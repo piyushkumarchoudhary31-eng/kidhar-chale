@@ -7,8 +7,8 @@
     "url": "https://github.com/sergebulaev"
   },
   "license": "MIT",
-  "homepage": "https://github.com/sergebulaev/linkedin-skills",
-  "repository": "https://github.com/sergebulaev/linkedin-skills",
+  "homepage": "https://github.com/piyushkumarchoudhary31-eng/kidhar-chale",
+  "repository": "https://github.com/piyushkumarchoudhary31-eng/kidhar-chale",
   "keywords": [
     "linkedin",
     "marketing",
@@ -31,7 +31,7 @@
       "Read",
       "Write"
     ],
-    "websiteURL": "https://github.com/sergebulaev/linkedin-skills",
+    "websiteURL": "https://github.com/piyushkumarchoudhary31-eng/kidhar-chale",
     "defaultPrompt": [
       "Draft a LinkedIn post from my notes.",
       "Improve this LinkedIn comment.",

@@ -15,6 +15,8 @@
   <img src="https://img.shields.io/badge/PRs-welcome-F59E0B.svg" alt="PRs Welcome">
 </p>
 
+> Imported from [sergebulaev/linkedin-skills](https://github.com/sergebulaev/linkedin-skills) (MIT). Install commands below point to this copy.
+
 **Claude skills for LinkedIn.** 12 Claude Code and Codex skills that write LinkedIn posts, comments, and replies in your voice. They draft content, strip AI tells, and wait for your approval before anything gets published. No coding required.
 
 > **On another platform too?** The same team ships matching marketing skill bundles for [X (Twitter)](https://github.com/sergebulaev/x-skills) · [Instagram](https://github.com/sergebulaev/instagram-skills) · [YouTube](https://github.com/sergebulaev/youtube-skills) · [TikTok](https://github.com/sergebulaev/tiktok-skills) · [Threads](https://github.com/sergebulaev/threads-skills) · [Facebook](https://github.com/sergebulaev/facebook-skills). Same voice engine, same approve-before-publish flow.
@@ -26,14 +28,14 @@ Pick whichever way you use Claude Code or Codex:
 ### Codex CLI
 
 ```bash
-codex plugin marketplace add sergebulaev/linkedin-skills
+codex plugin marketplace add piyushkumarchoudhary31-eng/kidhar-chale
 codex plugin add linkedin-skills@linkedin-skills
 ```
 
 To test a local clone before publishing changes:
 
 ```bash
-git clone https://github.com/sergebulaev/linkedin-skills.git
+git clone https://github.com/piyushkumarchoudhary31-eng/kidhar-chale.git linkedin-skills
 cd linkedin-skills
 codex plugin marketplace add .
 codex plugin add linkedin-skills@linkedin-skills
@@ -45,7 +47,7 @@ codex plugin add linkedin-skills@linkedin-skills
 2. Open the **Plugins** tab
 3. Click **Add**
 4. Choose **Add marketplace** → **Add from a repository**
-5. Paste `sergebulaev/linkedin-skills` there and sync
+5. Paste `piyushkumarchoudhary31-eng/kidhar-chale` there and sync
 6. Find the plugin under **Discover**, then click **Add**
 7. Done. The skills activate automatically when you ask about LinkedIn.
 
@@ -56,7 +58,7 @@ codex plugin add linkedin-skills@linkedin-skills
 1. Open Claude Desktop
 2. Click **Customize** in the left sidebar, then open the **Plugins** tab
 3. Click the **Add** dropdown at the top right and choose **Add marketplace**
-4. Select **Add from a repository**, paste `sergebulaev/linkedin-skills`, and sync
+4. Select **Add from a repository**, paste `piyushkumarchoudhary31-eng/kidhar-chale`, and sync
 5. Switch to the **Discover** tab and find the plugin in the list
 6. Click the **+** on the plugin card to install it
 7. Switch back to **Yours** to confirm it is listed and enabled
@@ -69,7 +71,7 @@ codex plugin add linkedin-skills@linkedin-skills
 1. Open your OpenClaw working directory
 2. Clone the skills into it:
    ```bash
-   git clone https://github.com/sergebulaev/linkedin-skills.git
+   git clone https://github.com/piyushkumarchoudhary31-eng/kidhar-chale.git linkedin-skills
    ```
 3. In OpenClaw settings, add this to your system prompt:
    ```
@@ -84,14 +86,14 @@ codex plugin add linkedin-skills@linkedin-skills
 ### Claude Code (CLI / VS Code / JetBrains)
 
 ```
-/plugin marketplace add sergebulaev/linkedin-skills
+/plugin marketplace add piyushkumarchoudhary31-eng/kidhar-chale
 /plugin install linkedin-skills@linkedin-skills
 ```
 
 Or clone the repo and open it as your working directory — the skills activate with no plugin install, which is the route to use where `/plugin` is unavailable:
 
 ```bash
-git clone https://github.com/sergebulaev/linkedin-skills.git
+git clone https://github.com/piyushkumarchoudhary31-eng/kidhar-chale.git linkedin-skills
 cd linkedin-skills
 ```
 
@@ -111,7 +113,7 @@ for /d %s in (skills\*) do mklink /J .claude\skills\%~nxs ..\..\%s
 Hermes Agent (Nous Research) follows the agentskills.io open standard and loads `skills/*/SKILL.md` directly. Clone the bundle into your Hermes skills folder:
 
 ```bash
-git clone https://github.com/sergebulaev/linkedin-skills.git ~/.hermes/skills/linkedin-skills
+git clone https://github.com/piyushkumarchoudhary31-eng/kidhar-chale.git ~/.hermes/skills/linkedin-skills
 ```
 
 Coming from OpenClaw? `hermes claw migrate` imports these skills automatically. Then call `/<skill-name>` from any of your Hermes chat surfaces.
@@ -121,10 +123,10 @@ Coming from OpenClaw? `hermes claw migrate` imports these skills automatically. 
 One command that works across Claude Code, Codex, Cursor, and any other agent that reads SKILL.md files:
 
 ```bash
-npx skills add sergebulaev/linkedin-skills
+npx skills add piyushkumarchoudhary31-eng/kidhar-chale
 ```
 
-> **Found this useful? [Star the repo](https://github.com/sergebulaev/linkedin-skills).** Curated Claude Code and Codex directories rank and gate by star count, so a star is what makes these skills findable for the next person. It is the only thing we ask. No signup, no email.
+> **Found this useful? [Star the repo](https://github.com/piyushkumarchoudhary31-eng/kidhar-chale).** Curated Claude Code and Codex directories rank and gate by star count, so a star is what makes these skills findable for the next person. It is the only thing we ask. No signup, no email.
 
 ## What you can do
 
@@ -345,7 +347,7 @@ linkedin-skills/
 | Runtime | Auto-discovers skills? | Setup |
 |---|---|---|
 | **Claude Code** (CLI, Desktop, Web, IDE) | Yes | Install via plugin or clone. Skills activate on matching prompts. |
-| **Codex CLI** | Yes | Install via `codex plugin marketplace add sergebulaev/linkedin-skills` and `codex plugin add linkedin-skills@linkedin-skills`. |
+| **Codex CLI** | Yes | Install via `codex plugin marketplace add piyushkumarchoudhary31-eng/kidhar-chale` and `codex plugin add linkedin-skills@linkedin-skills`. |
 | **Anthropic Managed Agents** (`/v1/agents`) | Yes | Pass skill files in the agent context. |
 | **OpenClaw** | Manual | Mount the repo, add system prompt pointing to `skills/*/SKILL.md`. |
 | **Cursor / Cline / Aider** | Manual | Read `SKILL.md` files as prompt context; import `lib/` as Python. |
@@ -355,7 +357,7 @@ linkedin-skills/
 ### OpenClaw quickstart
 
 ```bash
-git clone git@github.com:sergebulaev/linkedin-skills.git
+git clone git@github.com:piyushkumarchoudhary31-eng/kidhar-chale.git linkedin-skills
 
 # Add to OpenClaw system prompt:
 # "You have LinkedIn marketing skills in ./linkedin-skills/.
