@@ -287,3 +287,6 @@ section[id^="v-"]:not([hidden]) .genre .e,section[id^="v-"]:not([hidden]) .kc-tr
 .kc-tour-e{animation:kcEmoIn .6s var(--kc-out) backwards,kcFloat 2.6s ease-in-out .7s infinite}
 .genre:active .e,.genre[aria-pressed="true"] .e,.kc-try button:active .kc-try-e,.helpgrid a:active span,.kc-types button:active span,.kc-types button[aria-pressed="true"] span{animation:kcWiggle .55s var(--kc-out)!important}
 @media (hover:hover){.genre:hover .e,.kc-try button:hover .kc-try-e,.helpgrid a:hover span,.kc-types button:hover span{animation:kcWiggle .6s var(--kc-out)!important}}
+/* suggestion list: clear edge, opens upwards when the keyboard leaves no room below */
+.ac-list{border:1.5px solid var(--edge)}
+.ac-list.kc-up{top:auto;bottom:calc(100% + 4px)}
