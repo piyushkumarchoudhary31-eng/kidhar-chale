@@ -20,7 +20,9 @@ window.kcPhoto=(()=>{
     return{src:pg.thumbnail.source,w:pg.thumbnail.width,h:pg.thumbnail.height,by:artist,lic,file:'https://commons.wikimedia.org/wiki/'+encodeURIComponent('File:'+pg.pageimage).replace(/%3A/,':'),page:'https://en.wikipedia.org/wiki/'+encodeURIComponent(pg.title.replace(/ /g,'_'))}}
   function get(name,where){const id=name+'|'+where;if(id in cache)return Promise.resolve(cache[id]);
     return limit(()=>find(name,where)).then(r=>{if(r!==undefined){cache[id]=r;persist()}return r})}
-  function figure(r,name){return `<figure class="kc-ph"><img src="${r.src}" alt="${String(name).replace(/"/g,'&quot;')}" loading="lazy" decoding="async" width="${r.w}" height="${r.h}"><figcaption><a href="${r.file}" target="_blank" rel="noopener">Photo: ${r.by.replace(/</g,'&lt;')}${r.lic?' · '+r.lic:''}</a></figcaption></figure>`}
+  const ea=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function figure(r,name){if(!/^https:\/\/upload\.wikimedia\.org\//.test(r.src)||!/^https:\/\/commons\.wikimedia\.org\//.test(r.file))return '';
+    return `<figure class="kc-ph"><img src="${ea(r.src)}" alt="${ea(name)}" loading="lazy" decoding="async" width="${+r.w||720}" height="${+r.h||480}"><figcaption><a href="${ea(r.file)}" target="_blank" rel="noopener">Photo: ${ea(r.by)}${r.lic?' · '+ea(r.lic):''}</a></figcaption></figure>`}
   /* fill any element marked data-ph="Name|State" when it scrolls near */
   const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);fill(e.target)}),{rootMargin:'300px'}):null;
   function fill(el){const [n,w]=(el.dataset.ph||'').split('|');if(!n)return;
@@ -34,7 +36,7 @@ document.readyState==='loading'?document.addEventListener('DOMContentLoaded',()=
   const run=()=>{const el=document.querySelector('.kc-real[data-place]');if(!el)return;const place=el.dataset.place,root=document.querySelector('.brand').getAttribute('href');
     const links=`<p class="kc-replinks"><a href="${root}?report=${encodeURIComponent(place)}#plan">✍️ I went here: share what I spent</a> · <a href="${root}?feedback=${encodeURIComponent(place)}#plan">Report a problem</a></p>`;
     let c=null;try{c=JSON.parse(localStorage.getItem('bg_stats')||'null')}catch(_){}
-    const show=d=>{const s=d&&d[place];el.innerHTML=(s?`<p>👥 <b>${s.n} travellers</b> spent about <b>₹${s.perDay.toLocaleString('en-IN')} a day</b> on average (${s.days} days).</p>`:'')+links};
+    const show=d=>{const s=d&&d[place];el.innerHTML=(s&&+s.n>0?`<p>👥 <b>${+s.n} travellers</b> spent about <b>₹${(+s.perDay||0).toLocaleString('en-IN')} a day</b> on average (${+s.days||0} days).</p>`:'')+links};
     if(c&&Date.now()-c.t<3600e3)return show(c.d);
     fetch(API+'?action=stats').then(r=>r.json()).then(d=>{try{localStorage.setItem('bg_stats',JSON.stringify({t:Date.now(),d}))}catch(_){}show(d)}).catch(()=>show({}))};
   document.readyState==='loading'?document.addEventListener('DOMContentLoaded',run):run()})();

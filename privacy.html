@@ -1,5 +1,8 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<html lang="en"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://upload.wikimedia.org https://tile.openstreetmap.org https://*.tile.openstreetmap.org https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://www.google.com; connect-src 'self' https://en.wikipedia.org https://commons.wikimedia.org https://api.open-meteo.com https://script.google.com https://script.googleusercontent.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://upload.wikimedia.org https://*.g.doubleclick.net https://www.google.com; worker-src 'self'; manifest-src 'self'; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Privacy and Cookies · Kidhar Chale?</title>
 <meta name="description" content="What Kidhar Chale? keeps on your phone, what goes online, and how optional visit counting with Google Analytics works.">
 <link rel="canonical" href="https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/privacy.html">
@@ -39,10 +42,10 @@ footer{margin-top:24px;font-size:14px;color:var(--muted)}
 <main class="card">
 <h1>Privacy and cookies</h1>
 <p class="muted">Last updated: 28 November 2026</p>
-<p>Kidhar Chale? is a free trip planner made by Piyush Choudhary. There are no accounts, no ads and nothing to sign up for. This page explains, in plain words, what happens to your information.</p>
+<p>Kidhar Chale? is a free trip planner made by Piyush Choudhary. There are no ads, and you never have to sign up. An account is optional. This page explains, in plain words, what happens to your information.</p>
 
 <h2>What stays on your phone</h2>
-<p>Everything you type or plan is saved only in your own browser (in its local storage), on the device you are using. That includes your trips and plans, spends and splits, packing list, emergency card, passport and visa notes, language choice and places you looked at. It is never sent to us, and we have no server that could receive it.</p>
+<p>If you don’t sign in, everything you type or plan is saved only in your own browser (in its local storage), on the device you are using. That includes your trips and plans, spends and splits, packing list, emergency card, passport and visa notes, language choice and places you looked at. It is never sent to us, and we have no server that could receive it.</p>
 <p>To delete it, clear this site’s data in your browser settings, or uninstall the app if you added it to your home screen.</p>
 
 <h2>What goes online</h2>
@@ -53,10 +56,23 @@ footer{margin-top:24px;font-size:14px;color:var(--muted)}
 <tr><td>OpenStreetMap</td><td>Map pictures on Explore</td><td>Which part of the map you look at</td></tr>
 <tr><td>Google Fonts and cdnjs</td><td>Letters and the map code</td><td>A normal file request</td></tr>
 <tr><td>GitHub Pages</td><td>Hosts this website</td><td>A normal page request</td></tr>
+<tr><td>Google Apps Script</td><td>Only if you sign in, send feedback or share costs</td><td>What you send, plus your scrambled account key</td></tr>
 <tr><td>Wikipedia and Wikimedia Commons</td><td>Photos of places, with credit to each photographer</td><td>The name of the place shown</td></tr>
 </table></div>
 <p>If you tap <b>Use my location</b>, your browser asks you first. Your location is used on your phone to find the nearest city and its weather, and we don’t store it.</p>
 <p>Buttons for buses, trains, stays and flights open other websites (like redBus, IRCTC or Booking.com). Once you are there, their own privacy rules apply.</p>
+
+<h2 id="account">Optional account (sign in with an email code)</h2>
+<p>You can sign in to keep your trips, money, lists and emergency card on every phone and laptop you use. You type your email, we email you a 6-digit code, and you type it back. There is no password.</p>
+<ul>
+<li><b>Your email is never stored in readable form.</b> We keep only a one-way scrambled key made from it (HMAC-SHA256 with a secret), so it can recognise you when you sign in again, but nobody can turn it back into your email.</li>
+<li><b>Your name and saved data are encrypted</b> before they are stored, in a private Google Sheet run by the site owner through Google Apps Script. The key is kept separately from the Sheet, so the Sheet alone shows only scrambled text.</li>
+<li><b>Sign-in codes</b> work for 10 minutes, are stored only as a scrambled hash, and are blocked after 5 wrong tries. Codes are sent from the site owner’s Gmail account by Google.</li>
+<li><b>What is synced:</b> your trips and current plan, money and splits, packing and other lists, emergency card and notes. Things that only make sense on one device (language, map view, photo cache) stay on that device.</li>
+<li><b>Staying signed in:</b> your browser keeps a random sign-in key for up to 90 days. You can sign out of one device, or of all devices, from the account panel.</li>
+<li><b>Delete everything:</b> tap your account button, then <b>Delete my account</b>. Your account and everything saved in it are removed from the Sheet straight away.</li>
+</ul>
+<p>We don’t use your account for ads, don’t send newsletters, and don’t share it with anyone. Google runs the servers, so Google’s own security and <a href="https://policies.google.com/privacy" rel="noopener">privacy rules</a> also apply.</p>
 
 <h2>Feedback and "what I spent" reports</h2>
 <p>If you choose to send feedback or share what a trip cost, we save what you type in a private Google Sheet run by the site owner, using Google Apps Script. Reports are shown on the site only as averages for a place, never with names. Your email or Instagram is optional and only used to reply to you. Ask us any time and we will delete what you sent.</p>
@@ -78,10 +94,10 @@ footer{margin-top:24px;font-size:14px;color:var(--muted)}
 <p>You can change your mind at any time with <b>Cookie settings</b> at the bottom of the site. Google’s own rules are at <a href="https://policies.google.com/privacy" rel="noopener">policies.google.com/privacy</a>.</p>
 
 <h2>Children</h2>
-<p>The site is meant for travellers aged 13 and up. We don’t knowingly collect anything about children, and the site does not ask for anyone’s age or name.</p>
+<p>The site is meant for travellers aged 13 and up. We don’t knowingly collect anything about children. You need to be 13 or older to create an account.</p>
 
 <h2>Your rights</h2>
-<p>Under India’s Digital Personal Data Protection Act, 2023, and similar laws, you can ask what we hold about you and ask us to delete it. We hold nothing on a server, and your own data is on your device for you to view or clear. For anything else, contact us below.</p>
+<p>Under India’s Digital Personal Data Protection Act, 2023, and similar laws, you can ask what we hold about you and ask us to delete it. If you have an account, you can see your saved trips and delete the account and everything in it yourself, any time, from the account panel. Without an account, your data is only on your device for you to view or clear. For anything else, contact us below.</p>
 
 <h2>Contact</h2>
 <p>Questions or a problem? Write to us on <a href="https://github.com/piyushkumarchoudhary31-eng/kidhar-chale/issues" rel="noopener">GitHub</a>.</p>
