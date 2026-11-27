@@ -470,6 +470,69 @@ nav.jump a{display:inline-flex;align-items:center}
 /* 11. language switch */
 .kc-lang{margin-left:auto;padding:6px 12px;border-radius:999px;font-size:13px;font-weight:800;min-height:40px;border-width:2px;box-shadow:2px 2px 0 var(--shadow)}
 header.top{flex-wrap:wrap}
+
+/* ---------- LAPTOP LAYOUT (27 Nov) ---------- */
+.kc-side,.kc-col{display:contents}
+.kc-keys,#kc-empty{display:none}
+@media print{#kc-pa{display:none!important}#v-plan{display:block!important}}
+@media (min-width:1024px){
+  :root{--kc-side:220px}
+  body{padding-block:0 48px}
+  .wrap{max-width:1280px;display:grid;grid-template-columns:var(--kc-side) minmax(0,1fr);column-gap:40px;align-items:start}
+  .wrap>*{grid-column:2;min-width:0}
+  .wrap>.pass{margin-top:28px}
+  /* side bar */
+  .kc-side{display:flex;flex-direction:column;gap:18px;grid-column:1;grid-row:1/span 40;position:sticky;top:0;height:100vh;padding-block:28px 24px;box-sizing:border-box}
+  .kc-side header.top{flex-direction:column;align-items:flex-start;gap:12px;padding:0}
+  .kc-side .kc-lang{margin-left:0}
+  .kc-side nav.tabs{position:static;display:flex;flex-direction:column;gap:4px;max-width:none;margin:0;padding:8px;border-radius:20px;inset:auto}
+  .kc-side nav.tabs button{flex-direction:row;justify-content:flex-start;gap:12px;padding:11px 14px;font-size:15px;min-height:46px;color:var(--ink)}
+  .kc-side nav.tabs button svg{width:22px;height:22px;flex:none}
+  .kc-side nav.tabs button[aria-selected="true"]{color:var(--tag-ink)}
+  .kc-keys{display:block;margin-top:auto;font-size:12.5px;color:var(--muted);line-height:1.9}
+  .kc-keys kbd{font-family:var(--mono,ui-monospace,monospace);font-size:11.5px;border:1.5px solid var(--line);border-bottom-width:3px;border-radius:6px;padding:0 5px;background:var(--surface);color:var(--ink)}
+  #kc-pb:has(#p-out[hidden]) #kc-empty{display:flex}
+  .kc-try{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .kc-try button{display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center;text-align:left;padding:14px 16px;border-radius:16px;min-height:64px}
+  .kc-try-e{grid-row:1/span 2;font-size:28px;line-height:1}
+  .kc-try b{font-size:15px;line-height:1.3}
+  .kc-try small{color:var(--muted);font-weight:500;font-size:12.5px}
+  .kc-how{margin:4px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:8px;color:var(--muted)}
+  .kc-how b{color:var(--ink)}
+  .toast{bottom:28px}
+  /* Plan: form on the left, the plan on the right */
+  #v-plan{display:grid;grid-template-columns:minmax(340px,410px) minmax(0,1fr);gap:24px 28px;align-items:start}
+  #v-plan>#kc-home{grid-column:1/-1}
+  #kc-pa,#kc-pb{display:flex;flex-direction:column;gap:16px;min-width:0}
+  #kc-pa{position:sticky;top:0;max-height:100vh;overflow-y:auto;scrollbar-width:thin;padding:16px 8px 16px 2px;margin-top:-16px;box-sizing:border-box}
+  #p-go.kc-sticky{bottom:0}
+  /* Explore: places in a grid */
+  #x-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));align-items:start;gap:18px}
+  #v-explore .genres{grid-template-columns:repeat(auto-fill,minmax(112px,1fr))}
+  /* Book and Now: cards in two columns */
+  #v-go,#v-city{display:block;columns:2 360px;column-gap:22px}
+  #v-go>*,#v-city>*{break-inside:avoid;margin-bottom:22px}
+  #book-stay{display:flex}
+  /* Tools: drawers side by side */
+  #v-fun{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 22px;align-items:start}
+  #v-fun>.card:first-child,#tools-money{grid-column:1/-1}
+  #tools-money{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 22px;align-items:start}
+}
+@media (min-width:1024px) and (hover:hover){
+  .kc-side nav.tabs button:not([aria-selected="true"]):hover{background:var(--surface2)}
+  #x-list .card{transition:transform .12s}
+  #x-list .card:hover{transform:translate(-2px,-2px)}
+}
+@media (min-width:1024px){#kc-pa .genres{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}}
+@media (min-width:1024px){
+  #v-plan.kc-wres{grid-template-columns:minmax(0,1fr)}
+  #v-plan.kc-wres #kc-pb{display:none}
+  #v-plan.kc-wres #kc-pa{position:static;max-height:none;overflow:visible;margin-top:0;padding:0}
+  #v-plan.kc-wres #kc-pa>.seg{max-width:400px}
+  #v-plan.kc-wres #w-res,#v-plan.kc-wres #w-ai{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px;align-items:start}
+  #v-plan.kc-wres #w-res>:not(.card),#v-plan.kc-wres #w-ai>:not(.card){grid-column:1/-1}
+  #v-plan.kc-wres #w-more{justify-self:start;max-width:360px}
+}
 </style>
 </head>
 <body>
@@ -3202,6 +3265,39 @@ const lb=document.createElement('button');lb.type='button';lb.className='kc-lang
 const setLb=()=>{lb.textContent=lang==='hi'?'EN':'हिंदी';lb.setAttribute('aria-label',lang==='hi'?'Switch to English':'हिंदी में देखें');document.documentElement.lang=lang==='hi'?'hi':'en'};
 lb.onclick=()=>{lang=lang==='hi'?'en':'hi';sv('uilang',lang);if(lang==='hi')tr(document.body);else untr();setLb()};
 const top=$('header.top')||$('header');if(top)top.appendChild(lb);setLb();if(lang==='hi')tr(document.body);
+
+
+/* ---------- LAPTOP LAYOUT (27 Nov): brand and tabs move into a side bar, Plan gets two columns.
+   On phones the new wrappers use display:contents, so the phone layout is unchanged. ---------- */
+(function(){
+  const wrap=$('.wrap'),top=$('header.top'),nav=$('nav.tabs');
+  if(wrap&&top&&nav&&!$('.kc-side')){const side=document.createElement('aside');side.className='kc-side';wrap.prepend(side);side.append(top,nav)}
+  const vp=$('#v-plan'),seg=vp&&vp.querySelector(':scope > .seg'),form=$('#p-form'),head=$('#p-head'),out=$('#p-out');
+  if(seg&&form&&head&&out&&!$('#kc-pa')){const A=document.createElement('div');A.id='kc-pa';A.className='kc-col';const B=document.createElement('div');B.id='kc-pb';B.className='kc-col';
+    seg.before(A);A.append(seg,form);['wiz','welcome'].forEach(i=>{const e=document.getElementById(i);if(e)A.append(e)});A.after(B);B.append(head,out)}
+  /* laptop only: the empty right-hand column offers ready trips to try */
+  const pb=$('#kc-pb');if(pb&&!$('#kc-empty')){
+    const T=[['Delhi','Rishikesh',3,3000,'🏞'],['Jaipur','Jodhpur, Jaisalmer',5,6000,'🏜'],['Mumbai','Goa',4,5000,'🏖'],['Kolkata','Darjeeling',5,7000,'🚂']];
+    const E=document.createElement('div');E.id='kc-empty';E.className='card';
+    E.innerHTML=`<h2>Your plan shows up here</h2><p class="sub">Fill in the form on the left, or try one of these. Every plan has times, where to sleep, what it costs and links to book.</p>
+      <div class="kc-try">${T.map((t,i)=>`<button type="button" data-kctry="${i}"><span class="kc-try-e" aria-hidden="true">${t[4]}</span><b>${t[0]} → ${t[1]}</b><small>${t[2]} days · ₹${t[3].toLocaleString('en-IN')} budget</small></button>`).join('')}</div>
+      <ol class="kc-how"><li><b>Tell it</b> where you start, where you want to go, days and budget.</li><li><b>Get a plan</b> with no backtracking: buses and trains, beds and food, day by day.</li><li><b>Book and go.</b> Ticket sites open already searched, and Money tracks what you spend.</li></ol>`;
+    pb.prepend(E);
+    E.addEventListener('click',e=>{const b=e.target.closest('[data-kctry]');if(!b)return;const t=T[+b.dataset.kctry];const k=$('#m-know');if(k)k.click();
+      const s=(i,v)=>{const el=document.getElementById(i);if(!el)return;el.value=v;el.dispatchEvent(new Event('input'));el.dispatchEvent(new Event('change'))};
+      s('p-from',t[0]);s('p-to',t[1]);s('p-days',t[2]);s('p-budget',t[3]);const g=$('#p-go');if(g)g.click()})}
+  /* laptop: when the quiz shows its ideas, Plan turns into one wide column so the ideas sit side by side */
+  const wz=$('#wiz'),wres=wz&&wz.querySelector('.wpane[data-s="5"]');
+  if(wz&&wres&&vp){const sync=()=>vp.classList.toggle('kc-wres',!wz.hidden&&!wres.hidden);sync();
+    new MutationObserver(sync).observe(wz,{attributes:true,subtree:true,attributeFilter:['hidden']})}
+  /* laptop keyboard: 1–5 switch tabs, / searches places */
+  const keys=document.createElement('p');keys.className='kc-keys';keys.innerHTML='Keyboard: <kbd>1</kbd>–<kbd>5</kbd> switch tabs · <kbd>/</kbd> search places';
+  const sd=$('.kc-side');if(sd&&!sd.querySelector('.kc-keys'))sd.append(keys);
+  document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey)return;const t=e.target;if(t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName)))return;if($('.kc-tour'))return;
+    const vis=[...document.querySelectorAll('nav.tabs button')].filter(b=>b.offsetParent);
+    if(/^[1-9]$/.test(e.key)&&vis[+e.key-1]){vis[+e.key-1].click();window.scrollTo(0,0);e.preventDefault()}
+    else if(e.key==='/'){const x=vis.find(b=>b.dataset.v==='explore');if(x)x.click();const q=$('#x-q');if(q){q.focus();e.preventDefault()}}});
+})();
 
 mark();
 })();
