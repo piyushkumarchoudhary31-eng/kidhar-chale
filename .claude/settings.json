@@ -1,4 +1,8 @@
 {
+  "enabledPlugins": {
+    "mattpocock-skills@claude-plugins-official": true,
+    "superpowers@claude-plugins-official": true
+  },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
       "source": {
@@ -6,8 +10,5 @@
         "repo": "anthropics/claude-plugins-official"
       }
     }
-  },
-  "enabledPlugins": {
-    "mattpocock-skills@claude-plugins-official": true
   }
 }
