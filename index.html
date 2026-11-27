@@ -131,7 +131,7 @@ dl.facts dd{margin:2px 0 0}
 .choose legend span{font-weight:400;opacity:.85}
 .opt{padding:7px 11px;border-radius:4px;font-size:13.5px;font-weight:500}
 .opt[aria-pressed="true"]{background:color-mix(in srgb,var(--accent) 14%,var(--surface));border-color:var(--accent);font-weight:600}
-.opt[aria-pressed="true"]::after{content:none}
+.opt[aria-pressed="true"]::after{content:" ✓";color:var(--accent)}
 .stayblk{display:flex;flex-direction:column;gap:6px;border-top:1px dashed var(--line);padding-top:10px;margin-top:2px}
 .sopt{display:grid;grid-template-columns:1fr auto;gap:6px;align-items:stretch;min-width:0}
 .sopt button{display:grid;grid-template-columns:16px 1fr auto;gap:8px;align-items:start;text-align:left;font-weight:400;padding:9px 10px;background:var(--surface);min-width:0}
@@ -399,19 +399,19 @@ article.wk h3{margin:0}
 .scen li{margin:8px 0}.scen a{color:var(--ink);font-weight:700;font-size:13px}
 
 /* ---------- trip loader: a little bus on the road while Claude plans ---------- */
-.kl{background:var(--surface);border:1.5px solid var(--edge);border-radius:6px;box-shadow:none;padding:0;overflow:hidden;display:flex;flex-direction:column}
-.kl-scene{position:relative;height:118px;background:color-mix(in srgb,var(--klui,var(--pop)) 14%,var(--surface));border-bottom:1.5px solid var(--edge);overflow:hidden}
-.kl-sun{position:absolute;right:28px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--tag);border:1.5px solid var(--edge)}
+.kl{background:var(--surface);border:2.5px solid var(--edge);border-radius:18px;box-shadow:5px 5px 0 var(--shadow);padding:0;overflow:hidden;display:flex;flex-direction:column}
+.kl-scene{position:relative;height:118px;background:linear-gradient(180deg,color-mix(in srgb,var(--klui,var(--pop)) 22%,var(--surface)),var(--surface2));border-bottom:2.5px solid var(--edge);overflow:hidden}
+.kl-sun{position:absolute;right:28px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--tag);border:2.5px solid var(--edge)}
 .kl-hills{position:absolute;left:0;bottom:22px;width:200%;height:60px;display:flex}
 .kl-hills svg{width:50%;height:100%;flex:none}
 .kl-hills.back{bottom:30px;opacity:.55}
-.kl-road{position:absolute;left:0;right:0;bottom:0;height:24px;background:#2A2433;border-top:1.5px solid var(--edge)}
+.kl-road{position:absolute;left:0;right:0;bottom:0;height:24px;background:#2A2433;border-top:2.5px solid var(--edge)}
 .kl-road::after{content:"";position:absolute;left:0;top:10px;width:200%;height:4px;background:repeating-linear-gradient(90deg,var(--tag) 0 22px,transparent 22px 44px)}
 .kl-bus{position:absolute;left:50%;bottom:14px;width:96px;margin-left:-48px}
 .kl-body{padding:16px;display:flex;flex-direction:column;gap:12px}
 .kl-title{font-family:var(--display);font-weight:800;font-size:19px;line-height:1.2;margin:0}
 .kl-title .dots::after{content:"…"}
-.kl-city{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--muted);margin-top:-6px}.kl-city span{width:12px;height:12px;border-radius:4px;background:var(--kl,var(--accent));border:1.5px solid var(--edge);flex:none}
+.kl-city{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--muted);margin-top:-6px}.kl-city span{width:12px;height:12px;border-radius:4px;background:var(--kl,var(--accent));border:2px solid var(--edge);flex:none}
 .kl-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
 .kl-steps li{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--muted)}
 .kl-steps li i{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:800}
@@ -419,7 +419,7 @@ article.wk h3{margin:0}
 .kl-steps li.on i{border-color:var(--klui,var(--accent));border-top-color:transparent}
 .kl-steps li.ok{color:var(--ink)}
 .kl-steps li.ok i{background:var(--good);border-color:var(--good);color:var(--surface)}
-.kl-bar{height:12px;border-radius:4px;border:1.5px solid var(--edge);background:var(--surface2);overflow:hidden}
+.kl-bar{height:12px;border-radius:99px;border:2px solid var(--edge);background:var(--surface2);overflow:hidden}
 .kl-bar b{display:block;height:100%;width:3%;background:repeating-linear-gradient(-45deg,var(--klui,var(--accent)) 0 10px,color-mix(in srgb,var(--klui,var(--accent)) 55%,var(--surface)) 10px 20px);background-size:28px 28px;transition:width .6s ease-out}
 .kl-meta{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:12px;color:var(--muted)}
 .kl-tip{font-size:13px;color:var(--muted);border-top:1.5px dashed var(--line);padding-top:10px;min-height:2.6em}
@@ -639,15 +639,9 @@ header.top{flex-wrap:wrap}
 @media (max-width:1023.98px){.kc-hero-top{display:block;position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
 
 /* ===== printed-ticket look (28 Nov): icons, tags, hover, skeletons ===== */
-.kc-ic{width:1.15em;height:1.15em;vertical-align:-.2em;flex:none}
-.pass .line i{top:-10px;line-height:0;background:var(--accent);padding:0 3px}
-.pass .line i .kc-ic{width:16px;height:16px}
-[data-say] .kc-ic{width:18px;height:18px}
 .genre .e:empty,.kc-try-e:empty,.helpgrid a span:empty,.kc-types span[aria-hidden]:empty{display:none}
 .genre{justify-content:center;min-height:44px}
 .helpgrid a{min-height:52px;justify-content:center}
-.sk{font:700 10.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:5px 6px;min-width:58px;text-align:center;align-self:flex-start;margin-top:2px}
-.kc-tour-e{font:800 44px/1 var(--display);color:var(--accent);letter-spacing:-1px}
 .brand b{box-shadow:none}
 /* how it works: a numbered list, not a row of cards */
 .kc-how{display:block;counter-reset:none}
@@ -664,7 +658,7 @@ button,a,.genre,.opt,input,select,textarea,.kc-try button,#x-list article{transi
   .kc-try button:hover,.helpgrid a:hover{transform:translateY(-1px)}
   nav.tabs button:not([aria-selected="true"]):hover{color:var(--ink);background:color-mix(in srgb,var(--ink) 6%,transparent)}
 }
-button:not(:disabled):active{transform:translateY(1px)}
+
 /* skeleton loaders */
 @keyframes kcskel{from{background-position:100% 0}to{background-position:-100% 0}}
 .kc-skel{color:transparent!important;border-radius:4px;background:linear-gradient(90deg,var(--surface2) 25%,var(--line) 50%,var(--surface2) 75%);background-size:200% 100%;animation:kcskel 1.2s linear infinite;display:inline-block;min-width:150px;user-select:none}
@@ -673,6 +667,71 @@ button:not(:disabled):active{transform:translateY(1px)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 .kc-mapskel{display:block;margin:0;width:100%;height:100%;border-radius:0}
 .card.tag{padding-left:32px}.card.tag::before{left:12px;top:21px}
+
+/* ===== MOTION (28 Nov): smooth, app-like transitions ===== */
+:root{--kc-out:cubic-bezier(.22,.8,.24,1);--kc-io:cubic-bezier(.65,0,.35,1)}
+@keyframes kcRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes kcFade{from{opacity:0}to{opacity:1}}
+@keyframes kcFromR{from{opacity:0;transform:translateX(32px)}to{opacity:1;transform:none}}
+@keyframes kcFromL{from{opacity:0;transform:translateX(-32px)}to{opacity:1;transform:none}}
+@keyframes kcToL{to{opacity:0;transform:translateX(-26px)}}
+@keyframes kcToR{to{opacity:0;transform:translateX(26px)}}
+@keyframes kcDrop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes kcPop{0%{transform:scale(1)}35%{transform:scale(.93)}70%{transform:scale(1.03)}100%{transform:scale(1)}}
+/* the page eases in once it is ready */
+html.kc-ready body>*:not(nav.tabs){animation:kcFade .45s ease-out backwards}
+/* switching tabs: the new screen settles in, piece by piece */
+section[id^="v-"]:not([hidden])>*{animation:kcRise .5s var(--kc-out) backwards}
+section[id^="v-"]:not([hidden])>*:nth-child(2){animation-delay:.06s}
+section[id^="v-"]:not([hidden])>*:nth-child(3){animation-delay:.12s}
+section[id^="v-"]:not([hidden])>*:nth-child(4){animation-delay:.18s}
+section[id^="v-"]:not([hidden])>*:nth-child(n+5){animation-delay:.22s}
+/* quiz: each step slides in from the side it comes from */
+#wiz .wpane:not([hidden]){animation:kcFromR .46s var(--kc-out) backwards}
+#wiz[data-dir="b"] .wpane:not([hidden]){animation-name:kcFromL}
+#wiz .wpane.kc-leave{animation:kcToL .18s var(--kc-io) forwards!important}
+#wiz[data-dir="b"] .wpane.kc-leave{animation-name:kcToR!important}
+#w-bar,.wbar i{transition:width .6s var(--kc-out)}
+#w-res>*{animation:kcRise .55s var(--kc-out) backwards}
+#w-res>*:nth-child(2){animation-delay:.08s}#w-res>*:nth-child(3){animation-delay:.16s}#w-res>*:nth-child(4){animation-delay:.24s}#w-res>*:nth-child(n+5){animation-delay:.3s}
+/* "Pick for me" / "I know where" */
+#wiz:not([hidden]),#p-form:not([hidden]){animation:kcRise .45s var(--kc-out) backwards}
+/* a fresh plan arrives card by card */
+#p-out.kc-fresh>*{animation:kcRise .6s var(--kc-out) backwards}
+#p-out.kc-fresh>*:nth-child(2){animation-delay:.08s}#p-out.kc-fresh>*:nth-child(3){animation-delay:.16s}#p-out.kc-fresh>*:nth-child(4){animation-delay:.24s}#p-out.kc-fresh>*:nth-child(5){animation-delay:.32s}#p-out.kc-fresh>*:nth-child(n+6){animation-delay:.38s}
+/* places list: soft swap on filter, new cards rise in */
+#x-list.kc-swap>*{animation:kcFade .35s ease-out backwards}
+#x-list>.kc-new{animation:kcRise .5s var(--kc-out) backwards}
+/* drawers open smoothly */
+.kc-fold.kc-open>:not(h3){animation:kcDrop .38s var(--kc-out) backwards}
+.kc-fold>h3::after{transition:transform .3s var(--kc-out)}
+/* chosen chips give a small tap response */
+#wiz .on,.opt[aria-pressed="true"],.genre[aria-pressed="true"],.kc-types button[aria-pressed="true"]{animation:kcPop .32s var(--kc-out)}
+button,.genre,.opt{transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .16s var(--kc-out)}
+button:not(:disabled):active{transform:scale(.97)}
+/* sliding highlight under the selected tab */
+nav.tabs{isolation:isolate}
+@media (min-width:1024px){.kc-side nav.tabs{position:relative}}
+nav.tabs .kc-ind{position:absolute;left:0;top:0;z-index:-1;pointer-events:none;background:var(--tag);border-radius:6px;opacity:0;will-change:transform}
+@media (min-width:1024px){.kc-side nav.tabs .kc-ind{border-radius:4px;outline:1.5px solid var(--edge)}}
+nav.tabs.kc-ind-on .kc-ind{opacity:1}
+nav.tabs.kc-ind-anim .kc-ind{transition:transform .42s var(--kc-out),width .42s var(--kc-out),height .42s var(--kc-out),opacity .2s}
+nav.tabs.kc-ind-on button[aria-selected="true"]{background:transparent!important;outline:0!important}
+nav.tabs button{transition:color .25s ease}
+/* banners and the tour come up gently */
+.kc-consent{animation:kcRise .55s var(--kc-out) .5s backwards}
+html{scroll-behavior:auto}
+
+/* ===== EMOJI MOTION (28 Nov): emojis pop in, wiggle on tap ===== */
+@keyframes kcEmoIn{0%{opacity:0;transform:scale(.4) rotate(-12deg)}60%{opacity:1;transform:scale(1.18) rotate(4deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes kcWiggle{0%,100%{transform:rotate(0) scale(1)}20%{transform:rotate(-14deg) scale(1.15)}45%{transform:rotate(10deg) scale(1.15)}70%{transform:rotate(-5deg) scale(1.08)}}
+@keyframes kcFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-7px) rotate(-4deg)}}
+.genre .e,.kc-try-e,.kc-tour-e,.helpgrid a span,.sk,.kc-types button span,.kc-emo{display:inline-block;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",var(--body);transform-origin:50% 70%}
+section[id^="v-"]:not([hidden]) .genre .e,section[id^="v-"]:not([hidden]) .kc-try-e,section[id^="v-"]:not([hidden]) .helpgrid a span,section[id^="v-"]:not([hidden]) .kc-types button span,#p-out.kc-fresh .sk{animation:kcEmoIn .6s var(--kc-out) .15s backwards}
+.genre:nth-child(2) .e,.kc-try:nth-child(2) .kc-try-e{animation-delay:.2s!important}.genre:nth-child(3) .e{animation-delay:.25s!important}.genre:nth-child(4) .e{animation-delay:.3s!important}.genre:nth-child(n+5) .e{animation-delay:.35s!important}
+.kc-tour-e{animation:kcEmoIn .6s var(--kc-out) backwards,kcFloat 2.6s ease-in-out .7s infinite}
+.genre:active .e,.genre[aria-pressed="true"] .e,.kc-try button:active .kc-try-e,.helpgrid a:active span,.kc-types button:active span,.kc-types button[aria-pressed="true"] span{animation:kcWiggle .55s var(--kc-out)!important}
+@media (hover:hover){.genre:hover .e,.kc-try button:hover .kc-try-e,.helpgrid a:hover span,.kc-types button:hover span{animation:kcWiggle .6s var(--kc-out)!important}}
 </style>
 </head>
 <body>
@@ -685,7 +744,7 @@ button:not(:disabled):active{transform:translateY(1px)}
 <div class="pass" id="pass" aria-label="Your current trip">
   <div class="rt">
     <div><div class="code" id="ps-a">YOU</div><div class="cn" id="ps-an">Your city</div></div>
-    <div class="line" aria-hidden="true"><i><svg class="kc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M4 11h16M7 20v-3M17 20v-3"/><path d="M8 14h.01M16 14h.01"/></svg></i></div>
+    <div class="line" aria-hidden="true"><i>🚌</i></div>
     <div style="text-align:right"><div class="code" id="ps-b">???</div><div class="cn" id="ps-bn" style="margin-left:auto">Anywhere</div></div>
   </div>
   <div class="meta"><span id="ps-days">YOUR NEXT TRIP</span><span id="ps-cost">PLAN NOT MADE</span><span id="ps-date"></span></div>
@@ -696,7 +755,7 @@ button:not(:disabled):active{transform:translateY(1px)}
 <section id="v-explore" class="stack" hidden>
   <div class="card">
     <h2>Explore</h2>
-    <button class="surprise" id="x-ai">Not sure where to go? Answer 4 questions and we'll pick</button>
+    <button class="surprise" id="x-ai">✨ Not sure where to go? Answer 4 questions and we'll pick</button>
     <p class="sub">What do you love? Tap a type to see where to go, when to go, and the cheapest way to get there. <b id="x-total"></b></p>
     <div class="genres" id="x-genres"></div>
     <div class="row">
@@ -704,7 +763,7 @@ button:not(:disabled):active{transform:translateY(1px)}
       <label for="x-reg">Region<select id="x-reg"></select></label>
     </div>
     <div class="quick">
-      <button id="x-now" aria-pressed="false">Good this month</button><button id="x-cheap" aria-pressed="false">Cheapest only</button><button id="x-rand">Surprise me</button>
+      <button id="x-now" aria-pressed="false">🗓 Good this month</button><button id="x-cheap" aria-pressed="false">💸 Cheapest only</button><button id="x-rand">🎲 Surprise me</button>
     </div>
   </div>
   <div class="dayhead" style="align-items:center"><p class="eyebrow" id="x-count" aria-live="polite"></p><button class="ghost small" id="x-clear">Clear filters</button></div>
@@ -715,11 +774,11 @@ button:not(:disabled):active{transform:translateY(1px)}
 
 <section id="v-plan" class="stack">
   <div class="seg" role="tablist" aria-label="How to plan">
-    <button id="m-pick" role="tab" aria-selected="true">Pick for me</button>
-    <button id="m-know" role="tab" aria-selected="false">I know where</button>
+    <button id="m-pick" role="tab" aria-selected="true">✨ Pick for me</button>
+    <button id="m-know" role="tab" aria-selected="false">📍 I know where</button>
   </div>
   <div class="card wiz" id="wiz">
-    <div class="dayhead" style="align-items:center"><p class="eyebrow" id="w-step">Step 1 of 4</p><span class="sub" style="font-size:12.5px">4 quick questions</span></div>
+    <div class="dayhead" style="align-items:center"><p class="eyebrow" id="w-step">Step 1 of 4</p><span class="sub" style="font-size:12.5px">⚡ 4 quick questions</span></div>
     <div class="meter wbar"><i id="w-bar" style="width:25%"></i></div>
     <div class="wpane" data-s="1">
       <h2 class="wq">Where are you starting from?</h2>
@@ -746,14 +805,14 @@ button:not(:disabled):active{transform:translateY(1px)}
       <h2 class="wq">What kind of place?</h2>
       <p class="sub">Tap as many as you like, or let us choose.</p>
       <div class="genres" id="w-types"></div>
-      <button class="surprise" id="w-any">Idk, you choose. Surprise me</button>
+      <button class="surprise" id="w-any">🤷 Idk, you choose. Surprise me</button>
     </div>
     <div class="wpane" data-s="5" hidden>
-      <div class="dayhead" style="align-items:baseline"><h2 class="wq" style="margin:0">Your trip ideas</h2><button class="ghost small" id="w-edit">Change answers</button></div>
+      <div class="dayhead" style="align-items:baseline"><h2 class="wq" style="margin:0">Your trip drops 🔥</h2><button class="ghost small" id="w-edit">Change answers</button></div>
       <p class="sub" id="w-sum"></p>
       <div id="w-ai" class="stack" style="gap:10px"></div>
       <div id="w-res" class="stack" style="gap:10px"></div>
-      <button id="w-more">Show different ideas</button>
+      <button id="w-more">🔄 Show different ideas</button>
     </div>
     <p class="err" id="w-err" hidden></p>
     <div class="row wnav" id="w-nav">
@@ -783,11 +842,11 @@ button:not(:disabled):active{transform:translateY(1px)}
     </div>
     <label for="p-start">Start date<input id="p-start" type="date"></label>
     <fieldset class="choose" id="p-move"><legend>How do you like to travel? <span>Tap all you're happy with</span></legend>
-      <button type="button" class="opt" data-k="gbus">Govt bus</button><button type="button" class="opt" data-k="sbus">Sleeper / Volvo bus</button><button type="button" class="opt" data-k="train">Train (sleeper)</button><button type="button" class="opt" data-k="actrain">AC train</button><button type="button" class="opt" data-k="jeep">Shared jeep / taxi</button><button type="button" class="opt" data-k="scooter">Rent a scooter</button><button type="button" class="opt" data-k="flight">Flight if it saves a day</button>
+      <button type="button" class="opt" data-k="gbus">🚌 Govt bus</button><button type="button" class="opt" data-k="sbus">🛏 Sleeper / Volvo bus</button><button type="button" class="opt" data-k="train">🚆 Train (sleeper)</button><button type="button" class="opt" data-k="actrain">❄️ AC train</button><button type="button" class="opt" data-k="jeep">🚙 Shared jeep / taxi</button><button type="button" class="opt" data-k="scooter">🛵 Rent a scooter</button><button type="button" class="opt" data-k="flight">✈️ Flight if it saves a day</button>
     </fieldset>
-    <label class="check" for="p-night" style="border:0;padding:0"><input type="checkbox" id="p-night"><span>Overnight buses and trains are fine<small>Saves a night's bed, usually ₹400–800</small></span></label>
+    <label class="check" for="p-night" style="border:0;padding:0"><input type="checkbox" id="p-night"><span>🌙 Overnight buses and trains are fine<small>Saves a night's bed, usually ₹400–800</small></span></label>
     <fieldset class="choose" id="p-sleep"><legend>Where do you like to sleep? <span>Tap all you're happy with</span></legend>
-      <button type="button" class="opt" data-k="dorm">Dorm bed</button><button type="button" class="opt" data-k="priv">Hostel private room</button><button type="button" class="opt" data-k="hotel">Budget hotel</button><button type="button" class="opt" data-k="home">Homestay</button><button type="button" class="opt" data-k="dharam">Dharamshala / ashram</button><button type="button" class="opt" data-k="camp">Camp / tent</button>
+      <button type="button" class="opt" data-k="dorm">🛏 Dorm bed</button><button type="button" class="opt" data-k="priv">🔑 Hostel private room</button><button type="button" class="opt" data-k="hotel">🏨 Budget hotel</button><button type="button" class="opt" data-k="home">🏡 Homestay</button><button type="button" class="opt" data-k="dharam">🛕 Dharamshala / ashram</button><button type="button" class="opt" data-k="camp">⛺ Camp / tent</button>
     </fieldset>
     <label for="p-extra">Anything else? (food, pace, must-sees)<input id="p-extra" placeholder="Vegetarian, no early mornings, want one trek"></label>
     <button class="primary" id="p-go">Make my plan</button>
@@ -893,7 +952,7 @@ button:not(:disabled):active{transform:translateY(1px)}
       <label for="m-cat">For<select id="m-cat"><option>Food</option><option>Stay</option><option>Bus / train</option><option>Local auto</option><option>Entry ticket</option><option>Other</option></select></label>
     </div>
     <div class="quick" id="m-quick" aria-label="Quick add">
-      <button data-a="20" data-c="Food">Chai ₹20</button><button data-a="100" data-c="Food">Thali ₹100</button><button data-a="50" data-c="Local auto">Auto ₹50</button><button data-a="30" data-c="Other">Water ₹30</button><button data-a="500" data-c="Stay">Dorm ₹500</button>
+      <button data-a="20" data-c="Food">☕ Chai ₹20</button><button data-a="100" data-c="Food">🍛 Thali ₹100</button><button data-a="50" data-c="Local auto">🛺 Auto ₹50</button><button data-a="30" data-c="Other">💧 Water ₹30</button><button data-a="500" data-c="Stay">🛏 Dorm ₹500</button>
     </div>
     <button class="primary" id="m-add">Add spend</button>
     <div class="list" id="m-list"></div>
@@ -919,12 +978,12 @@ button:not(:disabled):active{transform:translateY(1px)}
     <h2>Travel kit</h2>
     <p class="sub">Tools for the road: pack right, stay safe at night, catch overcharging, speak the local language, collect stamps and take daily challenges.</p>
     <nav class="jump" aria-label="Jump to">
-      <a href="#f-pack">Packing</a><a href="#f-safe">Night bus</a><a href="#f-fare">Fare check</a><a href="#f-phr">Phrases</a><a href="#f-pass">Passport</a><a href="#f-chal">Challenge</a><a href="#f-season">Seasons</a><a href="#f-group">Group trip</a>
+      <a href="#f-pack">🎒 Packing</a><a href="#f-safe">🛡 Night bus</a><a href="#f-fare">🛺 Fare check</a><a href="#f-phr">🗣 Phrases</a><a href="#f-pass">🛂 Passport</a><a href="#f-chal">🔥 Challenge</a><a href="#f-season">🌦 Seasons</a><a href="#f-group">👥 Group trip</a>
     </nav>
   </div>
 
 <div class="card fsec" id="f-pack">
-    <h3>Packing list</h3>
+    <h3>🎒 Packing list</h3>
     <p class="sub">The stuff people forget and then pay three times for on the road. Tick as you pack.</p>
     <div><p class="eyebrow" id="k-count">0 of 14 packed</p><div class="meter" style="margin-top:6px"><i id="k-bar" style="width:0"></i></div></div>
     <div id="k-list"></div>
@@ -942,7 +1001,7 @@ button:not(:disabled):active{transform:translateY(1px)}
     </ul>
   </div>
   <div class="card fsec" id="f-safe">
-    <h3>Night-bus safety</h3>
+    <h3>🛡 Night-bus safety</h3>
     <p class="sub">Fill this before you board. It writes the message for your family or friend in one tap.</p>
     <div class="row">
       <label for="sf-from">From<input id="sf-from" placeholder="e.g. Jodhpur"></label>
@@ -973,7 +1032,7 @@ button:not(:disabled):active{transform:translateY(1px)}
   </div>
 
   <div class="card fsec" id="f-fare">
-    <h3>Is this fare fair?</h3>
+    <h3>🛺 Is this fare fair?</h3>
     <p class="sub">Type what the driver asked for. It compares it with typical local rates.</p>
     <div class="row">
       <label for="fc-city">City<select id="fc-city"></select></label>
@@ -989,15 +1048,15 @@ button:not(:disabled):active{transform:translateY(1px)}
   </div>
 
   <div class="card fsec" id="f-phr">
-    <h3>Survival phrases</h3>
+    <h3>🗣 Survival phrases</h3>
     <label for="ph-lang">Language<select id="ph-lang"></select></label>
     <p class="sub" id="ph-where"></p>
     <div id="ph-list"></div>
-    <p class="sub" style="font-size:12.5px" id="ph-note">Written the way it sounds in English letters. Tap the speaker to hear it in your phone’s voice.</p>
+    <p class="sub" style="font-size:12.5px" id="ph-note">Written the way it sounds in English letters. Tap 🔊 to hear it in your phone’s voice.</p>
   </div>
 
   <div class="card fsec" id="f-pass">
-    <h3>Trip passport</h3>
+    <h3>🛂 Trip passport</h3>
     <p class="sub">Stamp every place you reach. Fill up the map of India one state at a time.</p>
     <div class="row">
       <label for="ps-city">Place you reached<input id="ps-city" placeholder="Jodhpur"></label>
@@ -1014,7 +1073,7 @@ button:not(:disabled):active{transform:translateY(1px)}
   </div>
 
   <div class="card fsec" id="f-chal">
-    <h3>Today's challenge</h3>
+    <h3>🔥 Today's challenge</h3>
     <div class="chal"><p class="eyebrow" id="ch-date"></p><p class="big" id="ch-text"></p><p class="sub" id="ch-why"></p></div>
     <div class="row">
       <button class="primary" id="ch-done">I did it</button>
@@ -1028,14 +1087,14 @@ button:not(:disabled):active{transform:translateY(1px)}
   </div>
 
   <div class="card fsec" id="f-season">
-    <h3>Where to go this month</h3>
+    <h3>🌦 Where to go this month</h3>
     <label for="se-month">Month<select id="se-month"></select></label>
     <div id="se-out"></div>
     <p class="sub" style="font-size:12.5px">General season guide. For this week’s weather and road closures, check a weather app and local news before leaving.</p>
   </div>
 
   <div class="card fsec" id="f-group">
-    <h3>Group trip</h3>
+    <h3>👥 Group trip</h3>
     <p class="sub">One place for the plan and who paid what. Send the trip code on WhatsApp and friends paste it to join. When someone adds expenses, they send their code back and everyone pastes it to update.</p>
     <div id="gr-start" class="stack" style="gap:10px">
       <div class="row">
@@ -1051,7 +1110,7 @@ button:not(:disabled):active{transform:translateY(1px)}
     </div>
     <div id="gr-room" class="stack" style="gap:10px" hidden>
       <div class="dayhead"><div><p class="eyebrow">Trip ID</p><p class="code-big" id="gr-c"></p></div><button class="ghost small" id="gr-leave">Back to my trips</button></div>
-      <button class="primary" id="gr-share">Copy trip code to send friends</button>
+      <button class="primary" id="gr-share">📤 Copy trip code to send friends</button>
       <textarea id="gr-codebox" rows="3" readonly hidden></textarea>
       <p class="ok" id="gr-ok" hidden></p>
       <div class="row"><label for="gr-upd">Got an update from a friend?<input id="gr-upd" placeholder="Paste their code" autocomplete="off"></label><button id="gr-merge" style="flex:0 0 auto;align-self:flex-end">Update</button></div>
@@ -1171,12 +1230,12 @@ function renderPlan(raw){
   </div><p class="sub" style="font-size:12.5px">Change where you sleep on any night below and these numbers update.</p></div>`;
   p.days.forEach((dd,di)=>{
     const st=dd.stay,o=st.options[st.pick];
-    h+=`<div class="card tag day"><div class="dayhead"><p class="eyebrow">Day ${esc(dd.day)}</p><span class="sub">${st.options.length?'Sleep: '+esc(st.city)+(o?' · '+inr(o.price):''):''+esc(st.city)}</span></div><h3>${esc(dd.city)}</h3>`;
+    h+=`<div class="card tag day"><div class="dayhead"><p class="eyebrow">Day ${esc(dd.day)}</p><span class="sub">${st.options.length?'Sleep: '+esc(st.city)+(o?' · '+inr(o.price):''):'🌙 '+esc(st.city)}</span></div><h3>${esc(dd.city)}</h3>`;
     dd.items.forEach(it=>{h+=`<div class="leg"><span class="t">${esc(it.time)}</span><span>${esc(it.what)}</span><span class="c">${it.cost?inr(it.cost):'free'}</span></div>`});
     const parts=String(dd.city||'').split(/\s*(?:→|->)\s*/).filter(Boolean);
-    if(parts.length>1){h+=`<div class="row" style="gap:8px">`+parts.slice(0,-1).map((a,k)=>`<button class="small" data-from="${esc(a)}" data-to="${esc(parts[k+1])}">Tickets ${esc(a)} → ${esc(parts[k+1])}</button>`).join('')+`</div>`}
+    if(parts.length>1){h+=`<div class="row" style="gap:8px">`+parts.slice(0,-1).map((a,k)=>`<button class="small" data-from="${esc(a)}" data-to="${esc(parts[k+1])}">🎫 Tickets ${esc(a)} → ${esc(parts[k+1])}</button>`).join('')+`</div>`}
     if(st.options.length){
-      h+=`<div class="stayblk"><p class="eyebrow">Where to sleep in ${esc(st.city)} · tap to choose</p>`+st.options.map((s,oi)=>`<div class="sopt"><button data-d="${di}" data-o="${oi}" aria-pressed="${oi===st.pick}"><span class="radio" aria-hidden="true"></span><span style="min-width:0"><b>${esc(s.name||s.type+' in '+(s.area||st.city))}</b><small>${esc(s.name?s.type+' · '+s.area:'Any good one here; check reviews')}</small>${s.note?`<small>${esc(s.note)}</small>`:''}</span><span class="pr">${s.price?inr(s.price):'-'}</span></button><a href="${esc(stayLink(s,st.city))}" target="_blank" rel="noopener" aria-label="Check price for ${esc(s.name||s.type)}">Check ↗</a></div>`).join('')+
+      h+=`<div class="stayblk"><p class="eyebrow">🛏 Where to sleep in ${esc(st.city)} · tap to choose</p>`+st.options.map((s,oi)=>`<div class="sopt"><button data-d="${di}" data-o="${oi}" aria-pressed="${oi===st.pick}"><span class="radio" aria-hidden="true"></span><span style="min-width:0"><b>${esc(s.name||s.type+' in '+(s.area||st.city))}</b><small>${esc(s.name?s.type+' · '+s.area:'Any good one here; check reviews')}</small>${s.note?`<small>${esc(s.note)}</small>`:''}</span><span class="pr">${s.price?inr(s.price):'-'}</span></button><a href="${esc(stayLink(s,st.city))}" target="_blank" rel="noopener" aria-label="Check price for ${esc(s.name||s.type)}">Check ↗</a></div>`).join('')+
       `<button class="small ghost" data-stay="${esc(st.city)}" style="align-self:flex-start">More beds in ${esc(st.city)}</button></div>`;
     }
     h+='</div>';
@@ -1185,7 +1244,7 @@ function renderPlan(raw){
   h+=`<div class="card"><p class="note">Times and prices are typical, not live. Stay names are well-known places or areas; always check the price and recent reviews before paying.${p.verify.length?' Also check: '+p.verify.map(esc).join('; ')+'.':''}</p></div>`;
   {const cs=[];p.days.forEach(d=>String(d.city||'').split(/\s*(?:→|->)\s*/).forEach(c=>{c=c.trim();if(c&&cs[cs.length-1]!==c)cs.push(c)}));
    if(cs.length>1){const o=cs[0],de=cs[cs.length-1],w=[...new Set(cs.slice(1,-1).filter(x=>x!==o&&x!==de))].slice(0,8);
-    h+=`<div class="card"><h3>Your route on the map</h3><p class="sub">${cs.map(esc).join(' → ')}</p><a class="btnlink primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(o)}&destination=${encodeURIComponent(de)}${w.length?'&waypoints='+encodeURIComponent(w.join('|')):''}">Open the whole trip in Google Maps</a></div>`}}
+    h+=`<div class="card"><h3>🗺 Your route on the map</h3><p class="sub">${cs.map(esc).join(' → ')}</p><a class="btnlink primary" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(o)}&destination=${encodeURIComponent(de)}${w.length?'&waypoints='+encodeURIComponent(w.join('|')):''}">Open the whole trip in Google Maps</a></div>`}}
   h+=`<div class="card"><button id="p-copy">Copy plan to send on WhatsApp</button><textarea id="p-copytxt" rows="4" hidden readonly></textarea><p class="ok" id="p-copied" hidden>Copied. Paste it in any chat.</p></div>`;
   $('#p-out').innerHTML=h;
   updatePass(p);
@@ -1196,10 +1255,10 @@ function renderPlan(raw){
   $('#p-out').querySelectorAll('[data-stay]').forEach(b=>b.onclick=()=>{$('#s-city').value=b.dataset.stay;stayLinks();show('stay')});
   $('#p-out').querySelectorAll('.sopt [data-o]').forEach(b=>b.onclick=()=>{const y=scrollY;CUR.days[+b.dataset.d].stay.pick=+b.dataset.o;if(!CUR.example)save('plan',CUR);else save('examplePick',CUR.days.map(x=>x.stay.pick));renderPlan(CUR);scrollTo(0,y)});
 }
-(function(){const sp=load('plan',null);if(sp){renderPlan(sp);return}$('#p-out').innerHTML='<div class="card"><h3>Your plan shows up here</h3><p class="sub">Fill in where you start, where you want to go, days and budget above, then tap Make my plan. Not sure where to go? Tap Pick for me at the top.</p></div>';updatePass(null)})();
+(function(){const sp=load('plan',null);if(sp){renderPlan(sp);return}$('#p-out').innerHTML='<div class="card"><h3>Your plan shows up here</h3><p class="sub">Fill in where you start, where you want to go, days and budget above, then tap Make my plan. Not sure where to go? Tap ✨ Pick for me at the top.</p></div>';updatePass(null)})();
 window.bgCurrentPlan=()=>CUR;window.bgRenderPlan=p=>{save('plan',p);renderPlan(p)};
 
-function planText(p){const t=totals(p);let x=`${p.title}\n${p.summary}\n`;p.days.forEach(d=>{x+=`\nDay ${d.day}: ${d.city}\n`;d.items.forEach(i=>{x+=`  ${i.time}  ${i.what}${i.cost?' ('+inr(i.cost)+')':''}\n`});const o=d.stay.options[d.stay.pick];x+=o?`  Sleep: ${o.name||o.type+' in '+(o.area||d.stay.city)} (${inr(o.price)})\n`:`  Night: ${d.stay.city}\n`});
+function planText(p){const t=totals(p);let x=`🎒 ${p.title}\n${p.summary}\n`;p.days.forEach(d=>{x+=`\nDay ${d.day}: ${d.city}\n`;d.items.forEach(i=>{x+=`  ${i.time}  ${i.what}${i.cost?' ('+inr(i.cost)+')':''}\n`});const o=d.stay.options[d.stay.pick];x+=o?`  Sleep: ${o.name||o.type+' in '+(o.area||d.stay.city)} (${inr(o.price)})\n`:`  Night: ${d.stay.city}\n`});
   x+=`\nTotal per person: ${inr(t.sum)} (travel ${inr(t.travel)}, stay ${inr(t.stay)}, food ${inr(t.food)}, other ${inr(t.sight)})\nMade with Kidhar Chale? · free trip planner`;return x}
 function code3(n){const w=String(n||'').replace(/[^A-Za-z ]/g,'').trim();if(!w)return'---';return w.replace(/\s+/g,'').slice(0,3).toUpperCase()}
 /* two places with the same first three letters (Jaipur, Jaisalmer) get a different code for the second: first letter + its next consonants */
@@ -1213,7 +1272,7 @@ function updatePass(p){
   const n=(p&&p.days&&p.days.length)||+$('#p-days').value||0;$('#ps-days').textContent=n?n+(n==1?' DAY':' DAYS'):'YOUR NEXT TRIP';
   $('#ps-cost').textContent=sum?inr(sum)+' / PERSON':'PLAN NOT MADE';
   const dt=$('#p-start').value;$('#ps-date').textContent=dt?new Date(dt+'T00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short'}).toUpperCase():'';
-  const m=CHOICE.move;$('#pass .line i').innerHTML=(m.length&&m.every(k=>k==='flight'))?'<svg class="kc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.5 4.5a1.5 1.5 0 0 1 3 0V10l7 4v2l-7-2v4l2 1.5V21l-3.5-1-3.5 1v-1.5l2-1.5v-4l-7 2v-2l7-4z"/></svg>':(m.length&&m.every(k=>/train/.test(k)))?'<svg class="kc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="14" rx="3"/><path d="M6 10h12M9 21l1.5-4M15 21l-1.5-4"/><path d="M9 14h.01M15 14h.01"/></svg>':'<svg class="kc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="13" rx="2"/><path d="M4 11h16M7 20v-3M17 20v-3"/><path d="M8 14h.01M16 14h.01"/></svg>';
+  const m=CHOICE.move;$('#pass .line i').textContent=(m.length&&m.every(k=>k==='flight'))?'✈️':(m.length&&m.every(k=>/train/.test(k)))?'🚆':'🚌';
 }
 $('#p-go').onclick=async()=>{
   const btn=$('#p-go'),err=$('#p-err');err.hidden=true;
@@ -1253,7 +1312,14 @@ Reply ONLY with JSON: {"title":string,"summary":string (2 sentences),"days":[{"d
   try{
     const r=offlinePlan({from:$('#p-from').value.trim(),stops:$('#p-to').value.split(',').map(x=>x.trim()).filter(Boolean),nd,bud,ppl});
     if(r.error){bad(r.error);return}
-    const p=normPlan(r);p.meta={budget:bud,people:ppl};save('plan',p);renderPlan(p);$('#p-out').scrollIntoView({block:'start'});
+    const p=normPlan(r);p.meta={budget:bud,people:ppl};
+    /* a short city-coloured loader so the plan arrives instead of popping in */
+    if(window.kcLoader&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+      const LD=window.kcLoader($('#p-out'),{place:($('#p-to').value.split(',').map(x=>x.trim()).filter(Boolean)[0]||$('#p-from').value),title:'Planning your trip',eta:'a few seconds',tau:1.1,steps:[['Putting your stops in order, no backtracking',0],['Finding government buses and sleeper trains',.5],['Picking cheap beds for every night',1],['Adding food, sights and real costs',1.5]]});
+      $('#p-out').scrollIntoView({block:'start',behavior:'smooth'});
+      await new Promise(z=>setTimeout(z,2100));LD.done();await new Promise(z=>setTimeout(z,500));if(LD.stop)LD.stop();
+    }
+    save('plan',p);renderPlan(p);$('#p-out').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
   }catch(e){bad('Something went wrong making this plan. Try fewer places or different days.');renderPlan(load('plan',null)||EXAMPLE)}
   finally{btn.disabled=false;btn.textContent='Make my plan'}
 };
@@ -1356,7 +1422,7 @@ function offlinePlan(q){
         cur.items.push(legItem(L,a,b,'07:00'));arrH=7+L.h;
         if(L.longDay){cur.items.push({time:'13:00',what:'Lunch on the way',cost:150,kind:'food'});cur.items.push({time:fmt(7+L.h),what:`Arrive ${b.n} and check in`,cost:0,kind:'other'});if(!last){cur.stay={city:b.n,options:stayOpts(b,q.ppl)};open(b.n)}}
       }
-      if(last){cur.city=cur.city.includes('→')?cur.city:(L.over?b.n:`${a.n} → ${b.n}`);cur.items.push({time:'',what:`Home in ${b.n}. Trip done!`,cost:0,kind:'other'});cur.stay={city:'Home',options:[]};break}
+      if(last){cur.city=cur.city.includes('→')?cur.city:(L.over?b.n:`${a.n} → ${b.n}`);cur.items.push({time:'',what:`Home in ${b.n}. Trip done! 🎉`,cost:0,kind:'other'});cur.stay={city:'Home',options:[]};break}
       const ti=Math.max(0,Math.min(2,b.cost-1)),ab=b.reg[0]==='X';
       for(let d=1;d<=k[i];d++){
         if(d>1)open(b.n);
@@ -1671,11 +1737,11 @@ SF.forEach(id=>{if(sfS[id]!=null)$('#'+id).value=sfS[id];$('#'+id).addEventListe
 function t12(v){if(!v)return'';const[h,m]=v.split(':').map(Number);return((h%12)||12)+':'+String(m).padStart(2,'0')+(h<12?' am':' pm')}
 function safeMsg(){
   const v=id=>$('#'+id).value.trim();
-  const m=`Boarding now: ${v('sf-from')||'?'} → ${v('sf-to')||'?'}\nBus: ${v('sf-op')||'-'}${v('sf-no')?' ('+v('sf-no')+')':''}${v('sf-seat')?', seat '+v('sf-seat'):''}\nLeaves ${t12(v('sf-dep'))||'-'}, should reach by ${t12(v('sf-arr'))||'-'}.\nIf you don't hear from me by an hour after that, please call me.`;
+  const m=`🚌 Boarding now: ${v('sf-from')||'?'} → ${v('sf-to')||'?'}\nBus: ${v('sf-op')||'-'}${v('sf-no')?' ('+v('sf-no')+')':''}${v('sf-seat')?', seat '+v('sf-seat'):''}\nLeaves ${t12(v('sf-dep'))||'-'}, should reach by ${t12(v('sf-arr'))||'-'}.\nIf you don't hear from me by an hour after that, please call me. 🙏`;
   $('#sf-msg').textContent=m;$('#sf-wa').href='https://wa.me/?text='+encodeURIComponent(m);return m}
 safeMsg();
 $('#sf-copy').onclick=()=>copy(safeMsg(),$('#sf-ok'),$('#sf-msg'));
-$('#sf-arrived').onclick=()=>{const t=`Reached ${$('#sf-to').value.trim()||'safely'}. All good!`;$('#sf-msg').textContent=t;copy(t,$('#sf-ok'),$('#sf-msg'));setTimeout(safeMsg,4000)};
+$('#sf-arrived').onclick=()=>{const t=`✅ Reached ${$('#sf-to').value.trim()||'safely'}. All good!`;$('#sf-msg').textContent=t;copy(t,$('#sf-ok'),$('#sf-msg'));setTimeout(safeMsg,4000)};
 
 /* ===== 2. Fare check ===== */
 // base fare, km included in base, per km after, minimum cab per km, typical 2025-26 rates, approximate
@@ -1690,9 +1756,9 @@ function fare(){
   const lo=f,hi=Math.round(f*1.3/5)*5;
   if(!q){$('#fc-out').innerHTML=`<div class="verdict mid"><b>Fair is about ${inr(lo)}–${inr(hi)}</b><span>Enter what they asked to get a verdict.</span></div>`;return}
   const r=q/f;let cls,head,tip;
-  if(r<=1.3){cls='good';head='Fair price';tip='Go for it. Agree the price before you sit, and pay at the end.'}
+  if(r<=1.3){cls='good';head='Fair price ✓';tip='Go for it. Agree the price before you sit, and pay at the end.'}
   else if(r<=2){cls='mid';head='A bit high';tip=`Offer ${inr(hi)} and walk away slowly if they refuse. Many will call you back.`}
-  else{cls='bad';head='Way too high';tip=`That's ${r.toFixed(1)}× the normal fare. Say "meter se chalo" (go by meter), or book an auto on Uber, Ola or Rapido to see the real price.`}
+  else{cls='bad';head='Way too high 🚩';tip=`That's ${r.toFixed(1)}× the normal fare. Say "meter se chalo" (go by meter), or book an auto on Uber, Ola or Rapido to see the real price.`}
   if(mode==='erick')tip+=' Shared e-rickshaws charge per seat on fixed routes; ask a local what they paid.';
   $('#fc-out').innerHTML=`<div class="verdict ${cls}"><b>${head}</b><span>They asked <span class="num">${inr(q)}</span>. Typical: <span class="num">${inr(lo)}–${inr(hi)}</span> for ${km} km.</span><span>${esc(tip)}</span></div>`;
 }
@@ -1714,7 +1780,7 @@ const PH={
 $('#ph-lang').innerHTML=Object.keys(PH).map(l=>`<option>${l}</option>`).join('');$('#ph-lang').value=load('lang','Hindi');
 let tts=null;const ttsP=Promise.resolve(('speechSynthesis' in window&&window.SpeechSynthesisUtterance)?{speak:(t,o)=>new Promise((res,rej)=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-IN';u.rate=(o&&o.rate)||.9;const v=speechSynthesis.getVoices().find(v=>/en[-_]IN/i.test(v.lang));if(v)u.voice=v;u.onend=res;u.onerror=rej;speechSynthesis.speak(u)}catch(e){rej(e)}})}:null);
 function phr(){const l=$('#ph-lang').value;save('lang',l);const[where,list]=PH[l];$('#ph-where').textContent='Spoken in: '+where;
-  $('#ph-list').innerHTML=list.split('|').map((x,i)=>`<div class="phr"><div><div class="say">${esc(x)}</div><div class="en">${esc(EN[i])}</div></div>${tts?`<button class="small ghost" data-say="${esc(x)}" aria-label="Hear ${esc(x)}"><svg class="kc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v4h4l5 4V6l-5 4z"/><path d="M16.5 9a4 4 0 0 1 0 6"/></svg></button>`:''}</div>`).join('');
+  $('#ph-list').innerHTML=list.split('|').map((x,i)=>`<div class="phr"><div><div class="say">${esc(x)}</div><div class="en">${esc(EN[i])}</div></div>${tts?`<button class="small ghost" data-say="${esc(x)}" aria-label="Hear ${esc(x)}">🔊</button>`:''}</div>`).join('');
   $('#ph-list').querySelectorAll('[data-say]').forEach(b=>b.onclick=()=>{tts.speak(b.dataset.say.replace('___','').replace(/\//g,','),{rate:.85}).catch(()=>{})})}
 $('#ph-lang').addEventListener('change',phr);phr();
 ttsP.then(t=>{tts=t;if(t)phr();else $('#ph-note').textContent='Written the way it sounds in English letters. Read it slowly; people will understand and love that you tried.'});
@@ -1746,7 +1812,7 @@ function dayIdx(){let h=0;for(const c of dk)h=(h*31+c.charCodeAt(0))>>>0;return(
 function streak(){let n=0;const d=new Date(today);if(!C.done[dk])d.setDate(d.getDate()-1);while(C.done[d.toISOString().slice(0,10)]){n++;d.setDate(d.getDate()-1)}return n}
 function chal(){const[c,w]=CH[dayIdx()];$('#ch-date').textContent=today.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'});$('#ch-text').textContent=c;$('#ch-why').textContent=w;
   const s=streak();C.best=Math.max(C.best||0,s);save('chal',C);$('#ch-streak').textContent=s;$('#ch-best').textContent=C.best;$('#ch-total').textContent=Object.keys(C.done).length;
-  const d=!!C.done[dk];$('#ch-done').textContent=d?'Done today':'I did it';$('#ch-done').disabled=d;$('#ch-skip').disabled=d}
+  const d=!!C.done[dk];$('#ch-done').textContent=d?'Done today ✓':'I did it';$('#ch-done').disabled=d;$('#ch-skip').disabled=d}
 $('#ch-done').onclick=()=>{C.done[dk]=CH[dayIdx()][0];save('chal',C);chal()};
 $('#ch-skip').onclick=()=>{C.skip++;save('chal',C);chal()};
 chal();
@@ -1799,7 +1865,7 @@ $('#gr-join').onclick=()=>{grErr('');if(absorb($('#gr-code').value))$('#gr-code'
 $('#gr-merge').onclick=()=>{grErr('');if(absorb($('#gr-upd').value))$('#gr-upd').value=''};
 $('#gr-leave').onclick=closeRoom;
 $('#gr-add').onclick=()=>{const a=+$('#gr-amt').value;if(!(a>0)||!room)return;room.exps.push({id:code6()+Date.now().toString(36),amt:a,by:$('#gr-pay').value,what:$('#gr-what').value.trim(),at:Date.now()});$('#gr-amt').value='';$('#gr-what').value='';keep();draw()};
-$('#gr-share').onclick=()=>{const t=`Kidhar Chale? trip "${room.name}". Open Kidhar Chale? → Kit → Group trip and paste this code:\n${enc(room)}`;const box=$('#gr-codebox');box.value=t;
+$('#gr-share').onclick=()=>{const t=`🎒 Kidhar Chale? trip "${room.name}". Open Kidhar Chale? → Kit → Group trip and paste this code:\n${enc(room)}`;const box=$('#gr-codebox');box.value=t;
   const fb=()=>{box.hidden=false;box.focus();box.select();flash($('#gr-ok'),'Code selected below. Tap Copy, then paste it in WhatsApp.')};
   try{navigator.clipboard.writeText(t).then(()=>flash($('#gr-ok'),'Copied! Paste it in your WhatsApp group.'),fb)}catch(e){fb()}};
 $('#gr-pushplan').onclick=()=>{const p=(window.bgCurrentPlan&&window.bgCurrentPlan())||load('plan',null);if(!p||!p.days){grErr('Make a plan in the Plan tab first.');return}
@@ -1829,7 +1895,7 @@ const CTRY={XSA:'NP:Nepal BT:Bhutan LK:Sri Lanka BD:Bangladesh MV:Maldives',XSE:
 for(const r in CTRY)CTRY[r].split(/ (?=[A-Z]{2,3}:)/).forEach(x=>{const[c,n]=x.split(':');ST[c]=[n,r]});
 const REG={all:'All regions',india:'All of India',N:'India: North & Himalaya',NE:'India: Northeast & Sikkim',E:'India: East',W:'India: West',S:'India: South',C:'India: Central',I:'India: Islands',abroad:'All abroad',XSA:'Nepal, Bhutan, Sri Lanka…',XSE:'Southeast Asia',XEA:'East Asia',XME:'Middle East & Central Asia',XEU:'Europe',XAF:'Africa',XAM:'Americas',XOC:'Australia & Pacific'};
 const isAbroad=x=>x.reg[0]==='X';
-const G=[['all','','Everything'],['u','','Underrated'],['r','','Remote'],['b','','Beaches'],['m','','Mountains'],['s','','Snow'],['t','','Treks'],['l','','Lakes'],['w','','Waterfalls'],['d','','Desert'],['h','','Heritage'],['p','','Spiritual'],['f','','Wildlife'],['i','','Islands'],['k','','Backpacker hubs'],['A','','Abroad']];
+const G=[['all','🧭','Everything'],['u','💎','Underrated'],['r','🛖','Remote'],['b','🏖','Beaches'],['m','🏔','Mountains'],['s','❄️','Snow'],['t','🥾','Treks'],['l','🏞','Lakes'],['w','💧','Waterfalls'],['d','🐪','Desert'],['h','🏛','Heritage'],['p','🛕','Spiritual'],['f','🐅','Wildlife'],['i','🏝','Islands'],['k','🎒','Backpacker hubs'],['A','🌏','Abroad']];
 const GN=Object.fromEntries(G.map(g=>[g[0],g]));
 const MS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 function months(str){const set=new Set();String(str).split(',').forEach(r=>{const[a,b]=r.split('-').map(Number);if(!a)return;let m=a;const e=b||a;for(let g=0;g<12;g++){set.add(m);if(m===e)break;m=m%12+1}});return set}
@@ -1840,7 +1906,7 @@ if(window.bgAddPlaces)window.bgAddPlaces(P.map(x=>({n:x.n,reg:x.state,abroad:isA
 const NOW=new Date().getMonth()+1;
 let S=Object.assign({g:'u',reg:'all',q:'',now:false,cheap:false},load('explore',{}));let shown=10;
 $('#x-reg').innerHTML=Object.entries(REG).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
-$('#x-now').textContent='Good in '+['January','February','March','April','May','June','July','August','September','October','November','December'][NOW-1];
+$('#x-now').textContent='🗓 Good in '+['January','February','March','April','May','June','July','August','September','October','November','December'][NOW-1];
 function match(x,skipG){
   if(!skipG&&S.g!=='all'&&!S.q){if(S.g==='A'){if(!isAbroad(x))return false}else if(!x.tags.includes(S.g))return false}
   if(S.reg==='india'){if(isAbroad(x))return false}else if(S.reg==='abroad'){if(!isAbroad(x))return false}else if(S.reg!=='all'&&x.reg!==S.reg)return false;
@@ -1853,11 +1919,11 @@ function genres(){
   $('#x-genres').querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{S.g=b.dataset.g;shown=10;save('explore',S);render();$('#x-count').scrollIntoView({block:'start',behavior:'smooth'})})}
 const costTxt=(c,ab)=>ab?(c===1?'₹ Cheap (under ₹2,500/day)':c===2?'₹₹ Moderate (₹2,500–5,000/day)':'₹₹₹ Pricey (over ₹5,000/day)'):(c===1?'₹ Cheap':c===2?'₹₹ Moderate':'₹₹₹ Pricier');
 function card(x){
-  const tg=x.tags.map(t=>GN[t]?`<span>${GN[t][1]} ${GN[t][2]}</span>`:'').join('')+(isAbroad(x)?'<span>Abroad</span>':'');
+  const tg=x.tags.map(t=>GN[t]?`<span>${GN[t][1]} ${GN[t][2]}</span>`:'').join('')+(isAbroad(x)?'<span>🌏 Abroad</span>':'');
   return`<article class="card place" id="pl-${x.i}"><div class="dayhead"><h3>${esc(x.n)}</h3><span class="sub">${esc(x.state)}</span></div>
   <p>${esc(x.why)}</p><div class="ptags">${tg}</div>
   <dl class="pmeta"><div><dt>Best time</dt><dd>${monthText(x.best)} ${x.ms.has(NOW)?'<span class="goodnow">· good now</span>':''}</dd></div><div><dt>Get there</dt><dd>${esc(x.reach)}</dd></div><div><dt>Daily cost</dt><dd>${costTxt(x.cost,isAbroad(x))}</dd></div></dl>
-  <div class="row" style="gap:8px"><button class="small primary" data-add="${x.i}">+ Add to my plan</button><button class="small" data-tk="${x.i}">Tickets</button><button class="small" data-sh="${x.i}">Cheat sheet</button></div></article>`}
+  <div class="row" style="gap:8px"><button class="small primary" data-add="${x.i}">+ Add to my plan</button><button class="small" data-tk="${x.i}">🎫 Tickets</button><button class="small" data-sh="${x.i}">📋 Cheat sheet</button></div></article>`}
 function render(){
   genres();$('#x-reg').value=S.reg;$('#x-q').value=S.q;$('#x-now').setAttribute('aria-pressed',S.now);$('#x-cheap').setAttribute('aria-pressed',S.cheap);
   let L=P.filter(x=>match(x));
@@ -1913,7 +1979,7 @@ $('#x-ai').onclick=()=>{mode('pick');window.bgShow('plan');scrollTo(0,0)};
 const d0=new Date();d0.setDate(d0.getDate()+3);
 const A=Object.assign({from:'',days:5,start:d0.toISOString().slice(0,10),budget:8000,people:1,types:[],any:false},load('wiz',{}));
 if(!A.start||A.start<new Date().toISOString().slice(0,10))A.start=d0.toISOString().slice(0,10);
-const TYPES=[['u','','Underrated'],['m','','Mountains'],['b','','Beaches'],['s','','Snow'],['t','','Treks'],['l','','Lakes'],['w','','Waterfalls'],['d','','Desert'],['h','','Heritage'],['p','','Spiritual'],['f','','Wildlife'],['r','','Remote'],['i','','Islands'],['k','','Backpacker vibe'],['A','','Abroad']];
+const TYPES=[['u','💎','Underrated'],['m','🏔','Mountains'],['b','🏖','Beaches'],['s','❄️','Snow'],['t','🥾','Treks'],['l','🏞','Lakes'],['w','💧','Waterfalls'],['d','🐪','Desert'],['h','🏛','Heritage'],['p','🛕','Spiritual'],['f','🐅','Wildlife'],['r','🛖','Remote'],['i','🏝','Islands'],['k','🎒','Backpacker vibe'],['A','🌏','Abroad']];
 $('#w-from').value=A.from;$('#w-days').value=A.days;$('#w-start').value=A.start;$('#w-budget').value=A.budget;$('#w-people').value=A.people;
 $('#w-fromq').innerHTML=['Delhi','Mumbai','Bengaluru','Jaipur','Jodhpur','Kolkata','Chennai','Hyderabad'].map(c=>`<button data-v="${c}">${c}</button>`).join('');
 function marks(){
@@ -1924,7 +1990,7 @@ function marks(){
   $('#w-perday').textContent=b?`That's about ${inr(b/d)} a day.`+(b/d<500?' Very tight: think dharamshalas, government buses and one nearby place.':b/d<1200?' Good for dorms, buses and dhabas.':b/d<3000?' Comfortable for India, with some private rooms.':' Enough for comfort in India or a nearby country.'):'';
 }
 function grab(){A.from=$('#w-from').value.trim();A.days=Math.min(30,Math.max(1,Math.round(+$('#w-days').value||1)));A.start=$('#w-start').value||A.start;A.budget=Math.max(0,Math.round(+$('#w-budget').value||0));A.people=Math.min(20,Math.max(1,Math.round(+$('#w-people').value||1)));save('wiz',A)}
-document.querySelectorAll('#w-fromq').forEach(q=>q.onclick=e=>{const b=e.target.closest('button');if(!b)return;$('#w-from').value=b.dataset.v;grab();marks();go(2)});
+document.querySelectorAll('#w-fromq').forEach(q=>q.onclick=e=>{const b=e.target.closest('button');if(!b)return;$('#w-from').value=b.dataset.v;grab();marks();setTimeout(()=>go(2),matchMedia('(prefers-reduced-motion: reduce)').matches?0:260)});
 $('#w-daysq').onclick=e=>{const b=e.target.closest('button');if(!b)return;$('#w-days').value=b.dataset.v;grab();marks()};
 $('#w-budq').onclick=e=>{const b=e.target.closest('button');if(!b)return;$('#w-budget').value=b.dataset.v;grab();marks()};
 const step=(id,dv,min,max)=>{const i=$('#'+id);i.value=Math.min(max,Math.max(min,(+i.value||0)+dv));grab();marks()};
@@ -1948,12 +2014,15 @@ function go(n){
     if(cur===3&&A.budget<500)return err('Add a budget of at least ₹500 so we can find something.');
     if(n===5&&!A.types.length&&!A.any)return err('Tap at least one type, or press "Idk, you choose".');
   }
-  cur=n;document.querySelectorAll('.wpane').forEach(p=>p.hidden=+p.dataset.s!==n);
+  const dir=n>cur?'f':'b',old=document.querySelector('.wpane:not([hidden])');
+  const swap=()=>{cur=n;$('#wiz').dataset.dir=dir;document.querySelectorAll('.wpane').forEach(p=>{p.classList.remove('kc-leave');p.hidden=+p.dataset.s!==n});
   $('#w-step').textContent=n<5?`Step ${n} of 4`:'Your trip ideas';$('#w-bar').style.width=(Math.min(n,4)*25)+'%';
   $('#w-back').hidden=n===1||n===5;$('#w-next').hidden=n===5;$('#w-next').textContent=n===4?'Find my trips':'Next →';
   if(n===5)results(true);
-  const f={1:'#w-from',2:'#w-days',3:'#w-budget'}[n];if(f&&matchMedia('(pointer:fine)').matches)$(f).focus();
-  $('#wiz').scrollIntoView({block:'start'});
+  const f={1:'#w-from',2:'#w-days',3:'#w-budget'}[n];if(f&&matchMedia('(pointer:fine)').matches)$(f).focus({preventScroll:true});
+  $('#wiz').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  };
+  if(old&&+old.dataset.s!==n&&!matchMedia('(prefers-reduced-motion: reduce)').matches){if(go.busy)return;go.busy=1;old.classList.add('kc-leave');setTimeout(()=>{go.busy=0;swap()},180)}else swap();
 }
 $('#w-next').onclick=()=>go(cur+1);$('#w-back').onclick=()=>go(cur-1);$('#w-edit').onclick=()=>go(1);
 ['w-from','w-days','w-budget'].forEach(id=>$('#'+id).addEventListener('keydown',e=>{if(e.key==='Enter'&&!document.querySelector('#'+id+'-ac:not([hidden])')){e.preventDefault();go(cur+1)}}));
@@ -2005,13 +2074,13 @@ function ideaCard(o,ai){
   const names=o.stops.map(s=>s.n||s);const first=o.stops[0];
   const tags=ai?(o.types||[]):[...new Set(o.stops.flatMap(s=>s.tags||[]))].slice(0,4).map(t=>{const x=TYPES.find(y=>y[0]===t);return x?x[1]+' '+x[2]:''}).filter(Boolean);
   const over=o.cost>A.budget;
-  return`<div class="idea${ai?' ai':''}"><div class="dayhead">${ai?'<span class="pill">AI pick</span>':'<span class="pill ex">Our pick</span>'}${o.cost?`<span class="pill ${over?'bad':'good'}">about ${inr(o.cost)}${over?' · over budget':''}</span>`:''}</div>
+  return`<div class="idea${ai?' ai':''}"><div class="dayhead">${ai?'<span class="pill">✨ AI pick</span>':'<span class="pill ex">Our pick</span>'}${o.cost?`<span class="pill ${over?'bad':'good'}">about ${inr(o.cost)}${over?' · over budget':''}</span>`:''}</div>
   <h3>${esc(ai?o.title:names.join(' + '))}</h3>
   <p class="route"><b>${esc(A.from)}</b> → ${names.map(n=>`<b>${esc(n)}</b>`).join(' → ')} → <b>${esc(A.from)}</b> · ${A.days} day${A.days>1?'s':''}</p>
   <p>${esc(ai?o.why:(first.why+(o.stops.length>1?' Then '+o.stops.slice(1).map(s=>s.n).join(' and ')+' nearby.':'')))}</p>
-  ${ai&&o.travel?`<p class="sub">${esc(o.travel)}</p>`:!ai?`<p class="sub">${esc(first.reach)}</p>`:''}
-  <div class="ideameta">${tags.map(t=>`<span class="pill ex">${esc(t)}</span>`).join('')}${!ai&&o.good?'<span class="goodnow">good in '+MN[month()-1]+'</span>':''}</div>
-  <div class="row" style="gap:8px"><button class="primary" data-plan="${esc(names.join('|'))}">Plan this trip</button><button class="small" data-look="${esc(names[0])}">See details</button></div></div>`}
+  ${ai&&o.travel?`<p class="sub">🚌 ${esc(o.travel)}</p>`:!ai?`<p class="sub">🚌 ${esc(first.reach)}</p>`:''}
+  <div class="ideameta">${tags.map(t=>`<span class="pill ex">${esc(t)}</span>`).join('')}${!ai&&o.good?'<span class="goodnow">✓ good in '+MN[month()-1]+'</span>':''}</div>
+  <div class="row" style="gap:8px"><button class="primary" data-plan="${esc(names.join('|'))}">✨ Plan this trip</button><button class="small" data-look="${esc(names[0])}">See details</button></div></div>`}
 function wire(box){box.querySelectorAll('[data-plan]').forEach(b=>b.onclick=()=>planIt(b.dataset.plan.split('|')));
   box.querySelectorAll('[data-look]').forEach(b=>b.onclick=()=>{try{const S=JSON.parse(localStorage.getItem('bg_explore')||'{}');S.q=b.dataset.look;S.g='all';S.reg='all';S.now=false;S.cheap=false;localStorage.setItem('bg_explore',JSON.stringify(S))}catch(e){}const q=$('#x-q');q.value=b.dataset.look;q.dispatchEvent(new Event('input'));
     const g=document.querySelector('#x-genres [data-g="all"]');if(g)g.click();const r=$('#x-reg');r.value='all';r.dispatchEvent(new Event('change'));window.bgShow('explore');setTimeout(()=>{const c=document.querySelector('#x-list .place');if(c)c.scrollIntoView({block:'center'})},250)})}
@@ -2047,7 +2116,7 @@ Rules: travel time there and back must fit the days with time to enjoy; the seas
 Reply ONLY with JSON: {"ideas":[{"title":"short catchy name","stops":["Place",...],"why":"2 short sentences on why this suits them","travel":"one line: how to get there cheaply and how long","cost":number,"types":["2-3 words like Mountains"]}]}`;
   try{const r=await s.json(prompt,{modelTier:'default',signal:my.signal});if(my!==aiCtl)return;LD.done();
     const ideas=(r&&Array.isArray(r.ideas)?r.ideas:[]).filter(o=>o&&Array.isArray(o.stops)&&o.stops.length).slice(0,3).map(o=>({title:String(o.title||o.stops.join(' + ')),stops:o.stops.map(String).slice(0,4),why:String(o.why||''),travel:String(o.travel||''),cost:Math.round(Number(String(o.cost).replace(/[^\d.]/g,''))||0),types:Array.isArray(o.types)?o.types.map(String).slice(0,3):[]}));
-    box.innerHTML=ideas.length?'<p class="eyebrow">AI picks</p>'+ideas.map(o=>ideaCard(o,true)).join(''):'';wire(box);showQuick()}
+    box.innerHTML=ideas.length?'<p class="eyebrow">✨ AI picks</p>'+ideas.map(o=>ideaCard(o,true)).join(''):'';wire(box);showQuick()}
   catch(e){LD.stop();if(my!==aiCtl)return;showQuick();box.innerHTML=e&&e.code==='rate_limited'?'<p class="sub">AI is busy right now. The quick ideas below still work; try again in a minute.</p>':e&&e.code==='not_granted'?'':'<p class="sub">AI picks didn’t load this time. The quick ideas below still work.</p>'}
 }
 $('#w-more').onclick=()=>{results(false);$('#w-res').scrollIntoView({block:'start'})};
@@ -2700,24 +2769,24 @@ function status(s,now){
   if(nx!=null)return{st:'later',in:nx-cur,at:nx,hours,closedTxt};
   return{st:'done',hours,closedTxt}}
 const dur=m=>m<60?m+' min':Math.floor(m/60)+' h'+(m%60?' '+(m%60)+' min':'');
-const KIND={monument:'Fort',temple:'Temple',view:'View',food:'Food',market:'Market',aarti:'Aarti',show:'Show',museum:'Museum'};
-const srcLine=s=>s.s&&SRC[s.s]?`<p class="src">Fee and hours from <a href="${SRC[s.s][1]}" target="_blank" rel="noopener">${esc(SRC[s.s][0])}</a> · checked ${CHK}</p>`:`<p class="src">Typical timings. Check before going.</p>`;
+const KIND={monument:'🏛',temple:'🛕',view:'🌅',food:'🍢',market:'🛍',aarti:'🪔',show:'🎭',museum:'🖼'};
+const srcLine=s=>s.s&&SRC[s.s]?`<p class="src">✅ Fee and hours from <a href="${SRC[s.s][1]}" target="_blank" rel="noopener">${esc(SRC[s.s][0])}</a> · checked ${CHK}</p>`:`<p class="src">⚠️ Typical timings. Check before going.</p>`;
 
 /* ---------- RIGHT NOW ---------- */
 const nowCities=[...new Set(SIGHTS.map(s=>s.c))].sort();
 const vc=$('#v-city');
 vc.insertAdjacentHTML('afterbegin',`<div class="card" id="now-card">
-  <h2>Right now</h2>
+  <h2>⏰ Right now</h2>
   <p class="sub">What's open near you this minute, what's closing soon, and what to do this evening. Timings follow India time.</p>
-  <div class="row"><button class="primary" id="now-loc">Use my location</button>
+  <div class="row"><button class="primary" id="now-loc">📍 Use my location</button>
   <label for="now-city">Or pick a city<select id="now-city"><option value="">Choose…</option>${nowCities.map(c=>`<option>${esc(c)}</option>`).join('')}</select></label></div>
   <p class="err" id="now-err" hidden></p>
   <div id="now-out" aria-live="polite"></div>
 </div>
 <div class="card" id="help-card">
-  <h3>Find help near me</h3>
+  <h3>🆘 Find help near me</h3>
   <p class="sub">Opens Google Maps searching around where you are.</p>
-  <div class="helpgrid">${[['','ATM'],['','Hospital'],['','Pharmacy'],['','Police station'],['','Public toilet'],['','Petrol pump'],['','Puncture repair'],['','Budget hotel']].map(([e,q])=>`<a href="${gmap(q+' near me')}" target="_blank" rel="noopener"><span aria-hidden="true">${e}</span>${q}</a>`).join('')}</div>
+  <div class="helpgrid">${[['🏧','ATM'],['🏥','Hospital'],['💊','Pharmacy'],['👮','Police station'],['🚻','Public toilet'],['⛽','Petrol pump'],['🔧','Puncture repair'],['🛏','Budget hotel']].map(([e,q])=>`<a href="${gmap(q+' near me')}" target="_blank" rel="noopener"><span aria-hidden="true">${e}</span>${q}</a>`).join('')}</div>
 </div>`);
 const navCity=document.querySelector('nav.tabs [data-v="city"]');
 if(navCity)navCity.innerHTML='<svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5M9 2h6"/></svg>Now';
@@ -2733,12 +2802,12 @@ function renderNow(ctx){
   rows.sort((a,b)=>ord[a.k.st]-ord[b.k.st]||(a.k.st==='later'?a.k.in-b.k.in:0)||(a.d??0)-(b.d??0));
   const pill=k=>k.st==='open'?(k.allday?'<span class="st open">Open now</span>':`<span class="st open">Open · ${dur(k.left)} left</span>`):k.st==='soon'?`<span class="st soon">Closing in ${dur(k.left)}</span>`:k.st==='later'?`<span class="st later">Opens at ${hm(k.at)}</span>`:k.st==='shut'?'<span class="st shut">Closed today</span>':'<span class="st shut">Closed for today</span>';
   const evening=cur<sn.set+90;
-  let h=`<div class="nowhead"><span><b>${hm(cur)}</b> ${DAYN[now.getDay()]}</span><span>Sunrise ${hm(sn.rise)}</span><span>Sunset ${hm(sn.set)}</span></div>`;
-  if(cur>sn.set-120&&evening)h+=`<p class="note">Sunset is ${cur<sn.set?'in '+dur(sn.set-cur):'happening now'}. Evening aartis, viewpoints and night markets are tagged below.</p>`;
-  h+=rows.map(({s,d,k})=>`<details class="sight ${k.st}"><summary><span class="sk" aria-hidden="true">${KIND[s.k]||'Place'}</span><span class="sn"><b>${esc(s.n)}</b><small>${ctx.here?esc(s.c)+' · '+(d<1?'under 1 km':Math.round(d)+' km'):esc(s.c)}</small></span>${pill(k)}</summary>
+  let h=`<div class="nowhead"><span>🕐 <b>${hm(cur)}</b> ${DAYN[now.getDay()]}</span><span>🌅 Sunrise ${hm(sn.rise)}</span><span>🌇 Sunset ${hm(sn.set)}</span></div>`;
+  if(cur>sn.set-120&&evening)h+=`<p class="note">Sunset is ${cur<sn.set?'in '+dur(sn.set-cur):'happening now'}. Evening aartis, viewpoints and night markets are marked 🪔 🌅 🍢 below.</p>`;
+  h+=rows.map(({s,d,k})=>`<details class="sight ${k.st}"><summary><span class="sk" aria-hidden="true">${KIND[s.k]||'📍'}</span><span class="sn"><b>${esc(s.n)}</b><small>${ctx.here?esc(s.c)+' · '+(d<1?'under 1 km':Math.round(d)+' km'):esc(s.c)}</small></span>${pill(k)}</summary>
    <dl class="facts"><div><dt>Hours today</dt><dd>${k.st==='shut'?'Closed today. ':''}${esc(k.hours)}${k.closedTxt?' · '+esc(k.closedTxt):''}${/monument|museum/.test(s.k)?'<br><small class="sub">Last entry is usually 30–45 minutes before closing.</small>':''}</dd></div><div><dt>Entry</dt><dd>${esc(s.fee)}</dd></div>${s.pay&&s.pay.length?`<div><dt>Ways to pay less</dt><dd><ul class="clean">${s.pay.map(p=>'<li>'+esc(p)+'</li>').join('')}</ul></dd></div>`:''}</dl>
    ${srcLine(s)}
-   <div class="row" style="gap:8px"><a class="btnlink" href="https://www.google.com/maps/dir/?api=1&destination=${s.la},${s.lo}" target="_blank" rel="noopener">Directions</a><a class="btnlink" href="${wiki(s.n)}" target="_blank" rel="noopener">Wikipedia</a></div></details>`).join('');
+   <div class="row" style="gap:8px"><a class="btnlink" href="https://www.google.com/maps/dir/?api=1&destination=${s.la},${s.lo}" target="_blank" rel="noopener">🧭 Directions</a><a class="btnlink" href="${wiki(s.n)}" target="_blank" rel="noopener">📖 Wikipedia</a></div></details>`).join('');
   h+=`<p class="sub" style="font-size:12.5px;margin-top:10px">Holidays, festivals and VIP visits can change timings without notice. Sunrise and sunset are worked out for the exact spot.</p>`;
   $('#now-out').innerHTML=h;
 }
@@ -2746,9 +2815,9 @@ $('#now-city').onchange=()=>{const c=$('#now-city').value;$('#now-err').hidden=t
 $('#now-loc').onclick=()=>{const err=$('#now-err');err.hidden=true;
   const fail=m=>{err.textContent=m;err.hidden=false};
   if(!navigator.geolocation)return fail('Location isn’t available here. Pick your city instead.');
-  $('#now-loc').textContent='Finding you…';
-  navigator.geolocation.getCurrentPosition(p=>{$('#now-loc').textContent='Use my location';renderNow({here:{la:p.coords.latitude,lo:p.coords.longitude}})},
-   e=>{$('#now-loc').textContent='Use my location';fail(e&&e.code===1?'Location is blocked. Pick your city from the list instead.':'Couldn’t find your location. Pick your city from the list instead.')},{timeout:12000,maximumAge:300000})};
+  $('#now-loc').textContent='📍 Finding you…';
+  navigator.geolocation.getCurrentPosition(p=>{$('#now-loc').textContent='📍 Use my location';renderNow({here:{la:p.coords.latitude,lo:p.coords.longitude}})},
+   e=>{$('#now-loc').textContent='📍 Use my location';fail(e&&e.code===1?'Location is blocked. Pick your city from the list instead.':'Couldn’t find your location. Pick your city from the list instead.')},{timeout:12000,maximumAge:300000})};
 (function(){const c=load('nowcity','');if(c&&nowCities.includes(c)){$('#now-city').value=c;renderNow({city:c})}})();
 window.bgNow={renderNow,status,sun,istNow};
 
@@ -2756,7 +2825,7 @@ window.bgNow={renderNow,status,sun,istNow};
 const ver=SIGHTS.filter(s=>s.s&&s.k!=='show');
 const byCity={};ver.forEach(s=>(byCity[s.c]=byCity[s.c]||[]).push(s));
 $('#v-money').insertAdjacentHTML('beforeend',`<div class="card" id="payless">
-  <h2>Ways to pay less at sights</h2>
+  <h2>💸 Ways to pay less at sights</h2>
   <p class="sub">Only discounts we could confirm on an official site. If a place isn't listed, we couldn't confirm a discount there, so don't count on one.</p>
   <div class="paygen"><p class="eyebrow">Rules that work in many places</p><ul class="clean">
    <li>Children under 15 get in free at ASI-protected monuments, such as the Taj Mahal, Agra Fort, Red Fort, Qutub Minar and Humayun's Tomb.</li>
@@ -2771,11 +2840,11 @@ $('#v-money').insertAdjacentHTML('beforeend',`<div class="card" id="payless">
 /* ---------- ON THE WAY (Go) ---------- */
 const PLX=(window.bgPlaces||[]).map(p=>{const c=CO[norm(p.n)];return c&&p.reg[0]!=='X'?{n:p.n,la:c.la,lo:c.lo,k:'place',tip:p.why}:null}).filter(Boolean);
 $('#v-go').insertAdjacentHTML('beforeend',`<div class="card" id="otw">
-  <h2>On the way</h2>
+  <h2>🛣 On the way</h2>
   <p class="sub">Driving or riding? See what's worth a stop between two places: temples, forts, famous food, and where to take your breaks.</p>
   <div class="row"><label for="ow-from">From<input id="ow-from" placeholder="e.g. Jodhpur" list="ow-dl" autocomplete="off"></label><label for="ow-to">To<input id="ow-to" placeholder="e.g. Jaipur" list="ow-dl" autocomplete="off"></label></div>
   <datalist id="ow-dl">${[...new Set(Object.values(CO).map(c=>c.n))].sort().map(n=>`<option value="${esc(n)}">`).join('')}</datalist>
-  <div class="quick" id="ow-veh" role="group" aria-label="Vehicle"><button data-v="bike" aria-pressed="true">Bike</button><button data-v="car" aria-pressed="false">Car</button></div>
+  <div class="quick" id="ow-veh" role="group" aria-label="Vehicle"><button data-v="bike" aria-pressed="true">🏍 Bike</button><button data-v="car" aria-pressed="false">🚗 Car</button></div>
   <button class="primary" id="ow-go">Show stops on the way</button>
   <p class="err" id="ow-err" hidden></p>
   <div id="ow-out"></div>
@@ -2806,7 +2875,7 @@ function onTheWay(fromQ,toQ,veh){
   return{A,B,D,road,mins,stops,breaks,veh,hills};
 }
 window.bgOnTheWay=onTheWay;
-const KS={food:'Food',sight:'Sight',rest:'Chai',fuel:'Fuel',place:'Stop'};
+const KS={food:'🍢',sight:'🏛',rest:'☕',fuel:'⛽',place:'📍'};
 $('#ow-go').onclick=()=>{const err=$('#ow-err');err.hidden=true;
   const f=$('#ow-from').value.trim(),t=$('#ow-to').value.trim();
   if(!f||!t){err.textContent='Add both From and To.';err.hidden=false;return}
@@ -2819,30 +2888,30 @@ $('#ow-go').onclick=()=>{const err=$('#ow-err');err.hidden=true;
   if(r.veh==='bike'&&r.road>380)warn.push('That’s a long day on a bike. Think about splitting it over two days.');
   if(r.mins>540)warn.push('Start at sunrise so you don’t ride the last part in the dark: highways at night have trucks and unlit cattle.');
   if(r.hills)warn.push('Mountain roads are slow, and landslides or snow can close them. Check road status locally before you set off, and keep a spare day.');
-  if(r.stops.some(s=>s.k==='fuel'))warn.push('Fuel stations are far apart on this route. Fill up at the stop and carry spare fuel.');
-  if(warn.length)h+=`<ul class="clean warnl">${warn.map(w=>'<li>'+esc(w)+'</li>').join('')}</ul>`;
+  if(r.stops.some(s=>s.k==='fuel'))warn.push('Fuel stations are far apart on this route. Fill up at the ⛽ stop and carry spare fuel.');
+  if(warn.length)h+=`<ul class="clean warnl">${warn.map(w=>'<li>⚠️ '+esc(w)+'</li>').join('')}</ul>`;
   h+=`<p class="eyebrow" style="margin-top:12px">Stops on the way · ${r.stops.length?r.stops.length:'none we know of yet'}</p>`;
   let bi=0;
-  r.stops.forEach(s=>{while(bi<r.breaks.length&&r.breaks[bi]<=s.at){h+=`<div class="brk">Break time, around km ${r.breaks[bi]}</div>`;bi++}
-    h+=`<div class="stop"><span class="sk" aria-hidden="true">${KS[s.k]||'Stop'}</span><div style="min-width:0"><p><b>${esc(s.n)}</b> <span class="sub">· km ${s.at}${s.off>8?' · '+Math.round(s.off)+' km off the road':''}</span></p><p class="sub">${esc(s.tip||'')}${s.by?' <i>('+esc(s.by)+')</i>':''}</p><p class="sub"><a href="${gmap(s.n)}" target="_blank" rel="noopener">Map ↗</a> · <a href="${wiki(s.n.split(',')[0])}" target="_blank" rel="noopener">Wikipedia ↗</a></p></div></div>`});
-  while(bi<r.breaks.length){h+=`<div class="brk">Break time, around km ${r.breaks[bi]}</div>`;bi++}
-  h+=`<a class="btnlink primary" href="${mapU}" target="_blank" rel="noopener" style="margin-top:12px">Open this route in Google Maps</a>
+  r.stops.forEach(s=>{while(bi<r.breaks.length&&r.breaks[bi]<=s.at){h+=`<div class="brk">☕ Break time, around km ${r.breaks[bi]}</div>`;bi++}
+    h+=`<div class="stop"><span class="sk" aria-hidden="true">${KS[s.k]||'📍'}</span><div style="min-width:0"><p><b>${esc(s.n)}</b> <span class="sub">· km ${s.at}${s.off>8?' · '+Math.round(s.off)+' km off the road':''}</span></p><p class="sub">${esc(s.tip||'')}${s.by?' <i>('+esc(s.by)+')</i>':''}</p><p class="sub"><a href="${gmap(s.n)}" target="_blank" rel="noopener">Map ↗</a> · <a href="${wiki(s.n.split(',')[0])}" target="_blank" rel="noopener">Wikipedia ↗</a></p></div></div>`});
+  while(bi<r.breaks.length){h+=`<div class="brk">☕ Break time, around km ${r.breaks[bi]}</div>`;bi++}
+  h+=`<a class="btnlink primary" href="${mapU}" target="_blank" rel="noopener" style="margin-top:12px">🗺 Open this route in Google Maps</a>
   <p class="sub" style="font-size:12.5px;margin-top:8px">Distances are estimates along a straight line, so a stop can sometimes be a short detour off your actual road. Google Maps shows the real route and live traffic.</p></div>`;
   $('#ow-out').innerHTML=h};
 (function(){const o=load('otw',null);if(o){$('#ow-from').value=o.f;$('#ow-to').value=o.t}})();
 
 /* ---------- TRAVEL BY STATE (Explore) ---------- */
 const vx=$('#v-explore');
-vx.insertAdjacentHTML('afterbegin',`<div class="seg seg4" role="tablist" aria-label="Explore by"><button role="tab" data-m="pl" aria-selected="true">Places</button><button role="tab" data-m="wk" aria-selected="false">Weekend</button><button role="tab" data-m="map" aria-selected="false">Map</button><button role="tab" data-m="st" aria-selected="false">States</button></div>`);
+vx.insertAdjacentHTML('afterbegin',`<div class="seg seg4" role="tablist" aria-label="Explore by"><button role="tab" data-m="pl" aria-selected="true">📍 Places</button><button role="tab" data-m="wk" aria-selected="false">🚗 Weekend</button><button role="tab" data-m="map" aria-selected="false">🗺 Map</button><button role="tab" data-m="st" aria-selected="false">🏛 States</button></div>`);
 vx.insertAdjacentHTML('beforeend',`<div id="x-states" class="stack" hidden><div class="card"><h2>Travel by state</h2><p class="sub">Every state and union territory: what to eat, what to bring home, festivals and the must-dos. Tap one.</p><div class="chips" id="st-chips">${STATES.map((s,i)=>`<button class="chip" data-st="${i}" aria-pressed="false">${esc(s.n)}</button>`).join('')}</div></div><div id="st-out"></div></div>`);
 const ST=window.bgST||{};
 function stateCard(i){const s=STATES[i];const sname=(ST[s.k]&&ST[s.k][0])||s.n;
   const pl=(window.bgPlaces||[]).filter(p=>p.state===sname||p.state===s.n);
   const li=a=>`<ul class="clean">${a.map(x=>'<li>'+esc(x)+'</li>').join('')}</ul>`;
   return`<article class="card stcard"><div class="dayhead"><h2>${esc(s.n)}</h2><span class="pill">Best: ${esc(s.best)}</span></div><p>${esc(s.intro)}</p><p class="sub">Capital: ${esc(s.cap)}</p>
-  <div class="stgrid"><section><h3>Must-eat</h3>${li(s.food)}</section><section><h3>Bring home</h3>${li(s.buy)}<p class="sub" style="font-size:12.5px">GI = Geographical Indication: the real thing is made only in that region. Buy from government emporiums or co-ops to be sure.</p></section>
-  <section><h3>Must-do</h3>${li(s.must)}</section><section><h3>Festivals</h3>${li(s.fest)}</section></div>
-  ${s.cafes?`<p><b>Cafés:</b> ${esc(s.cafes)}</p>`:''}
+  <div class="stgrid"><section><h3>🍛 Must-eat</h3>${li(s.food)}</section><section><h3>🛍 Bring home</h3>${li(s.buy)}<p class="sub" style="font-size:12.5px">GI = Geographical Indication: the real thing is made only in that region. Buy from government emporiums or co-ops to be sure.</p></section>
+  <section><h3>✅ Must-do</h3>${li(s.must)}</section><section><h3>🎉 Festivals</h3>${li(s.fest)}</section></div>
+  ${s.cafes?`<p><b>☕ Cafés:</b> ${esc(s.cafes)}</p>`:''}
   ${pl.length?`<p class="eyebrow" style="margin-top:10px">${pl.length} place${pl.length>1?'s':''} in our list</p><div class="chips">${pl.map(p=>`<button class="chip" data-goto="${esc(p.n)}">${esc(p.n)}</button>`).join('')}</div>`:''}
   <div class="links" style="margin-top:10px"><a href="${wvoy(s.n)}" target="_blank" rel="noopener"><b>Wikivoyage ↗</b><span>Free travel guide</span></a><a href="${wiki(s.n)}" target="_blank" rel="noopener"><b>Wikipedia ↗</b><span>History and culture</span></a></div></article>`}
 function showState(i){document.querySelectorAll('#st-chips [data-st]').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.st===i));save('state',i);
@@ -2863,7 +2932,7 @@ setTimeout(()=>{const m=load('xmode','pl');if(m!=='pl')setMode(m)},0);
 
 /* ---------- links on Explore cards and city info ---------- */
 function addLinks(root){root.querySelectorAll('article.place:not([data-lk])').forEach(a=>{a.dataset.lk=1;const n=a.querySelector('h3').textContent,st=(a.querySelector('.dayhead .sub')||{}).textContent||'';
-  a.insertAdjacentHTML('beforeend',`<p class="xlinks"><a href="${wiki(n)}" target="_blank" rel="noopener">Wikipedia</a><a href="${wvoy(n)}" target="_blank" rel="noopener">Wikivoyage</a><a href="${gmap(n+', '+st)}" target="_blank" rel="noopener">Map</a><a href="https://www.google.com/search?tbm=isch&q=${enc(n+' '+st)}" target="_blank" rel="noopener">Photos</a></p>`)})}
+  a.insertAdjacentHTML('beforeend',`<p class="xlinks"><a href="${wiki(n)}" target="_blank" rel="noopener">📖 Wikipedia</a><a href="${wvoy(n)}" target="_blank" rel="noopener">🧭 Wikivoyage</a><a href="${gmap(n+', '+st)}" target="_blank" rel="noopener">🗺 Map</a><a href="https://www.google.com/search?tbm=isch&q=${enc(n+' '+st)}" target="_blank" rel="noopener">📷 Photos</a></p>`)})}
 const xl=$('#x-list');if(xl){addLinks(xl);new MutationObserver(()=>addLinks(xl)).observe(xl,{childList:true})}
 const ca=$('#c-ans');if(ca)new MutationObserver(()=>{const l=ca.querySelector('.links:not([data-lk])');if(!l)return;l.dataset.lk=1;const n=ca.querySelector('h3').childNodes[0].textContent.trim();
   l.insertAdjacentHTML('beforeend',`<a href="${wiki(n)}" target="_blank" rel="noopener"><b>Wikipedia ↗</b><span>History, temples and stories</span></a><a href="https://lens.google/" target="_blank" rel="noopener"><b>Google Lens ↗</b><span>Point your camera at a sign or menu to translate it</span></a>`)}).observe(ca,{childList:true});
@@ -2872,7 +2941,7 @@ const ca=$('#c-ans');if(ca)new MutationObserver(()=>{const l=ca.querySelector('.
 const EM=load('emcard',{});
 const SCRIPTS=[['Hindi','कृपया मुझे इस पते पर ले चलिए'],['Marathi','कृपया मला या पत्त्यावर घेऊन चला'],['Bengali','অনুগ্রহ করে আমাকে এই ঠিকানায় নিয়ে চলুন'],['Tamil','தயவுசெய்து என்னை இந்த முகவரிக்கு அழைத்துச் செல்லுங்கள்'],['Telugu','దయచేసి నన్ను ఈ చిరునామాకు తీసుకెళ్లండి'],['Kannada','ದಯವಿಟ್ಟು ನನ್ನನ್ನು ಈ ವಿಳಾಸಕ್ಕೆ ಕರೆದುಕೊಂಡು ಹೋಗಿ'],['Malayalam','ദയവായി എന്നെ ഈ വിലാസത്തിലേക്ക് കൊണ്ടുപോകൂ'],['Gujarati','કૃપા કરીને મને આ સરનામે લઈ જાઓ'],['Punjabi','ਕਿਰਪਾ ਕਰਕੇ ਮੈਨੂੰ ਇਸ ਪਤੇ ’ਤੇ ਲੈ ਚੱਲੋ']];
 $('#v-fun').insertAdjacentHTML('beforeend',`<div class="card" id="f-em">
-  <h3>My emergency card</h3>
+  <h3>🆘 My emergency card</h3>
   <p class="sub">Fill it once. It stays only on this phone. If something happens, open this and show it to whoever is helping you.</p>
   <div class="row"><label for="em-name">Your name<input id="em-name" autocomplete="name"></label><label for="em-blood">Blood group<input id="em-blood" placeholder="e.g. B+"></label></div>
   <div class="row"><label for="em-who">Emergency contact name<input id="em-who"></label><label for="em-ph">Their phone<input id="em-ph" type="tel" inputmode="tel"></label></div>
@@ -2881,7 +2950,7 @@ $('#v-fun').insertAdjacentHTML('beforeend',`<div class="card" id="f-em">
   <div id="em-big" class="emcard" hidden></div>
 </div>
 <div class="card" id="f-lost">
-  <h3>Phone stolen or lost? Do this</h3>
+  <h3>📵 Phone stolen or lost? Do this</h3>
   <ol class="steps">
    <li><b>Block your SIM.</b> Call your network from a friend's phone and ask them to block the SIM, so nobody can get your OTPs.</li>
    <li><b>Block the phone on CEIR.</b> Report it on the government's Sanchar Saathi site (sancharsaathi.gov.in → Block your lost or stolen mobile). It blocks the phone on every network in India and helps trace it. You need a police complaint number, which you can get by filing online.</li>
@@ -2892,7 +2961,7 @@ $('#v-fun').insertAdjacentHTML('beforeend',`<div class="card" id="f-em">
   <p class="sub" style="font-size:12.5px">Write your network's customer-care number and one family number on paper and keep it in your wallet.</p>
 </div>
 <div class="card" id="f-drv">
-  <h3>Show this to the driver</h3>
+  <h3>🛺 Show this to the driver</h3>
   <p class="sub">Type where you're going. We show it big, with "Please take me to this address" in the local language.</p>
   <label for="dv-addr">Address or place<input id="dv-addr" placeholder="e.g. Zostel, Old Manali"></label>
   <label for="dv-lang">Language<select id="dv-lang">${SCRIPTS.map((s,i)=>`<option value="${i}">${s[0]}</option>`).join('')}</select></label>
@@ -2927,22 +2996,22 @@ function planThis(from,to){const f=$('#p-from'),t=$('#p-to');if(from)f.value=fro
 
 /* ---------- WEEKEND TRIPS FROM MY CITY ---------- */
 vx.insertAdjacentHTML('beforeend',`<div id="x-week" class="stack" hidden><div class="card">
- <h2>Weekend trips from my city</h2>
+ <h2>🚗 Weekend trips from my city</h2>
  <p class="sub">Places you can reach for a 2–3 day trip, nearest first. Good-this-month places are marked.</p>
- <div class="row"><label for="wk-city">My city<input id="wk-city" list="ow-dl" placeholder="e.g. Delhi, Jodhpur, Pune" autocomplete="off"></label><button id="wk-loc" class="ghost" style="flex:0 0 auto;align-self:flex-end">Near me</button></div>
+ <div class="row"><label for="wk-city">My city<input id="wk-city" list="ow-dl" placeholder="e.g. Delhi, Jodhpur, Pune" autocomplete="off"></label><button id="wk-loc" class="ghost" style="flex:0 0 auto;align-self:flex-end">📍 Near me</button></div>
  <div class="quick" id="wk-r" role="group" aria-label="How far"><button data-r="150">Up to 150 km</button><button data-r="300">Up to 300 km</button><button data-r="500">Up to 500 km</button></div>
- <div class="quick"><button id="wk-now" aria-pressed="false">Good in ${['January','February','March','April','May','June','July','August','September','October','November','December'][MONTH-1]} only</button></div>
+ <div class="quick"><button id="wk-now" aria-pressed="false">🗓 Good in ${['January','February','March','April','May','June','July','August','September','October','November','December'][MONTH-1]} only</button></div>
  <p class="err" id="wk-err" hidden></p></div><div id="wk-out" class="stack"></div></div>`);
 const W=Object.assign({city:'',r:300,now:false},load('week',{}));const MNAME=['January','February','March','April','May','June','July','August','September','October','November','December'];
-function nowLabel(){const b=$('#wk-now');if(b)b.textContent='Good in '+MNAME[(W.m||MONTH)-1]+' only'}
+function nowLabel(){const b=$('#wk-now');if(b)b.textContent='🗓 Good in '+MNAME[(W.m||MONTH)-1]+' only'}
 function wkDraw(here){const err=$('#wk-err');err.hidden=true;
   document.querySelectorAll('#wk-r [data-r]').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.r===W.r));$('#wk-now').setAttribute('aria-pressed',W.now);
   let A=here;if(!A){if(!W.city){$('#wk-out').innerHTML='';return}A=findCo(W.city);if(!A){err.textContent=`We couldn't find "${W.city}". Try a nearby bigger city.`;err.hidden=false;$('#wk-out').innerHTML='';return}}
   const L=PL.map(p=>({p,d:km(A,p)})).filter(x=>x.d>=25&&x.d<=W.r&&(!W.now||x.p.ms.has(W.m||MONTH))).sort((a,b)=>a.d-b.d).slice(0,40);
   if(!L.length){$('#wk-out').innerHTML=`<div class="card"><p>Nothing in our list within ${W.r} km${W.now?' that is good in '+MNAME[(W.m||MONTH)-1]:''}. Try a bigger distance.</p></div>`;return}
   $('#wk-out').innerHTML=`<p class="eyebrow">${L.length} places from ${esc(here?'where you are':A.n)}</p>`+L.map(({p,d})=>{const road=d*(p.tags.includes('m')?1.5:1.3),hrs=road/45;
-   return`<article class="card wk"><div class="dayhead"><h3>${esc(p.n)}</h3><span class="pill">${Math.round(road/10)*10} km</span></div><p class="sub">${esc(p.state)} · about ${hrs<1.5?Math.round(hrs*60)+' min':Math.round(hrs*2)/2+' h'} by road${p.ms.has(MONTH)?' · <span class="goodnow">good now</span>':' · best '+monthText(p.best)}</p><p>${esc(p.why)}</p><p class="sub">${esc(p.reach)}</p>
-   <div class="row" style="gap:8px"><button class="small primary" data-pt="${esc(p.n)}">Plan this trip</button><a class="btnlink" href="https://www.google.com/maps/dir/?api=1&origin=${here?A.la+','+A.lo:enc(A.n)}&destination=${enc(p.n+', '+p.state)}" target="_blank" rel="noopener">Route</a><a class="btnlink" href="${wiki(p.n)}" target="_blank" rel="noopener">About</a></div></article>`}).join('');
+   return`<article class="card wk"><div class="dayhead"><h3>${esc(p.n)}</h3><span class="pill">${Math.round(road/10)*10} km</span></div><p class="sub">${esc(p.state)} · about ${hrs<1.5?Math.round(hrs*60)+' min':Math.round(hrs*2)/2+' h'} by road${p.ms.has(MONTH)?' · <span class="goodnow">good now</span>':' · best '+monthText(p.best)}</p><p>${esc(p.why)}</p><p class="sub">🚌 ${esc(p.reach)}</p>
+   <div class="row" style="gap:8px"><button class="small primary" data-pt="${esc(p.n)}">Plan this trip</button><a class="btnlink" href="https://www.google.com/maps/dir/?api=1&origin=${here?A.la+','+A.lo:enc(A.n)}&destination=${enc(p.n+', '+p.state)}" target="_blank" rel="noopener">🧭 Route</a><a class="btnlink" href="${wiki(p.n)}" target="_blank" rel="noopener">📖 About</a></div></article>`}).join('');
   $('#wk-out').querySelectorAll('[data-pt]').forEach(b=>b.onclick=()=>planThis(here?'':A.n,b.dataset.pt))}
 $('#wk-city').value=W.city;
 $('#wk-city').addEventListener('change',()=>{W.city=$('#wk-city').value.trim();save('week',W);wkDraw()});
@@ -2956,8 +3025,8 @@ document.addEventListener('kc-xmode',e=>{if(e.detail==='wk'&&!$('#wk-out').inner
 window.bgWeekend=wkDraw;
 
 /* ---------- MAP (OpenStreetMap, loaded only when opened) ---------- */
-vx.insertAdjacentHTML('beforeend',`<div id="x-map" class="stack" hidden><div class="card"><h2>Map of all places</h2><p class="sub">${PL.length} places in India. Tap a pin for details. Colours show daily cost: <b style="color:#0B8F57">● cheap</b> <b style="color:#E0A100">● moderate</b> <b style="color:#D8203A">● pricier</b>.</p>
- <div class="quick"><button id="mp-now" aria-pressed="false">Good this month</button><button id="mp-me">Show me</button></div>
+vx.insertAdjacentHTML('beforeend',`<div id="x-map" class="stack" hidden><div class="card"><h2>🗺 Map of all places</h2><p class="sub">${PL.length} places in India. Tap a pin for details. Colours show daily cost: <b style="color:#0B8F57">● cheap</b> <b style="color:#E0A100">● moderate</b> <b style="color:#D8203A">● pricier</b>.</p>
+ <div class="quick"><button id="mp-now" aria-pressed="false">🗓 Good this month</button><button id="mp-me">📍 Show me</button></div>
  <div id="mp" class="mapbox" role="region" aria-label="Map of places"><p class="kc-skel kc-mapskel" aria-busy="true">Loading the map…</p></div>
  <p class="sub" style="font-size:12px">Map © OpenStreetMap contributors. Needs internet.</p></div></div>`);
 let MAP=null,LAYER=null,mpNow=false,mapLoading=false;
@@ -2983,13 +3052,13 @@ function festMonths(f){const m=f.match(/\(([^)]*)\)/);if(!m)return null;const t=
   if(/[–-]/.test(t)&&ms.length>=2){const out=[];let a=ms[0];for(let g=0;g<12;g++){out.push(a);if(a===ms[ms.length-1])break;a=a%12+1}return out}return ms}
 const FN=[];STATES.forEach(s=>s.fest.forEach(f=>{const m=festMonths(f);if(m&&m.includes(MONTH))FN.push({s:s.n,f})}));
 const nextM=MONTH%12+1;const FX=[];STATES.forEach(s=>s.fest.forEach(f=>{const m=festMonths(f);if(m&&m.includes(nextM)&&!m.includes(MONTH))FX.push({s:s.n,f})}));
-const xs=$('#x-states');if(xs&&(FN.length||FX.length))xs.insertAdjacentHTML('afterbegin',`<div class="card fest"><h2>Festivals & fairs</h2>
+const xs=$('#x-states');if(xs&&(FN.length||FX.length))xs.insertAdjacentHTML('afterbegin',`<div class="card fest"><h2>🎉 Festivals & fairs</h2>
   ${FN.length?`<p class="eyebrow">Happening around ${MS[MONTH-1]}</p><ul class="clean">${FN.map(x=>`<li><b>${esc(x.f)}</b> <span class="sub">· ${esc(x.s)}</span></li>`).join('')}</ul>`:''}
   ${FX.length?`<p class="eyebrow">Coming up in ${MS[nextM-1]}</p><ul class="clean">${FX.map(x=>`<li><b>${esc(x.f)}</b> <span class="sub">· ${esc(x.s)}</span></li>`).join('')}</ul>`:''}
   <p class="sub" style="font-size:12.5px">Many festivals follow the Hindu lunar calendar, so the exact dates move every year. Check this year's dates before you book.</p></div>`);
 
 /* ---------- NOW: weather + golden hour ---------- */
-const WMO={0:'Clear',1:'Mostly clear',2:'Partly cloudy',3:'Cloudy',45:'Fog',48:'Fog',51:'Drizzle',53:'Drizzle',55:'Drizzle',61:'Rain',63:'Rain',65:'Heavy rain',71:'Snow',73:'Snow',75:'Heavy snow',80:'Showers',81:'Showers',82:'Heavy showers',95:'Thunderstorm',96:'Thunderstorm, hail',99:'Thunderstorm, hail'};
+const WMO={0:'☀️ Clear',1:'🌤 Mostly clear',2:'⛅ Partly cloudy',3:'☁️ Cloudy',45:'🌫 Fog',48:'🌫 Fog',51:'🌦 Drizzle',53:'🌦 Drizzle',55:'🌦 Drizzle',61:'🌧 Rain',63:'🌧 Rain',65:'🌧 Heavy rain',71:'🌨 Snow',73:'🌨 Snow',75:'❄️ Heavy snow',80:'🌦 Showers',81:'🌧 Showers',82:'⛈ Heavy showers',95:'⛈ Thunderstorm',96:'⛈ Thunderstorm, hail',99:'⛈ Thunderstorm, hail'};
 const wxCache={};
 async function weather(la,lo){const k=la.toFixed(2)+','+lo.toFixed(2);if(wxCache[k])return wxCache[k];
   const r=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${la.toFixed(3)}&longitude=${lo.toFixed(3)}&current=temperature_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FKolkata&forecast_days=3`);
@@ -3004,10 +3073,10 @@ if(nowOut)new MutationObserver(()=>{const head=nowOut.querySelector('.nowhead:no
   const pos=window.__kcHere||null;
   const sp=pos||(city&&(window.bgCoords(city)))||null;if(!sp)return;
   const sn=N.sun(sp.la,sp.lo,N.istNow());
-  head.insertAdjacentHTML('beforeend',`<span>Golden hour ${fmt(sn.rise)}–${fmt(sn.rise+50)} & ${fmt(sn.set-50)}–${fmt(sn.set)}</span><span id="wx-now" class="wx kc-skel" aria-busy="true">Weather…</span>`);
+  head.insertAdjacentHTML('beforeend',`<span>📸 Golden hour ${fmt(sn.rise)}–${fmt(sn.rise+50)} & ${fmt(sn.set-50)}–${fmt(sn.set)}</span><span id="wx-now" class="wx kc-skel" aria-busy="true">🌡 Weather…</span>`);
   weather(sp.la,sp.lo).then(j=>{const c=j.current,d=j.daily;const el=$('#wx-now');if(!el)return;el.classList.remove('kc-skel');el.removeAttribute('aria-busy');
-    el.innerHTML=`${Math.round(c.temperature_2m)}° ${WMO[c.weather_code]||''} · today ${Math.round(d.temperature_2m_min[0])}–${Math.round(d.temperature_2m_max[0])}°${d.precipitation_probability_max[0]!=null?' · rain '+d.precipitation_probability_max[0]+'%':''}`;
-    const tm=d.precipitation_probability_max[1];if(tm>=60){head.insertAdjacentHTML('afterend','<p class="note">Rain is likely tomorrow ('+tm+'%). Plan indoor sights or carry a rain cover.</p>')}
+    el.innerHTML=`🌡 ${Math.round(c.temperature_2m)}° ${WMO[c.weather_code]||''} · today ${Math.round(d.temperature_2m_min[0])}–${Math.round(d.temperature_2m_max[0])}°${d.precipitation_probability_max[0]!=null?' · rain '+d.precipitation_probability_max[0]+'%':''}`;
+    const tm=d.precipitation_probability_max[1];if(tm>=60){head.insertAdjacentHTML('afterend','<p class="note">🌧 Rain is likely tomorrow ('+tm+'%). Plan indoor sights or carry a rain cover.</p>')}
   }).catch(()=>{const el=$('#wx-now');if(el)el.remove()})}).observe(nowOut,{childList:true});
 function fmt(m){m=((Math.round(m)%1440)+1440)%1440;let h=Math.floor(m/60),mi=m%60;const ap=h>=12?'pm':'am';h=h%12||12;return h+(mi?':'+String(mi).padStart(2,'0'):'')+ap}
 /* remember the GPS spot the Now tab used */
@@ -3030,7 +3099,7 @@ function shareImage(p){const W=1080,H=1350,c=document.createElement('canvas');c.
   const rows=Math.min(cs.length,9),ch=Math.max(360,140+rows*60+40);card(70,430,940,ch,'#FAF7F0');g.fillStyle='#1F1B16';g.font='800 44px "Big Shoulders", "Arial Narrow", sans-serif';g.fillText('MY ROUTE',120,510);
   g.font='700 46px "Instrument Sans", Arial, sans-serif';let y=590;cs.slice(0,9).forEach((x,i)=>{g.fillStyle='#E3A23B';g.beginPath();g.arc(140,y-15,16,0,7);g.fill();g.strokeStyle='#2B261F';g.lineWidth=4;g.stroke();
     if(i<Math.min(cs.length,9)-1){g.beginPath();g.moveTo(140,y+5);g.lineTo(140,y+45);g.stroke()}g.fillStyle='#1F1B16';g.fillText(x.length>30?x.slice(0,29)+'…':x,185,y);y+=60});
-  g.fillStyle='#1F1B16';g.font='600 30px "Instrument Sans", Arial, sans-serif';const fy=430+ch+90;const tips=(p.tips||[])[0];if(tips&&fy<1150){g.font='italic 600 30px "Instrument Sans", Arial, sans-serif';const words=('Tip: '+tips).split(' ');let line='',ly=fy;words.forEach(w=>{if(g.measureText(line+w).width>820){g.fillText(line,160,ly);line='';ly+=42}line+=w+' '});g.fillText(line,160,ly)}
+  g.fillStyle='#1F1B16';g.font='600 30px "Instrument Sans", Arial, sans-serif';const fy=430+ch+90;const tips=(p.tips||[])[0];if(tips&&fy<1150){g.font='italic 600 30px "Instrument Sans", Arial, sans-serif';const words=tips.split(' ');let line='',ly=fy;g.fillText('💡',110,ly);words.forEach(w=>{if(g.measureText(line+w).width>820){g.fillText(line,160,ly);line='';ly+=42}line+=w+' '});g.fillText(line,160,ly)}
   g.font='600 30px "Instrument Sans", Arial, sans-serif';g.fillText('Plan yours free · no ads · no sign-up',110,1280);
   return new Promise(r=>c.toBlob(r,'image/png'))}
 async function shareIt(p){const b=await shareImage(p);const f=new File([b],'my-trip-kidhar-chale.png',{type:'image/png'});
@@ -3040,7 +3109,7 @@ async function shareIt(p){const b=await shareImage(p);const f=new File([b],'my-t
 window.bgShareImage=shareImage;
 if(pOut)new MutationObserver(()=>{if(pOut.querySelector('#p-xtra'))return;const p=window.bgCurrentPlan&&window.bgCurrentPlan();if(!p||!p.days)return;
   const cp=pOut.querySelector('#p-copy');if(!cp)return;
-  cp.closest('.card').insertAdjacentHTML('beforebegin',`<div class="card" id="p-xtra"><h3>Share or keep this plan</h3><div class="row" style="gap:8px"><button class="small" id="p-shimg">Make a share picture</button><button class="small" id="p-pdf">Save as PDF</button></div><img id="p-img" alt="Your trip picture" hidden style="margin-top:10px;border:2px solid var(--edge);border-radius:12px;max-width:260px"><div id="p-wx"></div></div>`);
+  cp.closest('.card').insertAdjacentHTML('beforebegin',`<div class="card" id="p-xtra"><h3>📤 Share or keep this plan</h3><div class="row" style="gap:8px"><button class="small" id="p-shimg">🖼 Make a share picture</button><button class="small" id="p-pdf">🖨 Save as PDF</button></div><img id="p-img" alt="Your trip picture" hidden style="margin-top:10px;border:2px solid var(--edge);border-radius:12px;max-width:260px"><div id="p-wx"></div></div>`);
   $('#p-shimg').onclick=()=>shareIt(p);$('#p-pdf').onclick=()=>window.print();
   const start=$('#p-start')&&$('#p-start').value;const days=start?Math.round((new Date(start+'T00:00')-new Date(new Date().toDateString()))/864e5):99;
   if(days>=0&&days<=2){const cs=[...new Set(planCities(p))].slice(0,4);Promise.all(cs.map(n=>{const c=window.bgCoords(n);return c?weather(c.la,c.lo).then(j=>({n,j})).catch(()=>null):null})).then(r=>{r=r.filter(Boolean);if(!r.length)return;const el=$('#p-wx');if(!el)return;
@@ -3049,7 +3118,7 @@ if(pOut)new MutationObserver(()=>{if(pOut.querySelector('#p-xtra'))return;const 
 
 /* ---------- KIT: altitude sickness ---------- */
 $('#v-fun').insertAdjacentHTML('beforeend',`<div class="card" id="f-alt">
- <h3>Going high? Altitude sickness basics</h3>
+ <h3>🏔 Going high? Altitude sickness basics</h3>
  <p class="sub">For Leh-Ladakh, Spiti, Sikkim, Tawang and treks above about 2,500 m.</p>
  <ul class="clean">
   <li><b>Flying into Leh?</b> Rest completely for the first 24–48 hours. Most people who get sick skipped this.</li>
@@ -3077,9 +3146,9 @@ const today=new Date().toISOString().slice(0,10);
 const fmt=d=>new Date(d+'T00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short',weekday:'short'});
 const up=LW.filter(x=>x[1]>=today);
 const box=$('#x-week');if(!box||!up.length)return;
-$('#wk-out').insertAdjacentHTML('beforebegin',`<details class="card" id="lw"><summary><h2 style="display:inline">Long weekends in 2027</h2> <span class="pill">${up.length}</span></summary>
+$('#wk-out').insertAdjacentHTML('beforebegin',`<details class="card" id="lw"><summary><h2 style="display:inline">📅 Long weekends in 2027</h2> <span class="pill">${up.length}</span></summary>
  <p class="sub">Take a day or two off around a holiday and get a proper trip. Based on the central government's 2027 holiday list for Delhi offices; your state or company may differ.</p>
- ${up.map((x,i)=>`<div class="lwrow"><div class="lwn"><b class="num">${x[2]}</b><small>days</small></div><div style="min-width:0;flex:1"><p><b>${fmt(x[0])} – ${fmt(x[1])}</b></p><p class="sub">${esc(x[4])}</p><p class="sub">${x[3]?'Take leave: '+esc(x[3]):'No leave needed'}</p></div><button class="small" data-lwm="${+x[0].slice(5,7)}">Ideas</button></div>`).join('')}
+ ${up.map((x,i)=>`<div class="lwrow"><div class="lwn"><b class="num">${x[2]}</b><small>days</small></div><div style="min-width:0;flex:1"><p><b>${fmt(x[0])} – ${fmt(x[1])}</b></p><p class="sub">${esc(x[4])}</p><p class="sub">${x[3]?'🏖 Take leave: '+esc(x[3]):'✨ No leave needed'}</p></div><button class="small" data-lwm="${+x[0].slice(5,7)}">Ideas</button></div>`).join('')}
  <p class="sub" style="font-size:12px">* Id, Bakrid and Muharram depend on the moon and can shift by a day. Source: DoPT holiday list for 2027 (O.M. dated 16 July 2026).</p></details>`);
 box.querySelectorAll('[data-lwm]').forEach(b=>b.onclick=()=>{const m=+b.dataset.lwm;try{const W=JSON.parse(localStorage.getItem('bg_week')||'{}');W.now=true;W.m=m;W.r=Math.max(W.r||0,300);localStorage.setItem('bg_week',JSON.stringify(W))}catch(e){}
   if(window.bgWeekendMonth)window.bgWeekendMonth(m);const c=$('#wk-city');if(c&&!c.value){c.scrollIntoView({block:'center'});c.focus()}else{const o=$('#wk-out');if(o)o.scrollIntoView({block:'start',behavior:'smooth'})}});
@@ -3088,14 +3157,14 @@ box.querySelectorAll('[data-lwm]').forEach(b=>b.onclick=()=>{const m=+b.dataset.
 const $=s=>document.querySelector(s);
 const wiki=q=>'https://en.wikipedia.org/w/index.php?title=Special:Search&go=Go&search='+encodeURIComponent(q);
 /* ---------- GO: train helpers + scenic journeys ---------- */
-$('#v-go').insertAdjacentHTML('beforeend',`<div class="card" id="trainhelp"><h3>Train helpers</h3>
+$('#v-go').insertAdjacentHTML('beforeend',`<div class="card" id="trainhelp"><h3>🚆 Train helpers</h3>
  <div class="links">
   <a href="https://enquiry.indianrail.gov.in/mntes/" target="_blank" rel="noopener"><b>Where's my train? ↗</b><span>Live running status (NTES, Indian Railways)</span></a>
   <a href="https://www.indianrail.gov.in/enquiry/PNR/PnrEnquiry.html" target="_blank" rel="noopener"><b>PNR status ↗</b><span>Check if your waitlist got confirmed</span></a>
   <a href="https://railmadad.indianrailways.gov.in/" target="_blank" rel="noopener"><b>Rail Madad ↗</b><span>Complaint or help on a train (or call 139)</span></a>
   <a href="https://www.irctc.co.in/" target="_blank" rel="noopener"><b>IRCTC ↗</b><span>Book or cancel tickets</span></a>
  </div></div>
-<div class="card" id="scenic"><h3>Journeys worth taking just for the view</h3>
+<div class="card" id="scenic"><h3>🏞 Journeys worth taking just for the view</h3>
  <p class="sub">Cheap tickets, unforgettable windows. Grab a window seat.</p>
  <ul class="clean scen">${[
   ['Konkan Railway (Mumbai → Goa → Mangaluru)','Rivers, tunnels and green hills along the coast, best in the monsoon.','Konkan Railway'],
@@ -3111,7 +3180,7 @@ $('#v-go').insertAdjacentHTML('beforeend',`<div class="card" id="trainhelp"><h3>
  ].map(([n,t,w])=>`<li><b>${n}</b><br><span class="sub">${t}</span> <a href="${wiki(w)}" target="_blank" rel="noopener">Read ↗</a></li>`).join('')}</ul></div>`);
 
 /* ---------- KIT: solo & women travellers ---------- */
-$('#v-fun').insertAdjacentHTML('beforeend',`<div class="card" id="f-solo"><h3>Travelling solo or as a woman</h3><ul class="clean">
+$('#v-fun').insertAdjacentHTML('beforeend',`<div class="card" id="f-solo"><h3>🧍‍♀️ Travelling solo or as a woman</h3><ul class="clean">
  <li><b>Share your live location</b> with one person for every long journey (WhatsApp or Google Maps location sharing).</li>
  <li><b>Arrive before dark</b> in a new town, especially the first night. Book that first bed in advance.</li>
  <li><b>Trains:</b> there's a ladies' quota when booking, and some trains have ladies' coaches. In buses, ask for a seat next to a woman or a family.</li>
@@ -3123,7 +3192,7 @@ $('#v-fun').insertAdjacentHTML('beforeend',`<div class="card" id="f-solo"><h3>Tr
 
 /* ---------- PASS: countdown ---------- */
 function count(){const st=$('#p-start'),el=$('#ps-date');if(!st||!el||!st.value)return;const d=Math.round((new Date(st.value+'T00:00')-new Date(new Date().toDateString()))/864e5);
-  const base=new Date(st.value+'T00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short'}).toUpperCase();el.textContent=d>1?base+' · IN '+d+' DAYS':d===1?base+' · TOMORROW!':d===0?'TODAY!':base}
+  const base=new Date(st.value+'T00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short'}).toUpperCase();el.textContent=d>1?base+' · IN '+d+' DAYS':d===1?base+' · TOMORROW!':d===0?'TODAY! 🎒':base}
 ['change','input'].forEach(e=>{const st=$('#p-start');if(st)st.addEventListener(e,()=>setTimeout(count,0))});
 const pg=$('#p-go');if(pg)pg.addEventListener('click',()=>setTimeout(count,300));setTimeout(count,0);
 })();
@@ -3212,11 +3281,11 @@ window.kcLoader=function(el,o){
   let ti=Math.floor(Math.random()*TIPS.length);const showTip=()=>{tip.innerHTML='<b>While you wait:</b> '+TIPS[ti++%TIPS.length];tip.style.animation='none';void tip.offsetWidth;tip.style.animation=''};showTip();
   const tick=()=>{const sec=(Date.now()-t0)/1000;tt.textContent=Math.floor(sec)+' s';
     bar.style.width=Math.min(94,4+90*(1-Math.exp(-sec/(o.tau||22))))+'%';
-    li.forEach((x,i)=>{const at=steps[i][1],nx=i+1<steps.length?steps[i+1][1]:1e9;x.className=sec>=nx?'ok':sec>=at?'on':'';x.querySelector('i').textContent=sec>=nx?'':''})};
+    li.forEach((x,i)=>{const at=steps[i][1],nx=i+1<steps.length?steps[i+1][1]:1e9;x.className=sec>=nx?'ok':sec>=at?'on':'';x.querySelector('i').textContent=sec>=nx?'✓':''})};
   tick();const iv=setInterval(tick,500),tv=setInterval(showTip,7000);
   const sk=el.querySelector('.kl-skip');if(sk&&o.onSkip)sk.onclick=o.onSkip;
   const stop=()=>{clearInterval(iv);clearInterval(tv)};
-  return{stop,done(){stop();bar.style.width='100%';li.forEach(x=>{x.className='ok';x.querySelector('i').textContent=''})}};
+  return{stop,done(){stop();bar.style.width='100%';li.forEach(x=>{x.className='ok';x.querySelector('i').textContent='✓'})}};
 };
 
 /* ---------- CLAUDE LAYER: AI planning, voice and live group rooms. Does nothing outside Claude. ---------- */
@@ -3228,7 +3297,7 @@ if(!has)return;
 /* voice: a speaker button on every survival phrase */
 window.claude.use('tts').then(t=>{if(!t)return;const L=document.getElementById('ph-list');if(!L)return;
   const add=()=>{L.querySelectorAll('.phr').forEach(r=>{if(r.querySelector('[data-kcsay]'))return;const s=r.querySelector('.say');if(!s)return;
-    const b=document.createElement('button');b.className='small ghost';b.type='button';b.dataset.kcsay=s.textContent;b.setAttribute('aria-label','Hear '+s.textContent);b.innerHTML='<svg class="kc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v4h4l5 4V6l-5 4z"/><path d="M16.5 9a4 4 0 0 1 0 6"/></svg>';
+    const b=document.createElement('button');b.className='small ghost';b.type='button';b.dataset.kcsay=s.textContent;b.setAttribute('aria-label','Hear '+s.textContent);b.textContent='🔊';
     b.onclick=()=>t.speak(b.dataset.kcsay.replace('___','').replace(/\//g,','),{rate:.85}).catch(()=>{});r.appendChild(b)})};
   add();new MutationObserver(add).observe(L,{childList:true})}).catch(()=>{});
 /* live group rooms: friends with the link see each other's expenses at once, and can join with the 6-letter code */
@@ -3258,9 +3327,9 @@ const kitIntro=vFun.querySelector('.card');kitIntro.after(toolsMoney);
 const jumpRow=(items)=>{const n=document.createElement('nav');n.className='jump kc-jump';n.setAttribute('aria-label','Jump to');
   n.innerHTML=items.map(([t,id])=>`<button type="button" data-to="${id}">${t}</button>`).join('');
   n.querySelectorAll('[data-to]').forEach(b=>b.onclick=()=>{const t=document.getElementById(b.dataset.to);if(t){if(t.classList.contains('kc-fold'))t.classList.add('kc-open');t.scrollIntoView({block:'start',behavior:'smooth'})}});return n};
-const goTop=vGo.querySelector('.card');goTop.querySelector('h2').after(jumpRow([['Tickets','v-go'],['Beds','book-stay']]));
+const goTop=vGo.querySelector('.card');goTop.querySelector('h2').after(jumpRow([['🎫 Tickets','v-go'],['🛏 Beds','book-stay']]));
 const kitNav=kitIntro.querySelector('nav.jump');
-if(kitNav){const a=document.createElement('a');a.href='#tools-money';a.textContent='Money';kitNav.prepend(a)}
+if(kitNav){const a=document.createElement('a');a.href='#tools-money';a.textContent='💰 Money';kitNav.prepend(a)}
 const kh=kitIntro.querySelector('h2');if(kh)kh.textContent='Tools';
 const ks=kitIntro.querySelector('.sub');if(ks)ks.textContent='Trip money and split bills first, then tools for the road: packing, night-bus safety, fare check, phrases, passport stamps and more. Tap a tool to open it.';
 const nav=$('nav.tabs');
@@ -3294,7 +3363,7 @@ if(form){const keep=['p-move','p-night','p-sleep','p-extra'].map(id=>{const e=$(
   $('#p-go').classList.add('kc-sticky')}
 
 /* ===== 1. honest timing on Pick for me ===== */
-$$('#wiz .dayhead .sub').forEach(e=>{if(/20 sec/.test(e.textContent))e.textContent='4 quick questions'});
+$$('#wiz .dayhead .sub').forEach(e=>{if(/20 sec/.test(e.textContent))e.textContent='⚡ 4 quick questions'});
 
 /* ===== 4. Explore: search first ===== */
 const xq=$('#x-q');if(xq){const card=xq.closest('.card'),row=xq.closest('.row'),quick=card.querySelector('.quick'),h=card.querySelector('h2');
@@ -3344,12 +3413,12 @@ drawHome();remember();
 /* ===== 13. First visit: a 3-card tour ===== */
 const welcome=$('#welcome');
 if(!ld('toured',false)){const ov=document.createElement('div');ov.className='kc-tour';ov.setAttribute('role','dialog');ov.setAttribute('aria-label','Quick tour');
-  const S=[['','Pick a place','Not sure where to go? Tap <b>Pick for me</b> and answer 4 quick questions, or browse 680+ places in <b>Explore</b>.'],
-    ['','Get a day-by-day plan','Tell us where, days and budget. You get buses, beds, food and costs for every day, with no backtracking.'],
-    ['','Book, go, and track money','<b>Book</b> opens ticket and bed sites already searched. <b>Now</b> shows what’s open near you. <b>Tools</b> tracks spends and splits bills.']];
-  let k=0;const draw=()=>{const [e,t,d]=S[k];ov.innerHTML=`<div class="kc-tour-card"><div class="kc-tour-e" aria-hidden="true">0${k+1}</div><p class="eyebrow">${k+1} of 3</p><h2>${t}</h2><p>${d}</p>
+  const S=[['🧭','Pick a place','Not sure where to go? Tap <b>✨ Pick for me</b> and answer 4 quick questions, or browse 680+ places in <b>Explore</b>.'],
+    ['🗺','Get a day-by-day plan','Tell us where, days and budget. You get buses, beds, food and costs for every day, with no backtracking.'],
+    ['🎒','Book, go, and track money','<b>Book</b> opens ticket and bed sites already searched. <b>Now</b> shows what’s open near you. <b>Tools</b> tracks spends and splits bills.']];
+  let k=0;const draw=()=>{const [e,t,d]=S[k];ov.innerHTML=`<div class="kc-tour-card"><div class="kc-tour-e" aria-hidden="true">${e}</div><p class="eyebrow">${k+1} of 3</p><h2>${t}</h2><p>${d}</p>
     <div class="kc-dots">${S.map((_,i)=>`<i class="${i===k?'on':''}"></i>`).join('')}</div>
-    <div class="row" style="gap:8px"><button type="button" class="ghost" id="kc-skip">Skip</button><button type="button" class="primary" id="kc-next">${k<2?'Next →':'Let’s go'}</button></div></div>`;
+    <div class="row" style="gap:8px"><button type="button" class="ghost" id="kc-skip">Skip</button><button type="button" class="primary" id="kc-next">${k<2?'Next →':'Let’s go 🎒'}</button></div></div>`;
     $('#kc-skip').onclick=end;$('#kc-next').onclick=()=>{if(k<2){k++;draw()}else end()}};
   const end=()=>{sv('toured',true);sv('hideWelcome',true);ov.remove();if(welcome)welcome.hidden=true};
   document.body.appendChild(ov);draw();if(welcome)welcome.hidden=true}
@@ -3357,41 +3426,41 @@ else{sv('hideWelcome',true);if(welcome)welcome.hidden=true}
 
 /* ===== 11. Hindi switch (menus, buttons and headings; place details stay in English) ===== */
 const HI={"Free trip planner for India · no ads · no sign-up":"भारत के लिए फ्री ट्रिप प्लानर · कोई विज्ञापन नहीं · कोई साइन-अप नहीं","Plan a budget trip in seconds":"सेकंडों में बजट ट्रिप प्लान करें","Buses, trains, beds and food, day by day, with what it really costs. Don't know where to go? Let us pick.":"बस, ट्रेन, बेड और खाना, दिन-ब-दिन, असली खर्च के साथ। पता नहीं कहाँ जाएँ? हम चुन देंगे।","Trending budget trips":"ट्रेंडिंग बजट ट्रिप्स","Tap one to get the full day-by-day plan.":"किसी पर टैप करें और पूरा दिन-ब-दिन प्लान पाएँ।","Explore by what you love":"जो पसंद है, वहीं से खोजें","443 places in India and 244 abroad, with when to go and the cheapest way there.":"भारत में 443 और विदेश में 244 जगहें, कब जाएँ और सबसे सस्ता रास्ता भी।","How it works":"यह कैसे काम करता है","Tell it":"बताइए","where you start, where you want to go, days and budget.":"कहाँ से शुरू, कहाँ जाना है, कितने दिन और कितना बजट।","Get a plan":"प्लान पाइए","with no backtracking: buses and trains, beds and food, day by day.":"बिना उल्टा लौटे: बस और ट्रेन, बेड और खाना, दिन-ब-दिन।","Book and go.":"बुक करें और निकलें।","Ticket sites open already searched, and Money tracks what you spend.":"टिकट साइटें पहले से सर्च होकर खुलती हैं, और Money आपका खर्च गिनता है।","Book and go":"बुक करें और चलें","Help":"मदद","Places":"जगहें","Weekend trips":"वीकेंड ट्रिप्स","States":"राज्य","Buses, trains, flights":"बस, ट्रेन, फ्लाइट","Right now near me":"अभी मेरे आस-पास","Money and split":"पैसे और बँटवारा","Plan a trip":"ट्रिप प्लान करें","Pick for me":"मेरे लिए चुनो","See an example":"एक उदाहरण देखें","Keyboard: 1–5 tabs, / search":"कीबोर्ड: 1–5 टैब, / खोज","Travel more, spend less. A free planner for students and budget travellers. Everything stays in your browser.":"ज़्यादा घूमें, कम खर्च करें। छात्रों और बजट यात्रियों के लिए फ्री प्लानर। सब कुछ आपके ब्राउज़र में ही रहता है।",'Explore':'खोजें','Plan':'प्लान','Book':'बुकिंग','Now':'अभी','Tools':'टूल्स','Go':'बुकिंग','Kit':'टूल्स',
-'Places':'जगहें','Weekend':'वीकेंड','Map':'नक्शा','States':'राज्य',
-"Not sure where to go? Answer 4 questions and we'll pick":'पता नहीं कहाँ जाएँ? 4 सवालों के जवाब दें, हम चुन देंगे',
-'Search':'खोजें','Region':'इलाका','Cheapest only':'सिर्फ़ सबसे सस्ते','Surprise me':'कुछ भी दिखाओ','Clear filters':'फ़िल्टर हटाएँ',
-'Festivals & fairs':'त्योहार और मेले','Travel by state':'राज्य के हिसाब से घूमें','Weekend trips from my city':'मेरे शहर से वीकेंड ट्रिप','My city':'मेरा शहर','Near me':'मेरे पास',
-'Up to 150 km':'150 किमी तक','Up to 300 km':'300 किमी तक','Up to 500 km':'500 किमी तक','Long weekends in 2027':'2027 के लंबे वीकेंड','Ideas':'आइडिया',
-'Map of all places':'सभी जगहों का नक्शा','Good this month':'इस महीने अच्छा','Show me':'मुझे दिखाओ',
-'Pick for me':'मेरे लिए चुनो','I know where':'मुझे पता है कहाँ','Where are you starting from?':'आप कहाँ से शुरू कर रहे हैं?','Starting city':'शुरुआती शहर',
+'📍 Places':'📍 जगहें','🚗 Weekend':'🚗 वीकेंड','🗺 Map':'🗺 नक्शा','🏛 States':'🏛 राज्य',
+"✨ Not sure where to go? Answer 4 questions and we'll pick":'✨ पता नहीं कहाँ जाएँ? 4 सवालों के जवाब दें, हम चुन देंगे',
+'Search':'खोजें','Region':'इलाका','💸 Cheapest only':'💸 सिर्फ़ सबसे सस्ते','🎲 Surprise me':'🎲 कुछ भी दिखाओ','Clear filters':'फ़िल्टर हटाएँ',
+'🎉 Festivals & fairs':'🎉 त्योहार और मेले','Travel by state':'राज्य के हिसाब से घूमें','🚗 Weekend trips from my city':'🚗 मेरे शहर से वीकेंड ट्रिप','My city':'मेरा शहर','📍 Near me':'📍 मेरे पास',
+'Up to 150 km':'150 किमी तक','Up to 300 km':'300 किमी तक','Up to 500 km':'500 किमी तक','📅 Long weekends in 2027':'📅 2027 के लंबे वीकेंड','Ideas':'आइडिया',
+'🗺 Map of all places':'🗺 सभी जगहों का नक्शा','🗓 Good this month':'🗓 इस महीने अच्छा','📍 Show me':'📍 मुझे दिखाओ',
+'✨ Pick for me':'✨ मेरे लिए चुनो','📍 I know where':'📍 मुझे पता है कहाँ','Where are you starting from?':'आप कहाँ से शुरू कर रहे हैं?','Starting city':'शुरुआती शहर',
 'How many days do you have?':'आपके पास कितने दिन हैं?','Weekend · 2':'वीकेंड · 2','A week · 7':'एक हफ़्ता · 7','Leaving on':'निकलने की तारीख',
 'How much can you spend?':'आप कितना खर्च कर सकते हैं?','Budget per person (₹)':'प्रति व्यक्ति बजट (₹)','₹1 lakh':'₹1 लाख','What kind of place?':'कैसी जगह चाहिए?',
-'Idk, you choose. Surprise me':'पता नहीं, आप ही चुनो','Your trip ideas':'आपकी ट्रिप के आइडिया','Change answers':'जवाब बदलें','Show different ideas':'और आइडिया दिखाओ',
-'← Back':'← पीछे','Next →':'आगे →','4 quick questions':'4 छोटे सवाल','Plan a trip':'ट्रिप प्लान करें','Starting from':'कहाँ से',
+'🤷 Idk, you choose. Surprise me':'🤷 पता नहीं, आप ही चुनो','Your trip drops 🔥':'आपकी ट्रिप तैयार 🔥','Change answers':'जवाब बदलें','🔄 Show different ideas':'🔄 और आइडिया दिखाओ',
+'← Back':'← पीछे','Next →':'आगे →','⚡ 4 quick questions':'⚡ 4 छोटे सवाल','Plan a trip':'ट्रिप प्लान करें','Starting from':'कहाँ से',
 'Places to see, in the order you want to go (comma between)':'घूमने की जगहें, जिस क्रम में जाना है (बीच में कॉमा)','Days':'दिन','Total budget per person (₹)':'प्रति व्यक्ति कुल बजट (₹)',
 'People':'लोग','Start date':'शुरू होने की तारीख','More options':'और विकल्प','How do you like to travel?':'आप कैसे सफ़र करना पसंद करते हैं?','Tap all you\'re happy with':'जो भी ठीक लगे, सब चुनें',
-'Govt bus':'सरकारी बस','Sleeper / Volvo bus':'स्लीपर / वोल्वो बस','Train (sleeper)':'ट्रेन (स्लीपर)','AC train':'एसी ट्रेन','Shared jeep / taxi':'शेयर्ड जीप / टैक्सी',
-'Rent a scooter':'किराए की स्कूटी','Flight if it saves a day':'फ़्लाइट, अगर एक दिन बचे','Where do you like to sleep?':'आप कहाँ रुकना पसंद करते हैं?',
-'Dorm bed':'डॉर्म बेड','Hostel private room':'हॉस्टल का प्राइवेट कमरा','Budget hotel':'बजट होटल','Homestay':'होमस्टे','Dharamshala / ashram':'धर्मशाला / आश्रम','Camp / tent':'कैंप / टेंट',
+'🚌 Govt bus':'🚌 सरकारी बस','🛏 Sleeper / Volvo bus':'🛏 स्लीपर / वोल्वो बस','🚆 Train (sleeper)':'🚆 ट्रेन (स्लीपर)','❄️ AC train':'❄️ एसी ट्रेन','🚙 Shared jeep / taxi':'🚙 शेयर्ड जीप / टैक्सी',
+'🛵 Rent a scooter':'🛵 किराए की स्कूटी','✈️ Flight if it saves a day':'✈️ फ़्लाइट, अगर एक दिन बचे','Where do you like to sleep?':'आप कहाँ रुकना पसंद करते हैं?',
+'🛏 Dorm bed':'🛏 डॉर्म बेड','🔑 Hostel private room':'🔑 हॉस्टल का प्राइवेट कमरा','🏨 Budget hotel':'🏨 बजट होटल','🏡 Homestay':'🏡 होमस्टे','🛕 Dharamshala / ashram':'🛕 धर्मशाला / आश्रम','⛺ Camp / tent':'⛺ कैंप / टेंट',
 'Anything else? (food, pace, must-sees)':'और कुछ? (खाना, रफ़्तार, ज़रूर देखना)','Make my plan':'मेरा प्लान बनाओ','See an example':'एक उदाहरण देखें','Your itinerary':'आपका सफ़रनामा',
 'Book buses, trains, flights':'बस, ट्रेन, फ़्लाइट बुक करें','From':'कहाँ से','To':'कहाँ तक','Date':'तारीख','⇅ Swap':'⇅ बदलें','Cheapest-ticket rules for India':'भारत में सबसे सस्ते टिकट के नियम',
-'On the way':'रास्ते में','Bike':'बाइक','Car':'कार','Show stops on the way':'रास्ते के पड़ाव दिखाओ','Train helpers':'ट्रेन मदद','Journeys worth taking just for the view':'नज़ारों के लिए खास सफ़र',
-'Tickets':'टिकट','Beds':'बिस्तर','Find the cheapest bed':'सबसे सस्ता बिस्तर ढूँढें','City or area':'शहर या इलाका','Max per night (₹)':'एक रात की अधिकतम कीमत (₹)',
-'What should a bed cost here?':'यहाँ बिस्तर कितने का होना चाहिए?','Show typical prices':'आम कीमतें दिखाओ','Right now':'अभी','Use my location':'मेरी लोकेशन लो','Or pick a city':'या शहर चुनें',
-'Find help near me':'पास में मदद ढूँढें','City cheat sheets':'शहर की चीट शीट','Any other place':'कोई और जगह','Place':'जगह','Show info':'जानकारी दिखाओ','Emergency in India':'भारत में इमरजेंसी',
-'Tools':'टूल्स','Money':'पैसा','Trip money':'ट्रिप का पैसा','Trip budget (₹)':'ट्रिप बजट (₹)','Trip days':'ट्रिप के दिन','Today is day':'आज कौन सा दिन है','You can spend today':'आज आप खर्च कर सकते हैं',
+'🛣 On the way':'🛣 रास्ते में','🏍 Bike':'🏍 बाइक','🚗 Car':'🚗 कार','Show stops on the way':'रास्ते के पड़ाव दिखाओ','🚆 Train helpers':'🚆 ट्रेन मदद','🏞 Journeys worth taking just for the view':'🏞 नज़ारों के लिए खास सफ़र',
+'🎫 Tickets':'🎫 टिकट','🛏 Beds':'🛏 बिस्तर','Find the cheapest bed':'सबसे सस्ता बिस्तर ढूँढें','City or area':'शहर या इलाका','Max per night (₹)':'एक रात की अधिकतम कीमत (₹)',
+'What should a bed cost here?':'यहाँ बिस्तर कितने का होना चाहिए?','Show typical prices':'आम कीमतें दिखाओ','⏰ Right now':'⏰ अभी','📍 Use my location':'📍 मेरी लोकेशन लो','Or pick a city':'या शहर चुनें',
+'🆘 Find help near me':'🆘 पास में मदद ढूँढें','City cheat sheets':'शहर की चीट शीट','Any other place':'कोई और जगह','Place':'जगह','Show info':'जानकारी दिखाओ','Emergency in India':'भारत में इमरजेंसी',
+'Tools':'टूल्स','💰 Money':'💰 पैसा','Trip money':'ट्रिप का पैसा','Trip budget (₹)':'ट्रिप बजट (₹)','Trip days':'ट्रिप के दिन','Today is day':'आज कौन सा दिन है','You can spend today':'आज आप खर्च कर सकते हैं',
 'Amount (₹)':'रकम (₹)','For':'किस पर','Add spend':'खर्च जोड़ें','Split with friends':'दोस्तों में बाँटें','Who\'s in the group (comma separated)':'ग्रुप में कौन है (कॉमा लगाकर)','Paid by':'किसने दिया',
-'For what':'किस लिए','Add shared expense':'साझा खर्च जोड़ें','Ways to pay less at sights':'टिकट पर कम पैसे देने के तरीके','Packing list':'पैकिंग लिस्ट','Untick everything':'सब हटाएँ',
-'Before you leave the house':'घर से निकलने से पहले','Night-bus safety':'रात की बस में सुरक्षा','Copy message':'मैसेज कॉपी करें','Is this fare fair?':'क्या ये किराया सही है?',
-'City':'शहर','Ride':'सवारी','Distance (km)':'दूरी (किमी)','They asked (₹)':'उन्होंने माँगा (₹)','Survival phrases':'काम के वाक्य','Language':'भाषा','Trip passport':'ट्रिप पासपोर्ट',
-'Place you reached':'जहाँ पहुँचे','Stamp it':'मुहर लगाओ','Today\'s challenge':'आज का चैलेंज','I did it':'मैंने कर लिया','Give me another':'दूसरा दो','Where to go this month':'इस महीने कहाँ जाएँ',
-'Month':'महीना','Group trip':'ग्रुप ट्रिप','Trip name':'ट्रिप का नाम','Who\'s coming (comma separated)':'कौन आ रहा है (कॉमा लगाकर)','Create trip':'ट्रिप बनाओ','Join':'जुड़ें','Update':'अपडेट करें',
-'Add expense':'खर्च जोड़ें','My emergency card':'मेरा इमरजेंसी कार्ड','Your name':'आपका नाम','Blood group':'ब्लड ग्रुप','Emergency contact name':'इमरजेंसी संपर्क का नाम','Their phone':'उनका फ़ोन',
-'Show my emergency card':'मेरा इमरजेंसी कार्ड दिखाओ','Phone stolen or lost? Do this':'फ़ोन चोरी या गुम? ये करें','Show this to the driver':'ड्राइवर को ये दिखाएँ','Address or place':'पता या जगह',
-'Show it big':'बड़ा करके दिखाओ','Going high? Altitude sickness basics':'ऊँचाई पर जा रहे हैं? ऊँचाई की बीमारी की बातें','Travelling solo or as a woman':'अकेले या महिला यात्री',
+'For what':'किस लिए','Add shared expense':'साझा खर्च जोड़ें','💸 Ways to pay less at sights':'💸 टिकट पर कम पैसे देने के तरीके','🎒 Packing list':'🎒 पैकिंग लिस्ट','Untick everything':'सब हटाएँ',
+'Before you leave the house':'घर से निकलने से पहले','🛡 Night-bus safety':'🛡 रात की बस में सुरक्षा','Copy message':'मैसेज कॉपी करें','🛺 Is this fare fair?':'🛺 क्या ये किराया सही है?',
+'City':'शहर','Ride':'सवारी','Distance (km)':'दूरी (किमी)','They asked (₹)':'उन्होंने माँगा (₹)','🗣 Survival phrases':'🗣 काम के वाक्य','Language':'भाषा','🛂 Trip passport':'🛂 ट्रिप पासपोर्ट',
+'Place you reached':'जहाँ पहुँचे','Stamp it':'मुहर लगाओ','🔥 Today\'s challenge':'🔥 आज का चैलेंज','I did it':'मैंने कर लिया','Give me another':'दूसरा दो','🌦 Where to go this month':'🌦 इस महीने कहाँ जाएँ',
+'Month':'महीना','👥 Group trip':'👥 ग्रुप ट्रिप','Trip name':'ट्रिप का नाम','Who\'s coming (comma separated)':'कौन आ रहा है (कॉमा लगाकर)','Create trip':'ट्रिप बनाओ','Join':'जुड़ें','Update':'अपडेट करें',
+'Add expense':'खर्च जोड़ें','🆘 My emergency card':'🆘 मेरा इमरजेंसी कार्ड','Your name':'आपका नाम','Blood group':'ब्लड ग्रुप','Emergency contact name':'इमरजेंसी संपर्क का नाम','Their phone':'उनका फ़ोन',
+'Show my emergency card':'मेरा इमरजेंसी कार्ड दिखाओ','📵 Phone stolen or lost? Do this':'📵 फ़ोन चोरी या गुम? ये करें','🛺 Show this to the driver':'🛺 ड्राइवर को ये दिखाएँ','Address or place':'पता या जगह',
+'Show it big':'बड़ा करके दिखाओ','🏔 Going high? Altitude sickness basics':'🏔 ऊँचाई पर जा रहे हैं? ऊँचाई की बीमारी की बातें','🧍‍♀️ Travelling solo or as a woman':'🧍‍♀️ अकेले या महिला यात्री',
 'Welcome back':'फिर से स्वागत है','My trips':'मेरी ट्रिप्स','Recently viewed':'हाल में देखी गईं','Hide':'छिपाएँ','Hide ✕':'छिपाएँ ✕','Skip':'छोड़ें',
-'Pick a place':'जगह चुनें','Get a day-by-day plan':'दिन-ब-दिन का प्लान पाएँ','Book, go, and track money':'बुक करें, जाएँ, और पैसे का हिसाब रखें','Let’s go':'चलो चलें',
-'Show more places':'और जगहें दिखाओ','+ Add to my plan':'+ मेरे प्लान में जोड़ें','Cheat sheet':'चीट शीट','Best time':'सबसे अच्छा समय','Get there':'कैसे पहुँचें','Daily cost':'रोज़ का खर्च',
+'Pick a place':'जगह चुनें','Get a day-by-day plan':'दिन-ब-दिन का प्लान पाएँ','Book, go, and track money':'बुक करें, जाएँ, और पैसे का हिसाब रखें','Let’s go 🎒':'चलो चलें 🎒',
+'Show more places':'और जगहें दिखाओ','+ Add to my plan':'+ मेरे प्लान में जोड़ें','📋 Cheat sheet':'📋 चीट शीट','Best time':'सबसे अच्छा समय','Get there':'कैसे पहुँचें','Daily cost':'रोज़ का खर्च',
 'Total per person':'प्रति व्यक्ति कुल','Your plan':'आपका प्लान','Example plan':'उदाहरण प्लान','Planning your trip':'आपकी ट्रिप प्लान हो रही है','Finding trips for you':'आपके लिए ट्रिप ढूँढ रहे हैं','Show quick ideas now':'अभी झटपट आइडिया दिखाओ'};
 const PHI={'Place or state, e.g. Spiti':'जगह या राज्य, जैसे स्पीति','e.g. Jodhpur':'जैसे जोधपुर','e.g. Jaipur, Pushkar, Udaipur':'जैसे जयपुर, पुष्कर, उदयपुर','Delhi, Jodhpur, Mumbai…':'दिल्ली, जोधपुर, मुंबई…','Vegetarian, no early mornings, want one trek':'शाकाहारी, सुबह जल्दी नहीं, एक ट्रेक चाहिए'};
 let lang=ld('uilang','en');const orig=new WeakMap(),origPh=new WeakMap();
@@ -3437,8 +3506,8 @@ const top=$('header.top')||$('header');if(top)top.appendChild(lb);setLb();if(lan
   placePass();desk.addEventListener?desk.addEventListener('change',placePass):desk.addListener(placePass);
   /* 3. below the search: trending trips, explore by type, how it works (shown while there is no plan) */
   const pb=$('#kc-pb');if(pb&&!$('#kc-empty')){
-    const T=[['Delhi','Rishikesh',3,3000,'','Ganga, cafés, rafting'],['Jaipur','Jodhpur, Jaisalmer',5,6000,'','Forts and desert'],['Mumbai','Goa',4,5000,'','Beaches on a budget'],['Kolkata','Darjeeling',5,7000,'','Toy train and tea'],['Delhi','Manali',5,6000,'','Snow and old Manali'],['Chennai','Puducherry',3,3000,'','French quarter'],['Bengaluru','Coorg',3,3500,'','Coffee hills'],['Delhi','Amritsar',3,3000,'','Golden Temple, Wagah']];
-    const G=[['u','','Underrated'],['m','','Mountains'],['b','','Beaches'],['t','','Treks'],['h','','Heritage'],['p','','Spiritual'],['d','','Desert'],['f','','Wildlife'],['k','','Backpacker hubs'],['A','','Abroad']];
+    const T=[['Delhi','Rishikesh',3,3000,'🏞','Ganga, cafés, rafting'],['Jaipur','Jodhpur, Jaisalmer',5,6000,'🏜','Forts and desert'],['Mumbai','Goa',4,5000,'🏖','Beaches on a budget'],['Kolkata','Darjeeling',5,7000,'🚂','Toy train and tea'],['Delhi','Manali',5,6000,'🏔','Snow and old Manali'],['Chennai','Puducherry',3,3000,'🌊','French quarter'],['Bengaluru','Coorg',3,3500,'☕','Coffee hills'],['Delhi','Amritsar',3,3000,'🕌','Golden Temple, Wagah']];
+    const G=[['u','💎','Underrated'],['m','🏔','Mountains'],['b','🏖','Beaches'],['t','🥾','Treks'],['h','🏛','Heritage'],['p','🛕','Spiritual'],['d','🐪','Desert'],['f','🐅','Wildlife'],['k','🎒','Backpacker hubs'],['A','🌏','Abroad']];
     const E=document.createElement('div');E.id='kc-empty';E.className='stack';
     E.innerHTML=`<section class="kc-band"><div class="kc-band-h"><h2>Trending budget trips</h2><p class="sub">Tap one to get the full day-by-day plan.</p></div>
       <div class="kc-try">${T.map((t,i)=>`<button type="button" data-kctry="${i}"><span class="kc-try-e" aria-hidden="true">${t[4]}</span><span class="kc-try-t"><b>${t[0]} → ${t[1].replace(', ',' → ')}</b><small>${t[5]}</small></span><span class="kc-try-p">${t[2]} days<br><b>₹${t[3].toLocaleString('en-IN')}</b></span></button>`).join('')}</div></section>
@@ -3533,6 +3602,32 @@ const top=$('header.top')||$('header');if(top)top.appendChild(lb);setLb();if(lan
   window.addEventListener('appinstalled',()=>track('app_installed'));
   Object.assign(HI,{'Can we count visits?':'क्या हम विज़िट गिन सकते हैं?','Google Analytics would tell us which features people use, so we can make Kidhar Chale better. Your plans, notes and spends never leave your phone.':'Google Analytics से हमें पता चलेगा कि लोग कौन-से फ़ीचर इस्तेमाल करते हैं, ताकि हम Kidhar Chale को बेहतर बना सकें। आपके प्लान, नोट्स और खर्च कभी आपके फ़ोन से बाहर नहीं जाते।','No thanks':'नहीं, धन्यवाद','Allow':'अनुमति दें','Privacy':'प्राइवेसी','Privacy and cookies':'प्राइवेसी और कुकीज़','Cookie settings':'कुकी सेटिंग्स','Terms of use':'उपयोग की शर्तें'});
   syncTitle();
+})();
+
+/* ===== MOTION: sliding tab highlight, fresh-plan and list animations ===== */
+(()=>{
+  const RM=matchMedia('(prefers-reduced-motion: reduce)');
+  /* 1. tab highlight slides to the chosen tab */
+  const nav=document.querySelector('nav.tabs');
+  if(nav){const ind=document.createElement('i');ind.className='kc-ind';ind.setAttribute('aria-hidden','true');nav.appendChild(ind);
+    const place=()=>{const b=nav.querySelector('button[aria-selected="true"]');
+      if(!b||!b.offsetParent){nav.classList.remove('kc-ind-on');return}
+      ind.style.width=b.offsetWidth+'px';ind.style.height=b.offsetHeight+'px';ind.style.transform=`translate(${b.offsetLeft}px,${b.offsetTop}px)`;nav.classList.add('kc-ind-on')};
+    place();requestAnimationFrame(()=>{place();requestAnimationFrame(()=>nav.classList.add('kc-ind-anim'))});
+    new MutationObserver(place).observe(nav,{subtree:true,attributes:true,attributeFilter:['aria-selected','hidden']});
+    if(window.ResizeObserver)new ResizeObserver(place).observe(nav);
+    addEventListener('resize',place);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(place)}
+  /* 2. a new plan arrives card by card (not when you only change a stay) */
+  const out=document.querySelector('#p-out');let sig='';
+  if(out)new MutationObserver(()=>{const h=out.querySelector('h3'),n=out.querySelectorAll('.day').length;const s=(h?h.textContent:'')+'|'+n;
+    if(n&&s!==sig&&!RM.matches){out.classList.add('kc-fresh');clearTimeout(out._kc);out._kc=setTimeout(()=>out.classList.remove('kc-fresh'),1400)}sig=n?s:sig}).observe(out,{childList:true});
+  /* 3. places list: fade on a new filter, rise for "show more" cards, calm while typing */
+  const xl=document.querySelector('#x-list');let first=xl&&xl.firstElementChild;
+  if(xl)new MutationObserver(ms=>{if(RM.matches||document.documentElement.classList.contains('kc-typing')){first=xl.firstElementChild;return}
+    if(xl.firstElementChild!==first){first=xl.firstElementChild;xl.classList.remove('kc-swap');void xl.offsetWidth;xl.classList.add('kc-swap');clearTimeout(xl._kc);xl._kc=setTimeout(()=>xl.classList.remove('kc-swap'),500)}
+    else ms.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===1)n.classList.add('kc-new')}))}).observe(xl,{childList:true});
+  const q=document.querySelector('#x-q');
+  if(q){q.addEventListener('focus',()=>document.documentElement.classList.add('kc-typing'));q.addEventListener('blur',()=>document.documentElement.classList.remove('kc-typing'))}
 })();
 
 mark();
