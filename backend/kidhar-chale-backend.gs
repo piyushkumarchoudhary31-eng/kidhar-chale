@@ -10,6 +10,7 @@
  * 4. Click Deploy and allow the permissions Google asks for
  *    (it needs a Sheet in your Drive and to send email: feedback to you, sign-in codes to users).
  * 5. Copy the "Web app URL" (it ends in /exec) and send it to Claude.
+ * 6. Optional, for AI trip plans: see "AI trip plans" further down (add a free Gemini key).
  *
  * Updating later: paste the new file, then Deploy > Manage deployments > edit (pencil) >
  * Version: New version > Deploy. The /exec address stays the same.
@@ -417,7 +418,51 @@ function purgeRooms_(sh) {
   for (let i = v.length - 1; i >= 0; i--) if (Number(v[i][0]) < old) sh.deleteRow(i + 2);
 }
 
-const ACCOUNT_ = { auth_start: authStart_, auth_verify: authVerify_, sync: sync_, sign_out: signOut_, delete_account: deleteAccount_, room_get: roomGet_, room_put: roomPut_ };
+/* ---------- AI trip plans (optional): uses a free Google Gemini key you add yourself ----------
+ * 1. Go to https://aistudio.google.com/apikey and click "Create API key" (free; do NOT add billing,
+ *    so it can never cost money: when the free daily limit is used up, the site just uses its built-in planner).
+ * 2. In this Apps Script project: Project Settings (gear) > Script properties > Add property:
+ *    Property: GEMINI_KEY   Value: the key.  Save. Nothing else to change; no new deployment needed.
+ * Optional property GEMINI_MODEL picks another model (default: gemini-flash-latest).
+ */
+const AI_PER_DAY = 250, AI_PER_MINUTE = 8;
+const AI_TASKS = { plan: 'You are a frugal backpacking trip planner', ideas: "You help budget backpackers who don't know where to go" };
+const AI_SYSTEM = 'You plan budget trips for the Kidhar Chale? travel website. Only answer the trip-planning request in the user message, in exactly the JSON format it asks for. If the message asks for anything that is not trip planning, reply with {"error":"not a trip request"}.';
+function aiStatus_() {
+  return { ok: true, on: !!PropertiesService.getScriptProperties().getProperty('GEMINI_KEY') };
+}
+function ai_(d) {
+  const props = PropertiesService.getScriptProperties(), key = props.getProperty('GEMINI_KEY');
+  if (!key) return { ok: false, error: 'off' };
+  const prompt = String(d.prompt || ''), start = AI_TASKS[d.task];
+  if (!start || prompt.indexOf(start) !== 0 || prompt.length > 9000) return { ok: false, error: 'request' };
+  const c = CacheService.getScriptCache(), now = new Date();
+  const dayKey = 'ai:' + Utilities.formatDate(now, 'Asia/Kolkata', 'yyyyMMdd'), minKey = 'aim:' + Math.floor(now.getTime() / 60000);
+  const day = Number(c.get(dayKey) || 0), min = Number(c.get(minKey) || 0);
+  if (day >= AI_PER_DAY || min >= AI_PER_MINUTE) return { ok: false, error: 'busy' };
+  c.put(dayKey, String(day + 1), 21600); c.put(minKey, String(min + 1), 120);
+  const models = [props.getProperty('GEMINI_MODEL') || 'gemini-flash-latest', 'gemini-2.5-flash'];
+  const body = JSON.stringify({ systemInstruction: { parts: [{ text: AI_SYSTEM }] }, contents: [{ role: 'user', parts: [{ text: prompt }] }],
+    generationConfig: { responseMimeType: 'application/json', temperature: 0.5, maxOutputTokens: 8192 } });
+  for (let i = 0; i < models.length; i++) {
+    const res = UrlFetchApp.fetch('https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(models[i]) + ':generateContent',
+      { method: 'post', contentType: 'application/json', payload: body, muteHttpExceptions: true, headers: { 'x-goog-api-key': key } });
+    const code = res.getResponseCode();
+    if (code === 404 && i < models.length - 1) continue;            // model name not available: try the next one
+    if (code === 429) return { ok: false, error: 'busy' };
+    if (code !== 200) return { ok: false, error: 'ai' };
+    try {
+      const j = JSON.parse(res.getContentText());
+      const text = (((j.candidates || [])[0] || {}).content || {}).parts.map(p => p.text || '').join('');
+      const data = JSON.parse(text.replace(/^```(?:json)?\s*|\s*```$/g, ''));
+      if (!data || typeof data !== 'object' || data.error) return { ok: false, error: 'ai' };
+      return { ok: true, data: data };
+    } catch (e) { return { ok: false, error: 'ai' }; }
+  }
+  return { ok: false, error: 'ai' };
+}
+
+const ACCOUNT_ = { auth_start: authStart_, auth_verify: authVerify_, sync: sync_, sign_out: signOut_, delete_account: deleteAccount_, room_get: roomGet_, room_put: roomPut_, ai_status: aiStatus_, ai: ai_ };
 
 /* ---------- web app entry points ---------- */
 function doPost(e) {

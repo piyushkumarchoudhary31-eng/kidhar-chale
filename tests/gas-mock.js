@@ -42,7 +42,15 @@ function Book(name){this.id='sheet'+Object.keys(books).length;this.name=name;thi
 Book.prototype.getId=function(){return this.id};Book.prototype.getSheets=function(){return this.sheets};Book.prototype.getUrl=function(){return 'https://docs.google.com/'+this.id};
 Book.prototype.getSheetByName=function(n){return this.sheets.find(s=>s.name===n)||null};
 Book.prototype.insertSheet=function(n){const s=new Sheet(n);this.sheets.push(s);return s};
-const ctx={Utilities,console,
+const aiLog=[];let aiMode='ok';
+const PLAN={title:'Delhi → Rishikesh (AI)',summary:'An AI test plan. Two sentences.',days:[{day:1,city:'Delhi → Rishikesh',items:[{time:'06:00',what:'UPSRTC bus from Kashmere Gate',cost:350,kind:'travel'}],stay:{city:'Rishikesh',options:[{name:null,type:'Dorm',area:'Tapovan',price:400,note:'Walk in and compare.'}]}},{day:2,city:'Rishikesh',items:[{time:'09:00',what:'Laxman Jhula walk',cost:0,kind:'sight'}],stay:{city:'Rishikesh',options:[{name:null,type:'Dorm',area:'Tapovan',price:400,note:'Same bed.'}]}},{day:3,city:'Rishikesh → Delhi',items:[{time:'15:00',what:'Bus back',cost:350,kind:'travel'}],stay:{city:'On the bus',options:[]}}],tips:['Carry cash'],verify:['Bus times']};
+const IDEAS={ideas:[{title:'Ganga weekend',stops:['Rishikesh'],why:'Close and cheap. Great cafes.',travel:'Bus 6 h',cost:3000,types:['Spiritual']},{title:'Hill escape',stops:['Mussoorie'],why:'Cool air. Easy bus.',travel:'Bus 7 h',cost:4000,types:['Mountains']},{title:'Fort town',stops:['Jaipur'],why:'Forts and food. Cheap stays.',travel:'Train 5 h',cost:3500,types:['Heritage']}]};
+const UrlFetchApp={fetch:(url,o)=>{const b=JSON.parse(o.payload);aiLog.push({url,key:o.headers['x-goog-api-key'],prompt:b.contents[0].parts[0].text.slice(0,60),sys:!!b.systemInstruction});
+  if(aiMode==='404first'&&url.includes('flash-latest'))return{getResponseCode:()=>404,getContentText:()=>'{}'};
+  if(aiMode==='429')return{getResponseCode:()=>429,getContentText:()=>'{}'};
+  const t=b.contents[0].parts[0].text;const data=t.startsWith('You are a frugal')?PLAN:IDEAS;
+  return{getResponseCode:()=>200,getContentText:()=>JSON.stringify({candidates:[{content:{parts:[{text:'```json\n'+JSON.stringify(data)+'\n```'}]}}]})}}};
+const ctx={Utilities,console,UrlFetchApp,
  CacheService:{getScriptCache:()=>Cache},PropertiesService:{getScriptProperties:()=>({getProperty:k=>props.has(k)?props.get(k):null,setProperty:(k,v)=>props.set(k,v)})},
  LockService:{getScriptLock:()=>({waitLock(){},releaseLock(){}})},
  MailApp:{sendEmail:(a,b,c)=>{quota--;outbox.push(typeof a==='object'?a:{to:a,subject:b,body:c})},getRemainingDailyQuota:()=>quota},
@@ -52,4 +60,4 @@ const ctx={Utilities,console,
  Logger:{log:x=>console.log('[Logger]',x)},Date,Math,JSON,String,Number,Object,Array};
 vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(process.argv[2]||'../batch2/kidhar-chale-backend.gs','utf8'),ctx);
-module.exports={ctx,outbox,books,props,cacheStore,stats,setNow:f=>{now=f},setQuota:q=>{quota=q}};
+module.exports={aiLog,setAiMode:m=>{aiMode=m},ctx,outbox,books,props,cacheStore,stats,setNow:f=>{now=f},setQuota:q=>{quota=q}};

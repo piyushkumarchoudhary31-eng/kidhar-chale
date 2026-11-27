@@ -2,7 +2,8 @@ const http=require('http');const G=require('./gas-mock.js');let off=0;
 http.createServer((q,r)=>{let body='';q.on('data',c=>body+=c);q.on('end',()=>{
   const u=new URL(q.url,'http://x');let out;
   try{
-    if(u.pathname==='/advance'){off+=+u.searchParams.get('ms');G.setNow(()=>Date.now()+off);out='{}'}
+    if(u.pathname==='/setprop'){const v=u.searchParams.get('v');v?G.props.set(u.searchParams.get('k'),v):G.props.delete(u.searchParams.get('k'));out='{}'}
+    else if(u.pathname==='/advance'){off+=+u.searchParams.get('ms');G.setNow(()=>Date.now()+off);out='{}'}
     else if(u.pathname==='/outbox'){out=JSON.stringify(G.outbox)}
     else if(u.pathname==='/dump'){const b=Object.values(G.books)[0];out=JSON.stringify(b?b.sheets.map(s=>({name:s.name,rows:s.rows})):[])}
     else if(u.pathname==='/stats'){out=JSON.stringify(G.stats)}
