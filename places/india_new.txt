@@ -1,0 +1,200 @@
+Vaishno Devi|JK|pt|3-6,9-11|Train to Katra, then the 13 km walk or pony up|1|One of India's most visited shrines, reached by a lit mountain path that runs all night.|33.03|74.95
+Amarnath|JK|ptms|7-8|Bus to Pahalgam or Baltal, then the yatra trek (registration needed)|2|Ice lingam in a high cave, open only during the summer yatra.|34.21|75.50
+Kashmir Great Lakes|JK|tlm|7-9|Shared cab from Srinagar to Sonamarg trailhead|2|Seven-day trek past turquoise alpine lakes, often called India's prettiest trek.|34.43|74.93
+Tarsar Marsar|JK|tlmu|7-9|Shared cab from Srinagar to Aru via Pahalgam|2|Shorter lakes trek from Aru with twin blue lakes and wide meadows.|34.13|75.15
+Daksum|JK|umf|5-10|Shared cab from Anantnag (about 40 km)|2|Pine-forest valley with a gushing river and almost no crowds.|33.61|75.43
+Keran|JK|urm|5-10|Shared sumo from Kupwara (permit checked at the post)|2|Border village on the Kishanganga where you can see homes across the LoC.|34.65|73.96
+Sinthan Top|JK|smu|5-10|Shared cab from Anantnag via Daksum|2|High pass with snow walls well into summer and big views over Kishtwar.|33.57|75.50
+Kokernag|JK|uw|4-10|Bus from Anantnag|1|Spring-fed gardens and trout streams; the largest freshwater spring in Kashmir.|33.58|75.31
+Phugtal Monastery|LA|urhp|6-9|Shared taxi to Padum, then road head and a day's walk|2|Cave monastery built into a cliff above the Tsarap river.|33.22|77.17
+Chadar Trek|LA|tsr|1-2|Fly to Leh, then drive to Chilling with an agency|3|Winter walk on the frozen Zanskar river; one of the world's great treks.|33.78|77.07
+Tso Kar|LA|lfr|6-9|Shared taxi from Leh towards Pang|2|Salt lake on the Changthang plateau with kiangs and black-necked cranes.|33.30|77.97
+Thiksey Monastery|LA|hp|5-10|Local bus from Leh (19 km)|1|Hilltop gompa like a mini Potala; go for the dawn prayers.|34.06|77.67
+Drass|LA|hu|5-10|Bus from Srinagar or Kargil|1|Kargil War Memorial and one of the coldest inhabited places on earth.|34.43|75.76
+Suru Valley|LA|urm|6-9|Shared jeep from Kargil|2|Green valley under Nun and Kun peaks on the road to Zanskar.|34.15|75.95
+Malana|HP|urk|4-10|Bus to Jari, then shared cab and a short trek|1|Ancient village with its own laws and language above the Parvati valley.|32.06|77.26
+Sarahan|HP|hpu|3-11|HRTC bus from Shimla to Jeori, then local bus|1|Bhimakali temple in wood and stone with Srikhand peak behind it.|31.51|77.79
+Bijli Mahadev|HP|ptm|3-11|Bus from Kullu to Chansari, then 3 km walk|1|Hilltop Shiva temple with a 360-degree view of Kullu and Parvati valleys.|31.92|77.18
+Pin Valley|HP|rfm|6-9|Bus from Kaza to Mudh|2|Cold desert national park where snow leopards and ibex roam in winter.|31.95|78.05
+Manimahesh Lake|HP|ptl|7-9|Bus from Chamba to Hadsar, then 13 km trek|1|Sacred lake under Manimahesh Kailash; huge yatra in August.|32.39|76.64
+Chanshal Pass|HP|usm|5-10|Bus from Shimla to Rohru, then shared cab|2|Remote high pass to Dodra Kwar with snow fields and no crowds.|31.17|77.95
+Beas Kund|HP|tsl|6-10|Local bus from Manali to Solang|1|Easy three-day trek to the glacier lake where the Beas river starts.|32.37|77.08
+Kangra Fort|HP|h|9-6|Bus or toy train to Kangra|1|One of India's oldest forts with long views over the Kangra valley.|32.10|76.27
+Baijnath|HP|ph|9-6|Bus from Palampur or the Kangra toy train|1|13th-century Shiva temple beside the river in tea country.|32.05|76.65
+Masroor Rock Temples|HP|hu|9-5|Bus from Kangra to Masroor|1|Monolithic rock-cut temples, sometimes called the Ellora of the Himalaya.|32.07|76.13
+Rohtang Pass|HP|sm|5-10|Shared cab from Manali (permit needed)|2|Snow pass at 3,978 m with glacier views; busy but unforgettable.|32.37|77.25
+Solang Valley|HP|smk|12-6|Local bus or shared cab from Manali|1|Ski slopes in winter and paragliding in summer, just above Manali.|32.32|77.16
+Manikaran|HP|p|3-11|Bus from Bhuntar|1|Hot springs and a gurudwara serving free langar on the Parvati river.|32.03|77.35
+Mussoorie|UK|m|3-6,9-12|Bus from Dehradun (35 km)|2|Queen of the Hills with the Mall Road, Kempty falls and Landour above.|30.46|78.07
+Nag Tibba|UK|tm|10-5|Bus from Dehradun to Pantwari|1|Easy weekend trek with snow in winter and Bandarpoonch views.|30.58|78.15
+Yamunotri|UK|pt|5-10|Bus from Dehradun to Janki Chatti, then 6 km walk|1|Source temple of the Yamuna with hot springs; first stop of the Char Dham.|31.01|78.46
+Kainchi Dham|UK|p|3-11|Bus or shared cab from Nainital or Kathgodam|1|Neem Karoli Baba's ashram in a quiet river valley.|29.42|79.52
+Bhimtal|UK|l|3-6,9-12|Bus from Kathgodam (22 km)|1|Calmer lake than Nainital with an island cafe and boating.|29.35|79.56
+Rudranath|UK|ptm|5-10|Bus to Gopeshwar, then jeep to Sagar and a 20 km trek|1|Panch Kedar temple reached through some of Garhwal's best meadows.|30.52|79.32
+Tehri Lake|UK|l|10-6|Bus from Rishikesh to New Tehri|2|Huge reservoir with kayaking, jet skis and floating huts.|30.38|78.43
+Pindari Glacier|UK|tsm|5-6,9-10|Bus to Bageshwar, then jeep to Loharkhet|1|Classic Kumaon trek through Khati village to a glacier snout.|30.25|79.99
+Patal Bhuvaneshwar|UK|uhp|3-11|Bus from Almora or Pithoragarh to Gangolihat|1|Limestone cave temple you climb down into with chains.|29.67|80.10
+Almora|UK|hm|3-6,9-12|Bus from Kathgodam (80 km)|1|Old Kumaoni town on a ridge with Bal Mithai and Kasar Devi above.|29.60|79.66
+Ranikhet|UK|mu|3-6,9-12|Bus from Kathgodam|1|Army cantonment hill town with pine walks and Himalayan views.|29.64|79.43
+Nelong Valley|UK|ur|5-10|Shared cab from Uttarkashi via Harsil (permit at Uttarkashi)|2|Cold desert near Tibet with the restored Gartang Gali wooden bridge.|31.10|78.97
+Kalap|UK|ur|4-11|Bus to Mori, then jeep and a 5 km walk|1|Isolated Garhwal village with a community-run homestay.|31.07|78.27
+Gaumukh|UK|tps|5-6,9-10|Bus to Gangotri, then 18 km trek (permit)|2|Snout of the Gangotri glacier where the Ganga is born.|30.93|79.08
+Joshimath|UK|mk|10-6|Bus from Rishikesh|1|Gateway to Auli, Valley of Flowers and Badrinath, with a ropeway.|30.56|79.56
+Lohaghat|UK|mu|3-6,9-12|Bus from Tanakpur|1|Quiet Kumaon town near Abbott Mount and the Mayawati ashram.|29.40|80.09
+Sattal|UK|lf|3-6,9-12|Bus from Kathgodam to Bhimtal, then cab|1|Seven connected lakes in oak forest, famous for birdwatching.|29.36|79.53
+Dayara Bugyal|UK|tsm|12-6,9-11|Bus from Uttarkashi to Raithal|1|Rolling high meadows that turn into a snowfield in winter.|30.85|78.58
+Wagah Border|PB|h|1-12|Shared auto or bus from Amritsar (30 km)|1|Daily flag-lowering ceremony at the India-Pakistan border.|31.60|74.57
+Kapurthala|PB|hu|10-3|Bus from Jalandhar|1|Small city with a Moorish mosque and a French-style palace.|31.38|75.38
+Harike Wetland|PB|fl|11-2|Bus from Amritsar or Ferozepur|1|Big winter bird sanctuary where the Beas meets the Sutlej.|31.17|75.00
+Sultanpur Bird Sanctuary|HR|f|10-3|Bus or cab from Gurugram (15 km)|1|Easy day trip from Delhi for winter migratory birds.|28.46|76.89
+Delhi|DL|hk|10-3|Train, bus or flight to Delhi|2|Red Fort, Qutub Minar, Humayun's Tomb and endless street food.|28.61|77.21
+Mathura|UP|ph|10-3|Train from Delhi or Agra|1|Krishna's birthplace; Holi here is the wildest in India.|27.49|77.67
+Jhansi|UP|h|10-3|Train from Delhi or Agra|1|Rani Lakshmibai's fort and the gateway to Orchha.|25.45|78.57
+Sravasti|UP|phu|10-3|Bus from Balrampur or Lucknow|1|Buddhist site where the Buddha spent many rainy seasons.|27.51|82.05
+Bateshwar|UP|uhp|10-3|Bus from Agra (70 km)|1|Row of over 100 temples on the Yamuna, with a big cattle fair in November.|26.94|78.55
+Chambal Sanctuary|UP|fu|11-3|Bus from Agra to Bah|2|River safaris to see gharials, dolphins and skimmers.|26.85|78.73
+Chunar Fort|UP|hu|10-3|Bus or train from Varanasi|1|Riverside fort on the Ganga with legends from Bhartrihari to Sher Shah.|25.13|82.88
+Sariska|RJ|fh|10-3|Bus from Alwar (35 km)|2|Tiger reserve with ruined temples and the abandoned Kankwari fort.|27.33|76.43
+Neemrana|RJ|h|10-3|Bus from Delhi or Jaipur|2|15th-century hill fort turned heritage hotel, with zip lines.|27.99|76.38
+Dungarpur|RJ|uh|10-3|Bus from Udaipur (110 km)|1|Lakeside town with the painted Juna Mahal and green-stone palaces.|23.84|73.71
+Narlai|RJ|uh|10-3|Bus from Ranakpur or Jodhpur|2|Village with a granite hill, step-wells and leopards nearby.|25.25|73.48
+Sam Sand Dunes|RJ|d|10-3|Bus or jeep from Jaisalmer (42 km)|2|Big dunes for camel rides and desert camps under the stars.|26.83|70.51
+Menal|RJ|uhw|7-2|Bus from Chittorgarh or Bundi|1|Gorge waterfall next to Shiva temples, best after the monsoon.|25.09|75.17
+Vadnagar|GJ|uh|10-3|Bus from Mehsana|1|One of India's oldest living towns with Kirti Toran arches and a lakefront.|23.78|72.64
+Statue of Unity|GJ|h|10-3|Bus from Vadodara (90 km)|2|World's tallest statue with a viewing gallery and river valley views.|21.84|73.72
+Bet Dwarka|GJ|ip|10-3|Bus to Okha, then the Sudarshan bridge|1|Island temple town with clear water and dolphins offshore.|22.47|69.12
+Narara Marine Park|GJ|fbu|11-3|Bus from Jamnagar (55 km)|1|Walk the reef at low tide to see octopus, corals and starfish.|22.46|69.72
+Junagadh|GJ|h|10-3|Train from Ahmedabad or Rajkot|1|Uparkot fort, an Ashokan rock edict and the steps to Girnar.|21.52|70.46
+Vadodara|GJ|h|10-3|Train from Ahmedabad or Mumbai|1|Laxmi Vilas Palace and the base for Champaner.|22.31|73.18
+Wilson Hills|GJ|um|7-2|Bus from Valsad or Dharampur|1|Misty Gujarat hill station with sunset points and no crowds.|20.57|73.25
+Kalo Dungar|GJ|du|11-2|Bus or shared cab from Bhuj|1|Highest point of Kutch with views over the white Rann.|23.88|69.83
+Lakhpat|GJ|hur|11-2|Bus from Bhuj|1|Walled ghost town on the old Indus mouth with a Guru Nanak gurudwara.|23.83|68.78
+Mumbai|MH|hk|11-2|Train or flight to Mumbai|2|Marine Drive, Gateway of India, local trains and the best vada pav.|19.08|72.88
+Pune|MH|hk|10-3|Train or bus from Mumbai|1|Shaniwar Wada, forts around the city and a big student scene.|18.52|73.86
+Mahabaleshwar|MH|mw|10-6|Bus from Pune|2|Strawberry hills with viewpoints over the Krishna valley.|17.92|73.66
+Igatpuri|MH|mpw|6-2|Train from Mumbai|1|Monsoon waterfalls and the Dhamma Giri Vipassana centre.|19.70|73.56
+Bhimashankar|MH|ptf|7-2|Bus from Pune|1|Jyotirlinga in a forest reserve home to the giant squirrel.|19.07|73.54
+Sandhan Valley|MH|tu|11-5|Bus to Samrad village via Igatpuri|1|Deep canyon you walk and rappel through, called the valley of shadows.|19.53|73.73
+Kalavantin Durg|MH|t|10-5|Train to Panvel, then bus to Thakurwadi|1|Rock-cut steps up a pinnacle fort with a dizzy drop on both sides.|18.98|73.20
+Shirdi|MH|p|10-3|Train to Sainagar Shirdi|1|Sai Baba's town, one of the busiest pilgrim centres in India.|19.77|74.48
+Alibaug|MH|bh|10-3|Ferry from Mumbai Gateway to Mandwa|2|Weekend beaches and a sea fort you reach at low tide.|18.64|72.87
+Devkund Waterfall|MH|wt|9-2|Bus from Pune to Bhira|1|Turquoise plunge pool at the end of a forest trail.|18.37|73.39
+Elephanta Caves|MH|hi|10-4|Ferry from Gateway of India|1|Island caves with the giant three-faced Shiva sculpture.|18.96|72.93
+Kolhapur|MH|hp|10-3|Train from Pune or Mumbai|1|Mahalakshmi temple, Rankala lake and fiery Kolhapuri food.|16.70|74.24
+Kolad|MH|wk|6-10|Train or bus from Mumbai or Pune|1|White-water rafting on the Kundalika river.|18.43|73.33
+Andharban|MH|tw|7-10|Bus from Pune to Pimpri village|1|Monsoon forest trek with valley views and waterfalls.|18.38|73.43
+Ratangad|MH|t|7-2|Bus to Ratanwadi via Bhandardara|1|Fort with a natural rock window and Amruteshwar temple at the base.|19.50|73.71
+Guhagar|MH|bu|10-4|Bus from Chiplun or Ratnagiri|1|Long clean Konkan beach with old Konkani homes.|17.48|73.19
+Old Goa|GA|hp|11-3|Bus from Panaji (10 km)|1|Basilica of Bom Jesus and the grand churches of Portuguese Goa.|15.50|73.91
+Anjuna|GA|bk|11-3|Bus from Mapusa|2|Flea market, cliff cafes and Goa's backpacker scene.|15.58|73.74
+Cola Beach|GA|bu|11-3|Bus from Margao to Agonda, then a dirt road|2|Hidden beach with a freshwater lagoon behind the sand.|15.06|73.95
+Chorao Island|GA|fi|11-3|Free ferry from Ribandar|1|Salim Ali bird sanctuary in mangroves a ferry ride from Panaji.|15.52|73.86
+Mollem|GA|fwu|10-5|Train or bus to Kulem or Mollem|1|Forest reserve with Tambdi Surla temple and the road to Dudhsagar.|15.35|74.25
+Bengaluru|KA|k|10-3|Train or flight to Bengaluru|2|Garden city with breweries, Cubbon Park and weekend escapes all around.|12.97|77.59
+Udupi|KA|p|10-3|Train or bus from Mangaluru|1|Krishna temple and the home of Udupi food.|13.34|74.75
+Malpe|KA|bi|10-4|Bus from Udupi (6 km)|1|Beach town with boats to St Mary's basalt island.|13.35|74.70
+Kemmangundi|KA|mw|9-5|Bus from Chikkamagaluru or Tarikere|1|Old royal hill station with Hebbe falls nearby.|13.55|75.75
+Mullayanagiri|KA|tm|9-3|Bus or cab from Chikkamagaluru|1|Karnataka's highest peak with a short climb to the temple.|13.39|75.72
+Pattadakal|KA|hp|10-3|Bus from Badami (22 km)|1|UNESCO cluster of Chalukya temples mixing north and south styles.|15.95|75.82
+Aihole|KA|hu|10-3|Bus from Badami (35 km)|1|Over 100 early temples, called the cradle of Indian temple building.|16.02|75.88
+Bandipur National Park|KA|f|10-5|Bus from Mysuru (80 km)|2|Tiger and elephant reserve on the road to Ooty.|11.66|76.63
+BR Hills|KA|fu|10-5|Bus from Mysuru or Chamarajanagar|2|Forest hills where Eastern and Western Ghats meet, with tribal villages.|11.99|77.14
+Chitradurga|KA|h|10-3|Bus from Bengaluru|1|Seven-ring stone fort on giant boulders.|14.23|76.40
+Sringeri|KA|p|9-3|Bus from Chikkamagaluru or Udupi|1|Shankaracharya's first math on the calm Tunga river.|13.42|75.25
+Honnemaradu|KA|lu|10-4|Bus to Sagar, then local bus|1|Island camping and canoeing on the Sharavathi backwaters.|14.22|74.89
+Netrani Island|KA|iub|11-4|Bus to Murudeshwar, then a dive boat|3|Heart-shaped island with India's best scuba diving outside the islands.|14.02|74.33
+Savandurga|KA|t|10-3|Bus from Bengaluru to Magadi|1|One of Asia's largest monolith hills, a classic sunrise climb.|12.92|77.29
+Maravanthe|KA|b|10-4|Bus on the NH66 from Udupi|1|Highway with the sea on one side and a river on the other.|13.70|74.64
+Karwar|KA|bi|10-3|Train on the Konkan line|1|Quiet beaches, islands and the Kali river mouth near Goa.|14.81|74.13
+Thiruvananthapuram|KL|hp|10-3|Train or flight to Trivandrum|1|Padmanabhaswamy temple, museums and the base for Kovalam.|8.52|76.94
+Kovalam|KL|b|10-3|Bus from Thiruvananthapuram (16 km)|2|Crescent beaches with a lighthouse and Ayurveda stays.|8.40|76.98
+Munroe Island|KL|uli|9-3|Train to Munroe Thuruthu|1|Canoe through narrow canals of a quiet backwater island.|8.99|76.62
+Jatayu Earth's Center|KL|u|9-3|Bus from Kollam to Chadayamangalam|2|Giant bird sculpture on a rock with a cable car and views.|8.86|76.87
+Meesapulimala|KL|tm|9-4|Bus to Munnar, then forest department trek|2|South India's second highest peak in rolling grass hills.|10.05|77.17
+Ranipuram|KL|umt|9-4|Bus from Kanhangad|1|Grassy hilltop in Kerala's north, called the Ooty of Kerala.|12.42|75.35
+Paithalmala|KL|ut|9-3|Bus from Kannur to Kudiyanmala|1|Short forest trek to a high grassland near Karnataka.|12.18|75.55
+Chembra Peak|KL|tl|9-3|Bus to Meppadi in Wayanad|1|Trek to a heart-shaped lake halfway up Wayanad's highest peak.|11.51|76.09
+Sabarimala|KL|pt|11-1|Bus to Pamba, then the forest climb|1|Ayyappa shrine with a huge pilgrimage season in winter.|9.43|77.08
+Guruvayur|KL|p|9-3|Train from Thrissur|1|Krishna temple town and an elephant sanctuary at Punnathur Kotta.|10.59|76.04
+Ilaveezhapoonchira|KL|um|9-4|Bus from Thodupuzha to Melukavu|1|Hilltop valley where leaves never fall; big views at sunset.|9.79|76.81
+Marayoor|KL|uh|9-4|Bus from Munnar (40 km)|1|Sandalwood forests, stone-age dolmens and jaggery farms.|10.27|77.16
+Parambikulam|KL|fu|9-5|Bus from Pollachi via Topslip|2|Tiger reserve with bamboo rafting and tree-top huts.|10.43|76.78
+Chennai|TN|hk|11-2|Train or flight to Chennai|1|Marina beach, Mylapore temples and the best filter coffee.|13.08|80.27
+Yercaud|TN|ml|9-5|Bus from Salem (30 km)|1|Coffee-estate hill station around a quiet lake.|11.78|78.21
+Mudumalai|TN|f|9-5|Bus from Ooty or Mysuru|2|Elephant camp and forest drives on the Ooty-Mysuru road.|11.57|76.64
+Kanchipuram|TN|hp|10-3|Bus from Chennai (75 km)|1|City of a thousand temples and famous silk saris.|12.83|79.70
+Srirangam|TN|hp|10-3|Train to Tiruchirappalli|1|India's largest working temple complex on a river island.|10.86|78.69
+Vedanthangal|TN|f|11-2|Bus from Chengalpattu|1|India's oldest bird sanctuary, packed with nesting storks in winter.|12.55|79.86
+Manjolai|TN|umr|8-3|Bus from Tirunelveli (limited permits)|1|Misty tea estates deep inside a tiger reserve.|8.60|77.42
+Auroville|TN|pu|11-3|Bus or scooter from Puducherry|1|Experimental township around the golden Matrimandir.|12.01|79.81
+Gangaikonda Cholapuram|TN|hu|10-3|Bus from Kumbakonam (35 km)|1|UNESCO Chola temple, as grand as Thanjavur and almost empty.|11.21|79.45
+Velliangiri Hills|TN|pt|1-5|Bus from Coimbatore to Poondi|1|Seven-hill night pilgrimage climb, called the Kailash of the south.|10.98|76.68
+Kolukkumalai|TN|mu|9-5|Jeep from Suryanelli near Munnar|2|One of the highest tea estates in the world, best at sunrise.|10.07|77.23
+Konaseema|AP|ul|10-3|Bus from Rajahmundry to Amalapuram|1|Coconut-lined Godavari delta with boat rides and village food.|16.58|82.01
+Amaravati|AP|hp|10-3|Bus from Vijayawada (35 km)|1|Ancient Buddhist stupa site on the Krishna river.|16.57|80.36
+Ahobilam|AP|ptu|10-2|Bus from Kurnool or Nandyal|1|Nine Narasimha shrines spread through forested hills.|15.13|78.73
+Pulicat Lake|AP|fl|11-2|Bus from Chennai to Sullurpeta|1|Lagoon full of flamingos and pelicans in winter.|13.63|80.18
+Orvakal Rocks|AP|u|10-3|Bus from Kurnool (20 km)|1|Strange rock garden with caves and a small lake.|15.68|78.20
+Bhongir Fort|TG|ht|10-3|Train or bus from Hyderabad|1|Fort on a single giant rock with a fun climb.|17.51|78.89
+Kuntala Waterfalls|TG|w|7-11|Bus from Adilabad or Nirmal|1|Telangana's highest waterfall in forest country.|19.21|78.43
+Laknavaram Lake|TG|lu|8-2|Bus from Warangal to Govindaraopet|1|Lake with island cottages linked by hanging bridges.|18.17|80.08
+Nagarjuna Sagar|TG|lh|8-2|Bus from Hyderabad|1|Huge dam with a boat to the Buddhist island museum.|16.57|79.31
+Pakhal Lake|TG|lfu|10-2|Bus from Warangal to Narsampet|1|Old reservoir inside a wildlife sanctuary.|17.95|80.05
+Bhubaneswar|OD|hp|10-3|Train or flight to Bhubaneswar|1|Temple city with Lingaraj, Mukteswar and the Jain caves.|20.30|85.82
+Hirakud Dam|OD|l|9-3|Train to Sambalpur|1|One of the world's longest earthen dams with a scenic drive.|21.53|83.87
+Ratnagiri Buddhist Site|OD|hu|10-3|Bus from Cuttack or Jajpur|1|Diamond triangle of Buddhist monasteries on green hills.|20.64|86.33
+Duduma Falls|OD|wu|7-12|Bus from Koraput or Jeypore|1|175 m waterfall on the Odisha-Andhra border.|18.55|82.43
+Rushikulya|OD|fbu|2-4|Bus from Berhampur to Ganjam|1|Beach where thousands of olive ridley turtles nest at once.|19.37|85.07
+Mahendragiri|OD|ut|10-3|Bus from Berhampur to Paralakhemundi|1|Forested peak with Pandava-era temples on top.|18.97|84.37
+Lava|WBH|umf|3-5,10-12|Shared jeep from Kalimpong|1|Monastery village by the Neora Valley forest.|27.09|88.66
+Gorumara|WBH|f|9-6|Train to New Mal, then jeep|2|Dooars rhino park with watchtowers over the Murti river.|26.75|88.80
+Kurseong|WBH|m|3-5,10-12|Toy train or shared jeep from Siliguri|1|Land of white orchids on the toy train line.|26.88|88.28
+Neora Valley|WBH|fu|10-5|Jeep from Lava|2|Thick rainforest park with red pandas and orchids.|27.05|88.70
+Lepchajagat|WBH|um|3-5,10-12|Shared jeep from Darjeeling or Ghoom|1|Forest hamlet with Kanchenjunga views and few people.|27.03|88.20
+Mayapur|WB|p|10-3|Train to Krishnanagar, then ferry|1|ISKCON headquarters with a huge new temple.|23.42|88.39
+Tajpur|WB|bu|10-3|Bus from Kolkata via Ramnagar|1|Quiet red-crab beach near Digha without the crowds.|21.66|87.61
+Jhargram|WB|uf|10-3|Train from Kolkata (Howrah)|1|Forest town with a palace stay and tribal villages.|22.45|86.99
+Nalanda|BR|hp|10-3|Bus from Rajgir (12 km)|1|Ruins of the world's oldest great university.|25.14|85.44
+Kesaria|BR|hu|10-3|Bus from Motihari or Patna|1|One of the tallest Buddhist stupas ever built.|26.33|84.85
+Sasaram|BR|hu|10-3|Train on the Delhi-Kolkata line|1|Sher Shah Suri's tomb in the middle of a lake.|24.95|84.02
+Dassam Falls|JH|w|7-12|Bus from Ranchi (40 km)|1|Waterfall where the Kanchi river drops 44 m.|23.15|85.47
+McCluskieganj|JH|uh|10-3|Train from Ranchi|1|Old Anglo-Indian hamlet with colonial bungalows in the forest.|23.64|85.15
+Tirathgarh Falls|CG|w|7-1|Bus from Jagdalpur (35 km)|1|Milky waterfall in Kanger Valley's forest.|18.59|81.94
+Bhoramdeo|CG|hu|10-3|Bus from Kawardha (18 km)|1|11th-century carved temple called the Khajuraho of Chhattisgarh.|22.11|81.15
+Jagdalpur|CG|uh|10-3|Train or bus from Raipur or Vizag|1|Base for Bastar's tribal markets, waterfalls and the long Dussehra.|19.08|82.02
+Bhopal|MP|hl|10-3|Train from Delhi or Mumbai|1|City of lakes, Taj-ul-Masajid and the base for Sanchi and Bhimbetka.|23.26|77.41
+Hanuwantiya|MP|liu|11-2|Bus from Khandwa|2|Island tent city on the Indira Sagar backwaters.|22.27|76.92
+Patalkot|MP|ur|10-3|Bus from Chhindwara (78 km)|1|Horseshoe valley 1,000 m deep with tribal villages.|22.40|78.72
+Datia|MP|hu|10-3|Train from Jhansi or Gwalior|1|Seven-storey Bir Singh palace with no crowds.|25.67|78.46
+Udayagiri Caves|MP|h|10-3|Train to Vidisha, then auto|1|Gupta-era rock-cut caves with the great Varaha carving.|23.53|77.77
+Kuno|MP|f|10-6|Bus from Sheopur|2|National park where cheetahs were brought back to India.|25.60|77.20
+Yumthang Valley|SK|sm|3-6,10-12|Shared jeep from Lachung|2|Valley of flowers in spring and snow in winter.|27.82|88.70
+Nathu La|SK|s|4-11|Shared jeep from Gangtok (Indian nationals, permit)|2|Old Silk Route pass on the China border.|27.39|88.83
+Goecha La|SK|tsm|4-5,10-11|Shared jeep to Yuksom, then 9-day trek|2|Trek to a close view of Kanchenjunga's face.|27.60|88.15
+Temi Tea Garden|SK|u|3-5,10-12|Shared jeep from Ravangla or Namchi|1|Sikkim's only tea estate on a sweeping hillside.|27.24|88.42
+Lachen|SK|ms|3-6,10-12|Shared jeep from Gangtok (permit)|2|Base for Gurudongmar lake and Thangu valley.|27.72|88.56
+Rinchenpong|SK|um|3-5,10-12|Shared jeep from Pelling|1|Quiet ridge village with Kanchenjunga at eye level.|27.23|88.27
+Sela Pass|AR|sl|10-5|Shared sumo from Bomdila or Tawang|2|Snowy pass at 4,170 m with a frozen lake beside the road.|27.50|92.10
+Dong|AR|ur|10-3|Bus from Tezu to Walong, then walk|2|India's first sunrise, in a village near the China border.|28.17|97.04
+Shergaon|AR|u|10-4|Shared sumo from Bhalukpong|1|Apple and kiwi orchards in a gentle valley.|27.12|92.27
+Mayodia Pass|AR|su|12-3|Shared sumo from Roing|1|Snow pass that sees heavy snowfall in winter.|28.25|95.90
+Mokokchung|NL|u|10-5|Bus from Dimapur or Kohima|1|Cultural heart of the Ao Naga people.|26.32|94.52
+Tuophema|NL|uh|10-5|Shared taxi from Kohima|1|Community-run tourist village with Angami huts.|25.82|94.15
+Mawsynram|ML|uw|6-9|Shared taxi from Shillong (60 km)|1|One of the wettest places on earth, with a stalagmite cave.|25.30|91.58
+Mawphlang Sacred Forest|ML|uf|10-5|Shared taxi from Shillong|1|Ancient sacred grove guarded by Khasi tradition.|25.45|91.75
+Siju Caves|ML|ur|10-4|Bus from Tura or Williamnagar|1|One of the longest caves in India, home to bats.|25.35|90.68
+Nongkhnum Island|ML|iu|10-5|Shared taxi from Shillong to Nongstoin|1|River island with Langshiang falls nearby.|25.62|91.29
+Umiam Lake|ML|l|10-5|Bus from Guwahati to Shillong (stops by the lake)|1|Big pine-ringed lake on the way to Shillong.|25.65|91.89
+Pobitora|AS|f|11-4|Bus from Guwahati (50 km)|1|Highest density of one-horned rhinos anywhere.|26.23|92.05
+Nameri|AS|f|11-4|Bus from Tezpur|2|Rafting and birding in a forest park on the Jia Bhoroli.|26.95|92.85
+Hajo|AS|ph|10-4|Bus from Guwahati (30 km)|1|Hill town holy to Hindus, Buddhists and Muslims.|26.25|91.53
+Hoollongapar Gibbon Sanctuary|AS|fu|10-4|Train to Mariani, then auto|1|Only place in India to see hoolock gibbons, India's only ape.|26.71|94.39
+Lunglei|MZ|u|10-4|Bus from Aizawl|1|Mizoram's second town with ridge views and a rock bridge legend.|22.88|92.73
+Vantawng Falls|MZ|w|10-3|Bus from Aizawl towards Thenzawl|1|Mizoram's highest waterfall in bamboo forest.|23.12|92.75
+Tam Dil|MZ|lu|10-4|Bus from Aizawl (85 km)|1|Quiet forest lake with boating.|23.74|92.95
+Dumboor Lake|TR|lu|10-3|Bus from Agartala|1|Lake with 48 islands at the source of the Gumti river.|23.94|91.84
+Little Andaman|AN|briw|11-4|Government ferry from Port Blair|1|Surf beaches, waterfalls and very few visitors.|10.68|92.55
+Bangaram|LD|ib|10-5|Flight to Agatti, then boat|3|Tiny teardrop island with one of India's best lagoons.|10.94|72.29
+Kavaratti|LD|ib|10-5|Ship from Kochi (permit)|2|Lakshadweep's capital with coral lagoons and glass-bottom boats.|10.57|72.64
+Minicoy|LD|ibu|10-5|Ship from Kochi (permit)|2|Southernmost island with a lighthouse and its own culture.|8.28|73.05
+Sangti Valley|AR|uf|10-3|Shared sumo from Dirang (8 km)|1|Riverside valley where black-necked cranes come in winter.|27.27|92.27

@@ -1,0 +1,113 @@
+Annapurna Circuit|NP|tmsk|10-11,3-5|Bus from Kathmandu to Besisahar|1|Classic teahouse trek over the 5,416 m Thorong La pass.
+Nagarkot|NP|m|10-4|Bus from Bhaktapur|1|Hill village near Kathmandu with Himalayan sunrise views.
+Lalitpur|NP|h|10-4|Local bus from Kathmandu|1|Durbar Square of carved temples and a great museum.
+Bardia|NP|fur|10-4|Bus to Nepalgunj, then local bus|1|Nepal's wildest park for tigers, with jungle walks.
+Manaslu Circuit|NP|trm|9-11,3-5|Bus from Kathmandu to Soti Khola (guide and permit)|2|Quieter rival to Annapurna around the world's eighth highest peak.
+Polonnaruwa|LK|h|1-9|Bus from Dambulla or Habarana|1|Ancient royal city with giant stone Buddhas.
+Yala|LK|fb|2-7|Bus to Tissamaharama, then jeep safari|2|Best chance of seeing leopards in Asia.
+Hiriketiya|LK|bu|11-4|Bus to Dickwella|2|Horseshoe surf bay with a laid-back cafe scene.
+Horton Plains|LK|tf|1-3|Train to Ohiya or Nuwara Eliya|2|Cloud-forest plateau with the World's End cliff.
+Anuradhapura|LK|hp|1-9|Train from Colombo|1|Sri Lanka's first capital with huge dagobas and a sacred Bo tree.
+Dambulla|LK|hp|1-9|Bus from Kandy|1|Cave temples painted wall to wall, near Sigiriya.
+Bandarban|BD|umr|10-3|Bus from Chittagong|1|Bangladesh's hill country with Bawm villages and Nilgiri views.
+Saint Martin's Island|BD|ib|11-3|Bus to Teknaf, then ferry|1|Bangladesh's only coral island with coconut beaches.
+Dhigurah|MV|ibf|11-4|Speedboat from Malé to Ari Atoll|3|Local island famous for whale shark sightings.
+Fulidhoo|MV|ibu|11-4|Public ferry from Malé|2|Tiny local island with nurse sharks at the jetty.
+Phuket|TH|bk|11-4|Flight or bus from Bangkok|2|Thailand's biggest island with old town, beaches and day trips.
+Koh Phangan|TH|bik|1-4,7-9|Ferry from Surat Thani|1|Full moon parties and quiet jungle beaches on the same island.
+Koh Lipe|TH|ib|11-5|Bus to Pak Bara, then speedboat|2|Clear water and coral right off the beach near Malaysia.
+Sukhothai|TH|h|11-2|Bus from Bangkok or Chiang Mai|1|First Thai capital; cycle the temple ruins at sunrise.
+Mae Hong Son Loop|TH|rmk|11-2|Rent a scooter in Chiang Mai|1|600 km mountain road loop through Pai and hill villages.
+Koh Chang|TH|ibw|11-4|Bus from Bangkok to Trat, then ferry|1|Jungle island with waterfalls and long beaches.
+Quy Nhon|VN|bu|2-8|Train from Hoi An or Ho Chi Minh City|1|Quiet beach city with Cham towers and fresh seafood.
+Hue|VN|h|1-8|Train from Hanoi or Da Nang|1|Imperial citadel and royal tombs on the Perfume River.
+Phu Quoc|VN|ib|11-4|Flight from Ho Chi Minh City|2|Island with white beaches and night markets.
+Mui Ne|VN|db|11-4|Bus from Ho Chi Minh City|1|Red and white sand dunes beside a kite-surf beach.
+Ban Gioc Waterfall|VN|wr|8-10|Bus from Hanoi to Cao Bang|1|Wide terraced waterfall on the China border.
+Kep|KH|bu|11-5|Bus from Phnom Penh or Kampot|1|Sleepy seaside town famous for crab and Kampot pepper.
+Luang Namtha|LAO|tu|11-3|Bus from Luang Prabang|1|Base for jungle treks with homestays in ethnic villages.
+Mount Kinabalu|MY|tm|3-9|Flight to Kota Kinabalu, then bus|3|Southeast Asia's classic summit climb in Borneo.
+Semporna|MY|ibf|3-10|Flight to Tawau, then bus|2|Gateway to Sipadan, one of the world's best dive sites.
+Ipoh|MY|uh|1-12|Bus or train from Kuala Lumpur|1|Cave temples, street art and famous white coffee.
+Lake Toba|ID|lu|5-9|Bus from Medan|1|Huge volcanic lake with Samosir island and Batak villages.
+Bukit Lawang|ID|f|3-10|Bus from Medan|1|Jungle treks to see wild orangutans.
+Tana Toraja|ID|hur|5-9|Overnight bus from Makassar|1|Boat-shaped houses and unique funeral traditions.
+Uluwatu|ID|bk|4-10|Scooter from Kuta in Bali|2|Clifftop temple, surf breaks and sunset fire dance.
+Coron|PH|ibf|12-5|Flight or ferry from El Nido or Manila|2|Lagoons, shipwreck dives and limestone lakes.
+Batanes|PH|rbu|3-6|Flight from Manila|2|Remote northern islands of stone houses and green cliffs.
+Moalboal|PH|bfu|12-5|Bus from Cebu City|1|Sardine run and turtles just off the shore.
+Port Barton|PH|bu|12-5|Van from Puerto Princesa|1|Quiet Palawan beach village with island hopping.
+Osaka|JP|k|3-5,10-11|Bullet train from Tokyo or Kyoto|2|Japan's street food capital with a castle and neon Dotonbori.
+Hakone|JP|ml|3-5,10-11|Train from Tokyo|2|Hot springs and Mount Fuji views across Lake Ashi.
+Kanazawa|JP|h|3-5,10-11|Bullet train from Tokyo|2|Samurai and geisha districts with the Kenrokuen garden.
+Nikko|JP|hp|4-6,10-11|Train from Tokyo|2|Gilded shrines among cedar forests and waterfalls.
+Kumano Kodo|JP|tpu|3-5,10-11|Train to Kii-Tanabe, then bus|2|Ancient pilgrim trail through forest with village inns.
+Kawaguchiko|JP|ml|3-5,10-12|Bus from Tokyo|2|Lake at the foot of Mount Fuji with the best views of it.
+Miyajima|JP|ip|3-5,10-11|Ferry from Hiroshima|2|Island with the floating torii gate and wild deer.
+Seoraksan|KR|mt|4-6,9-11|Bus from Seoul to Sokcho|2|Granite peaks and autumn colours in Korea's top park.
+Alishan|TW|mt|3-5,10-12|Train or bus from Chiayi|2|Tea hills, giant cypress forest and a sunrise train.
+Sun Moon Lake|TW|l|3-5,10-12|Bus from Taichung|2|Mountain lake you can cycle around.
+Jiuzhaigou|CN|lw|9-11|Flight to Jiuzhai Huanglong or bus from Chengdu|3|Turquoise lakes and waterfalls in a Tibetan valley.
+Lijiang|CN|hm|3-5,9-11|Flight or train from Kunming|2|Old Naxi town under Jade Dragon Snow Mountain.
+Great Wall|CN|ht|4-5,9-10|Bus from Beijing to Mutianyu or Jinshanling|2|Walk restored and wild sections of the wall.
+Xi'an|CN|h|3-5,9-11|Bullet train from Beijing|2|Terracotta Army and one of the best city walls to cycle.
+Chengdu|CN|fk|3-6,9-11|Flight or train|2|Giant panda base and the spiciest food in China.
+Abu Dhabi|AE|hp|11-3|Bus from Dubai (2 hours)|2|Sheikh Zayed Grand Mosque and Louvre Abu Dhabi.
+Nizwa|OM|h|10-4|Bus from Muscat|2|Fort, souk and Friday goat market in the Omani interior.
+Musandam|OM|bu|10-4|Bus from Dubai to Khasab|2|Fjords of the Arabian peninsula with dolphin dhow trips.
+Dead Sea|JO|l|3-5,9-11|Bus from Amman|2|Float in the saltiest lake at the lowest point on earth.
+Ephesus|TUR|h|4-6,9-10|Bus to Selçuk from Izmir|2|One of the best-kept ancient Roman cities.
+Mardin|TUR|hu|4-6,9-10|Flight or bus to Mardin|1|Honey-stone old town over the Mesopotamian plain.
+Ölüdeniz|TUR|bt|5-10|Bus from Fethiye|2|Blue lagoon with paragliding from Babadağ.
+Tusheti|GE|rmu|7-9|Shared 4x4 from Kvemo Alvani|2|Remote mountain villages up one of the world's scariest roads.
+Vardzia|GE|hu|5-10|Marshrutka from Akhaltsikhe|1|Cave city carved into a cliff in the 12th century.
+Tatev|AM|hp|5-10|Bus to Goris, then the Wings of Tatev cable car|1|Cliff monastery reached by the world's longest reversible cable car.
+Garni and Geghard|AM|h|5-10|Bus from Yerevan|1|Greek-style temple and a rock-cut monastery in one day.
+Sheki|AZ|hu|5-10|Bus from Baku|1|Silk Road town with a painted khan's palace.
+Issyk-Kul|KG|l|6-9|Marshrutka from Bishkek|1|Huge alpine lake ringed by the Tian Shan mountains.
+Charyn Canyon|KZ|du|5-9|Tour or bus from Almaty|2|Red rock canyon compared to the Grand Canyon.
+Sintra|PT|h|4-10|Train from Lisbon|2|Fairy-tale palaces in misty forest hills.
+Madeira|PT|imt|4-10|Flight from Lisbon|2|Cliff-edge levada walks on a green Atlantic island.
+Azores|PT|il|5-9|Flight from Lisbon|2|Volcanic crater lakes and whale watching in mid-Atlantic.
+Sarajevo|BA|hu|5-9|Bus from Mostar or Belgrade|1|Ottoman bazaar and history at the crossroads of Europe.
+Lucerne|SUI|lm|5-9|Train from Zurich|3|Wooden bridge, lake cruises and Mount Pilatus above.
+Geirangerfjord|NO|lm|5-9|Bus or ferry from Ålesund|3|UNESCO fjord with waterfalls dropping straight into it.
+Scottish Highlands|GB|mlt|5-9|Train from Edinburgh to Inverness|3|Lochs, glens and castles at the edge of Europe.
+Sardinia|IT|b|5-10|Flight or ferry from Rome|2|Turquoise coves and stone nuraghe towers.
+Sicily|IT|hb|4-6,9-10|Flight or overnight ferry from Naples|2|Greek temples, Mount Etna and the best street food in Italy.
+Lake Como|IT|lm|4-10|Train from Milan|3|Villa-lined lake with ferries between pastel villages.
+Pompeii|IT|h|3-6,9-11|Train from Naples|2|Roman city frozen in time by Vesuvius.
+Zagori|GR|mu|5-10|Bus from Ioannina|2|Stone villages, arched bridges and the Vikos Gorge.
+Milos|GR|ib|5-10|Ferry from Athens|2|Moon-like white rocks and colourful fishing villages.
+Ljubljana|SI|h|5-9|Train from Zagreb or Vienna|2|Small, green capital on a river full of cafes.
+Durmitor|ME|mtu|6-9|Bus from Podgorica to Žabljak|1|Glacier lakes and the Tara canyon in Montenegro.
+Sighișoara|RO|hu|5-9|Train from Brașov|1|Medieval walled citadel in Transylvania.
+Mont Saint-Michel|FR|hi|4-10|Train to Pontorson, then shuttle|3|Abbey on a tidal island off Normandy.
+Okavango Delta|BW|f|6-10|Flight to Maun, then mokoro|3|Inland delta for safaris by canoe.
+Etosha|NA|f|6-10|Bus from Windhoek to Outjo|3|Waterholes where lions, rhinos and elephants gather.
+Ngorongoro|TZ|f|6-10|Shared safari from Arusha|3|Crater floor packed with the Big Five.
+Lamu|KE|hbu|7-3|Flight from Nairobi or Mombasa|2|Swahili island town with dhows and no cars.
+Simien Mountains|ET|mtf|10-3|Bus to Debark from Gondar|2|Dramatic cliffs and herds of gelada monkeys.
+Sidi Bou Said|TUN|h|4-6,9-10|Train from Tunis|2|Blue and white cliff village over the Mediterranean.
+Essaouira|MA|bh|4-10|Bus from Marrakech|1|Windy port town with a walled medina and kite surfing.
+Imlil|MA|mt|4-10|Shared taxi from Marrakech|1|Atlas mountain village and base for Toubkal.
+Abu Simbel|EG|h|10-4|Bus or flight from Aswan|2|Ramesses II's giant rock temples moved block by block.
+Kruger|ZA|f|5-9|Flight to Nelspruit or bus from Johannesburg|2|Self-drive safari park with the Big Five.
+Drakensberg|ZA|mt|4-10|Bus from Durban|2|Amphitheatre cliffs, rock art and great hiking.
+Cusco|PE|hk|5-9|Flight from Lima|2|Inca capital and base for Machu Picchu.
+Colca Canyon|PE|mt|5-10|Bus from Arequipa|1|One of the deepest canyons on earth with condors overhead.
+Huaraz|PE|mtl|5-9|Bus from Lima|1|Base for Laguna 69 and the Cordillera Blanca.
+Bariloche|ARG|lm|11-3,7-9|Bus or flight from Buenos Aires|2|Lake district with chocolate shops and mountain hikes.
+Rio de Janeiro|BRA|bk|12-3|Flight|2|Christ the Redeemer, Sugarloaf and Copacabana.
+Chapada Diamantina|BRA|wt|4-10|Bus from Salvador to Lençóis|1|Table mountains, caves and waterfall hikes.
+Tayrona|CO|bt|12-4|Bus from Santa Marta|2|Jungle beaches with a coastal trail.
+Quilotoa|EC|lt|6-9|Bus from Latacunga|1|Crater lake loop hike through Andean villages.
+Mexico City|MX|hk|10-5|Flight|2|Pyramids, Frida Kahlo's house and tacos on every corner.
+Bacalar|MX|lu|11-4|Bus from Cancún or Tulum|1|Lagoon of seven shades of blue.
+Tikal|GT|hf|11-4|Bus from Flores|2|Mayan temples rising above the jungle.
+Viñales|CU|u|11-4|Bus from Havana|1|Tobacco farms and limestone hills in western Cuba.
+La Fortuna|CR|wf|12-4|Bus from San José|2|Arenal volcano, hot springs and a waterfall plunge pool.
+New York|US|k|4-6,9-11|Flight|3|Skyline, museums and food from every country.
+Sydney|AU|bk|9-4|Flight|3|Harbour Bridge, Opera House and Bondi beach.
+Whitsundays|AU|ib|5-10|Bus or flight to Airlie Beach|3|Whitehaven beach and sailing on the Great Barrier Reef.
+Queenstown|NZ|kmt|12-3,6-9|Flight or bus|3|Adventure capital for bungy jumping and lake hikes.
