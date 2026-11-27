@@ -290,3 +290,49 @@ section[id^="v-"]:not([hidden]) .genre .e,section[id^="v-"]:not([hidden]) .kc-tr
 /* suggestion list: clear edge, opens upwards when the keyboard leaves no room below */
 .ac-list{border:1.5px solid var(--edge)}
 .ac-list.kc-up{top:auto;bottom:calc(100% + 4px)}
+/* shared-trip note and share card */
+.kc-shared{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,var(--surface))}
+.kc-share .row button{flex:1 1 auto}
+/* place photos */
+.kc-ph{margin:0 0 12px;border-radius:6px;overflow:hidden;background:var(--surface2);position:relative}
+.kc-ph-wait{aspect-ratio:16/9;background:linear-gradient(90deg,var(--surface2) 25%,var(--line) 50%,var(--surface2) 75%);background-size:200% 100%;animation:kcskel 1.2s linear infinite}
+.kc-ph img{display:block;width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;animation:kcFade .5s ease-out}
+.kc-ph figcaption{position:absolute;right:0;bottom:0;max-width:100%;font-size:10.5px;line-height:1.3;padding:3px 7px;background:rgba(20,17,12,.62);border-top-left-radius:6px}
+.kc-ph figcaption a{color:#F4EEE2;text-decoration:none;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kc-guide{display:inline-block;margin-top:10px;font-weight:700;color:var(--pop);text-underline-offset:3px}
+/* route map on plans */
+.kc-rmap{height:300px;margin:10px 0 12px;border:1.5px solid var(--edge);border-radius:6px;overflow:hidden;background:var(--surface2)}
+@media (min-width:1024px){.kc-rmap{height:340px}}
+.kc-pin span{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--accent);color:#fff;font:700 13px var(--mono);border:2px solid #FAF7F0}
+/* budget finder */
+.kc-finder{display:flex;flex-direction:column;gap:8px;border-color:var(--accent)}
+.kc-finder h2{margin:0}
+.kc-fl{font-weight:700;font-size:13.5px;margin:4px 0 0;display:flex;flex-direction:column;gap:6px}
+.kc-chips{display:flex;flex-wrap:wrap;gap:6px}
+.kc-chip{padding:8px 12px;min-height:40px;font-weight:700}
+.kc-chip[aria-pressed="true"]{background:var(--tag);color:var(--tag-ink);border-color:var(--edge)}
+#kf-go{margin-top:6px}
+.kc-findlink{margin:0 0 6px}
+@media (min-width:1024px){#v-explore>.kc-finder{grid-column:1/-1}}
+/* feedback and report sheets */
+.kc-sheet{position:fixed;inset:0;z-index:90;background:rgba(20,17,12,.45);display:flex;align-items:flex-end;justify-content:center;animation:kcFade .2s ease-out}
+.kc-sheet.kc-out{opacity:0;transition:opacity .2s}
+.kc-sheet-in{background:var(--surface);color:var(--ink);width:100%;max-width:560px;max-height:88vh;overflow:auto;border:1.5px solid var(--edge);border-bottom:0;border-radius:10px 10px 0 0;padding:18px 18px calc(18px + env(safe-area-inset-bottom,0px));animation:kcRise .35s var(--kc-out,ease-out)}
+@media (min-width:700px){.kc-sheet{align-items:center}.kc-sheet-in{border-radius:10px;border-bottom:1.5px solid var(--edge)}}
+.kc-sheet-h{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+.kc-sheet-h h2{margin:0}
+.kc-sheet form{display:flex;flex-direction:column;gap:10px}
+.kc-sheet label{display:flex;flex-direction:column;gap:5px;font-weight:700;font-size:14px}
+.kc-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.kc-hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0}
+.kc-msg{min-height:1.2em;color:var(--bad);font-weight:600;margin:0}
+.kc-done{font-size:17px;font-weight:700}
+.kc-real{margin:10px 0 0;font-size:14px}
+.kc-rep{margin-top:8px}
+.kc-legal .kc-fb{color:inherit;font:inherit;text-decoration:underline;text-underline-offset:3px;background:none;border:0;padding:0;cursor:pointer;min-height:0}
+.kc-aff{font-size:12.5px;margin-top:6px}
+.kc-glinks{display:flex;flex-wrap:wrap;gap:8px}
+.kc-glinks a{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border:1.5px solid var(--edge);border-radius:6px;text-decoration:none;color:var(--ink);font-weight:700;background:var(--surface);transition:border-color .15s,transform .15s}
+.kc-glinks a:hover{border-color:var(--accent);transform:translateY(-1px)}
+.kc-gcol ul{list-style:none;margin:0;padding:0}
+.kc-gcol a{color:inherit}
