@@ -11,7 +11,7 @@ async def main():
     for s,n in [(512,'icon-512.png'),(192,'icon-192.png'),(180,'apple-touch-icon.png')]:
       pg2=await b.new_page(viewport={'width':s,'height':s})
       # apple icon: full-bleed square (iOS rounds corners itself)
-      bg='#FF3D8B' if n=='apple-touch-icon.png' else 'transparent'
+      bg='#B5431C' if n=='apple-touch-icon.png' else 'transparent'
       await pg2.set_content(f'<body style="margin:0;background:{bg}"><div style="width:{s}px;height:{s}px">{svg.replace("<svg ","<svg width=%d height=%d "%(s,s))}</div></body>')
       await pg2.screenshot(path=D+n,omit_background=(bg=='transparent'))
     await b.close()

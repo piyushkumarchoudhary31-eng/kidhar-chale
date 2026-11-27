@@ -16,9 +16,9 @@ const kitIntro=vFun.querySelector('.card');kitIntro.after(toolsMoney);
 const jumpRow=(items)=>{const n=document.createElement('nav');n.className='jump kc-jump';n.setAttribute('aria-label','Jump to');
   n.innerHTML=items.map(([t,id])=>`<button type="button" data-to="${id}">${t}</button>`).join('');
   n.querySelectorAll('[data-to]').forEach(b=>b.onclick=()=>{const t=document.getElementById(b.dataset.to);if(t){if(t.classList.contains('kc-fold'))t.classList.add('kc-open');t.scrollIntoView({block:'start',behavior:'smooth'})}});return n};
-const goTop=vGo.querySelector('.card');goTop.querySelector('h2').after(jumpRow([['🎫 Tickets','v-go'],['🛏 Beds','book-stay']]));
+const goTop=vGo.querySelector('.card');goTop.querySelector('h2').after(jumpRow([['Tickets','v-go'],['Beds','book-stay']]));
 const kitNav=kitIntro.querySelector('nav.jump');
-if(kitNav){const a=document.createElement('a');a.href='#tools-money';a.textContent='💰 Money';kitNav.prepend(a)}
+if(kitNav){const a=document.createElement('a');a.href='#tools-money';a.textContent='Money';kitNav.prepend(a)}
 const kh=kitIntro.querySelector('h2');if(kh)kh.textContent='Tools';
 const ks=kitIntro.querySelector('.sub');if(ks)ks.textContent='Trip money and split bills first, then tools for the road: packing, night-bus safety, fare check, phrases, passport stamps and more. Tap a tool to open it.';
 const nav=$('nav.tabs');
@@ -52,7 +52,7 @@ if(form){const keep=['p-move','p-night','p-sleep','p-extra'].map(id=>{const e=$(
   $('#p-go').classList.add('kc-sticky')}
 
 /* ===== 1. honest timing on Pick for me ===== */
-$$('#wiz .dayhead .sub').forEach(e=>{if(/20 sec/.test(e.textContent))e.textContent='⚡ 4 quick questions'});
+$$('#wiz .dayhead .sub').forEach(e=>{if(/20 sec/.test(e.textContent))e.textContent='4 quick questions'});
 
 /* ===== 4. Explore: search first ===== */
 const xq=$('#x-q');if(xq){const card=xq.closest('.card'),row=xq.closest('.row'),quick=card.querySelector('.quick'),h=card.querySelector('h2');
@@ -102,12 +102,12 @@ drawHome();remember();
 /* ===== 13. First visit: a 3-card tour ===== */
 const welcome=$('#welcome');
 if(!ld('toured',false)){const ov=document.createElement('div');ov.className='kc-tour';ov.setAttribute('role','dialog');ov.setAttribute('aria-label','Quick tour');
-  const S=[['🧭','Pick a place','Not sure where to go? Tap <b>✨ Pick for me</b> and answer 4 quick questions, or browse 680+ places in <b>Explore</b>.'],
-    ['🗺','Get a day-by-day plan','Tell us where, days and budget. You get buses, beds, food and costs for every day, with no backtracking.'],
-    ['🎒','Book, go, and track money','<b>Book</b> opens ticket and bed sites already searched. <b>Now</b> shows what’s open near you. <b>Tools</b> tracks spends and splits bills.']];
-  let k=0;const draw=()=>{const [e,t,d]=S[k];ov.innerHTML=`<div class="kc-tour-card"><div class="kc-tour-e" aria-hidden="true">${e}</div><p class="eyebrow">${k+1} of 3</p><h2>${t}</h2><p>${d}</p>
+  const S=[['','Pick a place','Not sure where to go? Tap <b>Pick for me</b> and answer 4 quick questions, or browse 680+ places in <b>Explore</b>.'],
+    ['','Get a day-by-day plan','Tell us where, days and budget. You get buses, beds, food and costs for every day, with no backtracking.'],
+    ['','Book, go, and track money','<b>Book</b> opens ticket and bed sites already searched. <b>Now</b> shows what’s open near you. <b>Tools</b> tracks spends and splits bills.']];
+  let k=0;const draw=()=>{const [e,t,d]=S[k];ov.innerHTML=`<div class="kc-tour-card"><div class="kc-tour-e" aria-hidden="true">0${k+1}</div><p class="eyebrow">${k+1} of 3</p><h2>${t}</h2><p>${d}</p>
     <div class="kc-dots">${S.map((_,i)=>`<i class="${i===k?'on':''}"></i>`).join('')}</div>
-    <div class="row" style="gap:8px"><button type="button" class="ghost" id="kc-skip">Skip</button><button type="button" class="primary" id="kc-next">${k<2?'Next →':'Let’s go 🎒'}</button></div></div>`;
+    <div class="row" style="gap:8px"><button type="button" class="ghost" id="kc-skip">Skip</button><button type="button" class="primary" id="kc-next">${k<2?'Next →':'Let’s go'}</button></div></div>`;
     $('#kc-skip').onclick=end;$('#kc-next').onclick=()=>{if(k<2){k++;draw()}else end()}};
   const end=()=>{sv('toured',true);sv('hideWelcome',true);ov.remove();if(welcome)welcome.hidden=true};
   document.body.appendChild(ov);draw();if(welcome)welcome.hidden=true}
@@ -115,41 +115,41 @@ else{sv('hideWelcome',true);if(welcome)welcome.hidden=true}
 
 /* ===== 11. Hindi switch (menus, buttons and headings; place details stay in English) ===== */
 const HI={"Free trip planner for India · no ads · no sign-up":"भारत के लिए फ्री ट्रिप प्लानर · कोई विज्ञापन नहीं · कोई साइन-अप नहीं","Plan a budget trip in seconds":"सेकंडों में बजट ट्रिप प्लान करें","Buses, trains, beds and food, day by day, with what it really costs. Don't know where to go? Let us pick.":"बस, ट्रेन, बेड और खाना, दिन-ब-दिन, असली खर्च के साथ। पता नहीं कहाँ जाएँ? हम चुन देंगे।","Trending budget trips":"ट्रेंडिंग बजट ट्रिप्स","Tap one to get the full day-by-day plan.":"किसी पर टैप करें और पूरा दिन-ब-दिन प्लान पाएँ।","Explore by what you love":"जो पसंद है, वहीं से खोजें","443 places in India and 244 abroad, with when to go and the cheapest way there.":"भारत में 443 और विदेश में 244 जगहें, कब जाएँ और सबसे सस्ता रास्ता भी।","How it works":"यह कैसे काम करता है","Tell it":"बताइए","where you start, where you want to go, days and budget.":"कहाँ से शुरू, कहाँ जाना है, कितने दिन और कितना बजट।","Get a plan":"प्लान पाइए","with no backtracking: buses and trains, beds and food, day by day.":"बिना उल्टा लौटे: बस और ट्रेन, बेड और खाना, दिन-ब-दिन।","Book and go.":"बुक करें और निकलें।","Ticket sites open already searched, and Money tracks what you spend.":"टिकट साइटें पहले से सर्च होकर खुलती हैं, और Money आपका खर्च गिनता है।","Book and go":"बुक करें और चलें","Help":"मदद","Places":"जगहें","Weekend trips":"वीकेंड ट्रिप्स","States":"राज्य","Buses, trains, flights":"बस, ट्रेन, फ्लाइट","Right now near me":"अभी मेरे आस-पास","Money and split":"पैसे और बँटवारा","Plan a trip":"ट्रिप प्लान करें","Pick for me":"मेरे लिए चुनो","See an example":"एक उदाहरण देखें","Keyboard: 1–5 tabs, / search":"कीबोर्ड: 1–5 टैब, / खोज","Travel more, spend less. A free planner for students and budget travellers. Everything stays in your browser.":"ज़्यादा घूमें, कम खर्च करें। छात्रों और बजट यात्रियों के लिए फ्री प्लानर। सब कुछ आपके ब्राउज़र में ही रहता है।",'Explore':'खोजें','Plan':'प्लान','Book':'बुकिंग','Now':'अभी','Tools':'टूल्स','Go':'बुकिंग','Kit':'टूल्स',
-'📍 Places':'📍 जगहें','🚗 Weekend':'🚗 वीकेंड','🗺 Map':'🗺 नक्शा','🏛 States':'🏛 राज्य',
-"✨ Not sure where to go? Answer 4 questions and we'll pick":'✨ पता नहीं कहाँ जाएँ? 4 सवालों के जवाब दें, हम चुन देंगे',
-'Search':'खोजें','Region':'इलाका','💸 Cheapest only':'💸 सिर्फ़ सबसे सस्ते','🎲 Surprise me':'🎲 कुछ भी दिखाओ','Clear filters':'फ़िल्टर हटाएँ',
-'🎉 Festivals & fairs':'🎉 त्योहार और मेले','Travel by state':'राज्य के हिसाब से घूमें','🚗 Weekend trips from my city':'🚗 मेरे शहर से वीकेंड ट्रिप','My city':'मेरा शहर','📍 Near me':'📍 मेरे पास',
-'Up to 150 km':'150 किमी तक','Up to 300 km':'300 किमी तक','Up to 500 km':'500 किमी तक','📅 Long weekends in 2027':'📅 2027 के लंबे वीकेंड','Ideas':'आइडिया',
-'🗺 Map of all places':'🗺 सभी जगहों का नक्शा','🗓 Good this month':'🗓 इस महीने अच्छा','📍 Show me':'📍 मुझे दिखाओ',
-'✨ Pick for me':'✨ मेरे लिए चुनो','📍 I know where':'📍 मुझे पता है कहाँ','Where are you starting from?':'आप कहाँ से शुरू कर रहे हैं?','Starting city':'शुरुआती शहर',
+'Places':'जगहें','Weekend':'वीकेंड','Map':'नक्शा','States':'राज्य',
+"Not sure where to go? Answer 4 questions and we'll pick":'पता नहीं कहाँ जाएँ? 4 सवालों के जवाब दें, हम चुन देंगे',
+'Search':'खोजें','Region':'इलाका','Cheapest only':'सिर्फ़ सबसे सस्ते','Surprise me':'कुछ भी दिखाओ','Clear filters':'फ़िल्टर हटाएँ',
+'Festivals & fairs':'त्योहार और मेले','Travel by state':'राज्य के हिसाब से घूमें','Weekend trips from my city':'मेरे शहर से वीकेंड ट्रिप','My city':'मेरा शहर','Near me':'मेरे पास',
+'Up to 150 km':'150 किमी तक','Up to 300 km':'300 किमी तक','Up to 500 km':'500 किमी तक','Long weekends in 2027':'2027 के लंबे वीकेंड','Ideas':'आइडिया',
+'Map of all places':'सभी जगहों का नक्शा','Good this month':'इस महीने अच्छा','Show me':'मुझे दिखाओ',
+'Pick for me':'मेरे लिए चुनो','I know where':'मुझे पता है कहाँ','Where are you starting from?':'आप कहाँ से शुरू कर रहे हैं?','Starting city':'शुरुआती शहर',
 'How many days do you have?':'आपके पास कितने दिन हैं?','Weekend · 2':'वीकेंड · 2','A week · 7':'एक हफ़्ता · 7','Leaving on':'निकलने की तारीख',
 'How much can you spend?':'आप कितना खर्च कर सकते हैं?','Budget per person (₹)':'प्रति व्यक्ति बजट (₹)','₹1 lakh':'₹1 लाख','What kind of place?':'कैसी जगह चाहिए?',
-'🤷 Idk, you choose. Surprise me':'🤷 पता नहीं, आप ही चुनो','Your trip drops 🔥':'आपकी ट्रिप तैयार 🔥','Change answers':'जवाब बदलें','🔄 Show different ideas':'🔄 और आइडिया दिखाओ',
-'← Back':'← पीछे','Next →':'आगे →','⚡ 4 quick questions':'⚡ 4 छोटे सवाल','Plan a trip':'ट्रिप प्लान करें','Starting from':'कहाँ से',
+'Idk, you choose. Surprise me':'पता नहीं, आप ही चुनो','Your trip ideas':'आपकी ट्रिप के आइडिया','Change answers':'जवाब बदलें','Show different ideas':'और आइडिया दिखाओ',
+'← Back':'← पीछे','Next →':'आगे →','4 quick questions':'4 छोटे सवाल','Plan a trip':'ट्रिप प्लान करें','Starting from':'कहाँ से',
 'Places to see, in the order you want to go (comma between)':'घूमने की जगहें, जिस क्रम में जाना है (बीच में कॉमा)','Days':'दिन','Total budget per person (₹)':'प्रति व्यक्ति कुल बजट (₹)',
 'People':'लोग','Start date':'शुरू होने की तारीख','More options':'और विकल्प','How do you like to travel?':'आप कैसे सफ़र करना पसंद करते हैं?','Tap all you\'re happy with':'जो भी ठीक लगे, सब चुनें',
-'🚌 Govt bus':'🚌 सरकारी बस','🛏 Sleeper / Volvo bus':'🛏 स्लीपर / वोल्वो बस','🚆 Train (sleeper)':'🚆 ट्रेन (स्लीपर)','❄️ AC train':'❄️ एसी ट्रेन','🚙 Shared jeep / taxi':'🚙 शेयर्ड जीप / टैक्सी',
-'🛵 Rent a scooter':'🛵 किराए की स्कूटी','✈️ Flight if it saves a day':'✈️ फ़्लाइट, अगर एक दिन बचे','Where do you like to sleep?':'आप कहाँ रुकना पसंद करते हैं?',
-'🛏 Dorm bed':'🛏 डॉर्म बेड','🔑 Hostel private room':'🔑 हॉस्टल का प्राइवेट कमरा','🏨 Budget hotel':'🏨 बजट होटल','🏡 Homestay':'🏡 होमस्टे','🛕 Dharamshala / ashram':'🛕 धर्मशाला / आश्रम','⛺ Camp / tent':'⛺ कैंप / टेंट',
+'Govt bus':'सरकारी बस','Sleeper / Volvo bus':'स्लीपर / वोल्वो बस','Train (sleeper)':'ट्रेन (स्लीपर)','AC train':'एसी ट्रेन','Shared jeep / taxi':'शेयर्ड जीप / टैक्सी',
+'Rent a scooter':'किराए की स्कूटी','Flight if it saves a day':'फ़्लाइट, अगर एक दिन बचे','Where do you like to sleep?':'आप कहाँ रुकना पसंद करते हैं?',
+'Dorm bed':'डॉर्म बेड','Hostel private room':'हॉस्टल का प्राइवेट कमरा','Budget hotel':'बजट होटल','Homestay':'होमस्टे','Dharamshala / ashram':'धर्मशाला / आश्रम','Camp / tent':'कैंप / टेंट',
 'Anything else? (food, pace, must-sees)':'और कुछ? (खाना, रफ़्तार, ज़रूर देखना)','Make my plan':'मेरा प्लान बनाओ','See an example':'एक उदाहरण देखें','Your itinerary':'आपका सफ़रनामा',
 'Book buses, trains, flights':'बस, ट्रेन, फ़्लाइट बुक करें','From':'कहाँ से','To':'कहाँ तक','Date':'तारीख','⇅ Swap':'⇅ बदलें','Cheapest-ticket rules for India':'भारत में सबसे सस्ते टिकट के नियम',
-'🛣 On the way':'🛣 रास्ते में','🏍 Bike':'🏍 बाइक','🚗 Car':'🚗 कार','Show stops on the way':'रास्ते के पड़ाव दिखाओ','🚆 Train helpers':'🚆 ट्रेन मदद','🏞 Journeys worth taking just for the view':'🏞 नज़ारों के लिए खास सफ़र',
-'🎫 Tickets':'🎫 टिकट','🛏 Beds':'🛏 बिस्तर','Find the cheapest bed':'सबसे सस्ता बिस्तर ढूँढें','City or area':'शहर या इलाका','Max per night (₹)':'एक रात की अधिकतम कीमत (₹)',
-'What should a bed cost here?':'यहाँ बिस्तर कितने का होना चाहिए?','Show typical prices':'आम कीमतें दिखाओ','⏰ Right now':'⏰ अभी','📍 Use my location':'📍 मेरी लोकेशन लो','Or pick a city':'या शहर चुनें',
-'🆘 Find help near me':'🆘 पास में मदद ढूँढें','City cheat sheets':'शहर की चीट शीट','Any other place':'कोई और जगह','Place':'जगह','Show info':'जानकारी दिखाओ','Emergency in India':'भारत में इमरजेंसी',
-'Tools':'टूल्स','💰 Money':'💰 पैसा','Trip money':'ट्रिप का पैसा','Trip budget (₹)':'ट्रिप बजट (₹)','Trip days':'ट्रिप के दिन','Today is day':'आज कौन सा दिन है','You can spend today':'आज आप खर्च कर सकते हैं',
+'On the way':'रास्ते में','Bike':'बाइक','Car':'कार','Show stops on the way':'रास्ते के पड़ाव दिखाओ','Train helpers':'ट्रेन मदद','Journeys worth taking just for the view':'नज़ारों के लिए खास सफ़र',
+'Tickets':'टिकट','Beds':'बिस्तर','Find the cheapest bed':'सबसे सस्ता बिस्तर ढूँढें','City or area':'शहर या इलाका','Max per night (₹)':'एक रात की अधिकतम कीमत (₹)',
+'What should a bed cost here?':'यहाँ बिस्तर कितने का होना चाहिए?','Show typical prices':'आम कीमतें दिखाओ','Right now':'अभी','Use my location':'मेरी लोकेशन लो','Or pick a city':'या शहर चुनें',
+'Find help near me':'पास में मदद ढूँढें','City cheat sheets':'शहर की चीट शीट','Any other place':'कोई और जगह','Place':'जगह','Show info':'जानकारी दिखाओ','Emergency in India':'भारत में इमरजेंसी',
+'Tools':'टूल्स','Money':'पैसा','Trip money':'ट्रिप का पैसा','Trip budget (₹)':'ट्रिप बजट (₹)','Trip days':'ट्रिप के दिन','Today is day':'आज कौन सा दिन है','You can spend today':'आज आप खर्च कर सकते हैं',
 'Amount (₹)':'रकम (₹)','For':'किस पर','Add spend':'खर्च जोड़ें','Split with friends':'दोस्तों में बाँटें','Who\'s in the group (comma separated)':'ग्रुप में कौन है (कॉमा लगाकर)','Paid by':'किसने दिया',
-'For what':'किस लिए','Add shared expense':'साझा खर्च जोड़ें','💸 Ways to pay less at sights':'💸 टिकट पर कम पैसे देने के तरीके','🎒 Packing list':'🎒 पैकिंग लिस्ट','Untick everything':'सब हटाएँ',
-'Before you leave the house':'घर से निकलने से पहले','🛡 Night-bus safety':'🛡 रात की बस में सुरक्षा','Copy message':'मैसेज कॉपी करें','🛺 Is this fare fair?':'🛺 क्या ये किराया सही है?',
-'City':'शहर','Ride':'सवारी','Distance (km)':'दूरी (किमी)','They asked (₹)':'उन्होंने माँगा (₹)','🗣 Survival phrases':'🗣 काम के वाक्य','Language':'भाषा','🛂 Trip passport':'🛂 ट्रिप पासपोर्ट',
-'Place you reached':'जहाँ पहुँचे','Stamp it':'मुहर लगाओ','🔥 Today\'s challenge':'🔥 आज का चैलेंज','I did it':'मैंने कर लिया','Give me another':'दूसरा दो','🌦 Where to go this month':'🌦 इस महीने कहाँ जाएँ',
-'Month':'महीना','👥 Group trip':'👥 ग्रुप ट्रिप','Trip name':'ट्रिप का नाम','Who\'s coming (comma separated)':'कौन आ रहा है (कॉमा लगाकर)','Create trip':'ट्रिप बनाओ','Join':'जुड़ें','Update':'अपडेट करें',
-'Add expense':'खर्च जोड़ें','🆘 My emergency card':'🆘 मेरा इमरजेंसी कार्ड','Your name':'आपका नाम','Blood group':'ब्लड ग्रुप','Emergency contact name':'इमरजेंसी संपर्क का नाम','Their phone':'उनका फ़ोन',
-'Show my emergency card':'मेरा इमरजेंसी कार्ड दिखाओ','📵 Phone stolen or lost? Do this':'📵 फ़ोन चोरी या गुम? ये करें','🛺 Show this to the driver':'🛺 ड्राइवर को ये दिखाएँ','Address or place':'पता या जगह',
-'Show it big':'बड़ा करके दिखाओ','🏔 Going high? Altitude sickness basics':'🏔 ऊँचाई पर जा रहे हैं? ऊँचाई की बीमारी की बातें','🧍‍♀️ Travelling solo or as a woman':'🧍‍♀️ अकेले या महिला यात्री',
+'For what':'किस लिए','Add shared expense':'साझा खर्च जोड़ें','Ways to pay less at sights':'टिकट पर कम पैसे देने के तरीके','Packing list':'पैकिंग लिस्ट','Untick everything':'सब हटाएँ',
+'Before you leave the house':'घर से निकलने से पहले','Night-bus safety':'रात की बस में सुरक्षा','Copy message':'मैसेज कॉपी करें','Is this fare fair?':'क्या ये किराया सही है?',
+'City':'शहर','Ride':'सवारी','Distance (km)':'दूरी (किमी)','They asked (₹)':'उन्होंने माँगा (₹)','Survival phrases':'काम के वाक्य','Language':'भाषा','Trip passport':'ट्रिप पासपोर्ट',
+'Place you reached':'जहाँ पहुँचे','Stamp it':'मुहर लगाओ','Today\'s challenge':'आज का चैलेंज','I did it':'मैंने कर लिया','Give me another':'दूसरा दो','Where to go this month':'इस महीने कहाँ जाएँ',
+'Month':'महीना','Group trip':'ग्रुप ट्रिप','Trip name':'ट्रिप का नाम','Who\'s coming (comma separated)':'कौन आ रहा है (कॉमा लगाकर)','Create trip':'ट्रिप बनाओ','Join':'जुड़ें','Update':'अपडेट करें',
+'Add expense':'खर्च जोड़ें','My emergency card':'मेरा इमरजेंसी कार्ड','Your name':'आपका नाम','Blood group':'ब्लड ग्रुप','Emergency contact name':'इमरजेंसी संपर्क का नाम','Their phone':'उनका फ़ोन',
+'Show my emergency card':'मेरा इमरजेंसी कार्ड दिखाओ','Phone stolen or lost? Do this':'फ़ोन चोरी या गुम? ये करें','Show this to the driver':'ड्राइवर को ये दिखाएँ','Address or place':'पता या जगह',
+'Show it big':'बड़ा करके दिखाओ','Going high? Altitude sickness basics':'ऊँचाई पर जा रहे हैं? ऊँचाई की बीमारी की बातें','Travelling solo or as a woman':'अकेले या महिला यात्री',
 'Welcome back':'फिर से स्वागत है','My trips':'मेरी ट्रिप्स','Recently viewed':'हाल में देखी गईं','Hide':'छिपाएँ','Hide ✕':'छिपाएँ ✕','Skip':'छोड़ें',
-'Pick a place':'जगह चुनें','Get a day-by-day plan':'दिन-ब-दिन का प्लान पाएँ','Book, go, and track money':'बुक करें, जाएँ, और पैसे का हिसाब रखें','Let’s go 🎒':'चलो चलें 🎒',
-'Show more places':'और जगहें दिखाओ','+ Add to my plan':'+ मेरे प्लान में जोड़ें','📋 Cheat sheet':'📋 चीट शीट','Best time':'सबसे अच्छा समय','Get there':'कैसे पहुँचें','Daily cost':'रोज़ का खर्च',
+'Pick a place':'जगह चुनें','Get a day-by-day plan':'दिन-ब-दिन का प्लान पाएँ','Book, go, and track money':'बुक करें, जाएँ, और पैसे का हिसाब रखें','Let’s go':'चलो चलें',
+'Show more places':'और जगहें दिखाओ','+ Add to my plan':'+ मेरे प्लान में जोड़ें','Cheat sheet':'चीट शीट','Best time':'सबसे अच्छा समय','Get there':'कैसे पहुँचें','Daily cost':'रोज़ का खर्च',
 'Total per person':'प्रति व्यक्ति कुल','Your plan':'आपका प्लान','Example plan':'उदाहरण प्लान','Planning your trip':'आपकी ट्रिप प्लान हो रही है','Finding trips for you':'आपके लिए ट्रिप ढूँढ रहे हैं','Show quick ideas now':'अभी झटपट आइडिया दिखाओ'};
 const PHI={'Place or state, e.g. Spiti':'जगह या राज्य, जैसे स्पीति','e.g. Jodhpur':'जैसे जोधपुर','e.g. Jaipur, Pushkar, Udaipur':'जैसे जयपुर, पुष्कर, उदयपुर','Delhi, Jodhpur, Mumbai…':'दिल्ली, जोधपुर, मुंबई…','Vegetarian, no early mornings, want one trek':'शाकाहारी, सुबह जल्दी नहीं, एक ट्रेक चाहिए'};
 let lang=ld('uilang','en');const orig=new WeakMap(),origPh=new WeakMap();
@@ -195,8 +195,8 @@ const top=$('header.top')||$('header');if(top)top.appendChild(lb);setLb();if(lan
   placePass();desk.addEventListener?desk.addEventListener('change',placePass):desk.addListener(placePass);
   /* 3. below the search: trending trips, explore by type, how it works (shown while there is no plan) */
   const pb=$('#kc-pb');if(pb&&!$('#kc-empty')){
-    const T=[['Delhi','Rishikesh',3,3000,'🏞','Ganga, cafés, rafting'],['Jaipur','Jodhpur, Jaisalmer',5,6000,'🏜','Forts and desert'],['Mumbai','Goa',4,5000,'🏖','Beaches on a budget'],['Kolkata','Darjeeling',5,7000,'🚂','Toy train and tea'],['Delhi','Manali',5,6000,'🏔','Snow and old Manali'],['Chennai','Puducherry',3,3000,'🌊','French quarter'],['Bengaluru','Coorg',3,3500,'☕','Coffee hills'],['Delhi','Amritsar',3,3000,'🕌','Golden Temple, Wagah']];
-    const G=[['u','💎','Underrated'],['m','🏔','Mountains'],['b','🏖','Beaches'],['t','🥾','Treks'],['h','🏛','Heritage'],['p','🛕','Spiritual'],['d','🐪','Desert'],['f','🐅','Wildlife'],['k','🎒','Backpacker hubs'],['A','🌏','Abroad']];
+    const T=[['Delhi','Rishikesh',3,3000,'','Ganga, cafés, rafting'],['Jaipur','Jodhpur, Jaisalmer',5,6000,'','Forts and desert'],['Mumbai','Goa',4,5000,'','Beaches on a budget'],['Kolkata','Darjeeling',5,7000,'','Toy train and tea'],['Delhi','Manali',5,6000,'','Snow and old Manali'],['Chennai','Puducherry',3,3000,'','French quarter'],['Bengaluru','Coorg',3,3500,'','Coffee hills'],['Delhi','Amritsar',3,3000,'','Golden Temple, Wagah']];
+    const G=[['u','','Underrated'],['m','','Mountains'],['b','','Beaches'],['t','','Treks'],['h','','Heritage'],['p','','Spiritual'],['d','','Desert'],['f','','Wildlife'],['k','','Backpacker hubs'],['A','','Abroad']];
     const E=document.createElement('div');E.id='kc-empty';E.className='stack';
     E.innerHTML=`<section class="kc-band"><div class="kc-band-h"><h2>Trending budget trips</h2><p class="sub">Tap one to get the full day-by-day plan.</p></div>
       <div class="kc-try">${T.map((t,i)=>`<button type="button" data-kctry="${i}"><span class="kc-try-e" aria-hidden="true">${t[4]}</span><span class="kc-try-t"><b>${t[0]} → ${t[1].replace(', ',' → ')}</b><small>${t[5]}</small></span><span class="kc-try-p">${t[2]} days<br><b>₹${t[3].toLocaleString('en-IN')}</b></span></button>`).join('')}</div></section>
@@ -275,7 +275,7 @@ const top=$('header.top')||$('header');if(top)top.appendChild(lb);setLb();if(lan
   const foot=document.querySelector('footer.foot');
   if(foot&&!foot.querySelector('.kc-legal')){
     if(GA_ID){const first=foot.querySelector('p');if(first)first.innerHTML='<b>Kidhar Chale?</b> is made free for travellers. No ads, no sign-up. It runs on your phone: plans, spends and trips are saved only in this browser, and your name and notes never leave it. The weather asks Open-Meteo about a place, the map loads from OpenStreetMap, and if you allow it, Google Analytics counts visits.'}
-    const L=document.createElement('p');L.className='kc-legal';L.innerHTML='<a href="privacy.html">Privacy and cookies</a>'+(GA_ID?' · <button type="button" class="kc-cset">Cookie settings</button>':'');
+    const L=document.createElement('p');L.className='kc-legal';L.innerHTML='<a href="privacy.html">Privacy and cookies</a> · <a href="terms.html">Terms of use</a>'+(GA_ID?' · <button type="button" class="kc-cset">Cookie settings</button>':'');
     foot.appendChild(L);const cs=L.querySelector('.kc-cset');if(cs)cs.addEventListener('click',()=>{ls.set('consent','');banner()})}
   /* 4. key actions worth counting */
   window.addEventListener('kc:plan',e=>track('plan_created',e.detail||{}));
@@ -289,7 +289,7 @@ const top=$('header.top')||$('header');if(top)top.appendChild(lb);setLb();if(lan
     if(e.target.closest('.kc-lang'))track('language_switch')},true);
   if(navigator.share){const s=navigator.share.bind(navigator);try{navigator.share=d=>s(d).then(r=>{track('share',{method:'native'});return r})}catch(e){}}
   window.addEventListener('appinstalled',()=>track('app_installed'));
-  Object.assign(HI,{'Can we count visits?':'क्या हम विज़िट गिन सकते हैं?','Google Analytics would tell us which features people use, so we can make Kidhar Chale better. Your plans, notes and spends never leave your phone.':'Google Analytics से हमें पता चलेगा कि लोग कौन-से फ़ीचर इस्तेमाल करते हैं, ताकि हम Kidhar Chale को बेहतर बना सकें। आपके प्लान, नोट्स और खर्च कभी आपके फ़ोन से बाहर नहीं जाते।','No thanks':'नहीं, धन्यवाद','Allow':'अनुमति दें','Privacy':'प्राइवेसी','Privacy and cookies':'प्राइवेसी और कुकीज़','Cookie settings':'कुकी सेटिंग्स'});
+  Object.assign(HI,{'Can we count visits?':'क्या हम विज़िट गिन सकते हैं?','Google Analytics would tell us which features people use, so we can make Kidhar Chale better. Your plans, notes and spends never leave your phone.':'Google Analytics से हमें पता चलेगा कि लोग कौन-से फ़ीचर इस्तेमाल करते हैं, ताकि हम Kidhar Chale को बेहतर बना सकें। आपके प्लान, नोट्स और खर्च कभी आपके फ़ोन से बाहर नहीं जाते।','No thanks':'नहीं, धन्यवाद','Allow':'अनुमति दें','Privacy':'प्राइवेसी','Privacy and cookies':'प्राइवेसी और कुकीज़','Cookie settings':'कुकी सेटिंग्स','Terms of use':'उपयोग की शर्तें'});
   syncTitle();
 })();
 

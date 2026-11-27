@@ -82,9 +82,9 @@ window.kcLoader=function(el,o){
   let ti=Math.floor(Math.random()*TIPS.length);const showTip=()=>{tip.innerHTML='<b>While you wait:</b> '+TIPS[ti++%TIPS.length];tip.style.animation='none';void tip.offsetWidth;tip.style.animation=''};showTip();
   const tick=()=>{const sec=(Date.now()-t0)/1000;tt.textContent=Math.floor(sec)+' s';
     bar.style.width=Math.min(94,4+90*(1-Math.exp(-sec/(o.tau||22))))+'%';
-    li.forEach((x,i)=>{const at=steps[i][1],nx=i+1<steps.length?steps[i+1][1]:1e9;x.className=sec>=nx?'ok':sec>=at?'on':'';x.querySelector('i').textContent=sec>=nx?'✓':''})};
+    li.forEach((x,i)=>{const at=steps[i][1],nx=i+1<steps.length?steps[i+1][1]:1e9;x.className=sec>=nx?'ok':sec>=at?'on':'';x.querySelector('i').textContent=sec>=nx?'':''})};
   tick();const iv=setInterval(tick,500),tv=setInterval(showTip,7000);
   const sk=el.querySelector('.kl-skip');if(sk&&o.onSkip)sk.onclick=o.onSkip;
   const stop=()=>{clearInterval(iv);clearInterval(tv)};
-  return{stop,done(){stop();bar.style.width='100%';li.forEach(x=>{x.className='ok';x.querySelector('i').textContent='✓'})}};
+  return{stop,done(){stop();bar.style.width='100%';li.forEach(x=>{x.className='ok';x.querySelector('i').textContent=''})}};
 };

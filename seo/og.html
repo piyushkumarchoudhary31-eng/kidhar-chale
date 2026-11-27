@@ -1,41 +1,45 @@
 <!doctype html><html><head><meta charset="utf-8"><style>
 *{box-sizing:border-box;margin:0}
-body{width:1200px;height:630px;background:#F1ECFF;font-family:Inter,sans-serif;color:#16121F;position:relative;overflow:hidden}
-.dots{position:absolute;inset:0;background-image:radial-gradient(#d6caff 2px,transparent 2px);background-size:28px 28px;opacity:.7}
-.blob{position:absolute;right:-120px;top:-140px;width:620px;height:620px;border-radius:50%;background:#FFD23F;border:6px solid #16121F}
-.left{position:absolute;left:72px;top:84px;width:640px}
-.logo{display:flex;align-items:center;gap:18px;margin-bottom:34px}
-.logo i{width:74px;height:74px;border-radius:20px;background:#FF3D8B;border:5px solid #16121F;box-shadow:5px 5px 0 #16121F;display:grid;place-items:center;font:900 48px 'Inter Display',Inter;font-style:normal;color:#16121F}
-.logo i span{width:46px;height:46px;border-radius:12px;background:#FFD23F;border:4px solid #16121F;display:grid;place-items:center;font-size:34px;line-height:1}
-.logo b{font:900 40px 'Inter Display',Inter;letter-spacing:-.5px}
-.logo b em{color:#FF3D8B;font-style:normal}
-h1{font:900 76px/0.98 'Inter Display',Inter;letter-spacing:-2px}
-h1 em{font-style:normal;background:#FF3D8B;color:#fff;padding:0 14px;border:5px solid #16121F;border-radius:18px;box-shadow:6px 6px 0 #16121F;display:inline-block;transform:rotate(-2deg);margin-top:10px}
-p.sub{font:600 27px/1.35 Inter;color:#3c3550;margin-top:30px;width:600px}
-.chips{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap;width:640px}
-.chips span{font:700 21px Inter;background:#fff;border:3px solid #16121F;border-radius:999px;padding:8px 18px;box-shadow:3px 3px 0 #16121F}
-.ticket{position:absolute;right:70px;top:150px;width:380px;background:#fff;border:5px solid #16121F;border-radius:28px;box-shadow:10px 10px 0 #16121F;transform:rotate(4deg);overflow:hidden}
-.ticket .top{background:#3F5BFF;color:#fff;padding:16px 24px;font:800 18px 'DejaVu Sans Mono',monospace;letter-spacing:2px;display:flex;justify-content:space-between}
-.ticket .route{display:flex;justify-content:space-between;align-items:center;padding:26px 24px 8px}
-.ticket .route b{font:900 60px 'Inter Display',Inter;letter-spacing:-1px}
-.ticket .route small{display:block;font:600 16px Inter;color:#5E5770;letter-spacing:0}
-.ticket .route i{font-style:normal;font-size:34px}
-.ticket .row{display:flex;justify-content:space-between;padding:14px 24px 24px;border-top:4px dashed #D9D1EE;margin-top:16px}
-.ticket .row div{font:600 15px Inter;color:#5E5770}
-.ticket .row div b{display:block;font:900 30px 'Inter Display',Inter;color:#16121F}
-.url{position:absolute;left:72px;bottom:44px;font:700 22px 'DejaVu Sans Mono',monospace;color:#5E5770}
+body{width:1200px;height:630px;background:#EEE8DB;color:#1F1B16;font-family:'Instrument Sans',sans-serif;position:relative;overflow:hidden}
+.left{position:absolute;left:68px;top:64px;width:560px}
+.logo{display:flex;align-items:center;gap:14px;margin-bottom:40px}
+.logo img{width:58px;height:58px}
+.logo b{font:700 40px 'Big Shoulders';letter-spacing:.5px}
+.logo b em{font-style:normal;color:#B5431C}
+h1{font:800 104px/.9 'Big Shoulders';text-transform:uppercase;letter-spacing:-.5px}
+h1 span{color:#B5431C}
+p.sub{font:500 26px/1.35 'Instrument Sans';color:#4B443A;margin-top:26px;width:520px}
+.facts{position:absolute;left:68px;bottom:54px;font:600 17px 'IBM Plex Mono';letter-spacing:.08em;color:#665D51;display:flex;gap:26px}
+.facts b{color:#1F1B16}
+.tk{position:absolute;right:64px;top:58px;width:470px;background:#FAF7F0;border:2px solid #2B261F;border-radius:8px;overflow:hidden}
+.tk .hd{background:#B5431C;color:#FAF7F0;padding:18px 24px 16px}
+.tk .hd small{font:600 13px 'IBM Plex Mono';letter-spacing:.14em;opacity:.9}
+.tk .hd h2{font:800 38px/1 'Big Shoulders';text-transform:uppercase;margin-top:6px;letter-spacing:.3px}
+.tk .hd p{font:600 16px 'IBM Plex Mono';margin-top:8px}
+.tk .body{padding:16px 24px 18px}
+.tk .day{font:600 13px 'IBM Plex Mono';letter-spacing:.14em;color:#665D51;display:flex;justify-content:space-between;margin:4px 0 6px}
+.tk .city{font:800 26px 'Big Shoulders';text-transform:uppercase;margin-bottom:8px}
+.row{display:grid;grid-template-columns:58px 1fr 54px;gap:10px;padding:8px 0;border-top:1.5px dashed #D7CDBB;font-size:16.5px;line-height:1.3}
+.row .t{font:600 15px 'IBM Plex Mono';color:#B5431C}
+.row .c{font:600 15px 'IBM Plex Mono';text-align:right}
+.note{font:600 12px 'IBM Plex Mono';letter-spacing:.12em;color:#665D51;margin-top:8px;text-transform:uppercase}
+.perf{position:absolute;right:64px;top:58px;width:470px;height:100%;pointer-events:none}
 </style></head><body>
-<div class="dots"></div><div class="blob"></div>
 <div class="left">
- <div class="logo"><i><span>?</span></i><b>Kidhar Chale<em>?</em></b></div>
- <h1>Plan a budget trip<br><em>in seconds</em></h1>
- <p class="sub">Day-by-day plans with buses, trains, cheap stays and what it really costs.</p>
- <div class="chips"><span>687 places</span><span>Real costs in ₹</span><span>Free · no sign-up</span></div>
+ <div class="logo"><img src="icon.svg" alt=""><b>Kidhar Chale<em>?</em></b></div>
+ <h1>Plan a budget trip <span>in seconds</span></h1>
+ <p class="sub">Day-by-day routes by bus and train, cheap beds and what it really costs.</p>
 </div>
-<div class="ticket">
- <div class="top"><span>TRIP PASS</span><span>BUS · TRAIN</span></div>
- <div class="route"><div><b>JDH</b><small>Jodhpur</small></div><i>→</i><div style="text-align:right"><b>JSL</b><small>Jaisalmer</small></div></div>
- <div class="row"><div><b>3</b>days</div><div><b>₹4,200</b>all in</div><div><b>₹1,400</b>a day</div></div>
+<div class="facts"><span><b>687</b> PLACES</span><span><b>FREE</b> · NO SIGN-UP</span><span>COSTS IN <b>₹</b></span></div>
+<div class="tk">
+ <div class="hd"><small>A REAL PLAN FROM THE SITE</small><h2>Jaipur → Jodhpur → Jaisalmer</h2><p>5 DAYS · ₹3,900 PER PERSON</p></div>
+ <div class="body">
+  <div class="day"><span>DAY 1</span><span>SLEEP: DORM ₹350</span></div>
+  <div class="city">Jaipur → Jodhpur</div>
+  <div class="row"><span class="t">07:00</span><span>Sleeper train Jaipur → Jodhpur (~6 h)</span><span class="c">₹230</span></div>
+  <div class="row"><span class="t">13:30</span><span>Blue-city lanes under Mehrangarh fort</span><span class="c">free</span></div>
+  <div class="row"><span class="t">15:30</span><span>Lunch at a local dhaba</span><span class="c">₹120</span></div>
+  <div class="row"><span class="t">17:00</span><span>Shared auto around town</span><span class="c">₹60</span></div>
+ </div>
 </div>
-
 </body></html>
