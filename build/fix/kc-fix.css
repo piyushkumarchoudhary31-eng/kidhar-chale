@@ -40,3 +40,15 @@ nav.tabs button:focus-visible,.kc-side nav.tabs button:focus-visible{outline:2.5
 .kc-gem h3,.kc-gem p{margin:0}
 .kc-gem-plan{color:var(--pop);font-weight:700}
 .kc-gems [data-gem]{align-self:flex-start}
+/* share card: compact two-column buttons on phones */
+@media (max-width:699px){
+  .kc-share>.row,.kc-share .kc-cal{display:grid!important;grid-template-columns:1fr 1fr;gap:8px}
+  .kc-share>.row>button{min-width:0;padding-inline:8px}
+  .kc-share>.row:not(.kc-cal)>button:first-child{grid-column:1/-1}
+  .kc-share .kc-cal>button{min-width:0;padding-inline:8px}
+  .kc-share .kc-cal>p{grid-column:1/-1}
+  .kc-share .kc-cal>button:only-of-type{grid-column:1/-1}
+}
+/* stay: check-in, nights and people on one line */
+#v-stay .row:has(#s-in){display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:8px}
+#v-stay .row:has(#s-in) label{min-width:0}
