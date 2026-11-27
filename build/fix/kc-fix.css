@@ -1,0 +1,42 @@
+
+/* ---------- Book: your trip line, copy button ---------- */
+.kc-tsum{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:2px 0 0;padding:10px 12px;border:1.5px dashed var(--line);border-radius:6px;font-weight:700}
+.kc-tsum[hidden]{display:none}
+.kc-tsum small{flex-basis:100%;color:var(--muted);font-weight:500;font-size:12.5px}
+.kc-tsum button{min-height:36px;padding:4px 12px}
+.kc-packx:empty{display:none}
+.kc-packx{display:flex;flex-direction:column;gap:6px}
+.kc-packx-l{display:flex;flex-direction:column;gap:2px}
+.kc-cal .kc-cal-msg:empty{display:none}
+/* visa guide */
+.kc-visa{margin:0;font-size:13.5px}
+.kc-visa a,.kc-vrow a,.kc-visa-tip a{color:var(--pop)}
+.kc-visa-card:not(.kc-open)>:not(h3){display:none}
+.kc-vkey{margin:0;font-size:13px;color:var(--muted)}
+.kc-vlist{display:flex;flex-direction:column;gap:8px;max-height:60vh;overflow:auto;padding-right:4px}
+.kc-vrow{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line)}
+.kc-vrow[hidden]{display:none}
+.kc-vrow p{margin:2px 0 0;font-size:13.5px;color:var(--muted)}
+.kc-vrow small{color:var(--muted);font-weight:600}
+.kc-vc{flex:none;font-size:16px;line-height:1.4}
+/* money converter */
+.kc-fx-row{display:grid;grid-template-columns:1fr 1.4fr;gap:10px}
+.kc-fx-out{font-size:22px;margin:4px 0 0}
+.kc-fx-out b{font-family:"Big Shoulders","Instrument Sans",sans-serif;font-size:30px}
+.kc-fx-src{font-size:12.5px;margin:0}
+.kc-fx-src a{color:var(--pop)}
+.kc-fx-line{margin:0}
+/* accessibility fixes (28 Nov): readable selected chips in dark mode, stronger small orange text, keyboard focus on tabs */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .quick button[aria-pressed="true"],:root:not([data-theme="light"]) .quick button.on,:root:not([data-theme="light"]) .chip[aria-pressed="true"]{color:#0E1A2E}}
+:root[data-theme="dark"] .quick button[aria-pressed="true"],:root[data-theme="dark"] .quick button.on,:root[data-theme="dark"] .chip[aria-pressed="true"]{color:#0E1A2E}
+@media (prefers-color-scheme: light){.kc-kick{color:#9A3615}}
+:root:not([data-theme="dark"]) .kc-kick{color:#9A3615}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .kc-kick{color:var(--accent)}}
+nav.tabs button:focus-visible,.kc-side nav.tabs button:focus-visible{outline:2.5px solid var(--accent)!important;outline-offset:2px}
+/* hidden gems */
+.kc-gem-list{display:grid;gap:10px}
+@media (min-width:700px){.kc-gem-list{grid-template-columns:1fr 1fr}}
+.kc-gem{border:1px solid var(--line);border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:6px;background:var(--bg)}
+.kc-gem h3,.kc-gem p{margin:0}
+.kc-gem-plan{color:var(--pop);font-weight:700}
+.kc-gems [data-gem]{align-self:flex-start}

@@ -28,7 +28,7 @@ Range.prototype.getValues=function(){const o=[];for(let i=0;i<this.nr;i++){const
 Range.prototype.getValue=function(){return this.getValues()[0][0]};
 Range.prototype.setValues=function(v){if(v.length!==this.nr||v[0].length!==this.nc)throw new Error('size mismatch');v.forEach((row,i)=>row.forEach((x,j)=>{if(typeof x==='string'&&x.length>50000)throw new Error('cell over 50000');const R=this.sh.rows[this.r-1+i]||(this.sh.rows[this.r-1+i]=[]);R[this.c-1+j]=x}));return this};
 Range.prototype.setValue=function(x){return this.setValues([[x]])};
-Range.prototype.setNumberFormat=function(){return this};Range.prototype.getRow=function(){return this.r};
+Range.prototype.setNumberFormat=function(){return this};Range.prototype.setFontWeight=function(){return this};Range.prototype.setFontSize=function(){return this};Range.prototype.getRow=function(){return this.r};
 Range.prototype.createTextFinder=function(t){const self=this;let ent=false,mc=false;const f={matchEntireCell(b){ent=b;return f},matchCase(b){mc=b;return f},findNext(){const v=self.getValues();for(let i=0;i<v.length;i++)for(let j=0;j<v[i].length;j++){const s=String(v[i][j]);if(ent?s===t:s.includes(t))return new Range(self.sh,self.r+i,self.c+j)}return null}};return f};
 function Sheet(name){this.name=name;this.rows=[]}
 Sheet.prototype.setName=function(n){this.name=n;return this};
@@ -36,7 +36,7 @@ Sheet.prototype.appendRow=function(a){a.forEach(x=>{if(typeof x==='string'&&x.le
 Sheet.prototype.getLastRow=function(){return this.rows.length};Sheet.prototype.getMaxRows=function(){return 1000};Sheet.prototype.getMaxColumns=function(){return 26};
 Sheet.prototype.getRange=function(r,c,nr,nc){if(typeof r==='string')return new Range(this,1,1,1,1);return new Range(this,r,c,nr,nc)};
 Sheet.prototype.getDataRange=function(){return new Range(this,1,1,this.rows.length,Math.max(1,...this.rows.map(r=>r.length)))};
-Sheet.prototype.deleteRow=function(r){this.rows.splice(r-1,1)};Sheet.prototype.setFrozenRows=function(){};
+Sheet.prototype.deleteRow=function(r){this.rows.splice(r-1,1)};Sheet.prototype.clearContents=function(){this.rows=[];return this};Sheet.prototype.setColumnWidth=function(){return this};Sheet.prototype.setFrozenRows=function(){};
 const books={};
 function Book(name){this.id='sheet'+Object.keys(books).length;this.name=name;this.sheets=[new Sheet('Sheet1')];books[this.id]=this}
 Book.prototype.getId=function(){return this.id};Book.prototype.getSheets=function(){return this.sheets};Book.prototype.getUrl=function(){return 'https://docs.google.com/'+this.id};

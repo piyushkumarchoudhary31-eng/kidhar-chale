@@ -27,6 +27,11 @@
  *   Trips nobody has changed for 180 days are removed.
  * Do not share the Apps Script project itself: whoever can edit it could read the secret key.
  *
+ * Your dashboard: the "Dashboard" tab in the Sheet shows accounts, group trips, feedback, reports, hidden gems and
+ *   emails left today. It refreshes itself about once an hour (or run "dashboard" from the editor).
+ * Hidden gems: signed-in travellers can suggest a place. You get an email; type yes in the "Approved" column
+ *   of the Hidden gems tab to show it on the site.
+ *
  * Limits: a normal Gmail account can send about 100 emails a day. Sign-in codes stop for the
  * day after 90 (the site then asks people to try again later). Feedback emails count too.
  */
@@ -463,7 +468,85 @@ function ai_(d) {
   return { ok: false, error: 'ai' };
 }
 
-const ACCOUNT_ = { auth_start: authStart_, auth_verify: authVerify_, sync: sync_, sign_out: signOut_, delete_account: deleteAccount_, room_get: roomGet_, room_put: roomPut_, ai_status: aiStatus_, ai: ai_ };
+/* email a trip plan to yourself: only to the email you signed in with */
+function emailPlan_(d) {
+  const s = session_(d.token);
+  if (!s) return { ok: false, error: 'signin' };
+  const email = normEmail_(d.email);
+  if (!email) return { ok: false, error: 'email' };
+  const acc = ACC_(), row = findRow_(acc, 1, s.id);
+  if (!row || String(acc.getRange(row, 2).getValue()) !== emailKey_(email)) return { ok: false, error: 'email' };
+  const c = CacheService.getScriptCache(), mine = 'ep:' + s.id, n = Number(c.get(mine) || 0);
+  if (n >= 5) return { ok: false, error: 'limit' };
+  const dayKey = 'od:' + Utilities.formatDate(new Date(), 'Asia/Kolkata', 'yyyyMMdd'), day = Number(c.get(dayKey) || 0);
+  if (day >= CODES_PER_DAY_SITE || MailApp.getRemainingDailyQuota() < 5) return { ok: false, error: 'busy' };
+  c.put(mine, String(n + 1), 21600); c.put(dayKey, String(day + 1), 21600);
+  const title = String(d.title || 'Your trip').replace(/[\u0000-\u001f]/g, ' ').slice(0, 120);
+  const text = String(d.text || '').replace(/[\u0000-\u0008\u000b-\u001f]/g, ' ').slice(0, 20000);
+  const h = x => x.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  const html = '<div style="font-family:Arial,sans-serif;max-width:640px;margin:0 auto;padding:20px;background:#FAF7F0;border:1px solid #d9cfbd;border-radius:8px;color:#1d1a16">' +
+    '<p style="margin:0 0 4px;font-size:20px;font-weight:800">Kidhar Chale?</p><p style="margin:0 0 14px;color:#5a5248">Your trip plan</p>' +
+    '<pre style="white-space:pre-wrap;font:14px/1.5 Arial,sans-serif;margin:0">' + h(text) + '</pre>' +
+    '<p style="margin:16px 0 0;color:#5a5248;font-size:13px">Times and prices are typical, not live. Check them before you book.</p></div>';
+  MailApp.sendEmail({ to: email, subject: 'Your trip plan: ' + title, body: text + '\n\nTimes and prices are typical, not live. Check them before you book.', htmlBody: html, name: 'Kidhar Chale?' });
+  return { ok: true };
+}
+
+/* ---------- hidden gems: signed-in travellers suggest a place; you approve it in the Sheet ---------- */
+const GEMS_ = () => tab_('Hidden gems', ['Time', 'Place', 'State or country', 'Why go', 'Best time', 'How to reach', 'Tip', 'Approved (type yes)', 'Suggested by (scrambled)']);
+function gemSuggest_(d) {
+  const s = session_(d.token);
+  if (!s) return { ok: false, error: 'signin' };
+  if (d.website) return { ok: true };
+  const c = CacheService.getScriptCache(), k = 'gem:' + s.id, n = Number(c.get(k) || 0);
+  if (n >= 3) return { ok: false, error: 'limit' };
+  const place = clean_(d.place, 60), state = clean_(d.state, 40), why = clean_(d.why, 300);
+  if (place.length < 2 || state.length < 2 || why.length < 20) return { ok: false, error: 'short' };
+  c.put(k, String(n + 1), 21600);
+  GEMS_().appendRow([new Date(), place, state, why, clean_(d.best, 60), clean_(d.reach, 160), clean_(d.tip, 200), '', 'u' + hex_(hmac_('gem:' + s.id, pepper_())).slice(0, 10)]);
+  try { MailApp.sendEmail(Session.getEffectiveUser().getEmail(), 'Kidhar Chale: new hidden gem to check: ' + place, place + ', ' + state + '\n\n' + why + '\n\nApprove it by typing yes in the "Approved" column of the Hidden gems tab.'); } catch (e) {}
+  CacheService.getScriptCache().remove('gems');
+  return { ok: true };
+}
+function gemsList_() {
+  const c = CacheService.getScriptCache(), hit = c.get('gems');
+  if (hit) return hit;
+  const sh = GEMS_(), last = sh.getLastRow(), out = [];
+  if (last >= 2) sh.getRange(2, 1, last - 1, 8).getValues().forEach(r => {
+    if (String(r[7]).trim().toLowerCase() !== 'yes') return;
+    out.push({ place: String(r[1]), state: String(r[2]), why: String(r[3]), best: String(r[4]), reach: String(r[5]), tip: String(r[6]) });
+  });
+  const json = JSON.stringify(out.reverse().slice(0, 100));
+  c.put('gems', json, 600);
+  return json;
+}
+
+/* ---------- your dashboard: a "Dashboard" tab in the Sheet, refreshed about once an hour by itself ---------- */
+function dashboard() {
+  const ss = book_(), now = Date.now(), wk = now - 7 * 86400000, c = CacheService.getScriptCache();
+  const rows = (name, cols) => { const sh = ss.getSheetByName(name); if (!sh || sh.getLastRow() < 2) return []; return sh.getRange(2, 1, sh.getLastRow() - 1, cols).getValues(); };
+  const acc = rows('Accounts', 5), ses = rows('Sessions', 4), rooms = rows('Rooms', 2), fb = rows('Feedback', 1), rep = rows('Reports', 2), gems = rows('Hidden gems', 8);
+  const t = v => (v instanceof Date ? v.getTime() : Number(v) || 0);
+  const day = Utilities.formatDate(new Date(), 'Asia/Kolkata', 'yyyyMMdd');
+  const data = [
+    ['Accounts', acc.length], ['New accounts in the last 7 days', acc.filter(r => t(r[2]) > wk).length], ['People who used their account in the last 7 days', acc.filter(r => t(r[4]) > wk || t(r[3]) > wk).length],
+    ['Devices signed in now', ses.filter(r => t(r[3]) > now).length], ['Group trips', rooms.length], ['Group trips active in the last 7 days', rooms.filter(r => t(r[1]) > wk).length],
+    ['Feedback messages', fb.length], ['Feedback in the last 7 days', fb.filter(r => t(r[0]) > wk).length],
+    ['"What I spent" reports', rep.length], ['Places with reports', new Set(rep.map(r => String(r[1]).trim().toLowerCase())).size],
+    ['Hidden gems waiting for you to approve', gems.filter(r => String(r[7]).trim().toLowerCase() !== 'yes').length], ['Hidden gems on the site', gems.filter(r => String(r[7]).trim().toLowerCase() === 'yes').length],
+    ['AI plans made today', Number(c.get('ai:' + day) || 0)], ['Sign-in and plan emails sent today', Number(c.get('od:' + day) || 0)], ['Emails Gmail still allows today', MailApp.getRemainingDailyQuota()]];
+  let sh = ss.getSheetByName('Dashboard');
+  if (!sh) { sh = ss.insertSheet('Dashboard', 0); }
+  sh.clearContents();
+  sh.getRange(1, 1, 1, 2).setValues([['Kidhar Chale? dashboard', 'Updated ' + Utilities.formatDate(new Date(), 'Asia/Kolkata', 'd MMM yyyy, h:mm a')]]);
+  sh.getRange(3, 1, data.length, 2).setValues(data);
+  try { sh.getRange(1, 1).setFontWeight('bold').setFontSize(14); sh.setColumnWidth(1, 340); } catch (e) {}
+  c.put('dash', '1', 3600);
+  return data;
+}
+function dashMaybe_() { try { if (!CacheService.getScriptCache().get('dash')) dashboard(); } catch (e) {} }
+
+const ACCOUNT_ = { auth_start: authStart_, auth_verify: authVerify_, sync: sync_, sign_out: signOut_, delete_account: deleteAccount_, room_get: roomGet_, room_put: roomPut_, ai_status: aiStatus_, ai: ai_, email_plan: emailPlan_, gem_suggest: gemSuggest_ };
 
 /* ---------- web app entry points ---------- */
 function doPost(e) {
@@ -509,7 +592,10 @@ function doPost(e) {
 }
 
 function doGet(e) {
-  if (!e || !e.parameter || e.parameter.action !== 'stats') return out_({ ok: true });
+  const act = e && e.parameter && e.parameter.action;
+  if (act === 'gems') { dashMaybe_(); return ContentService.createTextOutput(gemsList_()).setMimeType(ContentService.MimeType.JSON); }
+  if (act !== 'stats') return out_({ ok: true });
+  dashMaybe_();
   const cache = CacheService.getScriptCache();
   const hit = cache.get('stats');
   if (hit) return ContentService.createTextOutput(hit).setMimeType(ContentService.MimeType.JSON);

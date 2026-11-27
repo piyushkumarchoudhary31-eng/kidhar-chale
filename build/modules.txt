@@ -1,1 +1,1 @@
-acct/kc-account.js acct/kc-account.css tablet/kc-tablet.css rooms/kc-rooms.js aiweb/kc-ai-web.js
+acct/kc-account.js acct/kc-account.css tablet/kc-tablet.css rooms/kc-rooms.js aiweb/kc-ai-web.js trip/kc-trip.js visa/kc-visa.js fx/kc-fx.js gems/kc-gems.js hi2/kc-hi2.js fix/kc-fix.js fix/kc-fix.css

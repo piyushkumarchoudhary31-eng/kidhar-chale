@@ -1,0 +1,15 @@
+const G=require('./gas-mock.js');const C=G.ctx;const assert=require('assert');
+const post=d=>JSON.parse(C.doPost({postData:{contents:JSON.stringify(d)}}).getContent());
+let r=post({kind:'room_get',id:'ABCDEF'});assert.ok(r.ok&&r.room===null);
+r=post({kind:'room_get',id:'abc'});assert.equal(r.error,'code');
+r=post({kind:'room_put',id:'K7QM2P',room:{id:'K7QM2P',name:'Goa <b>',members:['Piyush','Aman'],exps:[{id:'e1',amt:500,by:'Piyush',what:'Bus',at:1}],del:[],plan:'',planAt:0}});
+assert.ok(r.ok&&r.room.exps.length===1,JSON.stringify(r));const at1=r.at;
+r=post({kind:'room_put',id:'K7QM2P',room:{id:'K7QM2P',name:'Goa',members:['Aman','Riya'],exps:[{id:'e2',amt:300,by:'Riya',what:'Food',at:2}],del:[]}});
+assert.deepEqual(r.room.members,['Piyush','Aman','Riya']);assert.equal(r.room.exps.length,2);
+r=post({kind:'room_put',id:'K7QM2P',room:{id:'K7QM2P',members:['Aman'],exps:[],del:['e1']}});assert.deepEqual(r.room.exps.map(e=>e.id),['e2']);
+r=post({kind:'room_put',id:'K7QM2P',room:{id:'K7QM2P',members:['Aman'],exps:[{id:'e1',amt:500,by:'Piyush',at:1}],del:[]}});assert.deepEqual(r.room.exps.map(e=>e.id),['e2'],'deleted stays deleted');
+const at=r.at;r=post({kind:'room_get',id:'K7QM2P',at});assert.ok(r.same);
+G.cacheStore.clear();r=post({kind:'room_get',id:'K7QM2P'});assert.equal(r.room.exps.length,1,'read back from sheet after cache loss');
+const dump=JSON.stringify(Object.values(G.books)[0].sheets.map(s=>s.rows));assert.ok(!dump.includes('Riya')&&!dump.includes('Aman'),'room encrypted');
+r=post({kind:'room_put',id:'K7QM2P',room:{id:'K7QM2P',members:['A'],exps:Array.from({length:2500},(_,i)=>({id:'x'+i,amt:1,by:'A',what:'w'.repeat(80),at:i}))}});assert.ok(r.ok||r.error==='full');
+console.log('ROOM TESTS PASSED', r.ok?'(big room kept '+r.room.exps.length+')':'(big room refused)');

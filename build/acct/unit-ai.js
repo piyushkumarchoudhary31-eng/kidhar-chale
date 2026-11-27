@@ -1,0 +1,15 @@
+const G=require('./gas-mock.js');const C=G.ctx;const assert=require('assert');
+const post=d=>JSON.parse(C.doPost({postData:{contents:JSON.stringify(d)}}).getContent());
+let r=post({kind:'ai_status'});assert.deepEqual(r,{ok:true,on:false});
+r=post({kind:'ai',task:'plan',prompt:'You are a frugal backpacking trip planner x'});assert.equal(r.error,'off');
+G.props.set('GEMINI_KEY','test-key');
+r=post({kind:'ai_status'});assert.ok(r.on);
+r=post({kind:'ai',task:'plan',prompt:'Write me a poem'});assert.equal(r.error,'request','only trip prompts');
+r=post({kind:'ai',task:'plan',prompt:'You are a frugal backpacking trip planner'+'x'.repeat(9001)});assert.equal(r.error,'request');
+r=post({kind:'ai',task:'plan',prompt:'You are a frugal backpacking trip planner. Plan this trip: {}'});assert.ok(r.ok&&r.data.days.length===3,JSON.stringify(r));
+assert.equal(G.aiLog[0].key,'test-key');assert.ok(G.aiLog[0].url.includes('gemini-flash-lite-latest'));assert.ok(G.aiLog[0].sys);
+r=post({kind:'ai',task:'ideas',prompt:"You help budget backpackers who don't know where to go. Suggest"});assert.equal(r.data.ideas.length,3);
+G.setAiMode('404first');r=post({kind:'ai',task:'ideas',prompt:"You help budget backpackers who don't know where to go."});assert.ok(r.ok);assert.ok(G.aiLog[G.aiLog.length-1].url.includes('gemini-3.5-flash-lite'),'falls back to next model');
+G.setAiMode('429');r=post({kind:'ai',task:'ideas',prompt:"You help budget backpackers who don't know where to go."});assert.equal(r.error,'busy');
+G.setAiMode('ok');let busy=0;for(let i=0;i<10;i++){r=post({kind:'ai',task:'ideas',prompt:"You help budget backpackers who don't know where to go."});if(r.error==='busy')busy++}assert.ok(busy>0,'per-minute cap');
+console.log('AI TESTS PASSED');

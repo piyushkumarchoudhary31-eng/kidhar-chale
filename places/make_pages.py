@@ -17,6 +17,16 @@ TAGE = {'u': '💎', 'r': '🛖', 'b': '🏖', 'm': '🏔', 's': '❄️', 't': 
 REGN = {'N': 'North India and the Himalaya', 'NE': 'Northeast India and Sikkim', 'E': 'East India', 'W': 'West India', 'S': 'South India', 'C': 'Central India', 'I': 'Indian islands',
         'XSA': 'Nepal, Bhutan, Sri Lanka and neighbours', 'XSE': 'Southeast Asia', 'XEA': 'East Asia', 'XME': 'Middle East and Central Asia', 'XEU': 'Europe', 'XAF': 'Africa', 'XAM': 'The Americas', 'XOC': 'Australia and the Pacific'}
 E = lambda s: html.escape(str(s), quote=True)
+_vj = open(S + 'visa/kc-visa.js').read()
+VISA = {m[0]: (m[1], m[2]) for m in re.findall(r"(\b[A-Z]{2,8}):\['([NFAEV])','((?:[^'\\]|\\.)*)'\]", _vj)}
+for c in re.search(r"\[([^\]]*)\]\.forEach\(c=>V\[c\]=V\.SCHENGEN\)", _vj).group(1).replace("'", '').split(','): VISA[c.strip()] = VISA['SCHENGEN']
+VCAT = {'N': 'No visa needed', 'F': 'Visa-free', 'A': 'Visa on arrival', 'E': 'Apply online before you go (e-visa or ETA)', 'V': 'Visa needed'}
+_ix = open('/home/claude/standalone/index.html').read()
+_ct = re.search(r"const CTRY=\{(.*?)\};", _ix, re.S).group(1)
+CODE = {}
+for part in re.findall(r"'([^']*)'", _ct):
+    for x in re.split(r' (?=[A-Z]{2,3}:)', part):
+        c, n = x.split(':', 1); CODE[n] = c
 
 
 def slug(s):
@@ -75,7 +85,7 @@ HEAD = '''<!doctype html>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{url}">
 <meta name="theme-color" content="#B5431C">
-<meta property="og:type" content="article"><meta property="og:site_name" content="Kidhar Chale?"><meta property="og:title" content="{title}"><meta property="og:description" content="{desc}"><meta property="og:url" content="{url}"><meta property="og:image" content="{U}og-image.png"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Kidhar Chale?"><meta property="og:title" content="{title}"><meta property="og:description" content="{desc}"><meta property="og:url" content="{url}"><meta property="og:image" content="{og}"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{root}icon-192.png" type="image/png"><link rel="apple-touch-icon" href="{root}apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@700;800&family=Instrument+Sans:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
@@ -84,10 +94,13 @@ HEAD = '''<!doctype html>
 </head><body><div class="wrap">
 <header class="top"><a class="brand" href="{root}"><i>?</i><span>Kidhar Chale<b>?</b></span></a><a class="cta-s" href="{root}#plan">Plan a trip</a></header>
 '''
-FOOT = '''<footer class="foot"><p><a href="{root}">Trip planner</a> · <a href="{root}places/">All 1,000 places</a> · <a href="{root}student-savings.html">Student savings</a> · <a href="{root}passes-and-permits.html">Passes and permits</a> · <a href="{root}about.html">About</a> · <a href="{root}privacy.html">Privacy</a> · <a href="{root}terms.html">Terms</a></p>
+FOOT = '''<footer class="foot"><p><a href="{root}">Trip planner</a> · <a href="{root}places/">All 1,000 places</a> · <a href="{root}student-savings.html">Student savings</a> · <a href="{root}passes-and-permits.html">Passes and permits</a> · <a href="{root}about.html">About</a> · <a href="{root}privacy.html">Privacy</a> · <a href="{root}terms.html">Terms</a> · <a href="https://www.instagram.com/piyush_choudhary_21/" target="_blank" rel="noopener">Instagram</a></p>
 <p class="muted">Prices and timings are typical estimates and change often. Always check before you book or travel.</p></footer>
 </div><script src="{root}assets/config.js"></script><script src="{root}assets/photo.js" defer></script></body></html>
 '''
+
+
+OG = U + 'og-image.png'
 
 
 def page(p):
@@ -108,7 +121,14 @@ def page(p):
             {'@type': 'ListItem', 'position': 2, 'name': 'Places', 'item': U + 'places/'},
             {'@type': 'ListItem', 'position': 3, 'name': p['state'], 'item': f'{U}places/{p["ss"]}.html'},
             {'@type': 'ListItem', 'position': 4, 'name': p['n'], 'item': url}]}]}
-    h = HEAD.format(title=E(title), desc=E(desc), url=url, U=U, root=root, ld=json.dumps(ld, ensure_ascii=False))
+    pl = PLANS.get(p['n'])
+    faq = [(f'When is the best time to visit {p["n"]}?', f'{months(p["best"])}. ' + ('These months have the best weather for a budget trip.' if not ab else 'These months have the best weather; flights are usually cheaper outside school holidays.')),
+           (f'How do I reach {p["n"]}?', p['reach'] + '.' if not p['reach'].endswith('.') else p['reach']),
+           (f'How much does a trip to {p["n"]} cost?', (f'About {inr(pl["plan"]["sum"])} per person for {len(pl["plan"]["days"])} days from {pl["from"]} on a tight budget, with government buses or sleeper trains, dorm beds and local food. ' if pl else '') + 'Daily cost: ' + cost_txt(p['cost'], ab).split(' ', 1)[1] + '. Real trips usually cost 20 to 40 percent more.')]
+    v = VISA.get(CODE.get(p['state'], ''))
+    if ab and v: faq.append((f'Do Indians need a visa for {p["state"]}?', f'{VCAT[v[0]]}. {v[1]} Checked November 2026; rules change often, so confirm on the official site before you book.'))
+    ld['@graph'].append({'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': a}} for q, a in faq]})
+    h = HEAD.format(og=OG, title=E(title), desc=E(desc), url=url, U=U, root=root, ld=json.dumps(ld, ensure_ascii=False))
     h += f'<nav class="crumbs" aria-label="Breadcrumb"><a href="{root}places/">Places</a> › <a href="{p["ss"]}.html">{E(p["state"])}</a> › <span>{E(p["n"])}</span></nav>\n<main>\n'
     h += f'<div class="kc-ph kc-ph-wait" data-ph="{E(p["n"])}|{E(p["state"])}" aria-hidden="true"></div>\n'
     h += f'<h1>{E(p["n"])}</h1><p class="lede">{E(p["why"])}</p>\n'
@@ -119,7 +139,6 @@ def page(p):
     h += f'<div><dt>Daily cost</dt><dd>{cost_txt(p["cost"], ab)}</dd></div>'
     if c: h += f'<div><dt>On the map</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query={c[0]},{c[1]}" target="_blank" rel="noopener">Google Maps</a> · <a href="https://www.openstreetmap.org/?mlat={c[0]}&amp;mlon={c[1]}#map=11/{c[0]}/{c[1]}" target="_blank" rel="noopener">OpenStreetMap</a></dd></div>'
     h += '</dl><div class="kc-real" data-place="' + E(p['n']) + '"></div></section>\n'
-    pl = PLANS.get(p['n'])
     if pl:
         d = pl['plan']['days']; n = len(d)
         h += f'<section class="card"><h2>Sample budget from {E(pl["from"])}</h2>'
@@ -129,6 +148,7 @@ def page(p):
         h += f'<p><a class="btn" href="{root}?to={E(p["n"])}&amp;from={E(pl["from"])}&amp;days={n}#plan">Make the full day-by-day plan</a> <a class="btn alt" href="{root}?to={E(p["n"])}#plan">Plan from my city</a></p></section>\n'
     else:
         h += f'<section class="card"><h2>Plan this trip</h2><p>Make a day-by-day plan with buses, trains, beds and real costs, starting from your city.</p><p><a class="btn" href="{root}?to={E(p["n"])}#plan">Plan a trip to {E(p["n"])}</a></p></section>\n'
+    h += '<section class="faq"><h2>Quick answers</h2>' + ''.join(f'<h3>{E(q)}</h3><p>{E(a)}</p>' for q, a in faq) + '</section>\n'
     # nearby
     if c:
         near = sorted([(km(c, CO[q['n']]), q) for q in P if q is not p and q['n'] in CO], key=lambda x: x[0])
@@ -152,7 +172,7 @@ def state_page(state, lst):
     if len(desc) > 158: desc = desc[:155].rsplit(' ', 1)[0] + '…'
     ld = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': f'Places to visit in {state}', 'itemListElement': [
         {'@type': 'ListItem', 'position': i + 1, 'url': f'{U}places/{p["slug"]}.html', 'name': p['n']} for i, p in enumerate(lst)]}
-    h = HEAD.format(title=E(title), desc=E(desc), url=url, U=U, root=root, ld=json.dumps(ld, ensure_ascii=False))
+    h = HEAD.format(og=f'{U}places/og/{ss}.png', title=E(title), desc=E(desc), url=url, U=U, root=root, ld=json.dumps(ld, ensure_ascii=False))
     h += f'<nav class="crumbs" aria-label="Breadcrumb"><a href="{root}places/">Places</a> › <span>{E(state)}</span></nav>\n<main>\n'
     h += f'<h1>Budget places in {E(state)}</h1><p class="lede">{len(lst)} places picked for students and budget travellers, sorted with the cheapest first.</p>\n<ul class="near grid">'
     for p in sorted(lst, key=lambda x: (x['cost'], x['n'])):
@@ -166,7 +186,7 @@ def index_page():
     title = 'All 1,000 Places: Budget Travel Guides for India and Abroad | Kidhar Chale?'
     desc = 'Every place on Kidhar Chale?: 643 in India and 357 abroad, with the best time to go, how to reach and daily cost, grouped by state and country.'
     ld = {'@context': 'https://schema.org', '@type': 'CollectionPage', 'name': 'All places', 'url': url}
-    h = HEAD.format(title=E(title), desc=E(desc), url=url, U=U, root=root, ld=json.dumps(ld))
+    h = HEAD.format(og=OG, title=E(title), desc=E(desc), url=url, U=U, root=root, ld=json.dumps(ld))
     h += '<main>\n<h1>All 1,000 places</h1><p class="lede">643 places in India and 357 abroad. Pick a state or country.</p>\n'
     groups = defaultdict(list)
     for st, lst in by_state.items(): groups[state_reg[st]].append((st, lst))
@@ -179,8 +199,10 @@ def index_page():
 
 
 out = R + 'places/'
-if os.path.isdir(out): shutil.rmtree(out)
-os.makedirs(out)
+if os.path.isdir(out):
+    for f in os.listdir(out):
+        if f.endswith('.html'): os.remove(out + f)
+os.makedirs(out, exist_ok=True)
 for p in P: open(out + p['slug'] + '.html', 'w').write(page(p))
 for st, lst in by_state.items(): open(out + slug(st) + '-places.html', 'w').write(state_page(st, lst))
 assert not set(slug(s) + '-places' for s in by_state) & set(p['slug'] for p in P), 'state slug clashes with a place slug'

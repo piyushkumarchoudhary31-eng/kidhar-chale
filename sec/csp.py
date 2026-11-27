@@ -3,7 +3,7 @@ Only the site's own inline scripts (by hash) and a short list of trusted hosts m
 import re,sys,hashlib,base64,pathlib
 ROOT=pathlib.Path(sys.argv[1] if len(sys.argv)>1 else '/home/claude/kidhar-chale')
 HOSTS_SCRIPT="https://cdnjs.cloudflare.com https://www.googletagmanager.com"
-CONNECT="'self' https://en.wikipedia.org https://commons.wikimedia.org https://api.open-meteo.com https://script.google.com https://script.googleusercontent.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://upload.wikimedia.org https://*.g.doubleclick.net https://www.google.com"
+CONNECT="'self' https://open.er-api.com https://en.wikipedia.org https://commons.wikimedia.org https://api.open-meteo.com https://script.google.com https://script.googleusercontent.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://upload.wikimedia.org https://*.g.doubleclick.net https://www.google.com"
 IMG="'self' data: blob: https://upload.wikimedia.org https://tile.openstreetmap.org https://*.tile.openstreetmap.org https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://www.google.com"
 TAG=re.compile(r'<meta http-equiv="Content-Security-Policy"[^>]*>\n?')
 SCRIPT=re.compile(r'<script(?![^>]*\bsrc=)(?![^>]*application/ld\+json)[^>]*>(.*?)</script>',re.S)

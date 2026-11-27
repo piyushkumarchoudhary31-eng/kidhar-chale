@@ -139,7 +139,7 @@
         if(j.ok&&j.needName){pending.code=c;viewCode(w,true);return}
         if(!j.ok){busyBtn(sb,false,needName?'Create my account':'Sign in');m.textContent=j.error==='wrong'?`That code isn’t right. ${j.left} ${j.left===1?'try':'tries'} left.`:(ERR[j.error]||ERR.server);
           if(j.error==='expired'||j.error==='tries'){code.value=''}code.select&&code.select();return}
-        acct={token:j.token,name:j.name,email:maskEmail(pending.email),since:Date.now(),last:0};meta={t:{},since:0,dirty:{}};saveAcct();saveMeta();
+        acct={token:j.token,name:j.name,email:maskEmail(pending.email),em:pending.email,since:Date.now(),last:0};meta={t:{},since:0,dirty:{}};saveAcct();saveMeta();
         pending={email:'',sent:0};track(j.isNew?'sign_up':'login',{method:'email_code'});
         b.innerHTML=`<p class="kc-done">✅ ${j.isNew?'Account created':'Signed in'}. Saving your trips…</p>`;paint();
         await sync(true);if(!reloading&&w.isConnected)viewMe(w)}

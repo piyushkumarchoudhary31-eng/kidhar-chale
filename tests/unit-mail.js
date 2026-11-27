@@ -1,0 +1,11 @@
+const G=require('./gas-mock.js');const C=G.ctx;const assert=require('assert');
+const post=d=>JSON.parse(C.doPost({postData:{contents:JSON.stringify(d)}}).getContent());
+post({kind:'auth_start',email:'a@example.com'});const code=G.outbox[G.outbox.length-1].subject.slice(0,6);
+const t=post({kind:'auth_verify',email:'a@example.com',code,name:'A'}).token;
+let r=post({kind:'email_plan',token:t,email:'b@example.com',title:'x',text:'y'});assert.equal(r.error,'email','cannot email someone else');
+r=post({kind:'email_plan',token:'x'.repeat(40),email:'a@example.com',title:'x',text:'y'});assert.equal(r.error,'signin');
+r=post({kind:'email_plan',token:t,email:'A@Example.com',title:'Delhi → Goa',text:'Day 1 <script>x</script>'});assert.ok(r.ok);
+const m=G.outbox[G.outbox.length-1];assert.equal(m.to,'a@example.com');assert.ok(m.htmlBody.includes('&lt;script&gt;')&&!m.htmlBody.includes('<script>'));
+for(let i=0;i<4;i++)post({kind:'email_plan',token:t,email:'a@example.com',title:'x',text:'y'});
+r=post({kind:'email_plan',token:t,email:'a@example.com',title:'x',text:'y'});assert.equal(r.error,'limit');
+console.log('EMAIL PLAN TESTS PASSED');

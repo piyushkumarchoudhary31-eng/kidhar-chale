@@ -1,0 +1,15 @@
+const G=require('./gas-mock.js');const C=G.ctx;const assert=require('assert');
+const post=d=>JSON.parse(C.doPost({postData:{contents:JSON.stringify(d)}}).getContent());
+const get=q=>JSON.parse(C.doGet({parameter:q}).getContent());
+post({kind:'auth_start',email:'g@example.com'});const code=G.outbox[G.outbox.length-1].subject.slice(0,6);const t=post({kind:'auth_verify',email:'g@example.com',code,name:'G'}).token;
+let r=post({kind:'gem_suggest',place:'X',state:'Y',why:'short'});assert.equal(r.error,'signin');
+r=post({kind:'gem_suggest',token:t,place:'Lamayuru',state:'Ladakh',why:'tiny'});assert.equal(r.error,'short');
+r=post({kind:'gem_suggest',token:t,place:'Lamayuru',state:'Ladakh',why:'Moonland cliffs and an old monastery, almost no crowds.',best:'Jun–Sep',reach:'Bus from Leh',tip:'=HYPERLINK("x")'});assert.ok(r.ok);
+assert.deepEqual(get({action:'gems'}),[],'not shown before approval');
+const sh=Object.values(G.books)[0].getSheetByName('Hidden gems');assert.equal(sh.rows[1][6][0],"'",'formula injection neutralised');sh.rows[1][7]='Yes';G.cacheStore.delete('gems');
+const g=get({action:'gems'});assert.equal(g.length,1);assert.equal(g[0].place,'Lamayuru');
+post({kind:'gem_suggest',token:t,place:'A1',state:'B1',why:'xxxxxxxxxxxxxxxxxxxxxxxxx'});post({kind:'gem_suggest',token:t,place:'A2',state:'B2',why:'xxxxxxxxxxxxxxxxxxxxxxxxx'});
+r=post({kind:'gem_suggest',token:t,place:'A3',state:'B3',why:'xxxxxxxxxxxxxxxxxxxxxxxxx'});assert.equal(r.error,'limit');
+const d=C.dashboard();const m=Object.fromEntries(d);assert.equal(m['Accounts'],1);assert.equal(m['Hidden gems waiting for you to approve'],2);assert.equal(m['Hidden gems on the site'],1);
+const dash=Object.values(G.books)[0].getSheetByName('Dashboard');assert.ok(dash&&dash.rows.length>5);
+console.log('GEMS + DASHBOARD TESTS PASSED');

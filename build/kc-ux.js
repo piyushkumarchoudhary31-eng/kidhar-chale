@@ -558,7 +558,7 @@ window.kcPhoto=(()=>{
 
 /* ===== Hindi for all 1,000 place descriptions: loaded only when Hindi is switched on ===== */
 (()=>{let busy=false,done=false;const loadHi=()=>{if(done||busy)return;busy=true;
-  fetch('assets/places-hi.json').then(r=>r.json()).then(d=>{Object.assign(HI,d);done=true;if(lang==='hi')tr(document.body)}).catch(()=>{}).finally(()=>{busy=false})};
+  Promise.all(['assets/places-hi.json','assets/ui-hi.json'].map(u=>fetch(u).then(r=>r.json()).catch(()=>({})))).then(([a,b])=>{Object.assign(HI,a,b);done=true;if(lang==='hi'){tr(document.body);if(window.kcHiRe)kcHiRe(document.body)}}).catch(()=>{}).finally(()=>{busy=false})};
   if(lang==='hi')loadHi();lb.addEventListener('click',()=>{if(lang==='hi')loadHi()})})();
 
 mark();

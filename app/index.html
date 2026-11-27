@@ -31,7 +31,7 @@
 <style id="kc-boot">/* hold the page until scripts have arranged it, so nothing jumps (falls back after 2.5s) */@keyframes kcshow{to{visibility:visible}}html:not(.kc-ready) body>*{visibility:hidden;animation:kcshow 0s 2.5s forwards}</style>
 <script src="assets/config.js"></script>
 <!--KC-VERIFY-->
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/#website", "url": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/", "name": "Kidhar Chale?", "alternateName": ["Kidhar Chale", "किधर चलें"], "description": "Plan a budget trip in seconds: day-by-day bus and train routes, cheap stays and real costs in ₹. 643 places in India, 357 abroad. Free, no sign-up.", "inLanguage": ["en-IN", "hi-IN"], "publisher": {"@id": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/#org"}}, {"@type": "Organization", "@id": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/#org", "name": "Kidhar Chale?", "url": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/", "logo": {"@type": "ImageObject", "url": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/icon-512.png", "width": 512, "height": 512}, "founder": {"@type": "Person", "name": "Piyush Choudhary"}}, {"@type": "WebApplication", "@id": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/#app", "name": "Kidhar Chale?", "url": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/", "description": "Plan a budget trip in seconds: day-by-day bus and train routes, cheap stays and real costs in ₹. 643 places in India, 357 abroad. Free, no sign-up.", "applicationCategory": "TravelApplication", "operatingSystem": "Any (works in a web browser)", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "inLanguage": ["en-IN", "hi-IN"], "image": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/og-image.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "publisher": {"@id": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/#org"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/#website", "url": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/", "name": "Kidhar Chale?", "alternateName": ["Kidhar Chale", "किधर चलें"], "description": "Plan a budget trip in seconds: day-by-day bus and train routes, cheap stays and real costs in ₹. 643 places in India, 357 abroad. Free, no sign-up.", "inLanguage": ["en-IN", "hi-IN"], "publisher": {"@id": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/#org"}}, {"@type": "Organization", "@id": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/#org", "name": "Kidhar Chale?", "url": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/", "logo": {"@type": "ImageObject", "url": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/icon-512.png", "width": 512, "height": 512}, "founder": {"@type": "Person", "name": "Piyush Choudhary", "sameAs": ["https://www.instagram.com/piyush_choudhary_21/"]}, "sameAs": ["https://www.instagram.com/piyush_choudhary_21/"], "founder": {"@type": "Person", "name": "Piyush Choudhary"}}, {"@type": "WebApplication", "@id": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/#app", "name": "Kidhar Chale?", "url": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/", "description": "Plan a budget trip in seconds: day-by-day bus and train routes, cheap stays and real costs in ₹. 643 places in India, 357 abroad. Free, no sign-up.", "applicationCategory": "TravelApplication", "operatingSystem": "Any (works in a web browser)", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "inLanguage": ["en-IN", "hi-IN"], "image": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/og-image.png", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "publisher": {"@id": "https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/#org"}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@700;800&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
@@ -858,6 +858,49 @@ button.link:disabled{color:var(--muted);text-decoration:none;cursor:default}
   .kc-glinks{display:grid;grid-template-columns:repeat(3,1fr)}
   .kc-acct-sheet .kc-sheet-in{max-width:480px}
 }
+
+
+/* ---------- Book: your trip line, copy button ---------- */
+.kc-tsum{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin:2px 0 0;padding:10px 12px;border:1.5px dashed var(--line);border-radius:6px;font-weight:700}
+.kc-tsum[hidden]{display:none}
+.kc-tsum small{flex-basis:100%;color:var(--muted);font-weight:500;font-size:12.5px}
+.kc-tsum button{min-height:36px;padding:4px 12px}
+.kc-packx:empty{display:none}
+.kc-packx{display:flex;flex-direction:column;gap:6px}
+.kc-packx-l{display:flex;flex-direction:column;gap:2px}
+.kc-cal .kc-cal-msg:empty{display:none}
+/* visa guide */
+.kc-visa{margin:0;font-size:13.5px}
+.kc-visa a,.kc-vrow a,.kc-visa-tip a{color:var(--pop)}
+.kc-visa-card:not(.kc-open)>:not(h3){display:none}
+.kc-vkey{margin:0;font-size:13px;color:var(--muted)}
+.kc-vlist{display:flex;flex-direction:column;gap:8px;max-height:60vh;overflow:auto;padding-right:4px}
+.kc-vrow{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line)}
+.kc-vrow[hidden]{display:none}
+.kc-vrow p{margin:2px 0 0;font-size:13.5px;color:var(--muted)}
+.kc-vrow small{color:var(--muted);font-weight:600}
+.kc-vc{flex:none;font-size:16px;line-height:1.4}
+/* money converter */
+.kc-fx-row{display:grid;grid-template-columns:1fr 1.4fr;gap:10px}
+.kc-fx-out{font-size:22px;margin:4px 0 0}
+.kc-fx-out b{font-family:"Big Shoulders","Instrument Sans",sans-serif;font-size:30px}
+.kc-fx-src{font-size:12.5px;margin:0}
+.kc-fx-src a{color:var(--pop)}
+.kc-fx-line{margin:0}
+/* accessibility fixes (28 Nov): readable selected chips in dark mode, stronger small orange text, keyboard focus on tabs */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .quick button[aria-pressed="true"],:root:not([data-theme="light"]) .quick button.on,:root:not([data-theme="light"]) .chip[aria-pressed="true"]{color:#0E1A2E}}
+:root[data-theme="dark"] .quick button[aria-pressed="true"],:root[data-theme="dark"] .quick button.on,:root[data-theme="dark"] .chip[aria-pressed="true"]{color:#0E1A2E}
+@media (prefers-color-scheme: light){.kc-kick{color:#9A3615}}
+:root:not([data-theme="dark"]) .kc-kick{color:#9A3615}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .kc-kick{color:var(--accent)}}
+nav.tabs button:focus-visible,.kc-side nav.tabs button:focus-visible{outline:2.5px solid var(--accent)!important;outline-offset:2px}
+/* hidden gems */
+.kc-gem-list{display:grid;gap:10px}
+@media (min-width:700px){.kc-gem-list{grid-template-columns:1fr 1fr}}
+.kc-gem{border:1px solid var(--line);border-radius:6px;padding:12px;display:flex;flex-direction:column;gap:6px;background:var(--bg)}
+.kc-gem h3,.kc-gem p{margin:0}
+.kc-gem-plan{color:var(--pop);font-weight:700}
+.kc-gems [data-gem]{align-self:flex-start}
 </style>
 </head>
 <body>
@@ -995,6 +1038,7 @@ button.link:disabled{color:var(--muted);text-decoration:none;cursor:default}
       <label for="t-date">Date<input id="t-date" type="date"></label>
       <button class="ghost" id="t-swap" style="flex:0 0 auto;align-self:flex-end">⇅ Swap</button>
     </div>
+    <p class="kc-tsum" id="t-sum" hidden><span></span> <button type="button" class="small ghost">Copy</button><small>If a site opens with an empty box, paste this there.</small></p>
     <p class="eyebrow">Bus</p><div class="links" id="t-bus"></div>
     <p class="eyebrow">Train</p><div class="links" id="t-train"></div>
     <p class="eyebrow">Flight &amp; anywhere in the world</p><div class="links" id="t-fly"></div>
@@ -1019,6 +1063,11 @@ button.link:disabled{color:var(--muted);text-decoration:none;cursor:default}
     <div class="row">
       <label for="s-city">City or area<input id="s-city" placeholder="e.g. Udaipur"></label>
       <label for="s-max">Max per night (₹)<input id="s-max" type="number" inputmode="numeric" value="600" step="50"></label>
+    </div>
+    <div class="row">
+      <label for="s-in">Check-in<input id="s-in" type="date"></label>
+      <label for="s-n">Nights<input id="s-n" type="number" inputmode="numeric" min="1" max="30" value="1"></label>
+      <label for="s-ppl">People<input id="s-ppl" type="number" inputmode="numeric" min="1" max="10" value="1"></label>
     </div>
     <div class="links" id="s-links"></div>
     <p class="note">Book on the site directly, never through a WhatsApp number or someone at the station. Sort by price, then check the last 2 weeks of reviews for bedbugs and lockers.</p>
@@ -1359,7 +1408,7 @@ function renderPlan(raw){
     h+=`<div class="card tag day"><div class="dayhead"><p class="eyebrow">Day ${esc(dd.day)}</p><span class="sub">${st.options.length?'Sleep: '+esc(st.city)+(o?' · '+inr(o.price):''):'🌙 '+esc(st.city)}</span></div><h3>${esc(dd.city)}</h3>`;
     dd.items.forEach(it=>{h+=`<div class="leg"><span class="t">${esc(it.time)}</span><span>${esc(it.what)}</span><span class="c">${it.cost?inr(it.cost):'free'}</span></div>`});
     const parts=String(dd.city||'').split(/\s*(?:→|->)\s*/).filter(Boolean);
-    if(parts.length>1){h+=`<div class="row" style="gap:8px">`+parts.slice(0,-1).map((a,k)=>`<button class="small" data-from="${esc(a)}" data-to="${esc(parts[k+1])}">🎫 Tickets ${esc(a)} → ${esc(parts[k+1])}</button>`).join('')+`</div>`}
+    if(parts.length>1){h+=`<div class="row" style="gap:8px">`+parts.slice(0,-1).map((a,k)=>`<button class="small" data-from="${esc(a)}" data-to="${esc(parts[k+1])}" data-day="${di}">🎫 Tickets ${esc(a)} → ${esc(parts[k+1])}</button>`).join('')+`</div>`}
     if(st.options.length){
       h+=`<div class="stayblk"><p class="eyebrow">🛏 Where to sleep in ${esc(st.city)} · tap to choose</p>`+st.options.map((s,oi)=>`<div class="sopt"><button data-d="${di}" data-o="${oi}" aria-pressed="${oi===st.pick}"><span class="radio" aria-hidden="true"></span><span style="min-width:0"><b>${esc(s.name||s.type+' in '+(s.area||st.city))}</b><small>${esc(s.name?s.type+' · '+s.area:'Any good one here; check reviews')}</small>${s.note?`<small>${esc(s.note)}</small>`:''}</span><span class="pr">${s.price?inr(s.price):'-'}</span></button><a href="${esc(stayLink(s,st.city))}" target="_blank" rel="noopener" aria-label="Check price for ${esc(s.name||s.type)}">Check ↗</a></div>`).join('')+
       `<button class="small ghost" data-stay="${esc(st.city)}" style="align-self:flex-start">More beds in ${esc(st.city)}</button></div>`;
@@ -1378,7 +1427,11 @@ function renderPlan(raw){
     const fb=()=>{const ta=$('#p-copytxt');ta.value=tx;ta.hidden=false;ta.focus();ta.select();$('#p-copied').textContent='Text selected. Tap Copy.';done()};
     try{navigator.clipboard.writeText(tx).then(()=>{$('#p-copied').textContent='Copied. Paste it in any chat.';done()},fb)}catch(e){fb()}};
   if(window.kcTripShareHook)window.kcTripShareHook(p);
-  $('#p-out').querySelectorAll('[data-from]').forEach(b=>b.onclick=()=>{$('#t-from').value=b.dataset.from;$('#t-to').value=b.dataset.to;goLinks();show('go')});
+  $('#p-out').querySelectorAll('[data-from]').forEach(b=>b.onclick=()=>{$('#t-from').value=b.dataset.from;$('#t-to').value=b.dataset.to;
+    const st=$('#p-start')&&$('#p-start').value;if(st){const d=new Date(st+'T00:00');d.setDate(d.getDate()+(+b.dataset.day||0));$('#t-date').value=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+    goLinks();show('go')});
+  $('#p-out').querySelectorAll('[data-stay]').forEach(b=>{const st=$('#p-start')&&$('#p-start').value;if(!st)return;const di=[...$('#p-out').querySelectorAll('.day')].indexOf(b.closest('.day'));if(di<0)return;
+    b.addEventListener('click',()=>{const d=new Date(st+'T00:00');d.setDate(d.getDate()+di);const si=$('#s-in');if(si){si.value=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');const pp=$('#s-ppl');if(pp&&CUR&&CUR.meta&&CUR.meta.people)pp.value=CUR.meta.people;stayLinks()}})});
   $('#p-out').querySelectorAll('[data-stay]').forEach(b=>b.onclick=()=>{$('#s-city').value=b.dataset.stay;stayLinks();show('stay')});
   $('#p-out').querySelectorAll('.sopt [data-o]').forEach(b=>b.onclick=()=>{const y=scrollY;CUR.days[+b.dataset.d].stay.pick=+b.dataset.o;if(!CUR.example)save('plan',CUR);else save('examplePick',CUR.days.map(x=>x.stay.pick));renderPlan(CUR);scrollTo(0,y)});
 }
@@ -1587,41 +1640,59 @@ $('#w-close').onclick=()=>{$('#welcome').hidden=true;save('hideWelcome',true)};
 ['p-from','p-to','p-days','p-start'].forEach(id=>$('#'+id).addEventListener('change',()=>updatePass(CUR)));
 
 /* ---------- GO ---------- */
-function slug(x){return String(x).trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+function slug(x){const k=String(x).trim().toLowerCase();const A={'bengaluru':'bangalore','mysuru':'mysore','gurugram':'gurgaon','puducherry':'pondicherry','thiruvananthapuram':'trivandrum','new delhi':'delhi'};return(A[k]||k).normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+if(typeof placeInfo==='function')window.bgPlaceInfo=placeInfo;
+/* government bus company for the state you start in */
+const RTC={'Rajasthan':'RSRTC','Himachal Pradesh':'HRTC','Uttar Pradesh':'UPSRTC','Uttarakhand':'Uttarakhand Roadways','Punjab':'PRTC PUNBUS','Haryana':'Haryana Roadways','Karnataka':'KSRTC Karnataka','Kerala':'KSRTC Kerala','Tamil Nadu':'TNSTC SETC','Andhra Pradesh':'APSRTC','Telangana':'TGSRTC','Maharashtra':'MSRTC','Gujarat':'GSRTC','Bihar':'BSRTC','Odisha':'OSRTC','West Bengal':'SBSTC WBTC','Assam':'ASTC','Jammu & Kashmir':'JKRTC','Jammu and Kashmir':'JKRTC','Goa':'Kadamba KTCL','Sikkim':'SNT Sikkim','Meghalaya':'MTC Meghalaya','Tripura':'TRTC','Nagaland':'NST Nagaland','Mizoram':'MST Mizoram','Arunachal Pradesh':'APST','Puducherry':'PRTC Puducherry','Chandigarh':'CTU','Delhi':'DTC','Ladakh':'JKRTC Leh'};
+const tripDate=dt=>dt?new Date(dt+'T00:00'):null;
+const MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const ymd=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
 function goLinks(){
   const a=$('#t-from').value.trim(),b=$('#t-to').value.trim(),dt=$('#t-date').value;
-  if(!a||!b){const h='<p class="sub" style="grid-column:1/-1">Type where you\u2019re going from and to above, and the ticket sites show up here, already searched.</p>';$('#t-bus').innerHTML=h;$('#t-train').innerHTML='';$('#t-fly').innerHTML='';return}
+  const sumEl=$('#t-sum');
+  if(!a||!b){const h='<p class="sub" style="grid-column:1/-1">Type where you’re going from and to above, and the ticket sites show up here, already searched.</p>';$('#t-bus').innerHTML=h;$('#t-train').innerHTML='';$('#t-fly').innerHTML='';if(sumEl)sumEl.hidden=true;return}
   const g=q=>'https://www.google.com/search?q='+encodeURIComponent(q);
-  const nice=dt?new Date(dt+'T00:00').toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'';
+  const d=tripDate(dt),nice=d?d.toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'',rb=d?String(d.getDate()).padStart(2,'0')+'-'+MON[d.getMonth()]+'-'+d.getFullYear():'';
+  const sa=slug(a),sb=slug(b),from=(window.bgPlaceInfo?bgPlaceInfo(a):null)||{},rtc=RTC[from.state]||'';
+  const abroad=/^X/.test(from.reg||'')||(window.bgPlaceInfo&&/^X/.test((bgPlaceInfo(b)||{}).reg||''));
   const card=([n,s,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener"><b>${esc(n)} ↗</b><span>${esc(s)}</span></a>`;
-  $('#t-bus').innerHTML=[
-   ['redBus','Private + some govt buses','https://www.redbus.in/bus-tickets/'+slug(a)+'-to-'+slug(b)],
-   ['Government bus','State buses, cheapest',g('government bus '+a+' to '+b+' timetable fare')],
-   ['AbhiBus','Compare bus prices',g('abhibus '+a+' to '+b)],
-   ['Bus timings','Counter buses, no booking',g(a+' to '+b+' bus timings ordinary')]].map(card).join('');
-  $('#t-train').innerHTML=[
-   ['IRCTC','Official booking','https://www.irctc.co.in/nget/train-search'],
-   ['Trains on this route','Numbers, times, fares',g('trains from '+a+' to '+b+(nice?' '+nice:''))],
-   ['ConfirmTkt','Waitlist chances',g('confirmtkt '+a+' to '+b+' trains')],
-   ['ixigo Trains','Live running status',g('ixigo trains '+a+' to '+b)]].map(card).join('');
+  const q=new URLSearchParams({fromCityName:a,toCityName:b});if(rb)q.set('onward',rb);
+  $('#t-bus').innerHTML=(abroad?[['FlixBus and local buses','Search buses for this route',g('bus from '+a+' to '+b+(nice?' '+nice:''))]]:[
+   ['redBus',a+' → '+b+(nice?', '+nice:''),'https://www.redbus.in/bus-tickets/'+sa+'-to-'+sb+'?'+q.toString()],
+   [rtc?rtc+' (govt bus)':'Government bus','Cheapest; timetable and fare',g((rtc||'government')+' bus '+a+' to '+b+' timetable fare')],
+   ['ixigo Buses','Compare all bus companies','https://www.ixigo.com/buses/'+sa+'-'+sb+'-sts'],
+   ['Bus timings','Counter buses, no booking',g(a+' to '+b+' bus timings ordinary')]]).map(card).join('');
+  $('#t-train').innerHTML=abroad?'':[
+   ['IRCTC','Official booking (type the stations there)','https://www.irctc.co.in/nget/train-search'],
+   ['ixigo Trains','All trains '+a+' → '+b,'https://www.ixigo.com/by-train-rail/'+sa+'-to-'+sb+'-by-train'],
+   ['ConfirmTkt','Trains and waitlist chances','https://www.confirmtkt.com/trains/'+sa+'-to-'+sb+'-train-tickets'],
+   ['Trains on this route','Numbers, times, fares',g('trains from '+a+' to '+b+(nice?' '+nice:''))]].map(card).join('');
+  $('#t-train').previousElementSibling.hidden=abroad;
   $('#t-fly').innerHTML=[
-   ['Google Flights','Cheapest dates calendar','https://www.google.com/travel/flights?q='+encodeURIComponent('Flights from '+a+' to '+b+(dt?' on '+dt:''))],
-   ['Skyscanner','Flight price compare',g('skyscanner '+a+' to '+b+' flights')],
+   ['Google Flights','Cheapest dates calendar','https://www.google.com/travel/flights?q='+encodeURIComponent('Flights from '+a+' to '+b+(d?' on '+ymd(d):''))],
+   ['Skyscanner','Flight price compare',g('skyscanner '+a+' to '+b+' flights'+(nice?' '+nice:''))],
    ['Rome2Rio','Every way to get there, any country','https://www.rome2rio.com/map/'+encodeURIComponent(a)+'/'+encodeURIComponent(b)],
    ['BlaBlaCar','Shared car rides',g('blablacar '+a+' to '+b)]].map(card).join('');
+  if(sumEl){sumEl.hidden=false;const t=`${a} → ${b}${nice?', '+nice:''}`;sumEl.querySelector('span').textContent='Your trip: '+t;sumEl.dataset.copy=`${a} to ${b}${nice?' on '+nice:''}`}
 }
-['t-from','t-to','t-date'].forEach(id=>$('#'+id).addEventListener('input',goLinks));
+['t-from','t-to','t-date'].forEach(id=>{$('#'+id).addEventListener('input',goLinks);$('#'+id).addEventListener('change',goLinks)});
 $('#t-swap').onclick=()=>{const x=$('#t-from').value;$('#t-from').value=$('#t-to').value;$('#t-to').value=x;goLinks()};
+{const sm=$('#t-sum');if(sm)sm.querySelector('button').onclick=async()=>{const b=sm.querySelector('button');try{await navigator.clipboard.writeText(sm.dataset.copy);b.textContent='Copied ✓'}catch(e){b.textContent='Copy failed'}setTimeout(()=>b.textContent='Copy',1800)}}
 
 /* ---------- STAY ---------- */
 function stayLinks(){
   const c=$('#s-city').value.trim(),e=encodeURIComponent(c),mx=$('#s-max').value;
   if(!c){$('#s-links').innerHTML='<p class="sub" style="grid-column:1/-1">Type a city above and every booking site opens already searched for it.</p>';return}
   const g=q=>'https://www.google.com/search?q='+encodeURIComponent(q);
+  const din=$('#s-in')&&$('#s-in').value,n=Math.max(1,Math.min(30,+($('#s-n')&&$('#s-n').value)||1)),ppl=Math.max(1,Math.min(10,+($('#s-ppl')&&$('#s-ppl').value)||1));
+  const d1=tripDate(din),d2=d1?new Date(d1.getTime()+n*864e5):null;
+  const when=d1?' '+d1.toLocaleDateString('en-IN',{day:'numeric',month:'short'})+' to '+d2.toLocaleDateString('en-IN',{day:'numeric',month:'short'}):'';
+  const bk=new URLSearchParams({ss:c,order:'price',group_adults:ppl,no_rooms:1,group_children:0});if(d1){bk.set('checkin',ymd(d1));bk.set('checkout',ymd(d2))}
+  const ag=new URLSearchParams({textToSearch:c,adults:ppl,rooms:1});if(d1){ag.set('checkIn',ymd(d1));ag.set('los',n)}
   const L=[
-   ['Booking.com','Sorted lowest price first','https://www.booking.com/searchresults.html?ss='+e+'&order=price'],
-   ['Agoda','Search for '+c,'https://www.agoda.com/search?textToSearch='+e],
-   ['Google Hotels','Compares many sites at once','https://www.google.com/travel/search?q='+encodeURIComponent('cheap hotels in '+c)],
+   ['Booking.com','Lowest price first'+(d1?', your dates':''),'https://www.booking.com/searchresults.html?'+bk.toString()],
+   ['Agoda',(d1?'Your dates in ':'Search for ')+c,'https://www.agoda.com/search?'+ag.toString()],
+   ['Google Hotels','Compares many sites at once','https://www.google.com/travel/search?q='+encodeURIComponent('cheap hotels in '+c+when)],
    ['Hostelworld','Hostels in '+c,g('site:hostelworld.com hostels '+c)],
    ['Zostel','Zostel '+c,g('zostel '+c)],
    ['goSTOPS','goSTOPS '+c,g('gostops '+c)],
@@ -1631,7 +1702,9 @@ function stayLinks(){
    ['Couchsurfing','Free stays with locals','https://www.couchsurfing.com/']];
   $('#s-links').innerHTML=L.map(([n,s,u])=>`<a href="${esc(u)}" target="_blank" rel="noopener"><b>${esc(n)} ↗</b><span>${esc(s)}</span></a>`).join('');
 }
-$('#s-city').addEventListener('input',stayLinks);$('#s-max').addEventListener('input',stayLinks);stayLinks();goLinks();
+['s-city','s-max','s-in','s-n','s-ppl'].forEach(id=>{const el=$('#'+id);if(el){el.addEventListener('input',stayLinks);el.addEventListener('change',stayLinks)}});
+{const si=$('#s-in');if(si&&!si.value){const td=$('#t-date');si.value=td&&td.value?td.value:''}}
+stayLinks();goLinks();
 const wv=c=>'https://en.wikivoyage.org/wiki/'+encodeURIComponent(c.trim().replace(/ /g,'_'));
 $('#s-ask').onclick=()=>{
   const c=$('#s-city').value.trim();if(!c){$('#s-ans').innerHTML='<p class="err">Type a city in the box above first.</p>';return}const pl=placeInfo(c);const ti=Math.max(0,Math.min(2,pl.cost-1));const mult=pl.reg[0]==='X'?(pl.reg==='XSA'?1.5:3):1;
@@ -1817,6 +1890,7 @@ function find(q){
 window.bgFindPlace=find;
 const escH=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function hl(name,q){const i=norm(name).indexOf(norm(q).trim());if(i<0||!q.trim())return escH(name);const L=norm(q).trim().length;return escH(name.slice(0,i))+'<mark>'+escH(name.slice(i,i+L))+'</mark>'+escH(name.slice(i+L))}
+const NEXT={'p-from':'#p-to','t-from':'#t-to','t-to':'#t-date','sf-from':'#sf-to','s-city':'#s-in','w-from':'#w-next'};
 function attach(id,multi){
   const inp=document.getElementById(id);if(!inp)return;
   inp.setAttribute('autocomplete','off');inp.setAttribute('autocapitalize','words');inp.setAttribute('role','combobox');inp.setAttribute('aria-autocomplete','list');inp.setAttribute('aria-expanded','false');
@@ -1828,7 +1902,12 @@ function attach(id,multi){
   function pick(i){const it=items[i];if(!it)return;
     if(multi){const parts=inp.value.split(',');parts[parts.length-1]=' '+it.p.n;inp.value=parts.map((x,k)=>k?x.trim():x.trim()).join(', ')+', '}else inp.value=it.p.n;
     close();inp.dispatchEvent(new Event('input',{bubbles:true}));inp.dispatchEvent(new Event('change',{bubbles:true}));
-    if(!multi){inp.blur()}else{inp.focus()}}
+    if(multi){inp.focus();return}
+    /* move on by itself: the cursor jumps to the next box (the quiz goes to its next question, like the city buttons do) */
+    const nx=NEXT[id];
+    if(nx==='#w-next'){const b=document.getElementById('w-next');inp.blur();if(b)setTimeout(()=>b.click(),matchMedia('(prefers-reduced-motion: reduce)').matches?0:260);return}
+    const el=nx&&document.querySelector(nx);
+    if(el&&el.offsetParent&&!el.disabled){setTimeout(()=>{el.focus({preventScroll:true});el.scrollIntoView({block:'nearest',behavior:'smooth'});if(el.select&&el.type!=='date')try{el.select()}catch(_){}},60)}else inp.blur()}
   function render(){clearTimeout(bt);const q=token();items=find(q);sel=items.length?0:-1;
     if(!q.trim()){close();return}
     box.innerHTML=items.length?items.map((it,i)=>`<button type="button" role="option" id="${id}-o${i}" aria-selected="${i===sel}" data-i="${i}"><span>${hl(it.p.n,q)}${it.via?` <small>(${escH(it.via)})</small>`:''}</span><small>${escH(it.p.reg)}</small></button>`).join(''):`<div class="none">No match. You can still use "${escH(q.trim())}".</div>`;
@@ -1842,6 +1921,10 @@ function attach(id,multi){
     else if(e.key==='Enter'&&sel>=0){e.preventDefault();pick(sel)}
     else if(e.key==='Escape'){close()}});
   inp.addEventListener('blur',()=>{clearTimeout(bt);bt=setTimeout(close,120)});inp.addEventListener('focus',()=>clearTimeout(bt));
+  if(!multi&&NEXT[id]){inp.setAttribute('enterkeyhint','next');
+    inp.addEventListener('keydown',e=>{if(e.key!=='Enter'||e.defaultPrevented||!box.hidden||!inp.value.trim())return;e.preventDefault();
+      if(NEXT[id]==='#w-next'){const b=document.getElementById('w-next');if(b)b.click();return}
+      const el=document.querySelector(NEXT[id]);if(el&&el.offsetParent)el.focus()})}
 }
 attach('p-from');attach('p-to',true);attach('t-from');attach('t-to');attach('s-city');attach('c-any');attach('sf-from');attach('sf-to');attach('ps-city');attach('w-from');window.bgFindPlace=find;
 window.bgAddPlaces=list=>{list.forEach(x=>{const k=norm(x.n);if(PL.some(p=>p.k===k||p.ak.includes(k)||k.startsWith(p.k+' ')||p.k.startsWith(k+' ')))return;PL.push({n:x.n,reg:x.reg,al:[],k,ak:[],w:((x.abroad||WORLD.has(x.reg))?1:0)+2})})};
@@ -4200,7 +4283,7 @@ window.kcPhoto=(()=>{
 
 /* ===== Hindi for all 1,000 place descriptions: loaded only when Hindi is switched on ===== */
 (()=>{let busy=false,done=false;const loadHi=()=>{if(done||busy)return;busy=true;
-  fetch('assets/places-hi.json').then(r=>r.json()).then(d=>{Object.assign(HI,d);done=true;if(lang==='hi')tr(document.body)}).catch(()=>{}).finally(()=>{busy=false})};
+  Promise.all(['assets/places-hi.json','assets/ui-hi.json'].map(u=>fetch(u).then(r=>r.json()).catch(()=>({})))).then(([a,b])=>{Object.assign(HI,a,b);done=true;if(lang==='hi'){tr(document.body);if(window.kcHiRe)kcHiRe(document.body)}}).catch(()=>{}).finally(()=>{busy=false})};
   if(lang==='hi')loadHi();lb.addEventListener('click',()=>{if(lang==='hi')loadHi()})})();
 
 /* ===== ACCOUNT: sign in with a code sent to your email; trips saved privately (encrypted) in the cloud ===== */
@@ -4344,7 +4427,7 @@ window.kcPhoto=(()=>{
         if(j.ok&&j.needName){pending.code=c;viewCode(w,true);return}
         if(!j.ok){busyBtn(sb,false,needName?'Create my account':'Sign in');m.textContent=j.error==='wrong'?`That code isn’t right. ${j.left} ${j.left===1?'try':'tries'} left.`:(ERR[j.error]||ERR.server);
           if(j.error==='expired'||j.error==='tries'){code.value=''}code.select&&code.select();return}
-        acct={token:j.token,name:j.name,email:maskEmail(pending.email),since:Date.now(),last:0};meta={t:{},since:0,dirty:{}};saveAcct();saveMeta();
+        acct={token:j.token,name:j.name,email:maskEmail(pending.email),em:pending.email,since:Date.now(),last:0};meta={t:{},since:0,dirty:{}};saveAcct();saveMeta();
         pending={email:'',sent:0};track(j.isNew?'sign_up':'login',{method:'email_code'});
         b.innerHTML=`<p class="kc-done">✅ ${j.isNew?'Account created':'Signed in'}. Saving your trips…</p>`;paint();
         await sync(true);if(!reloading&&w.isConnected)viewMe(w)}
@@ -4446,6 +4529,268 @@ window.kcPhoto=(()=>{
   window.kcSample=()=>Date.now()<off?Promise.resolve(null):check().then(on=>on?sampler:null);
   /* ask once, quietly, after the page settles, so the first plan doesn't wait for it */
   const warm=()=>check();('requestIdleCallback' in window)?requestIdleCallback(warm,{timeout:5000}):setTimeout(warm,3000);
+})();
+
+/* ===== TRIP EXTRAS: add the plan to your calendar, a packing list for this trip, email the plan to yourself ===== */
+(()=>{
+  const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const out=$('#p-out');if(!out)return;
+  const plan=()=>window.bgCurrentPlan&&bgCurrentPlan();
+  const pad=n=>String(n).padStart(2,'0'),ymd=d=>d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate());
+  const startDate=()=>{const v=($('#p-start')||{}).value;return v?new Date(v+'T00:00'):null};
+  const inr=n=>'₹'+Math.round(+n||0).toLocaleString('en-IN');
+
+  /* ---------- 1. calendar (.ics): one all-day entry per day, plus each timed bus/train with a reminder ---------- */
+  const icsEsc=s=>String(s??'').replace(/\\/g,'\\\\').replace(/\n/g,'\\n').replace(/([,;])/g,'\\$1');
+  const fold=l=>{const out=[];let cur='';for(const ch of l){if(new TextEncoder().encode(cur+ch).length>74){out.push(cur);cur=' '+ch}else cur+=ch}out.push(cur);return out.join('\r\n')};
+  function ics(p,d0){const L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Kidhar Chale//Trip planner//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:'+icsEsc(p.title)];
+    const stamp=new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d+/,'');const uid=Math.random().toString(36).slice(2);
+    p.days.forEach((d,i)=>{const day=new Date(d0);day.setDate(day.getDate()+i);const next=new Date(day);next.setDate(next.getDate()+1);
+      const o=d.stay&&d.stay.options&&d.stay.options[d.stay.pick||0];
+      const desc=d.items.map(it=>`${it.time?it.time+'  ':''}${it.what}${it.cost?' ('+inr(it.cost)+')':''}`).join('\n')+(d.stay&&d.stay.city?`\nSleep: ${d.stay.city}${o?' · '+(o.name||o.type+' in '+(o.area||d.stay.city))+' about '+inr(o.price):''}`:'')+'\n\nMade with Kidhar Chale?';
+      L.push('BEGIN:VEVENT','UID:kc-'+uid+'-d'+i+'@kidharchale','DTSTAMP:'+stamp,'DTSTART;VALUE=DATE:'+ymd(day),'DTEND;VALUE=DATE:'+ymd(next),'SUMMARY:'+icsEsc(`Day ${i+1}: ${d.city}`),'DESCRIPTION:'+icsEsc(desc),'TRANSP:TRANSPARENT','END:VEVENT');
+      d.items.forEach((it,k)=>{const m=/^(\d{1,2}):(\d{2})$/.exec(String(it.time||'').trim());if(!m||it.kind!=='travel')return;
+        const s=new Date(day);s.setHours(+m[1],+m[2],0,0);const e=new Date(s.getTime()+60*60e3);const t=x=>ymd(x)+'T'+pad(x.getHours())+pad(x.getMinutes())+'00';
+        L.push('BEGIN:VEVENT','UID:kc-'+uid+'-d'+i+'-t'+k+'@kidharchale','DTSTAMP:'+stamp,'DTSTART:'+t(s),'DTEND:'+t(e),'SUMMARY:'+icsEsc('🚌 '+it.what.slice(0,80)),'DESCRIPTION:'+icsEsc(it.what+(it.cost?' · about '+inr(it.cost):'')+'\nCheck the exact time before you leave.'),
+          'BEGIN:VALARM','ACTION:DISPLAY','DESCRIPTION:'+icsEsc('Leaving soon: '+it.what.slice(0,60)),'TRIGGER:-PT1H','END:VALARM','END:VEVENT')})});
+    L.push('END:VCALENDAR');return L.map(fold).join('\r\n')+'\r\n'}
+  function saveIcs(p,d0){const blob=new Blob([ics(p,d0)],{type:'text/calendar;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);
+    a.download=(String(p.title).replace(/[^\w\- ]+/g,' ').replace(/\s+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'').slice(0,60)||'trip')+'.ics';document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},4000);
+    try{window.kcTrack&&kcTrack('add_to_calendar',{days:p.days.length})}catch(_){}}
+
+  /* ---------- 3. email the plan to yourself (signed in only, goes to your own account email) ---------- */
+  const C=window.KC_CONFIG||{},API=(C.api||'').trim();
+  async function emailPlan(p,btn,msg){let acct=null;try{acct=JSON.parse(localStorage.getItem('kc_acct')||'null')}catch(_){}
+    if(!acct||!acct.token){if(window.kcAccount)kcAccount.open();return}
+    btn.disabled=true;const t0=btn.textContent;btn.textContent='Sending…';msg.textContent='';
+    try{const r=await fetch(API,{method:'POST',body:JSON.stringify({kind:'email_plan',token:acct.token,email:acct.em||'',title:p.title,text:window.bgPlanText?bgPlanText(p):p.title}),credentials:'omit',referrerPolicy:'no-referrer'});const j=await r.json();
+      if(j.ok){msg.textContent='Sent to '+(acct.email||'your email')+'. Check spam if you don’t see it.';btn.textContent='✓ Sent';try{window.kcTrack&&kcTrack('email_plan')}catch(_){}return}
+      msg.textContent=j.error==='limit'?'You can email 5 plans a day. Try again tomorrow.':j.error==='email'?'Sign out and sign in again once, then try.':j.error==='signin'?'Sign in again to email your plan.':'Couldn’t send right now. Try again later.'}
+    catch(_){msg.textContent='Couldn’t connect. Check your internet.'}
+    btn.disabled=false;btn.textContent=t0}
+
+  /* buttons in the share card of every plan */
+  new MutationObserver(()=>{const sh=out.querySelector('.kc-share');if(!sh||sh.querySelector('.kc-cal'))return;const p=plan();if(!p||!p.days)return;
+    const row=document.createElement('div');row.className='row kc-cal';row.style.gap='8px';
+    row.innerHTML='<button type="button" class="kc-cal-b">📅 Add to calendar</button>'+(API?'<button type="button" class="kc-mail-b">✉️ Email me this plan</button>':'')+'<p class="sub kc-cal-msg" role="status" style="flex-basis:100%;margin:0"></p>';
+    (sh.querySelector('.row')||sh).after(row);const msg=row.querySelector('.kc-cal-msg');
+    row.querySelector('.kc-cal-b').onclick=()=>{const p=plan();const d0=startDate();
+      if(d0){saveIcs(p,d0);msg.textContent='Opening your calendar file. On iPhone tap "Add All"; on Android open it with your calendar app.';return}
+      msg.innerHTML='When does the trip start? <input type="date" class="kc-cal-d" style="max-width:180px;display:inline-block;margin-left:6px" aria-label="Trip start date"> <button type="button" class="small primary kc-cal-go">Add</button>';
+      const di=msg.querySelector('.kc-cal-d'),t=new Date();t.setDate(t.getDate()+7);di.value=t.getFullYear()+'-'+pad(t.getMonth()+1)+'-'+pad(t.getDate());di.focus();
+      msg.querySelector('.kc-cal-go').onclick=()=>{if(!di.value)return;const ps=$('#p-start');if(ps){ps.value=di.value;ps.dispatchEvent(new Event('change',{bubbles:true}))}saveIcs(plan(),new Date(di.value+'T00:00'));msg.textContent='Opening your calendar file. On iPhone tap "Add All"; on Android open it with your calendar app.'}};
+    const mb=row.querySelector('.kc-mail-b');if(mb)mb.onclick=()=>emailPlan(plan(),mb,msg);
+  }).observe(out,{childList:true});
+
+  /* ---------- 2. a packing list for this trip: from its places, month and how you travel ---------- */
+  const box=$('#f-pack');if(!box)return;
+  const extra=document.createElement('div');extra.className='kc-packx';const kl=$('#k-list');kl?kl.before(extra):box.appendChild(extra);
+  const ALT=/^(Ladakh)$/i,ALTP=/leh|ladakh|spiti|kaza|tso|pangong|nubra|zanskar|kedarnath|hemkund|gurudongmar|tawang|sela|lahaul|kinnaur|chitkul|rohtang|chopta|tungnath|roopkund|kheerganga|hampta|sandakphu|goecha|chadar|kashmir great lakes|kunzum|chandratal|keylong|jispa|sach pass|gangotri|gaumukh|kailash|everest|annapurna/i;
+  const ILP=/^(Arunachal Pradesh|Nagaland|Mizoram|Manipur)$/;
+  function items(p){if(!p||!p.days)return null;
+    const names=[...new Set(p.days.flatMap(d=>String(d.city||'').split(/\s*(?:→|->)\s*/)).map(x=>x.trim()).filter(x=>x&&!/^on the (bus|train)$/i.test(x)))];
+    const home=names[0];const info=names.slice(1).map(n=>window.bgPlaceInfo?bgPlaceInfo(n):null).filter(x=>x&&x.known);
+    const tags=new Set(info.flatMap(x=>x.tags||[])),states=new Set(info.map(x=>x.state)),abroad=info.some(x=>/^X/.test(x.reg||''));
+    const d0=startDate()||new Date(),m=d0.getMonth()+1,days=p.days.length;
+    const cold=tags.has('s')||(tags.has('m')&&[11,12,1,2,3].includes(m))||(tags.has('d')&&[12,1,2].includes(m))||[...states].some(s=>/Ladakh|Sikkim|Himachal|Uttarakhand|Jammu|Kashmir|Arunachal/.test(s))&&[10,11,12,1,2,3].includes(m);
+    const high=states.has('Ladakh')||names.some(n=>ALTP.test(n));
+    const wet=[6,7,8,9].includes(m)&&!tags.has('d')&&!states.has('Ladakh'),hot=[4,5,6].includes(m)&&!tags.has('m')&&!tags.has('s');
+    const night=p.days.some(d=>/^on the (bus|train)$/i.test(String(d.stay&&d.stay.city||''))),train=p.days.some(d=>d.items.some(i=>i.kind==='travel'&&/train|express|mail|rail/i.test(i.what)));
+    const L=[];const add=(t,w)=>{if(!L.some(x=>x[0]===t))L.push([t,w])};
+    if(cold){add('Thermal inner layer (top + bottom)','Nights are cold here this month; thermals keep a cheap jacket warm enough.');add('Warm jacket, woollen cap and gloves','Mornings and evenings drop near or below zero in the hills in these months.');add('Cold cream and lip balm','Cold wind cracks skin within a day.')}
+    if(tags.has('m')||tags.has('s')||high){add('Sunscreen SPF 50 and sunglasses','Mountain sun burns fast, even when it feels cool; snow glare hurts the eyes.')}
+    if(high){add('Read the altitude tips before you go','Tools has altitude sickness advice. Above 3,000 m, rest on day one and drink a lot of water. Ask a doctor about medicines before the trip.')}
+    if(tags.has('t')){add('Trekking shoes with good grip','Sports shoes slip on wet rock and mud.');add('Head torch or small torch','Trails and campsites have no lights; phone torches drain the battery.');add('Rain poncho','Mountain weather changes in an hour.')}
+    if(tags.has('b')||tags.has('i')){add('Swimwear and flip-flops','For the beach; most hostels have no spare ones.');add('Dry bag for phone and wallet','Sea spray, boats and sudden showers.')}
+    if(tags.has('d')){add('Cotton scarf or stole','Covers face and neck from sun and sand in the desert.');if([11,12,1,2].includes(m))add('Warm layer for desert nights','Desert nights in winter get close to freezing.')}
+    if(wet){add('Rain cover for your bag + umbrella','It is monsoon in these months; a soaked bag ruins clothes and electronics.');add('Quick-dry clothes, no jeans','Jeans stay wet for days in the monsoon.')}
+    if(hot){add('Cap, cotton clothes, electrolyte sachets','It is very hot this month in the plains; carry water on every bus.')}
+    if(tags.has('p')){add('Clothes that cover shoulders and knees','Temples, gurudwaras and monasteries on this trip expect it.');add('Socks for temple floors','Stone floors get very hot by noon, and shoes come off.')}
+    if(tags.has('f')){add('Dull-coloured clothes','Safaris ask for green, brown or khaki; bright colours scare animals away.')}
+    if(night){add('Neck pillow','You sleep on a bus or train on this trip.')}
+    if(train){add('Chain and lock for your bag','To lock your bag to the berth on sleeper trains.')}
+    if([...states].some(s=>ILP.test(s)))add('Inner Line Permit, printed + on phone','Needed to enter '+[...states].filter(s=>ILP.test(s)).join(', ')+'. See Passes and permits.');
+    if(states.has('Ladakh'))add('Ladakh permit and ID copies','Needed for Nubra, Pangong and other protected areas; checkpoints keep copies.');
+    if(abroad){add('Passport (valid 6+ months) and visa','Most countries refuse entry if the passport expires within 6 months.');add('Forex card or some US dollars','Indian debit cards often fail abroad or charge high fees.');add('Universal plug adapter','Plugs differ outside India.');add('Travel insurance papers','Hospitals abroad can cost lakhs without it.')}
+    if(days>=6)add('Small packet of detergent','Wash clothes in the hostel and pack half as much.');
+    return{key:p.title+'|'+m,where:names.slice(1).join(', '),month:d0.toLocaleDateString('en-IN',{month:'long'}),L}}
+  let ck={};try{ck=JSON.parse(localStorage.getItem('bg_packx')||'{}')}catch(_){}
+  function draw(){const r=items(plan());if(!r||!r.L.length){extra.innerHTML='';return}
+    if(ck.key!==r.key)ck={key:r.key,on:{}};
+    extra.innerHTML=`<p class="eyebrow">For your trip: ${esc(r.where)} in ${esc(r.month)}</p><div class="kc-packx-l">${r.L.map(([t,w],i)=>`<label class="check" for="kx${i}"><input type="checkbox" id="kx${i}" ${ck.on[t]?'checked':''} data-t="${esc(t)}"><span>${esc(t)}<small>${esc(w)}</small></span></label>`).join('')}</div><p class="eyebrow" style="margin-top:6px">Every trip</p>`;
+    extra.querySelectorAll('input').forEach(x=>x.onchange=()=>{ck.on[x.dataset.t]=x.checked;try{localStorage.setItem('bg_packx',JSON.stringify(ck))}catch(_){}})}
+  draw();new MutationObserver(draw).observe(out,{childList:true});const ps=$('#p-start');if(ps)ps.addEventListener('change',draw);
+})();
+
+/* ===== VISA GUIDE for Indian passports (ordinary passport, tourism). Checked Nov 2026 from the Henley Passport Index news lists and embassy pages; rules change often. ===== */
+(()=>{
+  const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  /* N no visa at all · F visa-free · A on arrival · E apply online first (e-visa / ETA) · V visa from the embassy or VFS */
+  const V={
+   NP:['N','No visa or passport needed: Voter ID or passport works.'],BT:['N','No visa, but you need an entry permit at the border and pay a daily fee (SDF) of ₹1,200 a night.'],
+   LK:['E','Apply for the ETA online before you fly.'],BD:['V','Visa needed from the Bangladesh mission.'],MV:['A','Free 30-day visa on arrival with a hotel booking and return ticket.'],
+   TH:['F','For a short stay. Check the current number of days before you go.'],VN:['E','e-Visa online, usually ready in 3–5 working days.'],KH:['A','Visa on arrival or e-Visa online.'],
+   LAO:['A','Visa on arrival at main borders, or e-Visa online.'],MY:['F','Stay up to 30 days.'],SG:['V','Visa needed, applied through an authorised agent.'],
+   ID:['A','Visa on arrival (e-VOA online too).'],PH:['F','Stay up to 14 days.'],JP:['E','Apply for the eVISA online.'],KR:['V','Visa needed from the Korean embassy.'],
+   HK:['E','Free online Pre-arrival Registration before you fly.'],TW:['E','e-Visa online.'],CN:['V','Visa needed from the Chinese visa centre.'],MNG:['A','Visa on arrival or e-Visa online.'],
+   AE:['V','Visa needed, usually applied online through an airline or agent. Visa on arrival if you hold a valid US visa or UK/EU residence.'],
+   OM:['E','e-Visa online.'],JO:['A','Visa on arrival; the Jordan Pass includes the visa fee.'],TUR:['V','Visa needed. e-Visa only if you hold a valid US, UK or Schengen visa.'],
+   GE:['E','e-Visa online. Visa-free if you hold a valid US, UK or Schengen visa.'],AM:['E','e-Visa online.'],AZ:['E','ASAN e-Visa online, ready in about 3 days.'],
+   UZ:['E','e-Visa online.'],KG:['E','e-Visa online.'],KZ:['F','Stay up to 14 days.'],TJ:['E','e-Visa online. The Pamir Highway needs an extra GBAO permit (tick it on the form).'],
+   SCHENGEN:['V','Schengen visa needed (covers most of Europe). Apply through VFS or BLS 2–3 months ahead.'],
+   GB:['V','UK visa needed. Apply online, then give fingerprints at VFS.'],IE:['V','Irish visa needed. A UK visa does not cover Ireland unless you use the British-Irish visa scheme.'],
+   BA:['V','Visa needed; entry allowed with a valid multi-entry US, UK or Schengen visa.'],ME:['V','Visa needed; entry allowed with a valid US, UK or Schengen visa.'],AL:['V','Visa needed; entry allowed with a valid multi-entry US, UK or Schengen visa.'],
+   EG:['E','e-Visa online, or on arrival if you hold a valid US, UK or Schengen visa.'],MA:['E','e-Visa online.'],KE:['E','Apply for the ETA online before you fly.'],TZ:['A','Visa on arrival or e-Visa online.'],
+   UG:['E','e-Visa online. Yellow fever card needed.'],ZA:['V','Visa needed, through VFS.'],NA:['E','Visa on arrival or e-Visa: check before you go.'],ZW:['A','Visa on arrival.'],MG:['A','Visa on arrival or e-Visa online.'],
+   MU:['F','For tourist stays; carry a return ticket and hotel booking.'],ET:['E','e-Visa online.'],BW:['E','e-Visa online.'],TUN:['V','Visa needed from the Tunisian embassy.'],
+   PE:['V','Visa needed, unless you hold a valid US, UK, Canada or Schengen visa.'],BO:['E','e-Visa online.'],CL:['V','Visa needed from the Chilean consulate.'],ARG:['V','Visa needed. An online AVE is possible if you hold a valid US or Schengen visa.'],
+   BRA:['V','Visa needed, through VFS.'],CO:['V','Visa needed, unless you hold a valid US or Schengen visa.'],EC:['V','Check visa rules before booking: they changed recently.'],MX:['V','Visa needed, unless you hold a valid US, UK, Canada or Schengen visa.'],
+   GT:['V','Visa needed, unless you hold a valid US, Canada or Schengen visa.'],CU:['E','Tourist card or e-Visa needed before you fly.'],CR:['V','Visa needed, unless you hold a valid US, Canada or Schengen visa.'],
+   US:['V','US visa needed. Interview waits can be long: apply months ahead.'],CA:['V','Visa needed, apply online and give fingerprints at VFS.'],AU:['E','Visitor visa (subclass 600) applied online.'],NZ:['E','Visitor visa applied online.'],FJ:['F','For tourist stays; carry a return ticket.']};
+  ['PT','ES','FR','IT','GR','SUI','AT','DE','NED','BE','CZ','HU','PL','CRO','SI','BG','RO','IS','NO','FI','EE'].forEach(c=>V[c]=V.SCHENGEN);
+  const CAT={N:['🟢','No visa'],F:['🟢','Visa-free'],A:['🟡','Visa on arrival'],E:['🟠','Apply online first'],V:['🔴','Visa needed']};
+  const names={};try{Object.entries(window.bgST||{}).forEach(([c,v])=>{if(Array.isArray(v)&&/^X/.test(v[1]||''))names[c]=v[0]})}catch(_){}
+  const wv=n=>'https://en.wikivoyage.org/wiki/'+encodeURIComponent(n.replace(/ /g,'_'))+'#Get_in';
+  window.kcVisa=name=>{const code=Object.keys(names).find(c=>names[c]===name);return code&&V[code]?{code,cat:V[code][0],note:V[code][1],label:CAT[V[code][0]]}:null};
+  /* badge on every place card abroad */
+  const xl=$('#x-list');
+  const badge=art=>{if(art.querySelector('.kc-visa'))return;const n=((art.querySelector('.dayhead > .sub')||{}).textContent||'').trim();
+    const v=n&&kcVisa(n);if(!v)return;const p=document.createElement('p');p.className='kc-visa';p.innerHTML=`${v.label[0]} <b>${esc(v.label[1])}</b> for Indian passports · <a href="${esc(wv(n))}" target="_blank" rel="noopener">entry rules</a>`;
+    const fg=art.querySelector('.kc-guide');fg?fg.before(p):art.appendChild(p)};
+  if(xl){const run=()=>xl.querySelectorAll('article').forEach(badge);run();new MutationObserver(run).observe(xl,{childList:true})}
+  /* the guide itself, as a drawer in Tools */
+  const fun=$('#v-fun');if(!fun)return;
+  const card=document.createElement('div');card.className='card kc-fold kc-visa-card';card.id='f-visa';
+  const rows=Object.keys(names).filter(c=>V[c]).map(c=>[names[c],V[c]]).sort((a,b)=>'NFAEV'.indexOf(a[1][0])-'NFAEV'.indexOf(b[1][0])||a[0].localeCompare(b[0]));
+  card.innerHTML=`<h3 role="button" tabindex="0" aria-expanded="false">🛂 Visa guide for Indian passports</h3>
+   <p class="sub">For a normal Indian passport and a tourist trip. Checked November 2026. Rules change often, so always confirm on the country’s official site or embassy before you book.</p>
+   <label>Find a country<input id="kc-vq" placeholder="e.g. Thailand" autocomplete="off"></label>
+   <p class="kc-vkey">${Object.entries(CAT).filter(([k])=>k!=='N').map(([k,v])=>`${v[0]} ${esc(v[1])}`).join(' · ')}</p>
+   <div class="kc-vlist">${rows.map(([n,v])=>`<div class="kc-vrow" data-n="${esc(n.toLowerCase())}"><span class="kc-vc">${CAT[v[0]][0]}</span><div><b>${esc(n)}</b> <small>${esc(CAT[v[0]][1])}</small><p>${esc(v[1])} <a href="${esc(wv(n))}" target="_blank" rel="noopener">Entry rules ↗</a></p></div></div>`).join('')}</div>
+   <p class="note">Most countries need a passport valid for at least 6 months after your trip, a return ticket and proof of money. A valid US, UK or Schengen visa opens extra doors in many countries (see the notes).</p>`;
+  const tools=fun.querySelector('.kc-guides')||fun.querySelector('#f-pack');(tools&&tools.nextElementSibling)?tools.after(card):fun.appendChild(card);
+  const h=card.querySelector('h3');const t=()=>{card.classList.toggle('kc-open');h.setAttribute('aria-expanded',card.classList.contains('kc-open'))};h.addEventListener('click',t);h.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
+  card.querySelector('#kc-vq').addEventListener('input',e=>{const q=e.target.value.trim().toLowerCase();card.querySelectorAll('.kc-vrow').forEach(r=>r.hidden=!!q&&!r.dataset.n.includes(q))});
+  const jump=fun.querySelector('nav.jump');if(jump&&!jump.querySelector('a[href="#f-visa"]'))jump.insertAdjacentHTML('beforeend','<a href="#f-visa">🛂 Visa</a>');
+  /* the planner: a trip abroad gets the visa line in its tips card */
+  const out=$('#p-out');if(out)new MutationObserver(()=>{if(out.querySelector('.kc-visa-tip'))return;const p=window.bgCurrentPlan&&bgCurrentPlan();if(!p||!p.days)return;
+    const cs=[...new Set(p.days.flatMap(d=>String(d.city||'').split(/\s*(?:→|->)\s*/)).map(x=>x.trim()))];
+    const found=[];cs.forEach(c=>{const pi=window.bgPlaceInfo?bgPlaceInfo(c):null;if(pi&&/^X/.test(pi.reg||'')&&pi.state){const v=kcVisa(pi.state);if(v&&!found.some(f=>f.n===pi.state))found.push({n:pi.state,v})}});
+    if(!found.length)return;const card=document.createElement('div');card.className='card kc-visa-tip';
+    card.innerHTML='<h3>🛂 Visa for this trip</h3>'+found.map(f=>`<p>${f.v.label[0]} <b>${esc(f.n)}: ${esc(f.v.label[1])}.</b> ${esc(f.v.note)} <a href="${esc(wv(f.n))}" target="_blank" rel="noopener">Entry rules ↗</a></p>`).join('')+'<p class="sub">For Indian passports, checked Nov 2026. Confirm on the official site before booking.</p>';
+    const first=out.querySelector('.card');first?first.after(card):out.appendChild(card)}).observe(out,{childList:true});
+})();
+
+/* ===== MONEY CONVERTER for trips abroad: live rates (ExchangeRate-API, free), last rates kept for offline ===== */
+(()=>{
+  const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const CUR={NP:'NPR',BT:'BTN',LK:'LKR',BD:'BDT',MV:'MVR',TH:'THB',VN:'VND',KH:'USD',LAO:'LAK',MY:'MYR',SG:'SGD',ID:'IDR',PH:'PHP',JP:'JPY',KR:'KRW',HK:'HKD',TW:'TWD',CN:'CNY',MNG:'MNT',
+    AE:'AED',OM:'OMR',JO:'JOD',TUR:'TRY',GE:'GEL',AM:'AMD',AZ:'AZN',UZ:'UZS',KG:'KGS',KZ:'KZT',TJ:'TJS',
+    PT:'EUR',ES:'EUR',FR:'EUR',IT:'EUR',GR:'EUR',AT:'EUR',DE:'EUR',NED:'EUR',BE:'EUR',SI:'EUR',CRO:'EUR',EE:'EUR',FI:'EUR',ME:'EUR',IE:'EUR',BG:'EUR',
+    SUI:'CHF',CZ:'CZK',HU:'HUF',PL:'PLN',BA:'BAM',AL:'ALL',RO:'RON',IS:'ISK',NO:'NOK',GB:'GBP',
+    EG:'EGP',MA:'MAD',KE:'KES',TZ:'TZS',UG:'UGX',ZA:'ZAR',NA:'NAD',ZW:'USD',MG:'MGA',MU:'MUR',ET:'ETB',BW:'BWP',TUN:'TND',
+    PE:'PEN',BO:'BOB',CL:'CLP',ARG:'ARS',BRA:'BRL',CO:'COP',EC:'USD',MX:'MXN',GT:'GTQ',CU:'USD',CR:'CRC',US:'USD',CA:'CAD',AU:'AUD',NZ:'NZD',FJ:'FJD'};
+  const NAME={USD:'US dollar',EUR:'Euro',GBP:'British pound',AED:'UAE dirham',THB:'Thai baht',VND:'Vietnamese dong',NPR:'Nepali rupee',LKR:'Sri Lankan rupee',BDT:'Bangladeshi taka',MVR:'Maldivian rufiyaa',BTN:'Bhutanese ngultrum',
+    LAK:'Lao kip',MYR:'Malaysian ringgit',SGD:'Singapore dollar',IDR:'Indonesian rupiah',PHP:'Philippine peso',JPY:'Japanese yen',KRW:'Korean won',HKD:'Hong Kong dollar',TWD:'Taiwan dollar',CNY:'Chinese yuan',MNT:'Mongolian tögrög',
+    OMR:'Omani rial',JOD:'Jordanian dinar',TRY:'Turkish lira',GEL:'Georgian lari',AMD:'Armenian dram',AZN:'Azerbaijani manat',UZS:'Uzbek som',KGS:'Kyrgyz som',KZT:'Kazakh tenge',TJS:'Tajik somoni',
+    CHF:'Swiss franc',CZK:'Czech koruna',HUF:'Hungarian forint',PLN:'Polish złoty',BAM:'Bosnian mark',ALL:'Albanian lek',RON:'Romanian leu',ISK:'Icelandic króna',NOK:'Norwegian krone',
+    EGP:'Egyptian pound',MAD:'Moroccan dirham',KES:'Kenyan shilling',TZS:'Tanzanian shilling',UGX:'Ugandan shilling',ZAR:'South African rand',NAD:'Namibian dollar',MGA:'Malagasy ariary',MUR:'Mauritian rupee',ETB:'Ethiopian birr',BWP:'Botswana pula',TND:'Tunisian dinar',
+    PEN:'Peruvian sol',BOB:'Bolivian boliviano',CLP:'Chilean peso',ARS:'Argentine peso',BRL:'Brazilian real',COP:'Colombian peso',MXN:'Mexican peso',GTQ:'Guatemalan quetzal',CRC:'Costa Rican colón',CAD:'Canadian dollar',AUD:'Australian dollar',NZD:'NZ dollar',FJD:'Fijian dollar'};
+  const KEY='bg_fx';let fx=null;try{fx=JSON.parse(localStorage.getItem(KEY)||'null')}catch(_){}
+  let loading=null;
+  const rates=()=>{if(fx&&Date.now()-fx.t<12*3600e3)return Promise.resolve(fx);if(loading)return loading;
+    return loading=fetch('https://open.er-api.com/v6/latest/INR').then(r=>r.json()).then(j=>{if(j&&j.result==='success'&&j.rates){fx={t:Date.now(),at:j.time_last_update_utc||'',r:j.rates};try{localStorage.setItem(KEY,JSON.stringify(fx))}catch(_){}}loading=null;return fx}).catch(()=>{loading=null;return fx})};
+  const fmt=(n,c)=>{try{return new Intl.NumberFormat('en-IN',{style:'currency',currency:c,maximumFractionDigits:n<100?2:0}).format(n)}catch(_){return c+' '+Math.round(n).toLocaleString('en-IN')}};
+  const curOf=country=>{const code=Object.keys(window.bgST||{}).find(c=>(bgST[c]||[])[0]===country);return code&&CUR[code]};
+  window.kcFx={rates,curOf,fmt};
+  /* Tools: converter drawer */
+  const fun=$('#v-fun');if(fun){
+    const card=document.createElement('div');card.className='card kc-fold kc-fx';card.id='f-fx';
+    const list=[...new Set(Object.values(CUR))].sort((a,b)=>(NAME[a]||a).localeCompare(NAME[b]||b));
+    let st={c:'THB',amt:1000,dir:'in'};try{Object.assign(st,JSON.parse(localStorage.getItem('bg_fxui')||'{}'))}catch(_){}
+    card.innerHTML=`<h3 role="button" tabindex="0" aria-expanded="false">💱 Money converter</h3>
+      <p class="sub">For trips abroad. Rates update twice a day and are saved, so it works offline too.</p>
+      <div class="kc-fx-row"><label>Amount<input id="kc-fx-a" type="number" inputmode="decimal" min="0" value="${+st.amt||1000}"></label>
+       <label>Currency<select id="kc-fx-c">${list.map(c=>`<option value="${c}"${c===st.c?' selected':''}>${esc(NAME[c]||c)} (${c})</option>`).join('')}</select></label></div>
+      <div class="kc-chips" id="kc-fx-d"><button type="button" class="kc-chip" data-d="in" aria-pressed="${st.dir==='in'}">₹ to this currency</button><button type="button" class="kc-chip" data-d="out" aria-pressed="${st.dir==='out'}">This currency to ₹</button></div>
+      <p class="kc-fx-out" id="kc-fx-o" aria-live="polite"></p>
+      <p class="sub kc-fx-src" id="kc-fx-s"></p>`;
+    const g=fun.querySelector('#f-visa')||fun.querySelector('.kc-guides');g?g.after(card):fun.appendChild(card);
+    const h=card.querySelector('h3');const t=()=>{card.classList.toggle('kc-open');h.setAttribute('aria-expanded',card.classList.contains('kc-open'));if(card.classList.contains('kc-open'))draw()};h.addEventListener('click',t);h.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();t()}});
+    const A=card.querySelector('#kc-fx-a'),Cs=card.querySelector('#kc-fx-c'),O=card.querySelector('#kc-fx-o'),Sx=card.querySelector('#kc-fx-s');
+    async function draw(){st.amt=+A.value||0;st.c=Cs.value;try{localStorage.setItem('bg_fxui',JSON.stringify(st))}catch(_){}
+      const f=await rates();if(!f||!f.r||!f.r[st.c]){O.textContent='Rates need internet the first time. Connect once and they are saved.';Sx.textContent='';return}
+      const r=f.r[st.c];O.innerHTML=st.dir==='in'?`${esc(fmt(st.amt,'INR'))} = <b>${esc(fmt(st.amt*r,st.c))}</b>`:`${esc(fmt(st.amt,st.c))} = <b>${esc(fmt(st.amt/r,'INR'))}</b>`;
+      Sx.innerHTML=`1 ${esc(st.c)} = ${esc(fmt(1/r,'INR'))}. Rates ${f.at?'from '+esc(new Date(f.at).toLocaleDateString('en-IN',{day:'numeric',month:'short'})):''} by <a href="https://www.exchangerate-api.com" target="_blank" rel="noopener">Exchange Rate API</a>. Banks and cards charge 2–4% more.`}
+    A.addEventListener('input',draw);Cs.addEventListener('change',draw);
+    card.querySelector('#kc-fx-d').addEventListener('click',e=>{const b=e.target.closest('[data-d]');if(!b)return;st.dir=b.dataset.d;card.querySelectorAll('[data-d]').forEach(x=>x.setAttribute('aria-pressed',x===b));draw()});
+    const jump=fun.querySelector('nav.jump');if(jump&&!jump.querySelector('a[href="#f-fx"]'))jump.insertAdjacentHTML('beforeend','<a href="#f-fx">💱 Money</a>');
+    window.kcFxOpen=c=>{if(c&&[...Cs.options].some(o=>o.value===c))Cs.value=c;if(!card.classList.contains('kc-open'))t();window.bgShow&&bgShow('fun');setTimeout(()=>card.scrollIntoView({block:'start',behavior:'smooth'}),200)};
+  }
+  /* plan abroad: the total in local money */
+  const out=$('#p-out');if(out)new MutationObserver(()=>{const sum=out.querySelector('#p-sum');if(!sum||out.querySelector('.kc-fx-line'))return;const p=window.bgCurrentPlan&&bgCurrentPlan();if(!p||!p.days)return;
+    const cs=[...new Set(p.days.flatMap(d=>String(d.city||'').split(/\s*(?:→|->)\s*/)).map(x=>x.trim()))];let cur=null;
+    for(const c of cs){const pi=window.bgPlaceInfo?bgPlaceInfo(c):null;if(pi&&/^X/.test(pi.reg||'')&&pi.state){cur=curOf(pi.state);if(cur)break}}
+    if(!cur||cur==='BTN')return;const line=document.createElement('p');line.className='sub kc-fx-line';sum.closest('.dayhead').after(line);
+    rates().then(f=>{if(!f||!f.r||!f.r[cur]){line.remove();return}const rs=+String(sum.textContent).replace(/[^\d]/g,'');line.innerHTML=`About <b>${esc(fmt(rs*f.r[cur],cur))}</b> in ${esc(NAME[cur]||cur)} · <button type="button" class="link kc-fx-go">converter</button>`;line.querySelector('.kc-fx-go').onclick=()=>window.kcFxOpen&&kcFxOpen(cur)})}).observe(out,{childList:true});
+})();
+
+/* ===== HIDDEN GEMS from travellers: signed-in people suggest, the owner approves in the Sheet ===== */
+(()=>{
+  const C=window.KC_CONFIG||{},API=(C.api||'').trim();if(!API)return;
+  const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const ex=$('#v-explore');if(!ex)return;
+  const card=document.createElement('div');card.className='card kc-gems';card.id='kc-gems';
+  card.innerHTML='<h2>💎 Hidden gems from travellers</h2><p class="sub">Places real travellers loved that most people skip. Checked by us before they show up here.</p><div class="kc-gem-list"><p class="sub">Loading…</p></div><button type="button" class="ghost" data-gem>➕ Suggest a hidden gem</button>';
+  const f=$('#kc-finder');f?f.after(card):ex.prepend(card);
+  const list=card.querySelector('.kc-gem-list');
+  const draw=g=>{if(!Array.isArray(g)||!g.length){list.innerHTML='<p class="sub">No gems yet. Know a place most people miss? Be the first to add it.</p>';return}
+    list.innerHTML=g.slice(0,12).map(x=>`<article class="kc-gem"><div class="dayhead"><h3>${esc(x.place)}</h3><span class="sub">${esc(x.state)}</span></div><p>${esc(x.why)}</p>${x.best?`<p class="sub"><b>Best time:</b> ${esc(x.best)}</p>`:''}${x.reach?`<p class="sub"><b>Getting there:</b> ${esc(x.reach)}</p>`:''}${x.tip?`<p class="sub">💡 ${esc(x.tip)}</p>`:''}<a class="kc-gem-plan" href="?to=${encodeURIComponent(x.place)}#plan">Plan a trip here →</a></article>`).join('')};
+  let cache=null;try{cache=JSON.parse(localStorage.getItem('bg_gems')||'null')}catch(_){}
+  if(cache&&Date.now()-cache.t<3600e3)draw(cache.d);
+  else fetch(API+'?action=gems',{credentials:'omit',referrerPolicy:'no-referrer'}).then(r=>r.json()).then(d=>{try{localStorage.setItem('bg_gems',JSON.stringify({t:Date.now(),d}))}catch(_){}draw(d)}).catch(()=>{if(cache)draw(cache.d);else list.innerHTML='<p class="sub">Hidden gems need internet to load.</p>'});
+  function open(){let acct=null;try{acct=JSON.parse(localStorage.getItem('kc_acct')||'null')}catch(_){}
+    if(!acct||!acct.token){if(window.kcAccount)kcAccount.open();return}
+    const w=document.createElement('div');w.className='kc-sheet';w.setAttribute('role','dialog');w.setAttribute('aria-modal','true');w.setAttribute('aria-label','Suggest a hidden gem');
+    w.innerHTML=`<div class="kc-sheet-in"><div class="kc-sheet-h"><h2>Suggest a hidden gem</h2><button type="button" class="kc-x" aria-label="Close">✕</button></div><form novalidate>
+      <div class="kc-two"><label>Place<input name="place" maxlength="60" required placeholder="e.g. Lamayuru"></label><label>State or country<input name="state" maxlength="40" required placeholder="e.g. Ladakh"></label></div>
+      <label>Why should people go?<textarea name="why" rows="3" maxlength="300" required placeholder="What makes it special, in 1–2 lines"></textarea></label>
+      <div class="kc-two"><label>Best time (optional)<input name="best" maxlength="60" placeholder="e.g. Jun–Sep"></label><label>How to reach (optional)<input name="reach" maxlength="160" placeholder="e.g. Bus from Leh, 3 h"></label></div>
+      <label>One tip (optional)<input name="tip" maxlength="200" placeholder="e.g. Stay at the monastery guesthouse"></label>
+      <input type="text" name="website" class="kc-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="primary" type="submit">Send for review</button><p class="kc-msg" role="alert"></p><p class="sub">We check every place before it appears. Your name is never shown.</p></form></div>`;
+    document.body.appendChild(w);const close=()=>{w.classList.add('kc-out');setTimeout(()=>w.remove(),220)};w.querySelector('.kc-x').onclick=close;w.addEventListener('click',e=>{if(e.target===w)close()});
+    const fm=w.querySelector('form'),m=w.querySelector('.kc-msg');setTimeout(()=>fm.place.focus(),250);
+    fm.onsubmit=async e=>{e.preventDefault();const d=Object.fromEntries(new FormData(fm).entries());if(d.website)return close();
+      if((d.place||'').trim().length<2||(d.state||'').trim().length<2){m.textContent='Add the place and its state or country.';return}
+      if((d.why||'').trim().length<20){m.textContent='Tell us a little more about why it is special.';return}
+      const b=fm.querySelector('button[type=submit]');b.disabled=true;b.textContent='Sending…';
+      try{const r=await fetch(API,{method:'POST',body:JSON.stringify(Object.assign({kind:'gem_suggest',token:acct.token},d)),credentials:'omit',referrerPolicy:'no-referrer'});const j=await r.json();
+        if(j.ok){fm.innerHTML='<p class="kc-done">✅ Thanks! We will check it and add it soon.</p><button type="button" class="primary">Close</button>';fm.querySelector('button').onclick=close;try{window.kcTrack&&kcTrack('gem_suggested')}catch(_){}return}
+        m.textContent=j.error==='limit'?'You can suggest 3 places a day. Thank you!':j.error==='signin'?'Sign in again, then try.':'Could not send. Try again later.'}
+      catch(_){m.textContent='Couldn’t connect. Check your internet.'}b.disabled=false;b.textContent='Send for review'}}
+  document.addEventListener('click',e=>{if(e.target.closest('[data-gem]'))open()});
+})();
+
+/* ===== Hindi for text with numbers in it ("360 places", "5 days"…) ===== */
+(()=>{
+  const RE=[[/^([\d,]+) places$/,'$1 जगहें'],[/^1 place$/,'1 जगह'],[/^(\d+) days$/,'$1 दिन'],[/^Show more places \((\d+) left\)$/,'और जगहें दिखाएँ ($1 बाकी)'],[/^(\d+) of (\d+) packed$/,'$2 में से $1 पैक'],
+    [/^💸 Trips under (₹[\d,]+)$/,'💸 $1 से कम की ट्रिप्स'],[/^Show trips under (₹[\d,]+)$/,'$1 से कम की ट्रिप्स दिखाएँ'],[/^Step (\d) of (\d)$/,'चरण $1 / $2'],[/^Spoken in: (.*)$/,'बोली जाती है: $1'],
+    [/^Your trip: (.*)$/,'आपकी ट्रिप: $1'],[/^For your trip: (.*) in (.*)$/,'आपकी ट्रिप के लिए: $1 ($2)'],[/^(\d+) Underrated$/,'$1 कम मशहूर'],[/^Great in (\w+)$/,'$1 में बढ़िया'],[/^Skip in (\w+)$/,'$1 में न जाएँ']];
+  const done=new Map();
+  window.kcHiRe=root=>{const w=document.createTreeWalker(root||document.body,NodeFilter.SHOW_TEXT);let n;
+    while(n=w.nextNode()){const pe=n.parentElement;if(!pe||pe.closest('script,style,.kc-lang'))continue;const t=n.nodeValue.trim();if(!t||t.length>80)continue;
+      for(const [re,rep] of RE){if(re.test(t)){if(!done.has(n))done.set(n,n.nodeValue);n.nodeValue=n.nodeValue.replace(t,t.replace(re,rep));break}}}};
+  const isHi=()=>document.documentElement.lang==='hi';
+  let pend=false;new MutationObserver(()=>{if(!isHi()||pend)return;pend=true;requestAnimationFrame(()=>{pend=false;kcHiRe(document.body)})}).observe(document.body,{childList:true,subtree:true});
+  const lb=document.querySelector('.kc-lang');if(lb)lb.addEventListener('click',()=>{if(isHi())kcHiRe(document.body);else{done.forEach((v,n)=>{if(n.isConnected)n.nodeValue=v});done.clear()}});
+  if(isHi())kcHiRe(document.body);
+})();
+
+/* ===== Instagram link in the footers ===== */
+(()=>{const IG='https://www.instagram.com/piyush_choudhary_21/';
+  const leg=document.querySelector('footer.foot .kc-legal');if(leg&&!leg.querySelector('.kc-ig'))leg.insertAdjacentHTML('beforeend',` · <a class="kc-ig" href="${IG}" target="_blank" rel="noopener">Instagram</a>`);
+  const kf=document.querySelector('.kc-footer .kc-gcol ul');if(kf&&!kf.querySelector('.kc-ig'))kf.insertAdjacentHTML('beforeend',`<li><a class="kc-ig" href="${IG}" target="_blank" rel="noopener">Instagram</a></li>`);
 })();
 
 mark();
