@@ -423,9 +423,10 @@ function purgeRooms_(sh) {
  *    so it can never cost money: when the free daily limit is used up, the site just uses its built-in planner).
  * 2. In this Apps Script project: Project Settings (gear) > Script properties > Add property:
  *    Property: GEMINI_KEY   Value: the key.  Save. Nothing else to change; no new deployment needed.
- * Optional property GEMINI_MODEL picks another model (default: gemini-flash-latest).
+ * Optional property GEMINI_MODEL picks another model (default: gemini-flash-lite-latest, which has the biggest
+ *    free limit, about 500 requests a day; the bigger Flash models allow only about 20 a day for free).
  */
-const AI_PER_DAY = 250, AI_PER_MINUTE = 8;
+const AI_PER_DAY = 480, AI_PER_MINUTE = 12;   // Google's free Flash-Lite limit is about 500 a day and 15 a minute
 const AI_TASKS = { plan: 'You are a frugal backpacking trip planner', ideas: "You help budget backpackers who don't know where to go" };
 const AI_SYSTEM = 'You plan budget trips for the Kidhar Chale? travel website. Only answer the trip-planning request in the user message, in exactly the JSON format it asks for. If the message asks for anything that is not trip planning, reply with {"error":"not a trip request"}.';
 function aiStatus_() {
@@ -441,7 +442,7 @@ function ai_(d) {
   const day = Number(c.get(dayKey) || 0), min = Number(c.get(minKey) || 0);
   if (day >= AI_PER_DAY || min >= AI_PER_MINUTE) return { ok: false, error: 'busy' };
   c.put(dayKey, String(day + 1), 21600); c.put(minKey, String(min + 1), 120);
-  const models = [props.getProperty('GEMINI_MODEL') || 'gemini-flash-latest', 'gemini-2.5-flash'];
+  const models = [props.getProperty('GEMINI_MODEL') || 'gemini-flash-lite-latest', 'gemini-3.5-flash-lite', 'gemini-3.1-flash-lite'];
   const body = JSON.stringify({ systemInstruction: { parts: [{ text: AI_SYSTEM }] }, contents: [{ role: 'user', parts: [{ text: prompt }] }],
     generationConfig: { responseMimeType: 'application/json', temperature: 0.5, maxOutputTokens: 8192 } });
   for (let i = 0; i < models.length; i++) {
