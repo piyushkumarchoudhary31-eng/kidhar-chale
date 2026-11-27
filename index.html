@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'sha256-9JCxErsjRb2eZw0l3Q8Hd9Gw6BANE3UTp91/XC3TW8Q=' 'sha256-QoMl/ODRUCIcosF0+RcqJlCA2wvXgi/HQBKCTD3HNKU=' 'sha256-YvISAN/5480GnEqEf4CCN7poH17inreSBV7FXduirik=' 'sha256-jufC3u/gWFnapFEU3FHJNyCq0JEL51GDOlITNq8ms6M=' 'sha256-tSDjBzDeD8Wp8RTN8hwV8HY79/g5mUaYfFN/dsH1BPA=' 'sha256-tp28CuXBZnknngQpJpLrK7pVCoodv8dYREb+GJE2OqM=' 'sha256-xMKAXLmbbD+Xf5lc7jzlqzMYXKuvxDxU1GoUfdAp3gE=' https://cdnjs.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://upload.wikimedia.org https://tile.openstreetmap.org https://*.tile.openstreetmap.org https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://www.google.com; connect-src 'self' https://open.er-api.com https://en.wikipedia.org https://commons.wikimedia.org https://api.open-meteo.com https://script.google.com https://script.googleusercontent.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://upload.wikimedia.org https://*.g.doubleclick.net https://www.google.com; worker-src 'self'; manifest-src 'self'; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'sha256-7HNucECZvHg1pM+bB3P3wtA6kxOCc1LNwrk2dAahcfA=' 'sha256-QoMl/ODRUCIcosF0+RcqJlCA2wvXgi/HQBKCTD3HNKU=' 'sha256-YvISAN/5480GnEqEf4CCN7poH17inreSBV7FXduirik=' 'sha256-jufC3u/gWFnapFEU3FHJNyCq0JEL51GDOlITNq8ms6M=' 'sha256-tSDjBzDeD8Wp8RTN8hwV8HY79/g5mUaYfFN/dsH1BPA=' 'sha256-tp28CuXBZnknngQpJpLrK7pVCoodv8dYREb+GJE2OqM=' 'sha256-xMKAXLmbbD+Xf5lc7jzlqzMYXKuvxDxU1GoUfdAp3gE=' https://cdnjs.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://upload.wikimedia.org https://tile.openstreetmap.org https://*.tile.openstreetmap.org https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://www.google.com; connect-src 'self' https://open.er-api.com https://en.wikipedia.org https://commons.wikimedia.org https://api.open-meteo.com https://script.google.com https://script.googleusercontent.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://upload.wikimedia.org https://*.g.doubleclick.net https://www.google.com; worker-src 'self'; manifest-src 'self'; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Plan a budget trip in seconds: day-by-day bus and train routes, cheap stays and real costs in ₹. 643 places in India, 357 abroad. Free, no sign-up.">
@@ -903,6 +903,18 @@ nav.tabs button:focus-visible,.kc-side nav.tabs button:focus-visible{outline:2.5
 .kc-gem h3,.kc-gem p{margin:0}
 .kc-gem-plan{color:var(--pop);font-weight:700}
 .kc-gems [data-gem]{align-self:flex-start}
+/* share card: compact two-column buttons on phones */
+@media (max-width:699px){
+  .kc-share>.row,.kc-share .kc-cal{display:grid!important;grid-template-columns:1fr 1fr;gap:8px}
+  .kc-share>.row>button{min-width:0;padding-inline:8px}
+  .kc-share>.row:not(.kc-cal)>button:first-child{grid-column:1/-1}
+  .kc-share .kc-cal>button{min-width:0;padding-inline:8px}
+  .kc-share .kc-cal>p{grid-column:1/-1}
+  .kc-share .kc-cal>button:only-of-type{grid-column:1/-1}
+}
+/* stay: check-in, nights and people on one line */
+#v-stay .row:has(#s-in){display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:8px}
+#v-stay .row:has(#s-in) label{min-width:0}
 </style>
 </head>
 <body>
@@ -4464,7 +4476,8 @@ window.kcPhoto=(()=>{
     paint();const w=$('.kc-acct-sheet');if(w)viewEmail(w,msg);else if(msg){const bar=document.createElement('div');bar.className='kc-acct-bar';bar.setAttribute('role','status');bar.innerHTML=`<span>${esc(msg)}</span><button type="button" class="small" data-acct>Sign in</button>`;document.body.appendChild(bar);setTimeout(()=>bar.remove(),9000)}}
 
   /* footer and privacy note: say that accounts are optional */
-  const fp=$('footer.foot p');if(fp&&!fp.querySelector('.kc-acct-note'))fp.insertAdjacentHTML('beforeend',' <span class="kc-acct-note">Sign-in is optional: with an account, your trips are also saved, encrypted, so you can open them on any device.</span>');
+  const fp=$('footer.foot p');if(fp&&!fp.querySelector('.kc-acct-note'))fp.innerHTML='<b>Kidhar Chale?</b> is made free for travellers. No ads, and sign-in is optional. <span class="kc-acct-note">Without an account, your plans, spends and trips stay only in this browser. With one, they are also saved, encrypted, so you can open them on any device.</span> The weather asks Open-Meteo about a place’s location, and the map loads from OpenStreetMap. <a href="privacy.html">How we handle data</a>.';
+  document.querySelectorAll('.kc-footer p').forEach(kb=>{if(/Everything stays in your browser/.test(kb.textContent))kb.textContent=kb.textContent.replace('Everything stays in your browser.','Your trips stay in your browser, or in your account if you sign in.')});
   if(typeof HI==='object')Object.assign(HI,{'Sign in':'साइन इन','Save your trips':'अपनी ट्रिप्स सेव करें','Sign in or create account':'साइन इन करें या अकाउंट बनाएँ','Sign in with just your email. Your plans, money and lists stay safe and open on any phone or laptop.':'सिर्फ़ ईमेल से साइन इन करें। आपके प्लान, खर्च और लिस्ट सुरक्षित रहेंगे और किसी भी फ़ोन या लैपटॉप पर खुलेंगे।','Manage account and trips':'अकाउंट और ट्रिप्स','Sign in or create an account with your email. We send you a 6-digit code. No password to remember.':'अपने ईमेल से साइन इन करें या अकाउंट बनाएँ। हम आपको 6 अंकों का कोड भेजेंगे। कोई पासवर्ड याद नहीं रखना।','Your email':'आपका ईमेल','Send me a code':'मुझे कोड भेजें','Check your email':'अपना ईमेल देखें','Code':'कोड','Use a different email':'दूसरा ईमेल डालें','Send a new code':'नया कोड भेजें','My saved trips':'मेरी सेव की गई ट्रिप्स','Settings':'सेटिंग्स','Name':'नाम','Save':'सेव करें','Sign out':'साइन आउट','Sign out on all devices':'सभी डिवाइस से साइन आउट','Delete my account':'मेरा अकाउंट डिलीट करें','Save now':'अभी सेव करें','Cancel':'रद्द करें','Your trips are encrypted. Nobody else can read them.':'आपकी ट्रिप्स एन्क्रिप्टेड हैं। कोई और इन्हें नहीं पढ़ सकता।','We never store your email in readable form, and never send ads.':'हम आपका ईमेल पढ़ने लायक रूप में कभी नहीं रखते, और कभी विज्ञापन नहीं भेजते।','Delete your account and everything in it any time.':'अपना अकाउंट और उसमें सब कुछ कभी भी डिलीट करें।','Create my account':'मेरा अकाउंट बनाएँ','Your name':'आपका नाम','What should we call you?':'हम आपको क्या कहें?','Welcome! One last thing':'स्वागत है! बस एक चीज़ और'});
   paint();
   if(acct)setTimeout(()=>sync(false),1200);
@@ -4793,6 +4806,33 @@ window.kcPhoto=(()=>{
 (()=>{const IG='https://www.instagram.com/piyush_choudhary_21/';
   const leg=document.querySelector('footer.foot .kc-legal');if(leg&&!leg.querySelector('.kc-ig'))leg.insertAdjacentHTML('beforeend',` · <a class="kc-ig" href="${IG}" target="_blank" rel="noopener">Instagram</a>`);
   const kf=document.querySelector('.kc-footer .kc-gcol ul');if(kf&&!kf.querySelector('.kc-ig'))kf.insertAdjacentHTML('beforeend',`<li><a class="kc-ig" href="${IG}" target="_blank" rel="noopener">Instagram</a></li>`);
+})();
+/* ===== small flow fixes: fill your home city for you and put the cursor where you need it next ===== */
+(()=>{
+  const $=s=>document.querySelector(s);
+  const home=()=>{let w={},f={};try{w=JSON.parse(localStorage.getItem('bg_wiz')||'{}')}catch(_){}try{f=JSON.parse(localStorage.getItem('bg_finder')||'{}')}catch(_){}
+    return String(w.from||($('#p-from')||{}).value||f.from||'').trim()};
+  const set=(el,v)=>{el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}));el.dispatchEvent(new Event('change',{bubbles:true}))};
+  const focus=el=>{if(el&&el.offsetParent){el.focus({preventScroll:true});el.scrollIntoView({block:'center',behavior:'smooth'})}};
+  /* Tickets on a place card: the "From" box gets your home city, and the cursor goes to the next empty box */
+  document.addEventListener('click',e=>{if(!e.target.closest('#x-list [data-tk],.kc-guide-tk'))return;setTimeout(()=>{const f=$('#t-from'),t=$('#t-to'),d=$('#t-date');if(!f||!t)return;
+    const h=home();if(!f.value.trim()&&h&&h.toLowerCase()!==t.value.trim().toLowerCase())set(f,h);
+    focus(!f.value.trim()?f:!d.value?d:null)},80)});
+  /* "Open plan" after adding a place: show the form where the place went, fill your home city */
+  document.addEventListener('click',e=>{const b=e.target.closest('.toast button');if(!b||!/Open plan/i.test(b.textContent))return;setTimeout(()=>{const to=$('#p-to');
+    if(to&&!to.offsetParent){const k=$('#m-know');if(k)k.click()}const f=$('#p-from'),h=home();if(f&&!f.value.trim()&&h)set(f,h);
+    setTimeout(()=>focus(f&&!f.value.trim()?f:$('#p-days')&&!$('#p-days').value?$('#p-days'):to),250)},60)});
+  /* On the way: picking a town from the list moves on, like the other boxes */
+  const next={'ow-from':'#ow-to','ow-to':'#ow-go'};
+  Object.keys(next).forEach(id=>{const el=document.getElementById(id);if(!el)return;el.setAttribute('enterkeyhint','next');
+    el.addEventListener('input',e=>{if(e.inputType==='insertReplacementText'||e.inputType===undefined&&e.isTrusted){const dl=el.list;if(dl&&[...dl.options].some(o=>o.value===el.value))setTimeout(()=>focus($(next[id])),40)}});
+    el.addEventListener('keydown',e=>{if(e.key==='Enter'&&el.value.trim()){e.preventDefault();const n=$(next[id]);if(n.tagName==='BUTTON')n.click();else focus(n)}})});
+  const ow=$('#ow-from');if(ow&&!ow.value.trim()){const h=home();if(h)ow.placeholder='e.g. '+h}
+})();
+/* ===== dates: no picking a day that has already gone ===== */
+(()=>{const d=new Date(),t=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  ['#t-date','#s-in','#p-start','#w-start'].forEach(s=>{const el=document.querySelector(s);if(!el)return;el.min=t;if(el.value&&el.value<t){el.value=t;el.dispatchEvent(new Event('change',{bubbles:true}))}});
+  document.addEventListener('focusin',e=>{const el=e.target;if(el&&el.classList&&el.classList.contains('kc-cal-d'))el.min=t});
 })();
 
 mark();
