@@ -1,0 +1,687 @@
+Gurez Valley|JK|urm|5-9|Shared sumo from Srinagar via Bandipora|2|Kishanganga river valley of log-wood villages, close to the LoC and barely touristed.
+Doodhpathri|JK|um|4-10|Shared cab from Srinagar (about 42 km)|2|Meadows with milky streams; a quieter Gulmarg.
+Sonamarg|JK|mst|5-9|Shared taxi from Srinagar|2|Base for Thajiwas glacier and the Kashmir Great Lakes trek.
+Gulmarg|JK|sm|12-3,5-9|Shared taxi from Srinagar via Tangmarg|3|Gondola rides and some of the cheapest skiing in Asia.
+Pahalgam|JK|mt|4-10|Bus or shared cab from Srinagar|2|Lidder river walks, Aru and Betaab valleys.
+Srinagar|JK|lh|4-10|Bus/shared cab from Jammu; Vande Bharat to Srinagar|2|Dal Lake shikaras, Old City lanes and Mughal gardens.
+Warwan Valley|JK|rut|6-9|Long road via Kishtwar, then trek|1|Remote valley of glaciers and wooden villages with almost no visitors.
+Bangus Valley|JK|ru|5-9|Hire a cab from Kupwara|2|Huge, empty meadows in north Kashmir.
+Patnitop|JK|ms|12-2,4-6|Bus from Jammu|2|Easy pine-forest hill stop on the Jammu–Srinagar road.
+Leh|LA|mk|5-9|Bus from Manali or Srinagar; flights from Delhi|2|Ladakh base: monasteries, cafés and permits for everything nearby.
+Nubra Valley|LA|dm|5-9|Shared taxi from Leh over Khardung La|2|Sand dunes and double-humped camels in a cold desert.
+Turtuk|LA|ur|5-9|Shared taxi from Leh or Diskit|1|Balti village of apricot orchards, the last stop before Pakistan.
+Pangong Tso|LA|lm|5-9|Shared taxi from Leh (permit)|2|A lake that shifts through every blue; stay at Spangmik or Merak.
+Tso Moriri|LA|lr|6-9|Taxi from Leh (permit)|2|Quieter high lake with the nomad village of Korzok.
+Hanle|LA|ru|5-10|Taxi from Leh (permit, about 250 km)|2|Dark-sky reserve with an observatory; the best stars in India.
+Zanskar|LA|rtm|6-9|Bus or shared taxi from Kargil to Padum|2|Remote valley of cliff monasteries; frozen Chadar trek in winter.
+Kargil|LA|u|5-10|Buses on the Srinagar–Leh road stop here|1|Cheap stopover with Suru valley views and the Drass war memorial.
+Kasol|HP|km|3-6,9-11|HRTC bus from Bhuntar|1|Backpacker hub of Parvati valley and base for Kheerganga.
+Kheerganga|HP|t|5-10|Bus to Barshaini, then 12 km trek|1|Trek to a natural hot spring at 2,950 m.
+Tosh|HP|um|4-6,9-11|Bus to Barshaini, then walk up|1|Quiet terraced village at the end of Parvati valley.
+Grahan|HP|ut|4-6,9-11|8 km trek from Kasol|1|Car-free village reached only by trail.
+Tirthan Valley|HP|um|3-6,9-11|Bus to Aut or Banjar from Delhi or Kullu|2|Trout river, wooden homestays and the Great Himalayan National Park.
+Jibhi|HP|u|3-6,9-12|Bus to Banjar, then local bus|1|Treehouse homestays, Jalori Pass and the Serolsar lake walk.
+Shoja|HP|u|3-6,9-11|Bus via Banjar towards Jalori Pass|2|Tiny village below Jalori Pass with huge views.
+Barot|HP|ur|4-6,9-11|Bus from Mandi or Jogindernagar|1|Uhl river valley with an old haulage trolley line; very quiet.
+Prashar Lake|HP|ltu|4-6,9-11|Seasonal bus from Mandi; trail from Baggi|1|Lake with a floating island and a three-tier pagoda temple.
+Bir Billing|HP|k|3-5,10-11|Bus to Bir from Dharamshala or Baijnath|2|Paragliding capital with a Tibetan colony and cafés.
+McLeod Ganj|HP|kp|3-6,9-11|HRTC bus to Dharamshala, then local bus|1|Little Lhasa: Tibetan temples, cafés and the Triund trek.
+Triund|HP|t|3-6,9-12|9 km walk from McLeod Ganj|1|The easiest Himalayan overnight trek for beginners.
+Dalhousie|HP|m|3-6,10-12|Bus from Pathankot|2|Colonial hill town with Khajjiar meadow 22 km away.
+Khajjiar|HP|m|3-6,9-11|Bus from Dalhousie or Chamba|2|Meadow and lake ringed by deodars.
+Bharmour|HP|up|4-10|Bus from Chamba|1|Ancient Chaurasi temples and Gaddi shepherd culture.
+Pangi Valley|HP|r|6-9|Over Sach Pass from Chamba (rough road)|1|One of the most cut-off valleys in India.
+Manali|HP|msk|3-6,10-2|Overnight bus from Delhi|2|Gateway to Solang, Atal Tunnel and Lahaul; Old Manali cafés.
+Sissu|HP|us|5-10,12-2|Bus through Atal Tunnel from Manali|2|Waterfalls and the Chandra river just past the tunnel.
+Jispa|HP|ur|6-9|Buses on the Manali–Leh road|2|Riverside camping stop in Lahaul.
+Kaza|HP|rmk|6-9|Bus from Manali or Reckong Peo|1|Spiti base for Key monastery, Kibber and Langza.
+Chandratal|HP|lr|6-9|Shared taxi from Kaza or Manali, then walk|2|Moon lake at 4,300 m; camp below it.
+Langza|HP|ru|6-9|Local taxi from Kaza|1|Fossil village under a giant Buddha statue.
+Dhankar|HP|ruh|6-9|Bus or taxi from Kaza|1|Cliff-top monastery with a small lake above it.
+Mudh|HP|rut|6-9|Bus from Kaza into Pin Valley|1|Last village of Pin Valley; snow leopard country.
+Nako|HP|rl|5-10|Buses between Reckong Peo and Kaza|1|Mud-house village beside a small lake.
+Kalpa|HP|um|4-6,9-11|Bus to Reckong Peo, then local bus|1|Kinnaur Kailash views and apple orchards.
+Chitkul|HP|ur|5-10|Bus from Reckong Peo via Sangla|1|Last inhabited village before the Tibet border.
+Sangla|HP|u|4-10|Bus from Reckong Peo or Shimla|2|Baspa valley with carved wooden temples.
+Shimla|HP|m|3-6,12-1|Toy train from Kalka; buses from Delhi|2|Ridge walks, the toy train and cheap Lakkar Bazaar.
+Narkanda|HP|su|12-2,4-6|Bus from Shimla|2|Hatu Peak and budget snow skiing.
+Kasauli|HP|m|3-6,9-12|Bus from Kalka or Chandigarh|2|Quiet cantonment town close to Chandigarh.
+Rajgundha|HP|rut|5-10|Bus to Bir, then jeep or trek|1|Hidden meadow valley above Billing.
+Shangarh|HP|u|4-11|Bus to Sainj via Aut|1|Wide flat meadow surrounded by deodars.
+Rishikesh|UK|pk|2-5,9-11|Bus from Delhi; train to Yog Nagari Rishikesh|1|Yoga, Ganga aarti, rafting and cheap ashrams.
+Chopta|UK|tsu|4-6,9-12|Bus to Ukhimath, then shared jeep|1|Meadows and the trek to Tungnath and Chandrashila.
+Auli|UK|s|12-3,5-6|Bus to Joshimath, then ropeway or jeep|2|Ski slopes facing Nanda Devi.
+Valley of Flowers|UK|t|7-9|Bus to Govindghat, trek from Ghangaria|2|UNESCO valley that blooms in the monsoon.
+Har Ki Dun|UK|tr|4-6,9-11|Bus from Dehradun to Sankri|1|Old-village trek to a cradle-shaped valley.
+Kedarkantha|UK|ts|12-4|Bus from Dehradun to Sankri|1|The most popular winter snow trek in India.
+Munsiyari|UK|ur|3-6,9-11|Long bus from Haldwani or Kathgodam|1|The five Panchachuli peaks across the valley.
+Chaukori|UK|u|3-6,10-12|Bus from Kathgodam or Almora|1|Tea gardens and a wide Himalayan panorama.
+Binsar|UK|fu|10-6|Bus to Almora, then taxi|2|Forest sanctuary with a 300 km Himalayan view.
+Jageshwar|UK|hpu|3-6,9-11|Bus or taxi from Almora|1|More than 100 stone temples in a deodar grove.
+Mukteshwar|UK|u|3-6,9-12|Bus from Kathgodam or Nainital|2|Cliff-edge views and orchards, with no crowds.
+Kanatal|UK|u|3-6,10-1|Bus from Dehradun or Rishikesh to Chamba|2|Quiet camping spot near Mussoorie.
+Chakrata|UK|u|3-6,10-12|Bus from Dehradun|1|Army town with Tiger Falls; foreigners need a permit.
+Landour|UK|u|3-6,9-12|Walk or taxi up from Mussoorie|2|Quiet old lanes above Mussoorie; Ruskin Bond's home.
+Nainital|UK|l|3-6,10-12|Train to Kathgodam, then bus|2|Lake town with cheap boating and the Tiffin Top walk.
+Abbott Mount|UK|ur|3-6,10-12|Bus to Lohaghat, then taxi|2|Old British cottages on a forest ridge.
+Dodital|UK|tl|4-6,9-11|Bus to Uttarkashi, then Sangamchatti|1|Easy trek to a forest lake.
+Jim Corbett|UK|f|11-6|Train or bus to Ramnagar|3|India's oldest national park; book safaris on the official site.
+Kausani|UK|m|3-6,9-12|Bus from Almora or Kathgodam|1|Sunrise over a 300 km Himalayan wall.
+Mana|UK|ru|5-10|Bus to Badrinath, then 3 km|1|Called the first village of India, near the Tibet border.
+Gangtok|SK|mk|3-5,10-12|Shared jeep from NJP or Siliguri|2|MG Marg and monasteries; base for North Sikkim permits.
+Lachung|SK|sm|3-5,10-12|Permit tour jeep from Gangtok|3|Yumthang valley flowers in spring and snow at Zero Point.
+Gurudongmar Lake|SK|lr|4-6,10-11|Permit tour via Lachen|3|One of the highest lakes in the world, at about 5,400 m.
+Zuluk|SK|ru|10-5|Permit jeep from Rongli|2|Old Silk Route road with more than 30 hairpin bends.
+Pelling|SK|m|3-5,10-12|Shared jeep from Siliguri or Gangtok|2|Kanchenjunga sunrise and Pemayangtse monastery.
+Yuksom|SK|tu|3-5,10-12|Shared jeep from Pelling|1|Start of the Goecha La trek and Sikkim's first capital.
+Darjeeling|WBH|mk|3-5,10-12|Shared jeep from NJP; toy train|2|Tea estates, the toy train and Tiger Hill sunrise.
+Sandakphu|WBH|tr|10-12,3-5|Jeep to Maneybhanjang, then trek or Land Rover|1|See four of the five highest peaks on Earth.
+Kalimpong|WBH|u|3-5,10-12|Shared jeep from Siliguri|1|Calmer than Darjeeling, with flower nurseries and monasteries.
+Lolegaon|WBH|u|3-5,10-12|Shared jeep from Kalimpong|1|Canopy walk through old forest.
+Rishop|WBH|u|3-5,10-12|Jeep from Kalimpong|1|Tiny hamlet with a full Kanchenjunga view.
+Sittong|WBH|u|11-4|Jeep from Siliguri or Kurseong|1|Orange-orchard village; fruit season Nov–Dec.
+Ziro|AR|u|9-4|Train to Naharlagun, then shared sumo|2|Apatani rice fields; Ziro music festival in September.
+Mechuka|AR|ru|10-4|Long sumo ride from Aalo|2|Remote valley about 29 km from the China border.
+Tawang|AR|mps|3-6,9-11|Two-day sumo ride from Guwahati or Tezpur (ILP)|2|India's largest monastery and Sela Pass snow.
+Dirang|AR|u|3-6,9-11|Sumo on the Tawang road|1|Hot springs, kiwi orchards and Monpa villages.
+Namdapha|AR|rf|10-3|Bus to Miao from Dibrugarh or Tinsukia|2|Rainforest home to four big cats; very remote.
+Dzükou Valley|NL|tu|6-11|Taxi from Kohima to Viswema, then trek|1|Rolling green valley of bamboo; lilies in June–July.
+Khonoma|NL|u|10-5|Taxi from Kohima (about 20 km)|1|India's first green village; Angami culture.
+Kohima|NL|uh|10-5|Bus from Dimapur|1|WWII cemetery; Hornbill Festival on 1–10 December.
+Shillong|ML|kl|10-5|Shared sumo from Guwahati|2|Cafés, live music, and Umiam lake on the way.
+Nongriat|ML|twu|10-5|Taxi to Tyrna, then 3,500 steps down|1|Double-decker living root bridge and blue pools.
+Dawki|ML|lu|11-4|Shared sumo from Shillong|1|Glass-clear Umngot river where boats look like they float.
+Mawlynnong|ML|u|10-5|Taxi or sumo from Shillong|1|Famous as the cleanest village in Asia.
+Sohra|ML|w|6-12|Shared sumo from Shillong|1|Nohkalikai and Seven Sisters falls, at full power in monsoon.
+Majuli|AS|uhp|10-3|Bus to Jorhat, ferry from Nimati Ghat|1|World's largest river island; satras and mask-making.
+Kaziranga|AS|f|11-4|Bus from Guwahati (about 5 h)|2|One-horned rhino safaris; park shut May–Oct.
+Haflong|AS|ur|10-4|Train from Guwahati or Silchar|1|Assam's only hill station, with a quiet lake.
+Loktak Lake|MN|lu|10-4|Shared taxi from Imphal to Moirang|1|Floating phumdi islands and the only floating national park.
+Unakoti|TR|hur|10-3|Train to Kumarghat, then taxi|1|Giant faces carved into rock in a forest.
+Neermahal|TR|hu|10-3|Bus from Agartala to Melaghar|1|Water palace in Rudrasagar lake.
+Champhai|MZ|ru|10-3|Sumo from Aizawl|1|Rice-bowl valley of Mizoram near Myanmar.
+Amritsar|PB|ph|10-3|Train or bus from Delhi|1|Golden Temple with free langar and a free sarai stay.
+Varanasi|UP|phk|10-3|Train from Delhi|1|Ghats, aarti and lanes in the oldest living city.
+Agra|UP|h|10-3|Train from Delhi|1|Taj Mahal (closed Fridays) and Agra Fort.
+Ayodhya|UP|p|10-3|Train from Lucknow or Delhi|1|Ram temple and Saryu ghats.
+Vrindavan|UP|p|10-3|Train to Mathura, then auto|1|Krishna temples; Holi here is legendary.
+Dudhwa|UP|fru|11-6|Train to Palia or Mailani|2|Swamp deer and tigers in Terai forest, with few visitors.
+Chandigarh|CH|h|10-3|Train or bus from Delhi|1|Rock Garden, Sukhna Lake and planned-city walks.
+Jaisalmer|RJ|dhk|10-3|Overnight train or bus from Jodhpur or Delhi|1|A living golden fort and desert camps at Sam or Khuri.
+Khuri|RJ|du|10-2|Bus or taxi from Jaisalmer|1|Quieter dunes than Sam, with village camps.
+Jodhpur|RJ|h|10-3|Train from Delhi or Jaipur|1|Blue-city lanes under Mehrangarh fort.
+Bundi|RJ|hu|9-3|Bus from Kota|1|Stepwells and a painted palace with almost no crowds.
+Udaipur|RJ|lh|9-3|Train or bus from Jodhpur or Ahmedabad|2|City of lakes and rooftop sunsets over Pichola.
+Pushkar|RJ|pk|10-3|Bus from Ajmer|1|Holy lake and backpacker cafés; camel fair in November.
+Mount Abu|RJ|ml|10-3,7-9|Bus from Abu Road station|2|Rajasthan's only hill station and the Dilwara temples.
+Kumbhalgarh|RJ|hu|10-3|Bus from Udaipur|2|Fort wall that is one of the longest in the world.
+Bikaner|RJ|dh|10-3|Train from Delhi or Jodhpur|1|Junagarh fort, the camel farm and fresh bhujia.
+Osian|RJ|dhu|10-2|Bus from Jodhpur|1|Old temples and dunes an hour from Jodhpur.
+Mandawa|RJ|hu|10-3|Bus from Jhunjhunu or Jaipur|2|Open-air gallery of painted havelis.
+Chittorgarh|RJ|h|10-3|Train from Udaipur|1|India's largest fort.
+Ranthambore|RJ|f|10-6|Train to Sawai Madhopur|3|Tigers among fort ruins.
+Jaipur|RJ|h|10-3|Train or bus from Delhi|1|Forts, bazaars and the Pink City.
+Sambhar Lake|RJ|lu|11-2|Train or bus from Jaipur|1|India's largest salt lake, with flamingos in winter.
+Rann of Kutch|GJ|du|11-2|Bus from Bhuj to Dhordo|2|White salt desert; full-moon nights are magical.
+Mandvi|GJ|bu|10-3|Bus from Bhuj|1|Quiet beach and wooden ship-building yards.
+Dholavira|GJ|hr|11-2|Bus or taxi from Bhuj (long ride)|1|Harappan city ruins in the middle of the Rann.
+Shivrajpur|GJ|bu|10-3|Bus or auto from Dwarka|1|Blue Flag beach near Dwarka.
+Diu|DD|buh|10-4|Bus from Una or Veraval|2|Portuguese fort, cheap seafood and quiet beaches.
+Sasan Gir|GJ|f|12-4|Train or bus to Sasan Gir|2|The only home of Asiatic lions; park shut mid-June to mid-Oct.
+Polo Forest|GJ|fhu|7-2|Bus from Himmatnagar or Idar|1|Ruined temples in a monsoon forest.
+Saputara|GJ|m|6-2|Bus from Nashik or Surat|1|Gujarat's only hill station.
+Champaner|GJ|hu|10-3|Bus from Vadodara|1|UNESCO mosques and Pavagadh hill.
+Dwarka|GJ|p|10-3|Train from Ahmedabad|1|Char Dham temple and Bet Dwarka island.
+Tarkarli|MH|bu|10-5|Bus from Kudal or Malvan|2|Clear water and snorkelling near Sindhudurg fort.
+Vengurla|MH|bu|10-3|Bus from Sawantwadi|1|Empty beaches and lighthouse cliffs near Goa.
+Harihareshwar|MH|bup|10-3|Bus from Mumbai or Mahad|1|Temple beach on the Konkan coast.
+Kashid|MH|b|10-3|Bus from Alibaug|2|White sand within reach of Mumbai.
+Bhandardara|MH|lwu|5-12|Bus from Igatpuri or Nashik|1|Fireflies in late May, waterfalls in the monsoon.
+Malshej Ghat|MH|wu|7-9|Bus from Kalyan|1|Monsoon clouds, waterfalls and flamingos.
+Kaas Plateau|MH|u|8-10|Bus from Satara|1|Plateau of flowers that blooms after the monsoon.
+Amboli|MH|wu|6-9|Bus from Sawantwadi|1|Maharashtra's rainiest spot, full of waterfalls.
+Harishchandragad|MH|t|7-2|Bus to Khireshwar or Pachnai|1|Konkan Kada cliff and an overnight cave stay.
+Lonavala|MH|mw|6-9|Local train from Mumbai or Pune|1|Monsoon falls and forts; the Rajmachi trek.
+Ajanta & Ellora|MH|h|6-3|Bus from Chhatrapati Sambhajinagar|1|Rock-cut caves; Ajanta shut Mondays, Ellora shut Tuesdays.
+Matheran|MH|mu|10-5|Train to Neral, then toy train or walk|2|Car-free hill station.
+Tadoba|MH|f|3-6|Train to Chandrapur|3|Tiger sightings in summer; buffer-zone safaris cost less.
+Palolem|GA|bk|11-3|Train to Canacona|2|Calm crescent bay in South Goa.
+Agonda|GA|bu|11-3|Bus from Canacona|2|Quiet turtle-nesting beach.
+Arambol|GA|bk|11-3|Bus from Mapusa|1|Hippie North Goa: drum circles and a sweet-water lake.
+Divar Island|GA|ui|10-3|Free ferry from Old Goa|1|Sleepy island of old Portuguese houses.
+Dudhsagar Falls|GA|wt|6-10|Jeep from Kulem (Collem)|1|Four-tiered, milk-white waterfall.
+Gokarna|KA|bk|10-3|Train to Gokarna Road; bus from Goa|1|Om, Kudle and Half Moon beaches with cheap shacks.
+Hampi|KA|hku|10-2|Train to Hosapete, then bus|1|Boulders and ruins of the Vijayanagara empire.
+Badami|KA|hu|10-3|Train or bus from Hubballi|1|Red sandstone caves, with Pattadakal and Aihole nearby.
+Chikkamagaluru|KA|m|9-3|Bus from Bengaluru|2|Coffee estates and Mullayanagiri peak.
+Coorg|KA|m|10-4|Bus to Madikeri|2|Coffee country, Abbey Falls and homestays.
+Sakleshpur|KA|ut|9-3|Train or bus from Bengaluru or Hassan|2|Green-route railway line and Manjarabad fort.
+Agumbe|KA|fwu|6-12|Bus from Udupi or Shivamogga|1|King cobra rainforest and a famous sunset point.
+Kudremukh|KA|tu|10-5|Bus to Kalasa or Samse|1|Grassland trek to a peak shaped like a horse's face.
+Jog Falls|KA|w|7-10|Bus from Shivamogga or Sagar|1|One of the highest plunge waterfalls in India.
+Dandeli|KA|fu|10-5|Bus from Hubballi|2|Rafting on the Kali river and hornbills.
+Yana|KA|ut|10-2|Bus to Kumta or Sirsi, then taxi|1|Huge black limestone rock towers in the forest.
+Murudeshwar|KA|bp|10-3|Train on the Konkan line|1|Giant Shiva statue right by the sea.
+St Mary's Island|KA|biu|10-5|Train to Udupi, boat from Malpe|1|Island of basalt columns; Udupi food nearby.
+Belur & Halebidu|KA|h|10-3|Bus from Hassan|1|Intricate Hoysala temple carvings.
+Kabini|KA|f|10-5|Bus from Mysuru|3|Elephants and leopards beside the backwaters.
+Mysuru|KA|h|9-3|Train from Bengaluru|1|Palace lit up on Sunday evenings; Dasara festival.
+Varkala|KL|bk|10-3|Train to Varkala Sivagiri|1|Cliff-top cafés above the beach.
+Munnar|KL|m|9-5|Bus from Kochi|2|Tea hills and Eravikulam park.
+Vagamon|KL|um|9-5|Bus from Kottayam|1|Pine forest and meadows without Munnar's crowds.
+Alappuzha|KL|l|9-3|Train or bus from Kochi|1|Backwaters; ride the cheap state water-transport ferry instead of a houseboat.
+Marari|KL|bu|10-3|Bus or auto from Alappuzha|2|Fishing-village beach.
+Kochi|KL|hk|10-3|Train to Ernakulam|1|Fort Kochi, Chinese fishing nets and the Biennale.
+Wayanad|KL|mf|10-5|Bus from Kozhikode or Mysuru|2|Edakkal caves and Chembra peak.
+Thekkady|KL|f|10-3|Bus from Madurai or Kochi|2|Periyar boat safari and spice farms.
+Athirappilly|KL|w|6-1|Bus from Chalakudy|1|Kerala's biggest waterfall, called the Niagara of India.
+Ponmudi|KL|um|9-3|KSRTC bus from Thiruvananthapuram|1|Hairpin-bend hill station near the capital.
+Nelliampathy|KL|um|9-3|Bus from Palakkad|1|Orange estates and misty viewpoints.
+Bekal|KL|bh|10-3|Train to Kanhangad or Kasaragod|1|Sea fort with long empty beaches.
+Muzhappilangad|KL|bu|10-3|Bus from Kannur|1|Long drive-in beach.
+Poovar|KL|bu|10-3|Bus from Thiruvananthapuram|2|Golden sand bar between river and sea.
+Dhanushkodi|TN|brh|10-3|Bus from Rameswaram|1|Ghost town at the tip of India, with sea on both sides.
+Tharangambadi|TN|bhu|11-3|Bus from Mayiladuthurai|1|Danish fort town on a quiet beach.
+Chettinad|TN|hu|10-3|Train or bus to Karaikudi|1|Palatial mansions and fiery Chettinad food.
+Kolli Hills|TN|um|9-4|Bus from Namakkal|1|Seventy hairpin bends and Agaya Gangai falls.
+Yelagiri|TN|um|9-4|Bus from Jolarpettai|1|Small, cheap hill station near Chennai and Bengaluru.
+Valparai|TN|uf|9-5|Bus from Pollachi|1|Tea estates and lion-tailed macaques.
+Meghamalai|TN|ur|9-4|Bus from Theni or Chinnamanur|1|Cloudy tea estates with very few visitors.
+Ooty|TN|m|3-6,10-12|Nilgiri toy train from Mettupalayam|2|Toy train ride and tea gardens.
+Kodaikanal|TN|ml|3-6,9-12|Bus from Madurai or Kodai Road|2|Lake, forests and Dolphin's Nose.
+Pichavaram|TN|u|11-3|Bus from Chidambaram|1|Row through one of the largest mangrove forests.
+Mahabalipuram|TN|hb|11-3|Bus from Chennai|1|Shore Temple and giant rock carvings.
+Tiruvannamalai|TN|pu|11-2|Bus or train from Chennai or Villupuram|1|Arunachala hill and ashrams; full-moon walk.
+Puducherry|PY|bhk|10-3|Bus from Chennai|2|French Quarter and Auroville.
+Rameswaram|TN|p|10-3|Train over the Pamban bridge|1|Long temple corridors and the sea bridge.
+Madurai|TN|ph|10-3|Train from Chennai|1|Meenakshi temple and night food streets.
+Thanjavur|TN|h|10-3|Train|1|The great Brihadeeswarar temple.
+Gandikota|AP|uh|10-2|Bus to Jammalamadugu|1|India's Grand Canyon, with a fort on the gorge.
+Araku Valley|AP|m|10-3|Kirandul train from Visakhapatnam|1|Coffee and tribal culture; the train ride is the highlight.
+Lambasingi|AP|u|11-1|Bus from Visakhapatnam via Narsipatnam|1|One of the few places in South India that can touch 0°C.
+Papikondalu|AP|u|9-2|Boat from Rajahmundry or Polavaram|2|Boat trip through the Godavari gorge.
+Maredumilli|AP|uf|9-3|Bus from Rajahmundry|1|Forest camping and bamboo-cooked food.
+Belum Caves|AP|u|10-3|Bus from Tadipatri|1|One of the longest cave systems in India.
+Lepakshi|AP|hu|10-3|Bus from Hindupur|1|A hanging pillar and a giant Nandi.
+Horsley Hills|AP|u|10-3|Bus from Madanapalle|1|Small, cheap hill escape near Bengaluru.
+Tirupati|AP|p|9-3|Train|1|Free darshan with long queues; walk the hill steps.
+Hyderabad|TG|h|10-3|Train|1|Charminar, biryani and Golconda fort.
+Puri|OD|pb|10-3|Train from Bhubaneswar or Kolkata|1|Jagannath temple and a long beach.
+Konark|OD|hb|10-3|Bus from Puri|1|The Sun Temple shaped like a chariot.
+Chilika Lake|OD|lf|11-2|Bus to Satapada or Barkul|1|Irrawaddy dolphins and migratory birds.
+Gopalpur|OD|bu|10-3|Bus from Berhampur|1|Old port town on a calm beach.
+Chandipur|OD|bu|10-3|Bus from Balasore|1|The sea pulls back kilometres at low tide.
+Daringbadi|OD|um|10-2|Bus from Berhampur|1|Pine and coffee hills called the Kashmir of Odisha.
+Koraput|OD|ur|10-3|Train or bus|1|Tribal markets and Duduma falls.
+Bhitarkanika|OD|fu|11-2|Bus to Rajnagar or Khola|2|Saltwater crocodiles in mangrove creeks.
+Satkosia|OD|fu|11-2|Bus from Angul|2|Camping by the Mahanadi gorge.
+Mandarmani|WB|b|10-3|Bus from Kolkata|2|Long drive-on beach near Kolkata.
+Sundarbans|WB|fr|11-2|Train to Canning, then boat|2|Mangrove tiger country with boat stays.
+Shantiniketan|WB|hu|11-3|Train from Kolkata|1|Tagore's university town; Poush Mela in December.
+Bishnupur|WB|hu|10-3|Train from Kolkata|1|Terracotta temples and Baluchari saris.
+Kolkata|WB|h|10-2|Train|1|Trams, College Street books and cheap street food.
+Bodh Gaya|BR|p|10-3|Train to Gaya|1|Where the Buddha found enlightenment; monastery guesthouses.
+Rajgir|BR|hpu|10-3|Bus from Patna or Gaya|1|Ropeway, hot springs and the Nalanda ruins nearby.
+Netarhat|JH|u|10-3|Bus from Ranchi|1|Sunrise and sunset points on a quiet plateau.
+Patratu|JH|lu|10-3|Taxi from Ranchi|1|Serpentine valley road down to a dam lake.
+Khajuraho|MP|h|10-3|Train from Jhansi or Delhi|1|Carved temples and an evening light show.
+Orchha|MP|hu|10-3|Train to Jhansi, then shared auto|1|Riverside palaces and cenotaphs without crowds.
+Mandu|MP|hu|7-3|Bus from Indore|1|Afghan palaces on a plateau; magical in the monsoon.
+Maheshwar|MP|hpu|10-3|Bus from Indore|1|Narmada ghats and handloom weavers.
+Omkareshwar|MP|p|10-3|Bus from Indore|1|Jyotirlinga temple on an Om-shaped island.
+Pachmarhi|MP|mw|10-6|Bus from Pipariya|1|Madhya Pradesh's only hill station; caves and pools.
+Bhedaghat|MP|wu|10-3|Bus from Jabalpur|1|Boat ride between marble cliffs on the Narmada.
+Chanderi|MP|hu|10-3|Bus from Lalitpur|1|Old weaving town with forts and stepwells.
+Kanha|MP|f|10-6|Bus from Jabalpur or Mandla|3|Barasingha deer and tigers in the Jungle Book forest.
+Bandhavgarh|MP|f|10-6|Train to Umaria|3|Among the best chances to see a tiger in India.
+Sanchi|MP|hp|10-3|Train from Bhopal|1|Ashoka's great stupa.
+Gwalior|MP|h|10-3|Train|1|Hill fort and the Teli ka Mandir.
+Amarkantak|MP|pu|9-3|Train to Pendra Road, then bus|1|Source of the Narmada river.
+Chitrakote Falls|CG|wu|7-2|Bus from Jagdalpur|1|India's widest waterfall.
+Mainpat|CG|u|10-3|Bus from Ambikapur|1|Plateau with a Tibetan settlement.
+Havelock Island|AN|bi|11-4|Government ferry from Port Blair|3|Radhanagar beach and scuba diving.
+Neil Island|AN|biu|11-4|Ferry from Port Blair or Havelock|2|Cycle-sized island with coral beaches.
+Port Blair|AN|hi|11-4|Flight or ship from Chennai or Kolkata|2|Cellular Jail and the ferry hub.
+Long Island|AN|bir|11-4|Government ferry from Port Blair or Rangat|2|Lalaji Bay beach with almost no one there.
+Agatti|LD|bir|10-4|Flight or ship from Kochi; entry permit|3|Turquoise lagoons; needs a permit and planning.
+Pokhara|NP|lmk|10-4|Bus from Sunauli border or Kathmandu|1|Lakeside cafés and Annapurna views. Indians need no visa.
+Bandipur|NP|uh|10-4|Bus to Dumre, then jeep|1|Car-free Newari hill town in Nepal.
+Annapurna Base Camp|NP|t|10-11,3-5|Bus to Pokhara, then jeep to the trailhead|1|Classic tea-house trek in Nepal.
+Upper Mustang|NP|rd|5-10|Jeep from Jomsom; costly permit|3|The hidden walled kingdom of Lo.
+Kathmandu|NP|hk|10-4|Bus via the Sunauli or Raxaul border|1|Thamel and old Durbar squares.
+Haa Valley|BT|ur|3-5,9-11|Via Paro; Indians pay Bhutan's lower daily fee|3|Bhutan's quietest valley.
+Ella|LK|mk|1-4|Train from Kandy|2|Nine Arches bridge and one of the world's prettiest train rides.
+Arugam Bay|LK|bk|5-9|Bus from Colombo or Ella|2|Surf town on Sri Lanka's east coast.
+Ha Giang|VN|mr|9-11,3-5|Bus from Hanoi|1|The famous Ha Giang motorbike loop.
+Pai|TH|km|11-2|Minivan from Chiang Mai|1|Laid-back valley town in north Thailand.
+Nong Khiaw|LAO|u|10-3|Bus from Luang Prabang|1|Limestone cliffs above a river in Laos.
+Siem Reap|KH|h|11-3|Bus or flight|1|Angkor temples by bicycle.
+Flores|ID|rb|4-10|Fly to Labuan Bajo|2|Komodo dragons and pink beaches.
+Tbilisi|GE|hk|5-10|Flight; e-visa for Indians|2|Cheap, friendly capital of Georgia.
+Yusmarg|JK|um|4-10|Shared cab from Srinagar (about 47 km)|1|Pine meadows and a quiet river, far from Gulmarg's crowds.
+Aru Valley|JK|umt|4-10|Shared cab from Pahalgam|1|Meadow village and base for the Kolahoi glacier and Tarsar lake treks.
+Lolab Valley|JK|ur|4-10|Shared cab from Kupwara|1|Orchards and springs in a little-visited north Kashmir valley.
+Bhaderwah|JK|um|4-10|Bus from Jammu via Doda|1|Called mini Kashmir, with meadows at Padri and Guldanda.
+Sanasar|JK|u|3-6,9-11|Bus to Patnitop, then shared cab|1|Cup-shaped meadow near Patnitop with paragliding.
+Kishtwar|JK|ru|5-10|Bus from Jammu|1|Saffron fields and the gateway to remote Paddar and Warwan.
+Lamayuru|LA|hr|5-10|Buses on the Srinagar–Leh road|1|Ancient monastery above a moonland landscape.
+Alchi|LA|hu|5-10|Bus or shared taxi from Leh|1|Monastery with 1,000-year-old murals in a quiet village.
+Hemis|LA|hp|5-10|Shared taxi from Leh|2|Ladakh's richest monastery, with a masked-dance festival in summer.
+Dah Hanu|LA|ru|5-10|Taxi from Leh (permit)|2|Home of the Brokpa people, famous for flower headdresses.
+Umling La|LA|r|6-9|Taxi from Hanle (permit)|3|One of the highest roads that vehicles can drive in the world.
+Markha Valley|LA|tr|6-9|Taxi from Leh to Chilling|1|Homestay trek through villages and red gorges.
+Sham Valley|LA|tu|5-10|Taxi from Leh to Likir|1|Easy "baby trek" with village homestays.
+Pulga|HP|u|4-6,9-11|Bus to Barshaini, then a short walk|1|Fairy-forest village in Parvati valley.
+Rakchham|HP|ur|5-10|Bus from Sangla towards Chitkul|1|Riverside village between Sangla and Chitkul.
+Kibber|HP|ru|6-9|Bus or taxi from Kaza|1|High village famous for snow leopard tours in winter.
+Tabo|HP|hr|5-10|Buses between Reckong Peo and Kaza|1|A monastery more than 1,000 years old with mud-wall murals.
+Komic|HP|r|6-9|Taxi from Kaza|1|Among the highest villages in Asia reachable by road.
+Gue|HP|r|6-9|Taxi from Tabo|1|A naturally mummified monk in a tiny border village.
+Keylong|HP|r|6-9|Bus through Atal Tunnel from Manali|1|Lahaul's main town with Kardang monastery above it.
+Hampta Pass|HP|t|6-9|Taxi from Manali to Jobra|1|Short trek from green Kullu into barren Spiti.
+Bhrigu Lake|HP|tl|5-10|Taxi from Manali to Gulaba|1|Two-day trek to a high alpine lake.
+Naggar|HP|hu|3-6,9-11|Bus from Manali or Kullu|1|Old castle and the Roerich art gallery above Kullu.
+Chamba|HP|h|3-6,9-11|Bus from Pathankot|1|Ancient temples and Chamba rumal embroidery.
+Kareri Lake|HP|tl|4-6,9-11|Bus to Kareri village from Dharamshala|1|Quiet trek to a glacier lake near Dharamshala.
+Jalori Pass|HP|t|4-11|Bus from Banjar or Shoja|1|High pass with a forest walk to Raghupur fort.
+Chail|HP|u|3-6,9-12|Bus from Shimla or Kandaghat|2|Pine-forest town with one of the highest cricket grounds.
+Rewalsar|HP|lp|3-6,9-11|Bus from Mandi|1|Lake sacred to Buddhists, Hindus and Sikhs.
+Rohru|HP|u|4-11|Bus from Shimla|1|Trout river and apple country on the Pabbar.
+Andretta|HP|u|3-6,9-11|Bus to Panchrukhi near Palampur|1|Artists' village with a famous pottery studio.
+Palampur|HP|m|3-6,9-11|Bus from Dharamshala or Pathankot|1|Tea gardens below the Dhauladhar range.
+Dharchula|UK|ru|3-6,9-11|Bus from Tanakpur or Pithoragarh|1|Border town on the Kali river facing Nepal.
+Pithoragarh|UK|u|3-6,9-11|Bus from Tanakpur|1|Called mini Kashmir, with a fort and valley views.
+Khirsu|UK|u|3-6,9-12|Bus from Pauri|1|Silent oak forests and a wide Himalayan view.
+Lansdowne|UK|u|3-6,9-12|Bus from Kotdwar|1|Calm army cantonment with forest walks.
+Deoria Tal|UK|lt|3-6,9-12|Bus to Sari village via Ukhimath|1|Lake that mirrors the Chaukhamba peaks.
+Kuari Pass|UK|t|3-6,9-12|Bus to Joshimath|1|Trek with close views of Nanda Devi.
+Roopkund|UK|t|5-6,9-10|Bus to Lohajung via Kathgodam or Rishikesh|1|High trek to the mysterious skeleton lake.
+Brahmatal|UK|ts|12-3|Bus to Lohajung|1|Winter snow trek facing Mount Trishul.
+Gangotri|UK|p|5-10|Bus from Rishikesh or Uttarkashi|1|Source shrine of the Ganga; trek on to Gaumukh glacier.
+Kedarnath|UK|pt|5-6,9-10|Bus to Sonprayag, then a 16 km walk|1|Himalayan Shiva temple reached on foot.
+Badrinath|UK|p|5-10|Bus from Rishikesh|1|Vishnu shrine with hot springs beside the Alaknanda.
+Hemkund Sahib|UK|pt|6-9|Trek up from Ghangaria|1|High-altitude gurdwara beside a glacial lake.
+Pangot|UK|fu|10-6|Taxi from Nainital|2|Birding village with more than 200 species.
+Haridwar|UK|p|10-4|Train from Delhi|1|Har ki Pauri aarti and cheap dharamshalas.
+Devprayag|UK|pu|9-6|Buses on the Rishikesh–Badrinath road|1|Where two rivers meet to become the Ganga.
+Dhanaulti|UK|us|12-6|Bus from Mussoorie|1|Deodar forests and snow in winter near Mussoorie.
+Chitrakoot|UP|pu|10-3|Train to Chitrakoot Dham Karwi|1|Riverside ghats linked to the Ramayana.
+Lucknow|UP|h|10-3|Train from Delhi|1|Kebabs, chikan embroidery and the Bara Imambara maze.
+Prayagraj|UP|p|10-3|Train|1|Triveni Sangam and the Magh Mela every winter.
+Kushinagar|UP|p|10-3|Bus from Gorakhpur|1|Where the Buddha passed away; quiet monasteries.
+Fatehpur Sikri|UP|h|10-3|Bus from Agra|1|Akbar's abandoned red sandstone capital.
+Sarnath|UP|p|10-3|Auto from Varanasi|1|Where the Buddha gave his first sermon.
+Anandpur Sahib|PB|p|10-3|Train or bus from Chandigarh|1|Takht Kesgarh Sahib and the Hola Mohalla festival.
+Patiala|PB|h|10-3|Bus from Chandigarh|1|Qila Mubarak fort and the famous Patiala food.
+Kurukshetra|HR|p|10-3|Train from Delhi|1|Brahma Sarovar and the Gita's battlefield.
+Morni Hills|HR|u|10-3|Bus from Panchkula|1|Haryana's only hill station, with twin lakes.
+Old Delhi|DL|hk|10-3|Metro to Chandni Chowk|1|Parathe Wali Gali, Jama Masjid and spice-market rooftops.
+Kuldhara|RJ|hu|10-3|Taxi from Jaisalmer|1|Abandoned village wrapped in ghost stories.
+Barmer|RJ|du|10-2|Train from Jodhpur|1|Desert crafts and village stays far from tourists.
+Ranakpur|RJ|hp|10-3|Bus from Udaipur|1|Jain temple of 1,444 carved marble pillars.
+Bhangarh|RJ|hu|10-3|Bus from Alwar or Jaipur|1|Ruined town said to be India's most haunted.
+Abhaneri|RJ|hu|10-3|Bus from Jaipur, then local transport|1|Chand Baori, a deep stepwell of 3,500 steps.
+Nawalgarh|RJ|hu|10-3|Train or bus from Jaipur|1|Painted havelis with fewer tourists than Mandawa.
+Bharatpur|RJ|f|11-2|Train to Bharatpur|1|Keoladeo bird sanctuary, best explored on a rented bicycle.
+Banswara|RJ|ul|7-2|Bus from Udaipur|1|The "city of a hundred islands" on the Mahi river.
+Jawai|RJ|fu|10-3|Train to Jawai Bandh|3|Leopards living among granite hills and villages.
+Tal Chhapar|RJ|fu|9-3|Bus from Sujangarh|1|Grassland of blackbuck herds.
+Ajmer|RJ|p|10-3|Train from Jaipur or Delhi|1|Dargah of Khwaja Moinuddin Chishti.
+Bhuj|GJ|h|10-3|Train or bus from Ahmedabad|1|Craft villages of Kutch like Bhujodi and Nirona.
+Ahmedabad|GJ|h|10-3|Train|1|Old City pol houses and Manek Chowk night food.
+Modhera|GJ|h|10-3|Bus from Mehsana|1|Sun temple with a grand stepped tank.
+Patan|GJ|h|10-3|Bus from Ahmedabad|1|Rani ki Vav, the queen's UNESCO stepwell.
+Somnath|GJ|pb|10-3|Train to Veraval|1|Seaside Jyotirlinga temple.
+Girnar|GJ|pt|10-3|Bus to Junagadh|1|Thousands of steps or a ropeway to hilltop temples.
+Velavadar|GJ|fu|10-3|Bus to Vallabhipur from Bhavnagar|2|Blackbuck national park on open grassland.
+Little Rann|GJ|fd|11-3|Bus from Ahmedabad to Dasada|2|Wild ass sanctuary on cracked salt flats.
+Palitana|GJ|p|10-3|Bus from Bhavnagar|1|Hill of more than 800 Jain temples, climbed at dawn.
+Lothal|GJ|h|10-3|Bus from Ahmedabad|1|Harappan dockyard ruins.
+Raigad|MH|ht|10-3|Bus from Mahad|1|Shivaji's capital fort, by trek or ropeway.
+Rajmachi|MH|t|6-2|Walk from Lonavala|1|Monsoon trek to twin forts; fireflies in late May.
+Lonar|MH|lu|7-2|Bus from Chhatrapati Sambhajinagar|1|Crater lake made by a meteorite.
+Ganpatipule|MH|bp|10-3|Bus from Ratnagiri|1|Temple beach on the Konkan coast.
+Dapoli|MH|bu|10-3|Bus from Khed|1|Konkan beaches and dolphin spotting at Dabhol.
+Murud-Janjira|MH|hb|10-3|Bus to Murud from Alibaug|1|Island sea fort reached by sailboat.
+Kalsubai|MH|t|7-2|Train to Igatpuri, then bus to Bari|1|Climb Maharashtra's highest peak.
+Nashik|MH|p|10-3|Train|1|Vineyards and the Godavari ghats.
+Panchgani|MH|m|10-5|Bus from Pune or Wai|1|Table-land plateau and strawberry farms.
+Velas|MH|bfu|3-4|Bus from Mandangad|1|Turtle hatching festival on a village beach in spring.
+Chikhaldara|MH|um|7-2|Bus from Amravati|1|Vidarbha's only hill station, next to Melghat forest.
+Pench|MP|f|10-6|Bus from Nagpur|3|Teak forest of the Jungle Book stories.
+Cabo de Rama|GA|hbu|11-3|Bus from Canacona|1|Cliff fort with a hidden beach below.
+Butterfly Beach|GA|bu|11-3|Boat from Palolem|1|Tiny cove reached only by boat or trail.
+Fontainhas|GA|h|11-3|Walk from Panaji bus stand|1|Panaji's Latin quarter of bright Portuguese houses.
+Netravali|GA|fwu|6-10|Bus from Margao towards Netravali|1|Bubbling lake and forest waterfalls in South Goa.
+Bylakuppe|KA|pu|10-3|Bus from Mysuru or Kushalnagar|1|Golden Temple of South India's largest Tibetan settlement.
+Shivanasamudra|KA|w|7-11|Bus to Kollegal|1|Twin waterfalls on the Kaveri.
+Shravanabelagola|KA|ph|10-3|Bus from Hassan|1|Climb to the giant Gommateshwara statue.
+Melukote|KA|hu|10-3|Bus from Mandya|1|Hilltop temple town of stepped tanks.
+Nandi Hills|KA|m|9-3|Bus from Bengaluru|1|Sunrise above the clouds near Bengaluru.
+Skandagiri|KA|t|9-3|Bus to Chikkaballapur|1|Night trek for a sunrise above the clouds.
+Devbagh|KA|bi|10-3|Bus to Karwar|2|Island beach at the mouth of the Kali river.
+Kodachadri|KA|tu|10-3|Bus to Kollur, then jeep|1|Western Ghats peak with a famous sunset.
+Gokak Falls|KA|wu|7-10|Bus from Belagavi|1|Horseshoe falls with an old hanging bridge.
+Vijayapura|KA|h|10-2|Train|1|Gol Gumbaz and its whispering gallery.
+Bidar|KA|hu|10-2|Train|1|Persian-style madrasa and bidriware craft.
+Anegundi|KA|hu|10-2|Coracle or bus from Hampi|1|Old-kingdom village across the river from Hampi.
+Talakaveri|KA|p|9-3|Bus from Madikeri via Bhagamandala|1|Source of the Kaveri in the Brahmagiri hills.
+Kumarakom|KL|lf|9-3|Bus from Kottayam|2|Bird sanctuary and backwater canals.
+Gavi|KL|fu|9-5|KSRTC bus from Pathanamthitta|2|Rainforest eco-tourism zone with a famous single daily bus.
+Kollam|KL|l|9-3|Train|1|Ashtamudi lake and the cheapest long backwater ferry ride.
+Thrissur|KL|p|9-3|Train|1|Pooram festival with decorated elephants in April or May.
+Kannur|KL|b|10-3|Train|1|Theyyam ritual performances from November to May.
+Idukki|KL|um|9-5|Bus from Kochi|1|Arch dam and hill viewpoints.
+Silent Valley|KL|fr|9-4|Bus to Mukkali via Mannarkkad|2|Untouched evergreen rainforest; entry by forest jeep only.
+Kappad|KL|bh|10-3|Bus from Kozhikode|1|Beach where Vasco da Gama landed.
+Kozhikode|KL|h|10-3|Train|1|Halwa street, biryani and an evening beach.
+Thenmala|KL|fu|9-5|Bus from Kollam or Punalur|1|Kerala's first planned eco-tourism spot.
+Kanyakumari|TN|bp|10-3|Train|1|Sunrise and sunset from India's southern tip.
+Hogenakkal|TN|w|8-2|Bus from Dharmapuri|1|Coracle rides between waterfall cliffs.
+Javadhu Hills|TN|ur|9-3|Bus from Vellore or Tiruvannamalai|1|Sandalwood hills with almost no tourists.
+Kotagiri|TN|um|3-6,9-12|Bus from Mettupalayam or Ooty|1|Quieter Nilgiri tea town than Ooty.
+Coonoor|TN|m|3-6,9-12|Nilgiri toy train|2|Tea estates and Dolphin's Nose viewpoint.
+Topslip|TN|f|10-5|Bus from Pollachi|2|Anamalai tiger reserve with forest lodges.
+Point Calimere|TN|fb|11-2|Bus to Vedaranyam|1|Flamingos on a lonely coast.
+Courtallam|TN|w|6-9|Bus from Tenkasi|1|Bathing waterfalls that roar in the monsoon.
+Gingee|TN|h|10-3|Bus from Tiruvannamalai|1|One fort spread across three hills.
+Chidambaram|TN|p|10-3|Train|1|Nataraja temple of the cosmic dancer.
+Kumbakonam|TN|p|10-3|Train|1|Temple town and famous filter coffee.
+Velankanni|TN|pb|10-3|Train|1|Seaside basilica and pilgrim town.
+Srisailam|AP|pf|9-2|Bus from Hyderabad|1|Jyotirlinga temple above the Krishna gorge.
+Borra Caves|AP|u|10-3|Kirandul train from Visakhapatnam|1|Million-year-old limestone caves on the Araku line.
+Visakhapatnam|AP|b|10-3|Train|1|Beach road, a submarine museum and Kailasagiri hill.
+Talakona|AP|wf|7-1|Bus from Tirupati|1|Andhra's highest waterfall in a forest.
+Ramappa|TG|hu|10-3|Bus from Warangal|1|UNESCO temple built with floating bricks.
+Warangal|TG|h|10-3|Train|1|Kakatiya fort gateways and the thousand-pillar temple.
+Ananthagiri Hills|TG|u|7-2|Train or bus to Vikarabad|1|Forest hills an hour from Hyderabad.
+Similipal|OD|fw|11-5|Bus from Baripada|2|Tiger reserve with the tall Barehipani falls.
+Raghurajpur|OD|hu|10-3|Auto from Puri|1|Village where every house paints pattachitra.
+Mangalajodi|OD|fu|11-2|Bus to Tangi from Bhubaneswar|1|Wetland where former poachers now guide birders.
+Deomali|OD|tr|10-2|Bus to Koraput, then taxi|1|Odisha's highest peak among tribal villages.
+Taptapani|OD|u|10-2|Bus from Berhampur|1|Natural hot springs in a quiet forest.
+Murti|WBH|fu|10-5|Bus from Siliguri|1|Riverside forest village in the Dooars.
+Jaldapara|WBH|f|11-4|Train to Madarihat|2|Rhino safaris through tall elephant grass.
+Buxa|WBH|tf|10-4|Bus to Rajabhatkhawa from Alipurduar|1|Trek to an old fort inside tiger forest.
+Mirik|WBH|l|3-5,10-12|Shared jeep from Siliguri|1|Lake town with orange orchards and tea.
+Purulia|WB|u|11-3|Train from Kolkata|1|Red-soil hills, Ajodhya Pahar and Chhau dance.
+Bakkhali|WB|b|10-3|Bus from Kolkata|1|Quiet beach with a crocodile breeding centre.
+Murshidabad|WB|hu|10-3|Train from Kolkata|1|Nawabi palace of a thousand doors.
+Gangasagar|WB|pb|11-2|Train to Kakdwip, then ferry and bus|1|Island where the Ganga meets the sea; Makar Sankranti mela.
+Vaishali|BR|hp|10-3|Bus from Patna|1|Ashokan pillar and Buddhist stupas.
+Valmiki Nagar|BR|fu|10-4|Train to Bagaha or Narkatiaganj|2|Bihar's only tiger reserve.
+Vikramshila|BR|hu|10-3|Train to Kahalgaon|1|Ruins of an ancient Buddhist university.
+Hundru Falls|JH|w|7-11|Bus or taxi from Ranchi|1|A 98 m waterfall near Ranchi.
+Betla|JH|f|11-5|Bus from Daltonganj|2|Old forts inside the Palamau tiger reserve.
+Deoghar|JH|p|10-3|Train to Jasidih|1|Baidyanath Jyotirlinga and the huge Shravan pilgrimage.
+Parasnath|JH|pt|10-3|Bus to Madhuban from Giridih|1|Jharkhand's highest hill, lined with Jain shrines.
+Laitlum|ML|u|10-5|Taxi from Shillong|1|Canyon views from the end of a grassy ridge.
+Shnongpdeng|ML|lu|11-4|Shared sumo to Dawki, then taxi|1|Riverside camping, cliff jumping and kayaking.
+Krang Suri|ML|w|10-5|Taxi from Jowai|1|Waterfall falling into a turquoise pool.
+Pasighat|AR|ur|10-4|Bus from Dibrugarh|1|Siang river beaches and Adi villages.
+Bomdila|AR|m|3-6,9-11|Sumo on the Tawang road|1|Monastery town with apple orchards.
+Roing|AR|ru|10-4|Bus from Tinsukia|1|Mayudia snow pass and the Mishmi hills.
+Anini|AR|r|10-4|Long sumo ride from Roing|2|One of India's remotest district towns.
+Bhalukpong|AR|fu|10-4|Bus from Tezpur|1|River camping on the Kameng at Arunachal's gate.
+Mon|NL|ru|10-4|Bus from Dimapur via Sonari|1|Konyak villages with tattooed elders.
+Ukhrul|MN|ru|10-4|Shared taxi from Imphal|1|Shirui lily hills and Tangkhul villages.
+Imphal|MN|h|10-4|Flight, or bus from Dimapur|1|Ima Keithel, a huge market run only by women.
+Reiek|MZ|u|10-3|Taxi from Aizawl|1|Mountain viewpoint with a traditional Mizo village.
+Phawngpui|MZ|tr|10-4|Sumo from Aizawl to Sangau|1|Blue Mountain, Mizoram's highest peak.
+Jampui Hills|TR|ur|10-3|Bus from Agartala|1|Orange orchards on a long ridge facing Mizoram.
+Agartala|TR|h|10-3|Train|1|The white Ujjayanta palace.
+Manas|AS|f|11-4|Train to Barpeta Road|2|UNESCO forest with golden langurs.
+Sivasagar|AS|h|10-3|Bus from Jorhat|1|Ahom-era palaces and the Rang Ghar.
+Dibru-Saikhowa|AS|fr|11-4|Bus to Tinsukia|2|Feral horses on Brahmaputra river islands.
+Sualkuchi|AS|hu|10-3|Bus from Guwahati|1|Silk-weaving village full of clacking looms.
+Guwahati|AS|p|10-4|Train|1|Kamakhya temple and Brahmaputra sunsets.
+Ravangla|SK|pu|3-5,10-12|Shared jeep from Siliguri or Gangtok|1|Buddha Park with a giant statue.
+Namchi|SK|p|3-5,10-12|Shared jeep from Siliguri|1|Hilltop Char Dham with a huge Shiva statue.
+Dzongu|SK|ru|3-5,10-12|Permit jeep from Mangan|2|Lepcha reserve with village homestays.
+Tsomgo Lake|SK|ls|3-5,10-12|Permit tour from Gangtok|2|Glacial lake on the road to Nathu La.
+Uttarey|SK|u|3-5,10-12|Shared jeep from Pelling|1|Tiny border village with Singalila trails.
+Aritar|SK|lu|3-5,10-12|Shared jeep from Rangpo|1|Boot-shaped lake on the Silk Route side.
+Bhimbetka|MP|h|10-3|Bus from Bhopal|1|Prehistoric rock paintings in sandstone shelters.
+Ujjain|MP|p|10-3|Train|1|Mahakal temple and the Shipra ghats.
+Indore|MP|h|10-3|Train|1|India's cleanest city and its night food markets.
+Satpura|MP|f|10-6|Bus to Madhai from Itarsi|2|Canoe and walking safaris in tiger forest.
+Panna|MP|fw|10-6|Bus from Khajuraho|2|Tiger reserve of gorges near Khajuraho.
+Tamia|MP|u|10-3|Bus from Chhindwara|1|Patalkot valley, with tribal villages deep below the rim.
+Bhojpur|MP|hu|10-3|Bus from Bhopal|1|Unfinished giant Shiva temple.
+Barnawapara|CG|fu|11-4|Bus from Raipur|2|Gaur and leopards in an easy forest reserve.
+Kanger Valley|CG|fu|11-5|Bus to Jagdalpur|1|Limestone caves and Tirathgarh falls.
+Sirpur|CG|hu|10-3|Bus from Raipur|1|Brick Lakshman temple and Buddhist ruins.
+Baratang|AN|ri|11-4|Bus from Port Blair|2|Limestone caves and a mud volcano.
+Ross Island|AN|hi|11-4|Boat from Port Blair|1|British ruins taken over by deer and banyan roots.
+Diglipur|AN|bir|11-4|Overnight bus or ferry from Port Blair|2|Andaman's highest peak and turtle-nesting beaches.
+Chidiya Tapu|AN|bfu|11-4|Bus from Port Blair|1|Sunset point and birding near Port Blair.
+Bhaktapur|NP|h|10-4|Bus from Kathmandu|1|Medieval Newari city of pottery squares and famous curd.
+Lumbini|NP|p|10-3|Bus from the Sunauli border|1|Birthplace of the Buddha, with monasteries from many countries.
+Chitwan|NP|f|10-3|Bus from Kathmandu or Pokhara|1|Rhino and elephant jungle in Nepal's lowlands.
+Everest Base Camp|NP|t|10-11,3-5|Fly to Lukla or jeep to Salleri|2|The classic trek to the foot of the world's highest peak.
+Gokyo Lakes|NP|tl|10-11,3-5|Trek from Lukla|2|Turquoise lakes with Everest views and fewer crowds.
+Langtang Valley|NP|t|10-11,3-5|Bus from Kathmandu to Syabrubesi|1|Teahouse trek through Tamang villages near Kathmandu.
+Ghandruk|NP|tu|10-4|Bus from Pokhara to Nayapul|1|Gurung village with Annapurna views on a short trek.
+Tansen|NP|uh|10-4|Bus from Butwal|1|Hill town of old Newari houses near the Indian border.
+Janakpur|NP|p|10-3|Train from Jaynagar in Bihar|1|Janaki Mandir, said to be Sita's birthplace.
+Rara Lake|NP|lr|4-6,9-11|Flight to Talcha or a long jeep ride|2|Nepal's biggest lake in far-west wilderness.
+Paro|BT|hp|3-5,9-11|Bus via the Phuentsholing border|3|Tiger's Nest monastery on a cliff.
+Thimphu|BT|h|3-5,9-11|Bus from Phuentsholing|3|A capital with no traffic lights.
+Punakha|BT|h|3-5,9-12|Bus or taxi from Thimphu|3|Grand dzong where two rivers meet.
+Bumthang|BT|ur|3-5,9-11|Long bus ride from Thimphu|3|Cultural heartland of temples and buckwheat fields.
+Phobjikha|BT|uf|10-2|Taxi from Wangdue|3|Glacial valley where black-necked cranes spend winter.
+Sigiriya|LK|h|1-4|Bus from Dambulla|2|Fortress on a giant rock with ancient frescoes.
+Kandy|LK|ph|1-4|Train or bus from Colombo|1|Temple of the Tooth beside a lake.
+Galle|LK|hb|12-4|Coastal train from Colombo|2|Walled Dutch fort town by the sea.
+Mirissa|LK|bk|12-4|Train to Weligama or Matara|2|Whale watching and palm-lined beaches.
+Nuwara Eliya|LK|m|2-4|Train to Nanu Oya|2|Cool tea country with old colonial bungalows.
+Adam's Peak|LK|pt|12-5|Bus to the trailhead from Hatton|1|Night pilgrimage climb for sunrise.
+Jaffna|LK|ur|1-9|Train from Colombo|1|Tamil north of temples and small islands.
+Trincomalee|LK|b|5-9|Bus or train from Colombo|1|Calm east-coast beaches and Pigeon Island.
+Sreemangal|BD|u|10-3|Train from Dhaka|1|Tea gardens and the famous seven-layer tea.
+Cox's Bazar|BD|b|11-3|Bus from Dhaka or Chittagong|1|One of the longest natural sea beaches in the world.
+Sajek Valley|BD|ur|10-3|Jeep from Khagrachari|1|Hilltop village above a sea of clouds.
+Maafushi|MV|bi|12-4|Public ferry from Malé|3|Local-island guesthouses make the Maldives affordable.
+Thoddoo|MV|biu|12-4|Public speedboat from Malé|3|Farm island with a quiet tourist beach and watermelons.
+Bangkok|TH|hk|11-2|Cheap flights from Indian cities|1|Street food, temples and the cheapest gateway to Southeast Asia.
+Chiang Mai|TH|hk|11-2|Overnight train or bus from Bangkok|1|Old-city temples, night markets and cooking classes.
+Koh Lanta|TH|bi|11-4|Ferry or minivan from Krabi|2|Laid-back island with long sunset beaches.
+Koh Tao|TH|bi|3-9|Ferry from Chumphon|2|One of the cheapest places in the world to learn diving.
+Krabi|TH|bk|11-4|Bus or flight from Bangkok|2|Limestone cliffs, Railay beach and island hopping.
+Ayutthaya|TH|h|11-2|Train from Bangkok|1|Ruined royal capital best seen by bicycle.
+Kanchanaburi|TH|hw|11-3|Train from Bangkok|1|The bridge on the River Kwai and Erawan falls.
+Chiang Rai|TH|h|11-2|Bus from Chiang Mai|1|The White Temple and the Golden Triangle.
+Khao Sok|TH|fl|12-4|Bus from Surat Thani|2|Rainforest lake with floating bungalows.
+Hanoi|VN|hk|10-4|Flights from Indian cities|1|Old Quarter street food and egg coffee.
+Ha Long Bay|VN|i|10-4|Bus from Hanoi|2|Thousands of limestone islands; budget boat trips.
+Ninh Binh|VN|um|1-5,9-11|Bus or train from Hanoi|1|Rice paddies and karst rivers by rowing boat.
+Sapa|VN|tm|9-11,3-5|Overnight bus from Hanoi|1|Rice terraces and village homestay treks.
+Hoi An|VN|hb|2-7|Bus from Da Nang|1|Lantern-lit old town with tailors and beaches.
+Phong Nha|VN|fu|3-8|Train to Dong Hoi|1|Giant caves and jungle river rides.
+Da Lat|VN|m|11-4|Bus from Ho Chi Minh City|1|Cool hill town of pine forests and canyoning.
+Ho Chi Minh City|VN|h|12-4|Flights from India|1|Motorbike buzz, street food and the Mekong Delta nearby.
+Kampot|KH|u|11-4|Bus from Phnom Penh|1|Riverside pepper town below Bokor hill.
+Koh Rong|KH|bi|11-5|Ferry from Sihanoukville|2|Island of white sand and glowing plankton.
+Phnom Penh|KH|h|11-3|Bus from Siem Reap|1|Royal Palace and riverside markets.
+Battambang|KH|u|11-3|Bus from Siem Reap|1|Bamboo train and colonial streets.
+Luang Prabang|LAO|hp|11-3|Bus or train from Vientiane|1|Monks' morning alms round and Kuang Si waterfalls.
+Vang Vieng|LAO|km|11-3|Train from Vientiane|1|River tubing, caves and karst views.
+4000 Islands|LAO|ui|11-4|Bus from Pakse|1|Hammock life on Mekong islands.
+Thakhek Loop|LAO|r|11-4|Bus from Vientiane|1|Motorbike loop through caves and karst.
+Kuala Lumpur|MY|hk|5-9|Cheap flights from Indian cities|1|Petronas Towers, Batu Caves and hawker food.
+Penang|MY|h|12-3|Bus from Kuala Lumpur|1|George Town street art and some of Asia's best hawker food.
+Cameron Highlands|MY|m|1-4|Bus from Kuala Lumpur or Ipoh|1|Tea plantations and mossy forests.
+Langkawi|MY|bi|11-4|Ferry from Penang or Kuala Perlis|2|Duty-free island with a sky bridge.
+Perhentian Islands|MY|bi|4-9|Bus to Kuala Besut, then boat|2|Clear water and snorkelling with turtles.
+Malacca|MY|h|12-4|Bus from Kuala Lumpur|1|Colonial river town with the Jonker Street night market.
+Taman Negara|MY|fr|3-9|Bus and boat from Kuala Lumpur|2|One of the oldest rainforests in the world.
+Singapore|SG|h|2-9|Cheap flights from Indian cities|3|Hawker centres with world-famous food at low prices.
+Ubud|ID|hp|4-10|Bus or scooter from Denpasar|1|Rice terraces, temples and yoga in Bali.
+Nusa Penida|ID|bi|4-10|Boat from Sanur|2|Kelingking cliff beach and manta rays.
+Gili Islands|ID|bik|4-10|Boat from Bali or Lombok|2|Car-free islands with turtles offshore.
+Lombok|ID|bm|5-9|Ferry from Bali|1|Quieter neighbour of Bali with Mount Rinjani.
+Mount Bromo|ID|mr|5-10|Bus or train to Probolinggo|1|Sunrise over a smoking volcano crater.
+Yogyakarta|ID|h|5-10|Train from Jakarta|1|Borobudur and Prambanan temples.
+Raja Ampat|ID|bir|10-4|Fly to Sorong, then ferry|3|Some of the richest coral reefs on Earth.
+Ijen Crater|ID|r|5-10|Bus or train to Banyuwangi|2|Blue-fire volcano crater visited at night.
+El Nido|PH|bi|12-5|Bus from Puerto Princesa|2|Lagoons and limestone islands of Palawan.
+Siargao|PH|bi|3-10|Fly via Cebu|2|Surf island of palm-tree roads.
+Siquijor|PH|biu|12-5|Ferry from Dumaguete|1|Island of waterfalls and cheap scooter rides.
+Banaue|PH|hr|1-5|Overnight bus from Manila|1|Rice terraces carved 2,000 years ago.
+Bohol|PH|bi|12-5|Ferry from Cebu|2|Chocolate Hills and tiny tarsiers.
+Tokyo|JP|h|3-5,10-11|Flights from Indian cities|3|Neon districts, quiet shrines and cheap convenience-store meals.
+Kyoto|JP|hp|3-5,10-11|Train from Tokyo or Osaka|3|Temples, bamboo groves and old wooden lanes.
+Hiroshima|JP|h|3-5,10-11|Train from Osaka|3|Peace Park and Miyajima's floating gate.
+Nara|JP|h|3-5,10-11|Train from Kyoto|2|Bowing deer and a giant Buddha.
+Takayama|JP|hu|4-11|Bus from Nagoya|3|Old merchant town in the Japanese Alps.
+Shirakawa-go|JP|hus|12-2,4-11|Bus from Takayama|3|Thatched farmhouses that look magical in snow.
+Niseko|JP|s|12-3|Train or bus from Sapporo|3|World-famous powder-snow skiing.
+Okinawa|JP|bi|4-6,10-11|Flight from Tokyo|3|Tropical beaches and longevity food.
+Seoul|KR|hk|4-6,9-11|Flights from India|2|Palaces, street food and K-culture.
+Busan|KR|bh|5-10|Train from Seoul|2|Beaches, fish markets and the hillside Gamcheon village.
+Jeju Island|KR|im|4-10|Flight from Seoul|2|Volcano hikes and lava tubes.
+Gyeongju|KR|h|4-6,9-11|Bus from Busan|2|A museum without walls of royal tombs.
+Hong Kong|HK|hk|10-4|Flights from India|3|Dim sum, ferries and hiking trails above skyscrapers.
+Taipei|TW|hk|10-4|Flights from India|2|Night markets and hot springs on the metro.
+Taroko Gorge|TW|mt|10-4|Train to Hualien|2|Marble canyon with cliffside trails.
+Jiufen|TW|hu|10-4|Bus from Taipei|1|Lantern-lit mountain town of teahouses.
+Zhangjiajie|CN|mr|4-10|Train to Zhangjiajie|2|Forest of floating pillar mountains.
+Yangshuo|CN|mk|4-10|High-speed train to Guilin, then bus|2|River karst scenery by bamboo raft and bicycle.
+Gobi Desert|MNG|dr|6-9|Shared tour from Ulaanbaatar|2|Dunes, dinosaur cliffs and ger camps.
+Khövsgöl Lake|MNG|lr|6-9|Bus from Ulaanbaatar to Mörön|2|Deep blue lake of reindeer herders.
+Dubai|AE|hk|11-3|Short flights from Indian cities|3|Desert dunes, old souks and the Burj Khalifa.
+Muscat|OM|hb|10-3|Short flights from India|2|Forts, souqs and calm beaches.
+Wahiba Sands|OM|d|10-3|Rental car from Muscat|3|Overnight in Bedouin desert camps.
+Jebel Shams|OM|mt|10-4|Car from Nizwa|2|Walk the rim of Oman's Grand Canyon.
+Petra|JO|h|3-5,9-11|Bus from Amman|3|Rose-red city carved into rock.
+Wadi Rum|JO|dr|3-5,9-11|Bus from Aqaba|2|Mars-like desert with Bedouin camps.
+Istanbul|TUR|hk|4-6,9-10|Flights from India|2|Mosques, bazaars and ferries between two continents.
+Cappadocia|TUR|h|4-6,9-10|Overnight bus from Istanbul|2|Fairy chimneys and sunrise balloons.
+Kaş|TUR|b|5-10|Bus from Antalya|2|Turquoise coast with kayaking over sunken ruins.
+Pamukkale|TUR|h|4-6,9-10|Bus from Denizli|1|White travertine terraces above Roman ruins.
+Lycian Way|TUR|t|3-5,9-11|Bus to Fethiye|1|Long-distance trail along the coast.
+Giza|EG|h|10-4|Flights to Cairo|1|The Pyramids and the Sphinx at the edge of Cairo.
+Luxor|EG|h|10-4|Overnight train from Cairo|1|Valley of the Kings and huge temples.
+Dahab|EG|bk|3-5,9-11|Bus from Sharm el-Sheikh|1|Cheap Red Sea diving at the Blue Hole.
+Siwa Oasis|EG|dr|10-4|Bus from Alexandria or Marsa Matruh|1|Desert oasis of salt lakes and date palms.
+Aswan|EG|h|10-4|Train from Luxor|1|Nubian villages and trips to Abu Simbel.
+Kazbegi|GE|mt|6-9|Shared minibus from Tbilisi|1|Gergeti church below Mount Kazbek.
+Svaneti|GE|rmt|6-9|Shared minibus to Mestia|1|Medieval tower villages under glaciers.
+Kakheti|GE|hu|5-10|Shared minibus from Tbilisi to Telavi|1|Wine country of old monasteries.
+Batumi|GE|b|6-9|Train from Tbilisi|1|Black Sea promenade city.
+Yerevan|AM|h|5-10|Flights via the Gulf|1|Pink-stone capital with views of Mount Ararat.
+Dilijan|AM|u|5-10|Shared minibus from Yerevan|1|Forest spa town near Lake Sevan.
+Baku|AZ|h|4-6,9-10|Flights from India|2|Old city walls and the Flame Towers.
+Samarkand|UZ|h|4-6,9-10|Train from Tashkent|1|Turquoise domes of the Registan.
+Bukhara|UZ|h|4-6,9-10|Train from Samarkand|1|Living Silk Road town of madrasas.
+Khiva|UZ|h|4-6,9-10|Train or flight to Urgench|1|Walled museum city in the desert.
+Song Kol|KG|lr|6-9|Shared taxi to Kochkor, then horse or jeep|1|Yurt stays beside a high alpine lake.
+Karakol|KG|tm|6-9|Shared minibus from Bishkek|1|Base for valley treks and hot springs.
+Almaty|KZ|m|5-10|Flights from India|2|City below snowy peaks with Charyn canyon nearby.
+Pamir Highway|TJ|r|6-9|Shared jeep from Dushanbe or Khorog|2|One of the highest and wildest roads on Earth.
+Lisbon|PT|hk|3-6,9-10|Flights via the Gulf or Europe|3|Hills, trams and custard tarts.
+Porto|PT|h|4-10|Train from Lisbon|2|Riverside wine cellars and tiled churches.
+Lagos|PT|b|5-10|Bus from Lisbon|2|Algarve's golden cliffs and sea caves.
+Barcelona|ES|hb|5-6,9-10|Flights from India|3|Gaudí buildings and city beaches.
+Granada|ES|h|3-6,9-11|Bus from Madrid|2|The Alhambra and free tapas with drinks.
+Seville|ES|h|3-5,10-11|Train from Madrid|2|Flamenco and orange-tree plazas.
+Camino de Santiago|ES|tp|4-10|Train to Sarria or Saint-Jean|2|Walk the pilgrim route with cheap pilgrim dorms.
+Paris|FR|h|4-6,9-10|Flights from India|3|Museums, cafés and free views from Montmartre.
+Chamonix|FR|mst|6-9,12-4|Bus from Geneva|3|Mont Blanc hikes and skiing.
+Provence|FR|u|6-9|Train to Avignon|3|Lavender fields in full bloom in July.
+Rome|IT|h|4-6,9-10|Flights from India|3|The Colosseum and free-entry churches and fountains.
+Florence|IT|h|4-6,9-10|Train from Rome|3|Renaissance art and Tuscan hills.
+Cinque Terre|IT|bt|4-6,9-10|Train from La Spezia|3|Five cliff villages linked by hiking trails.
+Dolomites|IT|mt|6-9,12-3|Bus from Bolzano|3|Jagged peaks with mountain huts.
+Amalfi Coast|IT|b|5-9|Bus from Sorrento|3|Cliff towns by bus at a fraction of taxi prices.
+Venice|IT|h|4-6,9-11|Train from Florence or Milan|3|Canals; stay in Mestre to save money.
+Santorini|GR|bi|5-10|Ferry from Athens|3|White villages and caldera sunsets.
+Athens|GR|h|4-6,9-10|Flights from India|2|The Acropolis and cheap souvlaki.
+Meteora|GR|hp|4-6,9-10|Train to Kalambaka|2|Monasteries on top of rock towers.
+Naxos|GR|biu|5-10|Ferry from Athens|2|Cheaper Greek island with long beaches.
+Crete|GR|bt|5-10|Ferry or flight from Athens|2|Samaria gorge and pink-sand beaches.
+Interlaken|SUI|mt|6-9,12-3|Train from Zurich|3|Adventure base between two alpine lakes.
+Lauterbrunnen|SUI|mw|6-9|Train from Interlaken|3|Valley of 72 waterfalls.
+Zermatt|SUI|ms|12-4,6-9|Train from Visp|3|Car-free village below the Matterhorn.
+Hallstatt|AT|lh|5-10|Train to Hallstatt station, then ferry|3|Postcard lakeside village in the Alps.
+Vienna|AT|h|4-10|Flights or train|3|Palaces, coffee houses and cheap standing opera tickets.
+Berlin|DE|hk|5-9|Flights from India|2|History, street art and cheap döner.
+Munich|DE|h|5-10|Flights or train|3|Beer gardens and Oktoberfest.
+Amsterdam|NED|h|4-9|Flights from India|3|Canals, bicycles and world-class museums.
+Bruges|BE|h|4-10|Train from Brussels|3|Medieval canals and chocolate shops.
+Prague|CZ|hk|4-10|Flights or train|2|Fairy-tale old town and cheap food.
+Český Krumlov|CZ|hu|5-9|Bus from Prague|2|Riverside castle town.
+Budapest|HU|hk|4-10|Flights from India|2|Thermal baths and ruin bars.
+Kraków|PL|h|4-10|Flights or train|1|Old Town square and cheap pierogi.
+Zakopane|PL|ms|12-3,6-9|Bus from Kraków|1|Tatra mountain hikes and winter snow.
+Dubrovnik|CRO|hb|5-6,9-10|Bus from Split|3|Walled city on the Adriatic.
+Split|CRO|hb|5-10|Bus or ferry along the coast|2|Life inside a Roman palace.
+Plitvice Lakes|CRO|lw|4-10|Bus from Zagreb|2|Turquoise lakes linked by waterfalls.
+Lake Bled|SI|l|5-10|Bus from Ljubljana|2|Island church on an alpine lake.
+Mostar|BA|h|5-10|Bus from Sarajevo|1|Old bridge divers and Ottoman lanes.
+Kotor|ME|hb|5-10|Bus from Dubrovnik|2|Fjord-like bay and a fortress hike.
+Ksamil|AL|bu|6-9|Bus from Sarandë|1|Some of Europe's cheapest turquoise beaches.
+Theth|AL|rt|6-9|Shared van from Shkodër|1|Remote mountain village on the Valbona trail.
+Berat|AL|hu|4-10|Bus from Tirana|1|The "city of a thousand windows".
+Rila Monastery|BG|hp|5-10|Bus from Sofia|1|Striped monastery in the Rila mountains.
+Plovdiv|BG|hu|4-10|Bus from Sofia|1|A Roman theatre and an arty old town.
+Brașov|RO|h|5-10|Train from Bucharest|1|Transylvanian old town near Bran castle.
+Iceland Ring Road|IS|rw|6-9|Bus or rental car from Reykjavík|3|Waterfalls, glaciers and black-sand beaches.
+Reykjavík|IS|s|9-3|Flights via Europe|3|Northern-lights tours from the capital.
+Lofoten|NO|rm|6-8|Fly to Bodø via Oslo, then ferry|3|Fishing villages under sharp peaks.
+Tromsø|NO|s|11-3|Flight via Oslo|3|Northern-lights capital of the Arctic.
+Rovaniemi|FI|s|12-3|Overnight train from Helsinki|3|Santa's village and husky rides.
+Edinburgh|GB|h|5-9|Flights via London|3|Castle, cobbled closes and the free Royal Mile.
+Isle of Skye|GB|mr|5-9|Bus from Inverness|3|Fairy pools and dramatic cliffs.
+London|GB|h|5-9|Flights from Indian cities|3|Free museums and walkable history.
+Cliffs of Moher|IE|m|5-9|Bus from Galway|2|Wild Atlantic cliffs.
+Tallinn|EE|h|5-9|Ferry from Helsinki or flight|2|Medieval walled old town.
+Marrakech|MA|h|3-5,9-11|Flights via the Gulf|1|Souks, riads and Jemaa el-Fnaa food stalls.
+Chefchaouen|MA|hu|3-6,9-11|Bus from Fes or Tangier|1|The blue city of the Rif mountains.
+Merzouga|MA|d|3-5,10-11|Bus from Fes or Marrakech|1|Camel trek to a night under Saharan stars.
+Fes|MA|h|3-5,9-11|Train from Casablanca|1|Medieval medina and leather tanneries.
+Maasai Mara|KE|f|7-10|Bus to Narok, then safari|3|The Great Migration river crossings.
+Diani Beach|KE|b|12-3,7-10|Train to Mombasa|2|White sand and a coral reef.
+Zanzibar|TZ|bh|6-10,12-2|Ferry from Dar es Salaam|2|Spice island with the old lanes of Stone Town.
+Kilimanjaro|TZ|t|1-3,6-10|Bus to Moshi|3|Africa's highest peak, climbed without ropes.
+Serengeti|TZ|f|1-3,6-10|Safari from Arusha|3|Endless plains of the great migration.
+Bwindi|UG|fr|6-8,12-2|Bus to Kabale|3|Mountain gorilla trekking.
+Cape Town|ZA|hbm|10-4|Flights via the Gulf|2|Table Mountain and the Cape peninsula.
+Garden Route|ZA|bf|10-4|Backpacker bus from Cape Town|2|Coastal road of forests, lagoons and bungee jumps.
+Sossusvlei|NA|dr|5-10|Shuttle or car from Windhoek|3|The tallest red dunes on Earth.
+Victoria Falls|ZW|w|2-5|Bus from Livingstone or Bulawayo|2|One of the largest waterfalls in the world.
+Avenue of the Baobabs|MG|ur|4-11|Bus to Morondava|2|Giant baobab trees at sunset.
+Mauritius|MU|bi|5-12|Flights from Indian cities|2|Lagoons, Hindu temples and Indian-origin food.
+Lalibela|ET|hpr|10-3|Flight from Addis Ababa|2|Churches carved out of solid rock.
+Machu Picchu|PE|ht|4-10|Train or trek from Cusco|3|Inca citadel above the clouds.
+Rainbow Mountain|PE|tr|4-10|Tour from Cusco|1|Striped mountain at about 5,000 m.
+Huacachina|PE|d|4-11|Bus to Ica from Lima|1|Desert oasis with sandboarding on huge dunes.
+Salar de Uyuni|BO|dr|5-10|Bus from La Paz|2|The largest salt flat in the world.
+Lake Titicaca|BO|l|5-10|Bus from La Paz to Copacabana|1|Islands in the world's highest navigable lake.
+San Pedro de Atacama|CL|dr|3-5,9-11|Bus from Calama|3|Geysers, salt lagoons and the clearest night skies.
+Torres del Paine|CL|tm|11-3|Bus from Puerto Natales|3|Granite towers of Patagonia on the W trek.
+El Chaltén|ARG|tm|11-3|Bus from El Calafate|2|Free trails to Mount Fitz Roy.
+Iguazú Falls|ARG|w|3-5,8-11|Bus from Buenos Aires|2|Hundreds of waterfalls on the Brazil border.
+Ilha Grande|BRA|bi|4-11|Bus from Rio, then ferry|2|Car-free island of jungle trails.
+Lençóis Maranhenses|BRA|dlr|6-9|Bus to Barreirinhas|2|Rainwater lagoons between white dunes.
+Cartagena|CO|hb|12-4|Flights via Europe or the US|2|Colourful walled city on the Caribbean.
+Medellín|CO|hk|12-3,6-8|Flights via Europe or the US|1|City of eternal spring and hillside cable cars.
+Salento|CO|mu|12-3,6-8|Bus from Pereira or Armenia|1|Coffee farms and the giant wax palms of Cocora.
+Galápagos|EC|fir|1-5|Flight from Guayaquil|3|Islands where the wildlife isn't afraid of you.
+Baños|EC|kw|6-9|Bus from Quito|1|Waterfall route by bicycle and a swing at the edge of a cliff.
+Oaxaca|MX|h|10-5|Bus from Mexico City|1|Mole, markets and Day of the Dead.
+Tulum|MX|bh|11-4|Bus from Cancún|2|Mayan ruins above a Caribbean beach and cenote swims.
+San Cristóbal de las Casas|MX|hu|11-4|Bus from Oaxaca or Tuxtla|1|Highland colonial town of Mayan markets.
+Lake Atitlán|GT|lk|11-4|Shuttle from Antigua|1|Volcano-ringed lake of Mayan villages.
+Antigua Guatemala|GT|h|11-4|Shuttle from Guatemala City|1|Cobbled colonial streets under volcanoes.
+Havana|CU|h|12-4|Flights via Europe or Mexico|2|Vintage cars, salsa and crumbling grandeur.
+Monteverde|CR|f|12-4|Bus from San José|2|Cloud forest with hanging bridges.
+Grand Canyon|US|tm|3-5,9-11|Bus from Las Vegas or Flagstaff|3|The world's most famous canyon.
+Yosemite|US|mtw|5-10|Bus from Merced|3|Granite cliffs, waterfalls and giant sequoias.
+Banff|CA|mlt|6-9,12-3|Bus from Calgary|3|Turquoise Lake Louise and Rocky Mountain hikes.
+Cairns|AU|bi|6-10|Flights via Singapore|3|Snorkel the Great Barrier Reef.
+Uluru|AU|dr|5-9|Flight to Ayers Rock|3|Sacred red monolith in the outback.
+Tasmania|AU|tf|11-3|Flight or ferry from Melbourne|3|Wild trails and Cradle Mountain.
+Milford Sound|NZ|mw|11-4|Bus from Queenstown or Te Anau|3|Fjord of waterfalls and seals.
+Tongariro Crossing|NZ|t|11-4|Shuttle from Taupō|3|One-day volcanic hike past emerald lakes.
+Yasawa Islands|FJ|bi|5-10|Ferry from Nadi|3|Island hopping with beach dorm resorts.

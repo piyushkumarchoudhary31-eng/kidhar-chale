@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://piyushkumarchoudhary31-eng.github.io/kidhar-chale/sitemap.xml

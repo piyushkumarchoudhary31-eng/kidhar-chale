@@ -1,0 +1,443 @@
+Gurez Valley|34.63|74.83
+Doodhpathri|33.86|74.56
+Sonamarg|34.30|75.29
+Gulmarg|34.05|74.38
+Pahalgam|34.02|75.32
+Srinagar|34.08|74.80
+Warwan Valley|33.75|75.65
+Bangus Valley|34.40|74.08
+Patnitop|33.08|75.33
+Leh|34.16|77.58
+Nubra Valley|34.58|77.56
+Turtuk|34.85|76.83
+Pangong Tso|33.92|78.43
+Tso Moriri|32.90|78.30
+Hanle|32.78|78.97
+Zanskar|33.47|76.88
+Kargil|34.56|76.13
+Kasol|32.01|77.31
+Kheerganga|31.99|77.51
+Tosh|32.02|77.45
+Grahan|32.04|77.36
+Tirthan Valley|31.64|77.45
+Jibhi|31.59|77.37
+Shoja|31.57|77.38
+Barot|32.03|76.84
+Prashar Lake|31.75|77.10
+Bir Billing|32.04|76.72
+McLeod Ganj|32.24|76.32
+Triund|32.26|76.35
+Dalhousie|32.54|75.97
+Khajjiar|32.55|76.06
+Bharmour|32.44|76.53
+Pangi Valley|33.03|76.38
+Manali|32.24|77.19
+Sissu|32.48|77.13
+Jispa|32.64|77.18
+Kaza|32.23|78.07
+Chandratal|32.48|77.62
+Langza|32.27|78.08
+Dhankar|32.09|78.22
+Mudh|31.94|78.03
+Nako|31.88|78.63
+Kalpa|31.54|78.26
+Chitkul|31.35|78.44
+Sangla|31.42|78.26
+Shimla|31.10|77.17
+Narkanda|31.26|77.46
+Kasauli|30.90|76.96
+Rajgundha|32.13|76.72
+Shangarh|31.74|77.38
+Rishikesh|30.09|78.27
+Chopta|30.49|79.21
+Auli|30.53|79.57
+Valley of Flowers|30.73|79.60
+Har Ki Dun|31.15|78.42
+Kedarkantha|31.02|78.17
+Munsiyari|30.07|80.24
+Chaukori|29.85|80.04
+Binsar|29.70|79.75
+Jageshwar|29.64|79.85
+Mukteshwar|29.47|79.65
+Kanatal|30.41|78.35
+Chakrata|30.70|77.87
+Landour|30.46|78.10
+Nainital|29.38|79.46
+Abbott Mount|29.34|80.09
+Dodital|30.87|78.51
+Jim Corbett|29.53|78.77
+Kausani|29.84|79.60
+Mana|30.77|79.49
+Gangtok|27.33|88.61
+Lachung|27.69|88.74
+Gurudongmar Lake|28.03|88.71
+Zuluk|27.25|88.77
+Pelling|27.30|88.24
+Yuksom|27.37|88.22
+Darjeeling|27.04|88.26
+Sandakphu|27.11|88.00
+Kalimpong|27.06|88.47
+Lolegaon|27.02|88.55
+Rishop|27.08|88.62
+Sittong|26.93|88.37
+Ziro|27.55|93.83
+Mechuka|28.60|94.13
+Tawang|27.59|91.87
+Dirang|27.36|92.24
+Namdapha|27.50|96.38
+Dzükou Valley|25.56|94.08
+Khonoma|25.64|94.03
+Kohima|25.67|94.11
+Shillong|25.58|91.89
+Nongriat|25.24|91.67
+Dawki|25.18|92.02
+Mawlynnong|25.20|91.92
+Sohra|25.28|91.72
+Majuli|26.95|94.17
+Kaziranga|26.58|93.17
+Haflong|25.17|93.02
+Loktak Lake|24.55|93.79
+Unakoti|24.32|92.06
+Neermahal|23.49|91.32
+Champhai|23.47|93.33
+Amritsar|31.63|74.87
+Varanasi|25.32|83.01
+Agra|27.18|78.02
+Ayodhya|26.80|82.20
+Vrindavan|27.58|77.70
+Dudhwa|28.50|80.65
+Chandigarh|30.73|76.78
+Jaisalmer|26.92|70.91
+Khuri|26.61|70.71
+Jodhpur|26.24|73.02
+Bundi|25.44|75.64
+Udaipur|24.58|73.71
+Pushkar|26.49|74.55
+Mount Abu|24.59|72.71
+Kumbhalgarh|25.15|73.59
+Bikaner|28.02|73.31
+Osian|26.72|72.91
+Mandawa|28.06|75.15
+Chittorgarh|24.88|74.62
+Ranthambore|26.02|76.50
+Jaipur|26.91|75.79
+Sambhar Lake|26.93|75.08
+Rann of Kutch|23.85|69.75
+Mandvi|22.83|69.35
+Dholavira|23.89|70.21
+Shivrajpur|22.34|68.95
+Diu|20.71|70.98
+Sasan Gir|21.17|70.60
+Polo Forest|23.97|73.27
+Saputara|20.58|73.75
+Champaner|22.49|73.53
+Dwarka|22.24|68.97
+Tarkarli|16.03|73.47
+Vengurla|15.86|73.63
+Harihareshwar|17.99|73.02
+Kashid|18.44|72.91
+Bhandardara|19.54|73.76
+Malshej Ghat|19.33|73.78
+Kaas Plateau|17.72|73.82
+Amboli|15.96|74.00
+Harishchandragad|19.39|73.78
+Lonavala|18.75|73.41
+Ajanta & Ellora|20.25|75.40
+Matheran|18.99|73.27
+Tadoba|20.25|79.38
+Palolem|15.01|74.02
+Agonda|15.04|73.99
+Arambol|15.69|73.70
+Divar Island|15.52|73.89
+Dudhsagar Falls|15.31|74.31
+Gokarna|14.55|74.32
+Hampi|15.34|76.46
+Badami|15.92|75.68
+Chikkamagaluru|13.32|75.77
+Coorg|12.42|75.74
+Sakleshpur|12.94|75.79
+Agumbe|13.50|75.09
+Kudremukh|13.13|75.27
+Jog Falls|14.23|74.81
+Dandeli|15.27|74.62
+Yana|14.59|74.57
+Murudeshwar|14.09|74.48
+St Mary's Island|13.38|74.67
+Belur & Halebidu|13.19|75.93
+Kabini|11.95|76.27
+Mysuru|12.30|76.64
+Varkala|8.73|76.71
+Munnar|10.09|77.06
+Vagamon|9.69|76.90
+Alappuzha|9.50|76.34
+Marari|9.60|76.30
+Kochi|9.97|76.24
+Wayanad|11.69|76.08
+Thekkady|9.60|77.16
+Athirappilly|10.29|76.57
+Ponmudi|8.76|77.12
+Nelliampathy|10.53|76.69
+Bekal|12.39|75.03
+Muzhappilangad|11.80|75.45
+Poovar|8.31|77.07
+Dhanushkodi|9.18|79.42
+Tharangambadi|11.03|79.86
+Chettinad|10.07|78.78
+Kolli Hills|11.25|78.34
+Yelagiri|12.58|78.64
+Valparai|10.33|76.96
+Meghamalai|9.68|77.40
+Ooty|11.41|76.70
+Kodaikanal|10.24|77.49
+Pichavaram|11.43|79.79
+Mahabalipuram|12.62|80.19
+Tiruvannamalai|12.23|79.07
+Puducherry|11.93|79.83
+Rameswaram|9.29|79.31
+Madurai|9.93|78.12
+Thanjavur|10.79|79.14
+Gandikota|14.81|78.29
+Araku Valley|18.33|82.87
+Lambasingi|17.81|82.50
+Papikondalu|17.48|81.40
+Maredumilli|17.60|81.72
+Belum Caves|15.10|78.11
+Lepakshi|13.80|77.61
+Horsley Hills|13.66|78.40
+Tirupati|13.63|79.42
+Hyderabad|17.39|78.49
+Puri|19.81|85.83
+Konark|19.89|86.09
+Chilika Lake|19.72|85.32
+Gopalpur|19.26|84.91
+Chandipur|21.45|87.02
+Daringbadi|19.91|84.13
+Koraput|18.81|82.71
+Bhitarkanika|20.72|86.87
+Satkosia|20.60|84.80
+Mandarmani|21.66|87.71
+Sundarbans|22.13|88.86
+Shantiniketan|23.68|87.68
+Bishnupur|23.07|87.32
+Kolkata|22.57|88.36
+Bodh Gaya|24.70|84.99
+Rajgir|25.03|85.42
+Netarhat|23.48|84.27
+Patratu|23.63|85.28
+Khajuraho|24.85|79.93
+Orchha|25.35|78.64
+Mandu|22.35|75.39
+Maheshwar|22.18|75.59
+Omkareshwar|22.24|76.15
+Pachmarhi|22.47|78.43
+Bhedaghat|23.13|79.80
+Chanderi|24.71|78.14
+Kanha|22.28|80.61
+Bandhavgarh|23.72|81.02
+Sanchi|23.48|77.74
+Gwalior|26.22|78.18
+Amarkantak|22.67|81.75
+Chitrakote Falls|19.21|81.70
+Mainpat|22.82|83.30
+Havelock Island|11.97|92.99
+Neil Island|11.83|93.03
+Port Blair|11.62|92.73
+Long Island|12.39|92.93
+Agatti|10.86|72.19
+Yusmarg|33.83|74.67
+Aru Valley|34.09|75.26
+Lolab Valley|34.55|74.33
+Bhaderwah|32.98|75.71
+Sanasar|33.13|75.25
+Kishtwar|33.31|75.77
+Lamayuru|34.28|76.78
+Alchi|34.22|77.17
+Hemis|33.91|77.70
+Dah Hanu|34.62|76.55
+Umling La|32.70|79.27
+Markha Valley|33.85|77.45
+Sham Valley|34.25|77.32
+Pulga|32.01|77.43
+Rakchham|31.39|78.36
+Kibber|32.33|78.01
+Tabo|32.09|78.38
+Komic|32.36|78.18
+Gue|32.03|78.57
+Keylong|32.57|77.03
+Hampta Pass|32.27|77.36
+Bhrigu Lake|32.29|77.22
+Naggar|32.11|77.17
+Chamba|32.56|76.13
+Kareri Lake|32.33|76.27
+Jalori Pass|31.54|77.37
+Chail|30.97|77.20
+Rewalsar|31.63|76.83
+Rohru|31.20|77.75
+Andretta|32.07|76.58
+Palampur|32.11|76.54
+Dharchula|29.85|80.53
+Pithoragarh|29.58|80.21
+Khirsu|30.17|78.87
+Lansdowne|29.84|78.68
+Deoria Tal|30.52|79.13
+Kuari Pass|30.48|79.66
+Roopkund|30.26|79.73
+Brahmatal|30.18|79.62
+Gangotri|30.99|78.94
+Kedarnath|30.73|79.07
+Badrinath|30.74|79.49
+Hemkund Sahib|30.70|79.62
+Pangot|29.42|79.43
+Haridwar|29.95|78.16
+Devprayag|30.15|78.60
+Dhanaulti|30.43|78.24
+Chitrakoot|25.20|80.88
+Lucknow|26.85|80.95
+Prayagraj|25.44|81.85
+Kushinagar|26.74|83.89
+Fatehpur Sikri|27.09|77.66
+Sarnath|25.38|83.02
+Anandpur Sahib|31.24|76.50
+Patiala|30.34|76.39
+Kurukshetra|29.97|76.88
+Morni Hills|30.70|77.08
+Old Delhi|28.66|77.23
+Kuldhara|26.81|70.79
+Barmer|25.75|71.39
+Ranakpur|25.12|73.47
+Bhangarh|27.10|76.29
+Abhaneri|27.01|76.61
+Nawalgarh|27.85|75.27
+Bharatpur|27.16|77.52
+Banswara|23.55|74.44
+Jawai|25.10|73.15
+Tal Chhapar|27.80|74.43
+Ajmer|26.45|74.64
+Bhuj|23.24|69.67
+Ahmedabad|23.03|72.58
+Modhera|23.58|72.13
+Patan|23.86|72.10
+Somnath|20.89|70.40
+Girnar|21.53|70.53
+Velavadar|22.03|72.05
+Little Rann|23.30|71.70
+Palitana|21.52|71.82
+Lothal|22.52|72.25
+Raigad|18.23|73.44
+Rajmachi|18.83|73.39
+Lonar|19.98|76.51
+Ganpatipule|17.15|73.27
+Dapoli|17.76|73.19
+Murud-Janjira|18.30|72.96
+Kalsubai|19.60|73.71
+Nashik|20.00|73.79
+Panchgani|17.92|73.80
+Velas|17.96|73.03
+Chikhaldara|21.40|77.32
+Pench|21.70|79.30
+Cabo de Rama|15.09|73.92
+Butterfly Beach|15.02|74.00
+Fontainhas|15.50|73.83
+Netravali|15.10|74.20
+Bylakuppe|12.43|75.97
+Shivanasamudra|12.29|77.17
+Shravanabelagola|12.86|76.49
+Melukote|12.66|76.65
+Nandi Hills|13.37|77.68
+Skandagiri|13.42|77.69
+Devbagh|14.85|74.10
+Kodachadri|13.86|74.87
+Gokak Falls|16.20|74.78
+Vijayapura|16.83|75.71
+Bidar|17.91|77.52
+Anegundi|15.35|76.49
+Talakaveri|12.38|75.49
+Kumarakom|9.62|76.43
+Gavi|9.44|77.17
+Kollam|8.89|76.61
+Thrissur|10.53|76.21
+Kannur|11.87|75.37
+Idukki|9.85|76.97
+Silent Valley|11.08|76.43
+Kappad|11.38|75.73
+Kozhikode|11.26|75.78
+Thenmala|8.96|77.06
+Kanyakumari|8.08|77.55
+Hogenakkal|12.12|77.78
+Javadhu Hills|12.58|78.85
+Kotagiri|11.42|76.86
+Coonoor|11.35|76.80
+Topslip|10.45|76.84
+Point Calimere|10.30|79.85
+Courtallam|8.93|77.27
+Gingee|12.25|79.42
+Chidambaram|11.40|79.69
+Kumbakonam|10.96|79.38
+Velankanni|10.68|79.85
+Srisailam|16.07|78.87
+Borra Caves|18.28|83.04
+Visakhapatnam|17.69|83.22
+Talakona|13.81|79.21
+Ramappa|18.26|79.94
+Warangal|17.97|79.59
+Ananthagiri Hills|17.31|77.86
+Similipal|21.85|86.33
+Raghurajpur|19.88|85.86
+Mangalajodi|19.88|85.39
+Deomali|18.67|82.98
+Taptapani|19.50|84.40
+Murti|26.85|88.82
+Jaldapara|26.70|89.28
+Buxa|26.75|89.58
+Mirik|26.89|88.18
+Purulia|23.33|86.36
+Bakkhali|21.56|88.26
+Murshidabad|24.18|88.27
+Gangasagar|21.64|88.08
+Vaishali|25.99|85.13
+Valmiki Nagar|27.43|84.13
+Vikramshila|25.32|87.28
+Hundru Falls|23.45|85.65
+Betla|23.88|84.19
+Deoghar|24.48|86.70
+Parasnath|23.96|86.13
+Laitlum|25.46|91.94
+Shnongpdeng|25.21|92.00
+Krang Suri|25.30|92.27
+Pasighat|28.07|95.33
+Bomdila|27.26|92.41
+Roing|28.14|95.84
+Anini|28.80|95.90
+Bhalukpong|27.01|92.65
+Mon|26.73|95.00
+Ukhrul|25.10|94.36
+Imphal|24.82|93.94
+Reiek|23.70|92.62
+Phawngpui|22.63|93.04
+Jampui Hills|23.95|92.27
+Agartala|23.83|91.28
+Manas|26.70|91.00
+Sivasagar|26.98|94.64
+Dibru-Saikhowa|27.67|95.40
+Sualkuchi|26.17|91.57
+Guwahati|26.14|91.74
+Ravangla|27.31|88.36
+Namchi|27.17|88.36
+Dzongu|27.55|88.50
+Tsomgo Lake|27.37|88.76
+Uttarey|27.27|88.10
+Aritar|27.19|88.67
+Bhimbetka|22.94|77.61
+Ujjain|23.18|75.78
+Indore|22.72|75.86
+Satpura|22.50|78.25
+Panna|24.72|80.01
+Tamia|22.34|78.67
+Bhojpur|23.10|77.58
+Barnawapara|21.40|82.40
+Kanger Valley|18.86|81.98
+Sirpur|21.34|82.18
+Baratang|12.08|92.75
+Ross Island|11.68|92.76
+Diglipur|13.27|92.97
+Chidiya Tapu|11.49|92.71
