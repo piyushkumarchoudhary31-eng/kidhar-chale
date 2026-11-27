@@ -999,11 +999,13 @@ window.bgCurrentPlan=()=>CUR;window.bgRenderPlan=p=>{save('plan',p);renderPlan(p
 function planText(p){const t=totals(p);let x=`🎒 ${p.title}\n${p.summary}\n`;p.days.forEach(d=>{x+=`\nDay ${d.day}: ${d.city}\n`;d.items.forEach(i=>{x+=`  ${i.time}  ${i.what}${i.cost?' ('+inr(i.cost)+')':''}\n`});const o=d.stay.options[d.stay.pick];x+=o?`  Sleep: ${o.name||o.type+' in '+(o.area||d.stay.city)} (${inr(o.price)})\n`:`  Night: ${d.stay.city}\n`});
   x+=`\nTotal per person: ${inr(t.sum)} (travel ${inr(t.travel)}, stay ${inr(t.stay)}, food ${inr(t.food)}, other ${inr(t.sight)})\nMade with Kidhar Chale? · free trip planner`;return x}
 function code3(n){const w=String(n||'').replace(/[^A-Za-z ]/g,'').trim();if(!w)return'---';return w.replace(/\s+/g,'').slice(0,3).toUpperCase()}
+/* two places with the same first three letters (Jaipur, Jaisalmer) get a different code for the second: first letter + its next consonants */
+function code3b(n,other){const c=code3(n);if(c!==code3(other)||c==='---')return c;const w=String(n).replace(/[^A-Za-z]/g,'').toUpperCase();const k=w[0]+w.slice(1).replace(/[AEIOU]/g,'');return (k.length>=3?k.slice(0,3):c)}
 function updatePass(p){
   const from=$('#p-from').value.trim();const places=$('#p-to').value.split(',').map(x=>x.trim()).filter(Boolean);
   let a=from,b=places[places.length-1]||'';
-  if(p&&!p.example&&p.days&&p.days.length){const f=String(p.days[0].city||'').split(/\s*(?:→|->)\s*/);const l=String(p.days[p.days.length-1].city||'').split(/\s*(?:→|->)\s*/);a=f[0]||a;b=(l.length>1&&l[l.length-1].trim().toLowerCase()===a.trim().toLowerCase())?(places[places.length-1]||b):(l[l.length-1]||b)}
-  $('#ps-a').textContent=a?code3(a):'YOU';$('#ps-an').textContent=a||'Your city';$('#ps-b').textContent=b?code3(b):'???';$('#ps-bn').textContent=b||'Anywhere';
+  if(p&&!p.example&&p.days&&p.days.length){const parts=p.days.flatMap(d=>String(d.city||'').split(/\s*(?:→|->)\s*/)).map(x=>x.trim()).filter(x=>x&&!/^on the (bus|train)$/i.test(x));a=parts[0]||a;const far=parts.filter(x=>x.toLowerCase()!==String(a).trim().toLowerCase());b=far.length?far[far.length-1]:(places[places.length-1]||b)}
+  $('#ps-a').textContent=a?code3(a):'YOU';$('#ps-an').textContent=a||'Your city';$('#ps-b').textContent=b?code3b(b,a):'???';$('#ps-bn').textContent=b||'Anywhere';
   const sum=(p&&p.days)?totals(p).sum:0;
   const n=(p&&p.days&&p.days.length)||+$('#p-days').value||0;$('#ps-days').textContent=n?n+(n==1?' DAY':' DAYS'):'YOUR NEXT TRIP';
   $('#ps-cost').textContent=sum?inr(sum)+' / PERSON':'PLAN NOT MADE';
@@ -1059,6 +1061,7 @@ function placeInfo(name){
   const REGOF={};Object.values(ST).forEach(([n,r])=>{if(!REGOF[n])REGOF[n]=r});Object.assign(REGOF,{'Delhi NCR':'N','Northeast':'NE'});
   if(x)return{n:x.n,state:x.state,reg:x.reg,cost:x.cost,tags:x.tags,why:x.why,known:true};
   const f=window.bgFindPlace?window.bgFindPlace(name):[];const h=f.find(o=>o.p.n.toLowerCase()===low)||null;
+  if(!h){const al=f.find(o=>String(o.via||'').toLowerCase()===low&&o.p.n.toLowerCase()!==low);if(al)return placeInfo(al.p.n)}
   if(h){const st=h.p.reg==='Delhi NCR'?'Delhi':h.p.reg;const big=/^(delhi|mumbai|bengaluru|kolkata|chennai|hyderabad|pune|singapore|dubai|tokyo|london|paris|hong kong)$/i.test(h.p.n);return{n:h.p.n,state:st,reg:REGOF[h.p.reg]||REGOF[st]||'?',cost:big?2:1,tags:[],why:'',known:true}}
   return{n:name,state:'',reg:'?',cost:2,tags:[],why:'',known:false};
 }
@@ -1636,7 +1639,7 @@ let S=Object.assign({g:'u',reg:'all',q:'',now:false,cheap:false},load('explore',
 $('#x-reg').innerHTML=Object.entries(REG).map(([k,v])=>`<option value="${k}">${v}</option>`).join('');
 $('#x-now').textContent='🗓 Good in '+['January','February','March','April','May','June','July','August','September','October','November','December'][NOW-1];
 function match(x,skipG){
-  if(!skipG&&S.g!=='all'){if(S.g==='A'){if(!isAbroad(x))return false}else if(!x.tags.includes(S.g))return false}
+  if(!skipG&&S.g!=='all'&&!S.q){if(S.g==='A'){if(!isAbroad(x))return false}else if(!x.tags.includes(S.g))return false}
   if(S.reg==='india'){if(isAbroad(x))return false}else if(S.reg==='abroad'){if(!isAbroad(x))return false}else if(S.reg!=='all'&&x.reg!==S.reg)return false;
   if(S.now&&!x.ms.has(NOW))return false;
   if(S.cheap&&x.cost!==1)return false;
@@ -3122,7 +3125,9 @@ const vPlan=$('#v-plan');const home=document.createElement('div');home.id='kc-ho
 function addRecent(n){if(!n)return;let r=ld('recent',[]).filter(x=>x!==n);r.unshift(n);sv('recent',r.slice(0,8));drawHome()}
 document.addEventListener('click',e=>{const b=e.target.closest('#x-list [data-add],#x-list [data-sh],#x-list [data-tk],#wk-out [data-plan],.idea [data-plan]');if(!b)return;const card=b.closest('article,.card,.idea');const h=card&&card.querySelector('h3');if(h)addRecent(h.textContent.trim())},true);
 function remember(){const p=window.bgCurrentPlan&&window.bgCurrentPlan();if(!p||!p.days||p.example||!p.title)return;let T=ld('mytrips',[]);if(T[0]&&T[0].title===p.title&&T[0].n===p.days.length)return;
-  T=T.filter(x=>x.title!==p.title);T.unshift({title:p.title,n:p.days.length,at:Date.now(),plan:p});sv('mytrips',T.slice(0,5));drawHome()}
+  T=T.filter(x=>x.title!==p.title);T.unshift({title:p.title,n:p.days.length,at:Date.now(),plan:p});sv('mytrips',T.slice(0,5));drawHome()
+  /* a new plan also sets up Money: its budget and number of days */
+  const mb=$('#m-budget'),md=$('#m-days');if(p.meta&&p.meta.budget&&mb&&md){mb.value=p.meta.budget;md.value=p.days.length;mb.dispatchEvent(new Event('input'));md.dispatchEvent(new Event('input'))}}
 function drawHome(){const T=ld('mytrips',[]),R=ld('recent',[]);if(!T.length&&!R.length){home.innerHTML='';return}
   const cur=window.bgCurrentPlan&&window.bgCurrentPlan();
   home.innerHTML=`<div class="card kc-home"><div class="dayhead"><h3>Welcome back</h3><button class="ghost small" type="button" id="kc-home-x">Hide</button></div>
