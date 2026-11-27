@@ -42,7 +42,17 @@ SPECIAL = [
 ]
 
 
+import os
+KEEP = os.environ.get('KEEP_EMOJI') == '1'
+if KEEP:
+    TMP = S + 'noai/keep/'
+    os.makedirs(TMP, exist_ok=True)
+    OUT = {k: TMP + k for k in OUT}
+
+
 def text_fixes(s):
+    if KEEP:
+        return s.replace("'—'", "'-'").replace("||'—'", "||'-'").replace(" — ", ", ").replace('—', '-')
     for a, b in SPECIAL:
         s = s.replace(a, b)
     # sentence that only listed emojis

@@ -1,17 +1,17 @@
 /* ---------- trip loader: a little bus on the road while Claude plans ---------- */
-.kl{background:var(--surface);border:1.5px solid var(--edge);border-radius:6px;box-shadow:none;padding:0;overflow:hidden;display:flex;flex-direction:column}
-.kl-scene{position:relative;height:118px;background:color-mix(in srgb,var(--klui,var(--pop)) 14%,var(--surface));border-bottom:1.5px solid var(--edge);overflow:hidden}
-.kl-sun{position:absolute;right:28px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--tag);border:1.5px solid var(--edge)}
+.kl{background:var(--surface);border:2.5px solid var(--edge);border-radius:18px;box-shadow:5px 5px 0 var(--shadow);padding:0;overflow:hidden;display:flex;flex-direction:column}
+.kl-scene{position:relative;height:118px;background:linear-gradient(180deg,color-mix(in srgb,var(--klui,var(--pop)) 22%,var(--surface)),var(--surface2));border-bottom:2.5px solid var(--edge);overflow:hidden}
+.kl-sun{position:absolute;right:28px;top:16px;width:34px;height:34px;border-radius:50%;background:var(--tag);border:2.5px solid var(--edge)}
 .kl-hills{position:absolute;left:0;bottom:22px;width:200%;height:60px;display:flex}
 .kl-hills svg{width:50%;height:100%;flex:none}
 .kl-hills.back{bottom:30px;opacity:.55}
-.kl-road{position:absolute;left:0;right:0;bottom:0;height:24px;background:#2A2433;border-top:1.5px solid var(--edge)}
+.kl-road{position:absolute;left:0;right:0;bottom:0;height:24px;background:#2A2433;border-top:2.5px solid var(--edge)}
 .kl-road::after{content:"";position:absolute;left:0;top:10px;width:200%;height:4px;background:repeating-linear-gradient(90deg,var(--tag) 0 22px,transparent 22px 44px)}
 .kl-bus{position:absolute;left:50%;bottom:14px;width:96px;margin-left:-48px}
 .kl-body{padding:16px;display:flex;flex-direction:column;gap:12px}
 .kl-title{font-family:var(--display);font-weight:800;font-size:19px;line-height:1.2;margin:0}
 .kl-title .dots::after{content:"…"}
-.kl-city{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--muted);margin-top:-6px}.kl-city span{width:12px;height:12px;border-radius:4px;background:var(--kl,var(--accent));border:1.5px solid var(--edge);flex:none}
+.kl-city{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--muted);margin-top:-6px}.kl-city span{width:12px;height:12px;border-radius:4px;background:var(--kl,var(--accent));border:2px solid var(--edge);flex:none}
 .kl-steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
 .kl-steps li{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--muted)}
 .kl-steps li i{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:800}
@@ -19,7 +19,7 @@
 .kl-steps li.on i{border-color:var(--klui,var(--accent));border-top-color:transparent}
 .kl-steps li.ok{color:var(--ink)}
 .kl-steps li.ok i{background:var(--good);border-color:var(--good);color:var(--surface)}
-.kl-bar{height:12px;border-radius:4px;border:1.5px solid var(--edge);background:var(--surface2);overflow:hidden}
+.kl-bar{height:12px;border-radius:99px;border:2px solid var(--edge);background:var(--surface2);overflow:hidden}
 .kl-bar b{display:block;height:100%;width:3%;background:repeating-linear-gradient(-45deg,var(--klui,var(--accent)) 0 10px,color-mix(in srgb,var(--klui,var(--accent)) 55%,var(--surface)) 10px 20px);background-size:28px 28px;transition:width .6s ease-out}
 .kl-meta{display:flex;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:12px;color:var(--muted)}
 .kl-tip{font-size:13px;color:var(--muted);border-top:1.5px dashed var(--line);padding-top:10px;min-height:2.6em}

@@ -7,7 +7,7 @@ if(!has)return;
 /* voice: a speaker button on every survival phrase */
 window.claude.use('tts').then(t=>{if(!t)return;const L=document.getElementById('ph-list');if(!L)return;
   const add=()=>{L.querySelectorAll('.phr').forEach(r=>{if(r.querySelector('[data-kcsay]'))return;const s=r.querySelector('.say');if(!s)return;
-    const b=document.createElement('button');b.className='small ghost';b.type='button';b.dataset.kcsay=s.textContent;b.setAttribute('aria-label','Hear '+s.textContent);b.innerHTML='<svg class="kc-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10v4h4l5 4V6l-5 4z"/><path d="M16.5 9a4 4 0 0 1 0 6"/></svg>';
+    const b=document.createElement('button');b.className='small ghost';b.type='button';b.dataset.kcsay=s.textContent;b.setAttribute('aria-label','Hear '+s.textContent);b.textContent='🔊';
     b.onclick=()=>t.speak(b.dataset.kcsay.replace('___','').replace(/\//g,','),{rate:.85}).catch(()=>{});r.appendChild(b)})};
   add();new MutationObserver(add).observe(L,{childList:true})}).catch(()=>{});
 /* live group rooms: friends with the link see each other's expenses at once, and can join with the 6-letter code */

@@ -194,15 +194,9 @@ header.top{flex-wrap:wrap}
 @media (max-width:1023.98px){.kc-hero-top{display:block;position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}}
 
 /* ===== printed-ticket look (28 Nov): icons, tags, hover, skeletons ===== */
-.kc-ic{width:1.15em;height:1.15em;vertical-align:-.2em;flex:none}
-.pass .line i{top:-10px;line-height:0;background:var(--accent);padding:0 3px}
-.pass .line i .kc-ic{width:16px;height:16px}
-[data-say] .kc-ic{width:18px;height:18px}
 .genre .e:empty,.kc-try-e:empty,.helpgrid a span:empty,.kc-types span[aria-hidden]:empty{display:none}
 .genre{justify-content:center;min-height:44px}
 .helpgrid a{min-height:52px;justify-content:center}
-.sk{font:700 10.5px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:5px 6px;min-width:58px;text-align:center;align-self:flex-start;margin-top:2px}
-.kc-tour-e{font:800 44px/1 var(--display);color:var(--accent);letter-spacing:-1px}
 .brand b{box-shadow:none}
 /* how it works: a numbered list, not a row of cards */
 .kc-how{display:block;counter-reset:none}
@@ -219,7 +213,7 @@ button,a,.genre,.opt,input,select,textarea,.kc-try button,#x-list article{transi
   .kc-try button:hover,.helpgrid a:hover{transform:translateY(-1px)}
   nav.tabs button:not([aria-selected="true"]):hover{color:var(--ink);background:color-mix(in srgb,var(--ink) 6%,transparent)}
 }
-button:not(:disabled):active{transform:translateY(1px)}
+
 /* skeleton loaders */
 @keyframes kcskel{from{background-position:100% 0}to{background-position:-100% 0}}
 .kc-skel{color:transparent!important;border-radius:4px;background:linear-gradient(90deg,var(--surface2) 25%,var(--line) 50%,var(--surface2) 75%);background-size:200% 100%;animation:kcskel 1.2s linear infinite;display:inline-block;min-width:150px;user-select:none}
@@ -228,3 +222,68 @@ button:not(:disabled):active{transform:translateY(1px)}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 .kc-mapskel{display:block;margin:0;width:100%;height:100%;border-radius:0}
 .card.tag{padding-left:32px}.card.tag::before{left:12px;top:21px}
+
+/* ===== MOTION (28 Nov): smooth, app-like transitions ===== */
+:root{--kc-out:cubic-bezier(.22,.8,.24,1);--kc-io:cubic-bezier(.65,0,.35,1)}
+@keyframes kcRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes kcFade{from{opacity:0}to{opacity:1}}
+@keyframes kcFromR{from{opacity:0;transform:translateX(32px)}to{opacity:1;transform:none}}
+@keyframes kcFromL{from{opacity:0;transform:translateX(-32px)}to{opacity:1;transform:none}}
+@keyframes kcToL{to{opacity:0;transform:translateX(-26px)}}
+@keyframes kcToR{to{opacity:0;transform:translateX(26px)}}
+@keyframes kcDrop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@keyframes kcPop{0%{transform:scale(1)}35%{transform:scale(.93)}70%{transform:scale(1.03)}100%{transform:scale(1)}}
+/* the page eases in once it is ready */
+html.kc-ready body>*:not(nav.tabs){animation:kcFade .45s ease-out backwards}
+/* switching tabs: the new screen settles in, piece by piece */
+section[id^="v-"]:not([hidden])>*{animation:kcRise .5s var(--kc-out) backwards}
+section[id^="v-"]:not([hidden])>*:nth-child(2){animation-delay:.06s}
+section[id^="v-"]:not([hidden])>*:nth-child(3){animation-delay:.12s}
+section[id^="v-"]:not([hidden])>*:nth-child(4){animation-delay:.18s}
+section[id^="v-"]:not([hidden])>*:nth-child(n+5){animation-delay:.22s}
+/* quiz: each step slides in from the side it comes from */
+#wiz .wpane:not([hidden]){animation:kcFromR .46s var(--kc-out) backwards}
+#wiz[data-dir="b"] .wpane:not([hidden]){animation-name:kcFromL}
+#wiz .wpane.kc-leave{animation:kcToL .18s var(--kc-io) forwards!important}
+#wiz[data-dir="b"] .wpane.kc-leave{animation-name:kcToR!important}
+#w-bar,.wbar i{transition:width .6s var(--kc-out)}
+#w-res>*{animation:kcRise .55s var(--kc-out) backwards}
+#w-res>*:nth-child(2){animation-delay:.08s}#w-res>*:nth-child(3){animation-delay:.16s}#w-res>*:nth-child(4){animation-delay:.24s}#w-res>*:nth-child(n+5){animation-delay:.3s}
+/* "Pick for me" / "I know where" */
+#wiz:not([hidden]),#p-form:not([hidden]){animation:kcRise .45s var(--kc-out) backwards}
+/* a fresh plan arrives card by card */
+#p-out.kc-fresh>*{animation:kcRise .6s var(--kc-out) backwards}
+#p-out.kc-fresh>*:nth-child(2){animation-delay:.08s}#p-out.kc-fresh>*:nth-child(3){animation-delay:.16s}#p-out.kc-fresh>*:nth-child(4){animation-delay:.24s}#p-out.kc-fresh>*:nth-child(5){animation-delay:.32s}#p-out.kc-fresh>*:nth-child(n+6){animation-delay:.38s}
+/* places list: soft swap on filter, new cards rise in */
+#x-list.kc-swap>*{animation:kcFade .35s ease-out backwards}
+#x-list>.kc-new{animation:kcRise .5s var(--kc-out) backwards}
+/* drawers open smoothly */
+.kc-fold.kc-open>:not(h3){animation:kcDrop .38s var(--kc-out) backwards}
+.kc-fold>h3::after{transition:transform .3s var(--kc-out)}
+/* chosen chips give a small tap response */
+#wiz .on,.opt[aria-pressed="true"],.genre[aria-pressed="true"],.kc-types button[aria-pressed="true"]{animation:kcPop .32s var(--kc-out)}
+button,.genre,.opt{transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .16s var(--kc-out)}
+button:not(:disabled):active{transform:scale(.97)}
+/* sliding highlight under the selected tab */
+nav.tabs{isolation:isolate}
+@media (min-width:1024px){.kc-side nav.tabs{position:relative}}
+nav.tabs .kc-ind{position:absolute;left:0;top:0;z-index:-1;pointer-events:none;background:var(--tag);border-radius:6px;opacity:0;will-change:transform}
+@media (min-width:1024px){.kc-side nav.tabs .kc-ind{border-radius:4px;outline:1.5px solid var(--edge)}}
+nav.tabs.kc-ind-on .kc-ind{opacity:1}
+nav.tabs.kc-ind-anim .kc-ind{transition:transform .42s var(--kc-out),width .42s var(--kc-out),height .42s var(--kc-out),opacity .2s}
+nav.tabs.kc-ind-on button[aria-selected="true"]{background:transparent!important;outline:0!important}
+nav.tabs button{transition:color .25s ease}
+/* banners and the tour come up gently */
+.kc-consent{animation:kcRise .55s var(--kc-out) .5s backwards}
+html{scroll-behavior:auto}
+
+/* ===== EMOJI MOTION (28 Nov): emojis pop in, wiggle on tap ===== */
+@keyframes kcEmoIn{0%{opacity:0;transform:scale(.4) rotate(-12deg)}60%{opacity:1;transform:scale(1.18) rotate(4deg)}100%{transform:scale(1) rotate(0)}}
+@keyframes kcWiggle{0%,100%{transform:rotate(0) scale(1)}20%{transform:rotate(-14deg) scale(1.15)}45%{transform:rotate(10deg) scale(1.15)}70%{transform:rotate(-5deg) scale(1.08)}}
+@keyframes kcFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-7px) rotate(-4deg)}}
+.genre .e,.kc-try-e,.kc-tour-e,.helpgrid a span,.sk,.kc-types button span,.kc-emo{display:inline-block;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",var(--body);transform-origin:50% 70%}
+section[id^="v-"]:not([hidden]) .genre .e,section[id^="v-"]:not([hidden]) .kc-try-e,section[id^="v-"]:not([hidden]) .helpgrid a span,section[id^="v-"]:not([hidden]) .kc-types button span,#p-out.kc-fresh .sk{animation:kcEmoIn .6s var(--kc-out) .15s backwards}
+.genre:nth-child(2) .e,.kc-try:nth-child(2) .kc-try-e{animation-delay:.2s!important}.genre:nth-child(3) .e{animation-delay:.25s!important}.genre:nth-child(4) .e{animation-delay:.3s!important}.genre:nth-child(n+5) .e{animation-delay:.35s!important}
+.kc-tour-e{animation:kcEmoIn .6s var(--kc-out) backwards,kcFloat 2.6s ease-in-out .7s infinite}
+.genre:active .e,.genre[aria-pressed="true"] .e,.kc-try button:active .kc-try-e,.helpgrid a:active span,.kc-types button:active span,.kc-types button[aria-pressed="true"] span{animation:kcWiggle .55s var(--kc-out)!important}
+@media (hover:hover){.genre:hover .e,.kc-try button:hover .kc-try-e,.helpgrid a:hover span,.kc-types button:hover span{animation:kcWiggle .6s var(--kc-out)!important}}
