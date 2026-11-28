@@ -32,6 +32,7 @@ function kcDelhiISBT(other){const o=String(other||'').toLowerCase();const P=(win
   if(/Himachal|Punjab|Jammu|Kashmir|Ladakh|Chandigarh|Haryana|Uttarakhand/.test(st)||/shimla|manali|dharamshala|mcleod|amritsar|chandigarh|dehradun|rishikesh|haridwar|mussoorie|jammu|katra|srinagar/.test(o))return 'Kashmere Gate ISBT';
   if(/Rajasthan/.test(st)||/jaipur|jodhpur|udaipur|ajmer|pushkar|bikaner|jaisalmer/.test(o))return 'Sarai Kale Khan ISBT (or Bikaner House for RSRTC Volvos)';
   return 'your Delhi ISBT: Kashmere Gate, Anand Vihar or Sarai Kale Khan (check your ticket)'}
+const KC_RV=4;
 const kcN=s=>String(s||'').toLowerCase().replace(/[^a-z]/g,'');
 const kcN2=s=>' '+String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,' ').trim()+' ';
 function kcFee(f){f=String(f||'');if(/^(free|street food|snacks|fixed official)/i.test(f))return 0;
@@ -92,7 +93,7 @@ function kcEnforce(p){let lastArr=null;
   if(india)p.days.forEach(d=>(d.items||[]).forEach(it=>{if(it.kind!=='sight'&&it.kind!=='other')return;const w=kcN2(it.what);if(/\bfree\b/i.test(it.what)&&!/free langar/i.test(it.what))return;
     let sum=0;const seen=[];(window.bgSights||[]).forEach(x=>{const k=kcN2(x.n.replace(/\s*\(.*?\)/g,'').replace(/,\s*[A-Z][a-z]+$/,''));if(k.length>3&&w.includes(k)&&!seen.includes(k)){seen.push(k);sum+=kcFee(x.fee)}});
     if(sum>0&&(+it.cost||0)<sum){it.cost=sum;if(!/entry/i.test(it.what))it.what+=` · entry ~₹${sum} (Indian adults)`}}));
-  p.know=kcKnow(p,Array.isArray(p.know)?p.know:[]);
+  p.know=kcKnow(p,Array.isArray(p.know)?p.know:[]);p.rv=KC_RV;
   return p}
 function kcKnow(p,given){
   const out=(given||[]).map(x=>String(x||'').trim()).filter(Boolean).slice(0,3);

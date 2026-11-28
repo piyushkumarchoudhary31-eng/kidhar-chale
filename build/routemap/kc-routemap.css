@@ -85,3 +85,5 @@
 @media (prefers-reduced-motion:reduce){.kt-svg .kt-rev{animation:none!important;stroke-dashoffset:0!important}}
 @media print{.kc-troute{break-inside:avoid}.kt-svg .kt-rev{stroke-dashoffset:0!important;animation:none!important}.kt-badge{opacity:1!important}.kt-acts,.kt-street{display:none!important}.kt-map{aspect-ratio:1.5/1}}
 .kt-pdot{fill:var(--ink);stroke:var(--surface)}
+
+.kt-nav{align-self:flex-start;margin-top:6px}

@@ -238,7 +238,7 @@
       <div class="kt-map" role="img" aria-label="${E('Map of India showing the route '+title+(plN?', with places '+R.places.map(x=>x.L+' '+x.n).join(', '):''))}"><p class="kc-skel kt-skel" aria-busy="true">Drawing your map…</p></div>
       <div class="kt-key" aria-hidden="true"></div>
       <ol class="kt-list"></ol>
-      <div class="row kt-acts"><button type="button" class="small" id="kt-street" aria-expanded="false">🧭 Street map</button>${R.cities.length>1?`<a class="btnlink small" target="_blank" rel="noopener" id="kt-gm">📍 Open in Google Maps ↗</a>`:''}</div>
+      <div class="row kt-acts"><button type="button" class="small" id="kt-street" aria-expanded="false">🧭 Street map</button>${R.cities.length>1?`<a class="btnlink small" target="_blank" rel="noopener" id="kt-gm">📍 Intercity route in Google Maps ↗</a>`:''}</div>
       <div class="kc-rmap kt-street" hidden></div>
       <p class="kt-src">India map: Survey of India boundaries via <a href="https://github.com/datameet/maps" target="_blank" rel="noopener">DataMeet</a> (CC BY 4.0). Places are approximate.</p>`;
     first.after(card);
@@ -257,6 +257,14 @@
         const L=R.legs[si];if(L&&si<R.seq.length-1)h+=`<li class="kt-leg kt-m-${L.mode}"><span class="kt-ico" aria-hidden="true">${L.ico}</span><span><b>${E(L.name)}</b>${L.hrs?` · ~${E(String(L.hrs))} h`:''}${L.night?' · overnight':''} <small>Day ${L.day}</small></span></li>`});
       list.innerHTML=h};
     drawList();
+    /* "Directions for this day" on every day card that has places */
+    const dayNav=()=>{out.querySelectorAll('.kt-nav').forEach(x=>x.remove());const cards=[...out.querySelectorAll('.card.day')];
+      const byDay=new Map();R.places.forEach(x=>{if(x.la==null)return;(byDay.get(x.day)||byDay.set(x.day,[]).get(x.day)).push(x)});
+      byDay.forEach((ps,d)=>{const card=cards[d-1];if(!card)return;const c=ps[0].ci!=null?R.cities[ps[0].ci]:null,cn=c?', '+c.n:'';const q=x=>encodeURIComponent(x.n+cn);
+        const url=ps.length===1?`https://www.google.com/maps/dir/?api=1&destination=${q(ps[0])}`:`https://www.google.com/maps/dir/?api=1&origin=${q(ps[0])}&destination=${q(ps[ps.length-1])}${ps.length>2?'&waypoints='+ps.slice(1,-1).slice(0,8).map(q).join('%7C'):''}`;
+        const a=document.createElement('a');a.className='btnlink small kt-nav';a.target='_blank';a.rel='noopener';a.href=url;a.textContent=`🧭 Directions for day ${d}: ${ps.map(x=>x.L).join(' → ')} ↗`;
+        const row=card.querySelector('.row');row?row.before(a):(card.querySelector('.stayblk')?card.querySelector('.stayblk').before(a):card.appendChild(a))})};
+    dayNav();
     const modes=[...new Set(R.legs.map(l=>l.mode))];
     const KEY={train:'<i class="k-rail"></i>Train',bus:'<i class="k-road"></i>Bus',road:'<i class="k-road"></i>Road',cab:'<i class="k-road"></i>Taxi / jeep',flight:'<i class="k-fly"></i>Flight',ferry:'<i class="k-sea"></i>Ferry'};
     /* place lookups that need Wikipedia */
@@ -284,7 +292,7 @@
       .then(()=>{if(!card.isConnected)return;R.places=R.places.filter(x=>x.la!=null);R.places.forEach((x,i)=>x.L=letters(i));
         /* re-letter in order and redraw */
         const pl=R.places.length;card.querySelector('.kt-head .pill').textContent=`${R.days} day${R.days>1?'s':''}${pl?' · '+pl+' place'+(pl>1?'s':''):''}`;
-        drawList();seenOnce=true;draw();if(sm.dataset.on)openStreet(true)})}
+        drawList();dayNav();seenOnce=true;draw();if(sm.dataset.on)openStreet(true)})}
     /* street map with Leaflet, on demand */
     const LCSS='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css',LJS='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
     const leaflet=()=>window.L&&window.L.map?Promise.resolve(window.L):window.__kcLeaf||(window.__kcLeaf=new Promise((res,rej)=>{
