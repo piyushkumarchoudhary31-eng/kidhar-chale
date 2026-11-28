@@ -1,4 +1,4 @@
-const C='kidhar-chale-v18',X='kc-static-v1';
+const C='kidhar-chale-v19',X='kc-static-v1';
 const CORE=['./','./index.html','./manifest.json','./icon.svg','./icon-192.png','./assets/config.js','./assets/page.css','./assets/photo.js','./assets/india-map.json','./404.html'];
 const ROOT=new URL('./',self.location).pathname;
 const offline=u=>u.pathname===ROOT||u.pathname===ROOT+'index.html'?caches.match('./index.html'):new Response('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Offline · Kidhar Chale?</title><body style="font:16px/1.5 system-ui,sans-serif;background:#EEE8DB;color:#1F1B16;margin:0;padding:40px 20px"><div style="max-width:460px;margin:auto"><h1 style="margin:0 0 8px">You are offline</h1><p>This page is not saved on your phone yet. Your trip planner, saved plans and tools still work without internet.</p><p><a href="'+ROOT+'" style="color:#B5431C;font-weight:700">Open the planner</a></p></div>',{headers:{'Content-Type':'text/html; charset=utf-8'}});
