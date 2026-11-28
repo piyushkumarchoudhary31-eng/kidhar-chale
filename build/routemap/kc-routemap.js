@@ -127,12 +127,12 @@
       if(span*1>34*u()&&span>V.vw*.12){/* spread out enough to show on the big map */byC.delete(ci);continue}
       let placed=null;
       for(let tries=0;tries<4&&!placed;tries++){
-        const r=Math.min(V.vw,V.vh)*(phone?.22:.24);
+        const r=Math.min(V.vw,V.vh)*(phone?.22:.24)*(ps.length<=3?.8:1);
         const cs=corners(r).map(([x,y])=>({x,y,d:Math.hypot(x-c.X,y-c.Y)})).filter(o=>!occupied(o.x,o.y,r)).sort((a,b)=>a.d-b.d);
         if(cs.length){placed={x:cs[0].x,y:cs[0].y,r}}
         else if(!loupes.length){w*=1.16;h*=1.16;V=mk()}else break}
       if(!placed){byC.delete(ci);continue}
-      const z=Math.min((placed.r*2*.58)/span,(placed.r*2*.58)/(.9));
+      const z=Math.min((placed.r*2*.6)/span,(placed.r*2*.6)/(.6));
       used.push(placed);loupes.push({ci,ps,x:placed.x,y:placed.y,r:placed.r,z,cx:(bx0+bx1)/2,cy:(by0+by1)/2})}
     const U=u();
     /* little India in a free corner when we are zoomed in */

@@ -130,7 +130,9 @@ async function shareIt(p){const b=await shareImage(p);const f=new File([b],'my-t
 window.bgShareImage=shareImage;
 if(pOut)new MutationObserver(()=>{if(pOut.querySelector('#p-xtra'))return;const p=window.bgCurrentPlan&&window.bgCurrentPlan();if(!p||!p.days)return;
   const cp=pOut.querySelector('#p-copy');if(!cp)return;
-  cp.closest('.card').insertAdjacentHTML('beforebegin',`<div class="card" id="p-xtra"><h3>📤 Share or keep this plan</h3><div class="row" style="gap:8px"><button class="small" id="p-shimg">🖼 Make a share picture</button><button class="small" id="p-pdf">🖨 Save as PDF</button></div><img id="p-img" alt="Your trip picture" hidden style="margin-top:10px;border:2px solid var(--edge);border-radius:12px;max-width:260px"><div id="p-wx"></div></div>`);
+  /* one Save & share card: picture and PDF join the share buttons */
+  cp.closest('.card').insertAdjacentHTML('beforeend',`<div id="p-xtra"><div class="row" style="gap:8px"><button class="small" id="p-shimg">🖼 Make a share picture</button><button class="small" id="p-pdf">🖨 Save as PDF</button></div><img id="p-img" alt="Your trip picture" hidden style="margin-top:10px;border:2px solid var(--edge);border-radius:12px;max-width:260px"><div id="p-wx"></div></div>`);
+  {const h=cp.closest('.card').querySelector('h3');if(h&&/Share this trip/.test(h.textContent))h.textContent='📤 Save & share this trip'}
   $('#p-shimg').onclick=()=>shareIt(p);$('#p-pdf').onclick=()=>window.print();
   const start=$('#p-start')&&$('#p-start').value;const days=start?Math.round((new Date(start+'T00:00')-new Date(new Date().toDateString()))/864e5):99;
   if(days>=0&&days<=2){const cs=[...new Set(planCities(p))].slice(0,4);Promise.all(cs.map(n=>{const c=window.bgCoords(n);return c?weather(c.la,c.lo).then(j=>({n,j})).catch(()=>null):null})).then(r=>{r=r.filter(Boolean);if(!r.length)return;const el=$('#p-wx');if(!el)return;
