@@ -1458,6 +1458,98 @@ $('#p-night').checked=!!CHOICE.night;$('#p-night').onchange=()=>{CHOICE.night=$(
 const num=v=>{if(typeof v==='number')return isFinite(v)?Math.max(0,Math.round(v)):0;const m=String(v??'').replace(/,/g,'').match(/\d+(\.\d+)?/);return m?Math.round(+m[0]):0};
 const KINDS=['travel','food','sight','other'];
 function guessKind(w){w=String(w||'').toLowerCase();if(/\b(bus|train|taxi|jeep|auto|ferry|flight|metro|cab|rickshaw|ride|toy train|ropeway|boat to|sumo|scooter)\b/.test(w))return'travel';if(/\b(lunch|dinner|breakfast|chai|tea|thali|food|eat|maggi|momos?|snack|lassi|paratha|thukpa|dhaba|langar)\b/.test(w))return'food';return'sight'}
+/* ---------- plan rules every itinerary must follow (AI or built-in) ----------
+   1. at least 60 min (flights 120) to reach the named boarding point before any intercity departure
+   2. a priced last-mile ride after every intercity arrival
+   3. local rides (autos, shared jeeps, taxis to trailheads) are never ₹0
+   4. a 3-point "Know before you go" block                                       */
+const KC_LOCAL=/\b(local bus|city bus|shared auto|auto|autos|e-?rick\w*|rickshaw|tuk-?tuk|tempo|vikram|metro|cab|taxi|jeep|ola|uber|rapido|walk|walking|on foot|cycle|scooty|ropeway|boat)\b/i;
+const KC_LONG=/\b(bus|volvo|rtc|roadways|train|express|rail|flight|fly|ferry|ship|sleeper)\b/i;
+const kcMin=t=>{const m=String(t||'').match(/^(\d{1,2}):(\d{2})/);return m?(+m[1])*60+(+m[2]):null};
+const kcHM=m=>{m=((Math.round(m)%1440)+1440)%1440;return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')};
+const kcHrs=w=>{const h=String(w).match(/~?\s*(\d+(?:\.\d+)?)\s*(?:h|hr|hrs|hours)\b/i);if(h)return +h[1];const m=String(w).match(/~?\s*(\d+)\s*min/i);return m?+m[1]/60:null};
+function kcInIndia(n){const c=window.bgCoords&&window.bgCoords(n);return!c||(c.la>6&&c.la<37.5&&c.lo>68&&c.lo<97.6)}
+/* bus stands that are outside or below the town: name them */
+const KC_LAST={shimla:'ISBT Tutikandi, about 5 km below the Mall: local bus or taxi up to the Mall',nainital:'Tallital bus stand at the south end of the lake',kasol:'Bhuntar bus stand first, then the local bus up the Parvati valley',darjeeling:'shared jeeps from Siliguri/NJP stop at the Chowk Bazaar motor stand',rishikesh:'Rishikesh ISBT: shared auto or e-rickshaw on to Laxman Jhula or Tapovan','mcleod ganj':'McLeod Ganj bus stand at the main square (Delhi Volvos and Dharamshala buses stop here); most hostels are a 5–15 min walk',mcleodganj:'McLeod Ganj bus stand at the main square (Delhi Volvos and Dharamshala buses stop here); most hostels are a 5–15 min walk',mussoorie:'buses from Dehradun stop at Library Chowk or Picture Palace'};
+function kcIsLong(it){if(it.kind!=='travel')return false;const w=String(it.what||'');
+  if(/^(local|reach|get to|head to|go to|ride to|auto|shared auto|e-?rick|walk|from .* (bus stand|station|isbt|airport)|arrive|drop point|change at)/i.test(w))return false;
+  if(/\b(local bus|city bus|metro|ropeway)\b/i.test(w)&&!/→|->/.test(w))return false;
+  const hrs=kcHrs(w);return(/→|->/.test(w)||/\bto\b/i.test(w))&&(KC_LONG.test(w)||(hrs!=null&&hrs>=1.5))}
+function kcEnds(w,dayCity){const m=String(w).replace(/\s*\(.*?\)/g,'').match(/([A-Z][\w .'-]*?)\s*(?:→|->)\s*([A-Z][\w .'-]*)/);
+  if(m)return[m[1].replace(/^.*\b(?:from|bus|train|express|flight|volvo|ferry)\s+/i,'').trim(),m[2].trim()];
+  const t=String(w).match(/\bto\s+([A-Z][\w .'-]*)/);const parts=String(dayCity||'').split(/\s*(?:→|->)\s*/);return[parts[0]||'',t?t[1].trim():(parts[1]||'')]}
+function kcPoint(w,city,end){const mode=/flight|fly|airport/i.test(w)?'air':/train|express|rail/i.test(w)?'train':/ferry|ship|boat/i.test(w)?'sea':'bus';
+  if(!end){const f=String(w).match(/\bfrom\s+([A-Z][^,(→]+?)(?=\s+to\b|\s*\(|,|\s*→|$)/);if(f&&!/^[A-Z][a-z]+$/.test(f[1].trim())||f&&/isbt|stand|station|junction|airport|jetty|depot|chowk|gate/i.test(f[1]))return f[1].trim()}
+  if(mode==='bus'&&/^(new )?delhi$/i.test(String(city).trim()))return 'the right Delhi ISBT (Kashmere Gate for Himachal, Punjab and J&K; Anand Vihar for UP and Uttarakhand; Sarai Kale Khan or Bikaner House for Rajasthan)';
+  return city+(mode==='air'?' airport':mode==='train'?' railway station':mode==='sea'?' jetty':' bus stand')}
+const kcN=s=>String(s||'').toLowerCase().replace(/[^a-z]/g,'');
+function kcEnforce(p){let lastArr=null;
+  if(!p||!Array.isArray(p.days))return p;
+  const home=String((p.days[0]||{}).city||'').split(/\s*(?:→|->)\s*/)[0];const india=kcInIndia(home);
+  const ride=india?{w:'auto or shared auto',c:80}:{w:'metro, bus or taxi',c:350};
+  p.days.forEach((d,di)=>{const its=d.items=(Array.isArray(d.items)?d.items:[]);
+    for(let i=0;i<its.length;i++){const it=its[i];
+      /* 3. no free rides */
+      if(it.kind==='travel'&&!(+it.cost)&&KC_LOCAL.test(it.what)&&!/\b(walk|walking|on foot)\b/i.test(it.what)){it.cost=/taxi|cab|jeep/i.test(it.what)?(india?150:500):/local bus|city bus/i.test(it.what)?(india?30:150):ride.c}
+      if(it.kind==='sight'&&/\b(trailhead|trail head|trek start|base camp|base village|start of the trek)\b/i.test(it.what)&&!(i>0&&its[i-1].kind==='travel')){
+        const t=kcMin(it.time);const at=String(it.what).match(/(?:from|at|to)\s+([A-Z][\w ]+?)\s+(?:temple\s+)?(?:trailhead|trail head|base)/);
+        its.splice(i,0,{time:t!=null?kcHM(t-30):it.time,what:`Shared taxi or auto to ${at?at[1].trim()+' ':'the '}trailhead (not a walk; split the fare)`,cost:india?150:500,kind:'travel'});i++;continue}
+      if(!kcIsLong(it))continue;
+      const t=kcMin(it.time);if(t==null)continue;
+      const lead=/flight|fly|airport/i.test(it.what)?120:60;
+      const [A,B]=kcEnds(it.what,d.city);const board=kcPoint(it.what,A||'the',false);const air=lead===120;
+      const dep=di*1440+t;const tr=lastArr&&kcN(lastArr.city)===kcN(A)&&dep-lastArr.abs>=0&&dep-lastArr.abs<=240?dep-lastArr.abs:null;
+      const hrs0=kcHrs(it.what);lastArr=B&&hrs0!=null?{city:B,abs:dep+hrs0*60}:null;
+      /* 1. buffer before departure */
+      let has=-1;for(let j=i-1;j>=0;j--){const w=String(its[j].what||'');if(its[j].kind==='travel'&&!/^(arrive|change at|drop point)/i.test(w)&&/\b(reach|get to|head to|go to|ride to|auto to|cab to|taxi to|be at)\b/i.test(w)){has=j;break}if(/^change at/i.test(w)){has=j;break}if(kcIsLong(its[j]))break}
+      if(has>=0&&/^change at/i.test(its[has].what)){}
+      else if(has>=0){const tj=kcMin(its[has].time);if(tj!=null&&tj>t-lead)its[has].time=kcHM(t-lead);if(!(+its[has].cost)&&!/\bwalk/i.test(its[has].what))its[has].cost=ride.c}
+      else{
+        if(tr==null)for(let j=0;j<i;j++){const tj=kcMin(its[j].time);if(tj!=null&&tj>t-lead-30&&tj<=t&&its[j].kind!=='travel')its[j].time=kcHM(Math.max(0,t-lead-45))}
+        if(tr!=null)its.splice(i,0,{time:kcHM(Math.max(0,t-Math.min(lead,tr))),what:tr<lead?`Change at ${board}: only ${Math.round(tr)} min after you arrive, so if you are late take the next ${air?'flight':'one'} (ask at the counter)`:`Change at ${board}: find your ${air?'flight check-in':'bus or platform'} (you have ${Math.round(tr/60*10)/10} h)`,cost:0,kind:'travel'});
+        else its.splice(i,0,{time:kcHM(Math.max(0,t-lead)),what:`Reach ${board} by ${air?'cab or airport bus':ride.w}, at least ${air?'2 hours':'1 hour'} before departure`,cost:air?(india?300:600):ride.c,kind:'travel'});i++}
+      /* 2. last mile after arrival */
+      const hrs=kcHrs(it.what);if(!B)continue;
+      /* a change of bus/train in the same town soon after: no ride into town */
+      {const arrA=hrs!=null?dep+hrs*60:null;let nl=null,ndi=di,nii=i+1;for(let dd=di;dd<p.days.length&&!nl;dd++){const L=(p.days[dd]||{}).items||[];for(let q=dd===di?i+1:0;q<L.length;q++)if(kcIsLong(L[q])){nl=L[q];ndi=dd;break}}
+       if(nl&&arrA!=null){const nt=kcMin(nl.time),[nA]=kcEnds(nl.what,p.days[ndi].city);if(nt!=null){const gap=ndi*1440+nt-arrA;if(gap>=0&&gap<=240&&(!nA||kcN(nA)===kcN(B)))continue}}}
+      const arr=hrs!=null?t+hrs*60:null;const nextDay=arr!=null?arr>=1440:i===its.length-1;
+      const list=nextDay?((p.days[di+1]||{}).items):its;const k=nextDay?0:i+1;if(!Array.isArray(list))continue;
+      const nx=list[k];const nxw=String(nx&&nx.what||'');
+      if(nx&&nx.kind==='travel'&&(KC_LOCAL.test(nxw)||/\b(reach|to your stay|into town)\b/i.test(nxw)))continue;
+      if(nx&&kcIsLong(nx))continue;
+      const tip=KC_LAST[String(B).toLowerCase().trim()];
+      const pt=kcPoint(it.what,B,true);
+      let at=arr!=null?kcHM(arr):(nx?nx.time:it.time);if(nx&&kcMin(nx.time)!=null&&arr!=null&&kcMin(nx.time)<arr%1440)at=nx.time;
+      list.splice(k,0,{time:at,what:tip?`Drop point: ${tip}`:`Drop point: ${pt}; ${ride.w} to your stay or the town centre`,cost:tip&&/min walk/i.test(tip)?0:tip&&/local bus/i.test(tip)?(india?40:150):ride.c,kind:'travel'});
+      if(!nextDay)i++}});
+  p.know=kcKnow(p,Array.isArray(p.know)?p.know:[]);
+  return p}
+function kcKnow(p,given){
+  const out=(given||[]).map(x=>String(x||'').trim()).filter(Boolean).slice(0,3);
+  const txt=p.days.map(d=>d.city+' '+(d.items||[]).map(i=>i.what).join(' ')).join(' ');const ttx=p.days.map(d=>(d.items||[]).filter(i=>i.kind==='travel').map(i=>i.what).join(' ')).join(' ');
+  const cities=[...new Set(p.days.flatMap(d=>String(d.city||'').split(/\s*(?:→|->)\s*/)).map(s=>s.trim()).filter(Boolean))];
+  const abroad=cities.some(c=>!kcInIndia(c))||/\bvisa|passport\b/i.test(txt);
+  const PL=window.bgPlaces||[];const nn=x=>String(x||'').toLowerCase().replace(/[^a-z]/g,'');const info=cities.map(c=>PL.find(x=>nn(x.n)===nn(c))).filter(Boolean);
+  const states=new Set(info.map(x=>x.state));const hills=info.some(x=>(x.tags||[]).some(t=>'mts'.includes(t)))||/\b(trek\w*|trail\w*|pass|valley|hills?|snow|ghat road)\b/i.test(txt);
+  const train=/\b(train|express|rail|irctc)\b/i.test(ttx),fly=/\b(flight|fly)\b/i.test(ttx),bus=/\b(bus|volvo|rtc|roadways)\b/i.test(ttx);
+  const has=re=>out.some(x=>re.test(x));
+  if(!has(/\b(id|aadhaar|passport|permit|ilp|licence|license)\b/i)){
+    const ilp=['Arunachal Pradesh','Nagaland','Mizoram','Manipur'].filter(s=>states.has(s));
+    out.push(abroad?'Carry your passport (valid 6+ months) and a printed copy of your visa or e-visa; hostels scan it at check-in.'
+      :'Carry an original photo ID (Aadhaar, PAN, voter ID, passport or licence)'+(train?': ticket checkers on reserved trains can ask for it, and every hotel and hostel needs it at check-in.':fly?': airports and every hotel or hostel check it.':': every hotel and hostel needs it at check-in, and hill checkposts sometimes ask.')+(ilp.length?` ${ilp.join(', ')} also need an Inner Line Permit (ILP); apply online a few days before.`:'')+(states.has('Sikkim')&&/north sikkim|lachung|lachen|gurudongmar|nathu ?la|tsomgo/i.test(txt)?' North Sikkim and Nathu La need permits through a registered agent.':''))}
+  if(!has(/\b(upi|cash|atm|card)\b/i)){
+    out.push(abroad?'Indian UPI works in only a few countries, so check your bank app first; carry some local cash and a card with low forex fees.'
+      :hills?'UPI works in towns, but the network drops in the hills: carry ₹1,500–2,000 in small notes for shared jeeps, dhabas and village shops.'
+      :'UPI works almost everywhere here; keep ₹500 in small notes for autos and tea stalls when the network is slow.')}
+  if(!has(/\b(book|ahead|in advance|days before|tatkal|opens?)\b/i)){
+    out.push(train?'Train seats open 60 days ahead on IRCTC (8:00 am); Tatkal opens the day before at 10:00 (AC) and 11:00 (sleeper) and needs an Aadhaar-linked IRCTC account.'
+      :fly?'Book flights 3–6 weeks ahead for the lowest fares, and the first night’s bed 1–2 weeks ahead in peak months.'
+      :bus?'Book overnight and Volvo buses 3–7 days ahead for weekends and festivals (government buses sell seats online too), and the first night’s bed 1–2 weeks ahead in peak months.'
+      :'Book the first night’s bed 1–2 weeks ahead in peak months, and transport a few days ahead on weekends.')}
+  return out.slice(0,3)}
+window.kcEnforce=kcEnforce;window.kcKnow=kcKnow;
+
 function normPlan(p){
   if(!p||typeof p!=='object'||!Array.isArray(p.days)||!p.days.length)return null;
   const days=p.days.filter(x=>x&&typeof x==='object').map((d,i)=>{
@@ -1473,14 +1565,14 @@ function normPlan(p){
     return{day:num(d.day)||i+1,city:String(d.city||'Day '+(i+1)),items,stay:{city,options:opts,pick,sorted:true}};
   });
   const arr=x=>Array.isArray(x)?x.filter(v=>v!=null&&v!=='').map(String):[];
-  return{example:!!p.example,meta:(p.meta&&typeof p.meta==='object')?p.meta:{},title:String(p.title||'Your trip'),summary:String(p.summary||''),days,tips:arr(p.tips),verify:arr(p.verify)};
+  return{example:!!p.example,meta:(p.meta&&typeof p.meta==='object')?p.meta:{},title:String(p.title||'Your trip'),summary:String(p.summary||''),days,tips:arr(p.tips),verify:arr(p.verify),know:arr(p.know).slice(0,3)};
 }
 function totals(p){const t={travel:0,food:0,sight:0,stay:0};p.days.forEach(d=>{d.items.forEach(i=>{t[i.kind==='other'?'sight':i.kind]+=i.cost});const o=d.stay.options[d.stay.pick];if(o)t.stay+=o.price});t.sum=t.travel+t.food+t.sight+t.stay;return t}
 const isMoving=c=>/\b(bus|train|move|road|flight|ferry|overnight)\b/i.test(c);
 
 const EXAMPLE={example:true,meta:{budget:6000,people:1},title:'Delhi → Pathankot → Dharamshala, 4 days',summary:'Overnight buses save two nights of stay. The route runs one way, ending with an overnight bus back from Dharamshala.',
 days:[
-{day:1,city:'Delhi → Pathankot',items:[{time:'20:30',what:'HRTC or Punjab Roadways ordinary bus from Kashmere Gate ISBT to Pathankot (~10 h)',cost:550,kind:'travel'},{time:'21:00',what:'Dinner at a dhaba near ISBT',cost:120,kind:'food'}],stay:{city:'On the bus',options:[]}},
+{day:1,city:'Delhi → Pathankot',items:[{time:'18:30',what:'Dinner at a dhaba near ISBT',cost:120,kind:'food'},{time:'20:30',what:'HRTC or Punjab Roadways ordinary bus from Kashmere Gate ISBT to Pathankot (~10 h)',cost:550,kind:'travel'}],stay:{city:'On the bus',options:[]}},
 {day:2,city:'Pathankot → Dharamshala → McLeod Ganj',items:[{time:'06:30',what:'Arrive Pathankot bus stand, chai and paratha',cost:60,kind:'food'},{time:'07:15',what:'HRTC bus to Dharamshala (~3.5 h)',cost:180,kind:'travel'},{time:'11:30',what:'Local bus up to McLeod Ganj (~30 min)',cost:20,kind:'travel'},{time:'13:00',what:'Check in, thukpa lunch',cost:150,kind:'food'},{time:'14:30',what:'Walk to the Dalai Lama Temple (free)',cost:0,kind:'sight'},{time:'17:30',what:'Bhagsu waterfall walk (free)',cost:0,kind:'sight'},{time:'20:00',what:'Momos and tea dinner',cost:150,kind:'food'}],
  stay:{city:'McLeod Ganj',options:[{name:null,type:'Dorm',area:'Jogiwara Road, McLeod Ganj',price:400,note:'A cluster of small hostels; walk in and compare two before paying.'},{name:'Zostel Dharamkot',type:'Dorm',area:'Dharamkot, 2 km above McLeod',price:650,note:'Social hostel with valley views. Book ahead in May–June.'},{name:null,type:'Homestay',area:'Bhagsu village',price:700,note:'Private double about ₹1,400; cheaper for two people sharing.'}]}},
 {day:3,city:'Triund trek',items:[{time:'07:00',what:'Walk from Galu Devi temple trailhead up to Triund (~3–4 h)',cost:0,kind:'sight'},{time:'12:00',what:'Maggi and chai at the top',cost:120,kind:'food'},{time:'15:30',what:'Back down, dinner in McLeod',cost:180,kind:'food'}],
@@ -1488,6 +1580,7 @@ days:[
 {day:4,city:'Dharamshala → Delhi',items:[{time:'10:00',what:'Bhagsu Nag and Dharamkot cafés',cost:200,kind:'food'},{time:'15:00',what:'HPCA cricket stadium (outside view)',cost:0,kind:'sight'},{time:'19:30',what:'HRTC overnight bus Dharamshala → Delhi (~12 h)',cost:900,kind:'travel'}],stay:{city:'On the bus',options:[]}}],
 tips:['Book HRTC seats on the HRTC website a day ahead in peak months; ordinary buses sell at the counter.','Carry cash in McLeod: many small dhabas and the local bus are cash-only.','Triund needs no permit for a day walk, but start before 8 so you are down before dark.'],
 verify:['Exact bus departure times on the HRTC and PRTC sites','Hostel prices for your dates']};
+kcEnforce(EXAMPLE);
 
 let CUR=null;
 function stayLink(o,city){return o.name?'https://www.google.com/search?q='+encodeURIComponent(o.name+' '+city+' price'):'https://www.booking.com/searchresults.html?ss='+encodeURIComponent((o.area||city)+(o.area&&!o.area.toLowerCase().includes(city.toLowerCase())?', '+city:''))+'&order=price'}
@@ -1516,6 +1609,7 @@ function renderPlan(raw){
     h+='</div>';
   });
   if(p.tips.length)h+=`<div class="card"><h3>Money-savers for this trip</h3><ul class="clean">${p.tips.map(x=>'<li>'+esc(x)+'</li>').join('')}</ul></div>`;
+  {const kn=(p.know&&p.know.length===3)?p.know:kcKnow(p,p.know||[]);if(kn.length)h+=`<div class="card kc-know" id="p-know"><h3>🧳 Know before you go</h3><ul class="clean">${kn.map(x=>'<li>'+esc(x)+'</li>').join('')}</ul></div>`}
   h+=`<div class="card"><p class="note">Times and prices are typical, not live. Stay names are well-known places or areas; always check the price and recent reviews before paying.${p.verify.length?' Also check: '+p.verify.map(esc).join('; ')+'.':''}</p></div>`;
   h+=`<div class="card kc-share"><h3>📤 Share this trip</h3><p class="sub">Friends open the full plan from the link. No app or sign-up needed.</p><div class="row" style="gap:8px"><button class="primary" id="p-link">🔗 Share trip link</button><button id="p-wa">💬 Send on WhatsApp</button><button id="p-copy">📋 Copy as text</button></div><textarea id="p-copytxt" rows="4" hidden readonly></textarea><p class="ok" id="p-copied" hidden>Copied. Paste it in any chat.</p></div>`;
   $('#p-out').innerHTML=h;
@@ -1538,6 +1632,7 @@ window.bgCurrentPlan=()=>CUR;window.bgRenderPlan=p=>{save('plan',p);renderPlan(p
 window.bgRenderPlan=raw=>{const n=normPlan(raw);if(!n)return false;n.meta=n.meta||{};save('plan',n);renderPlan(n);return true};window.bgNormPlan=x=>normPlan(x);window.bgPlanText=x=>planText(x);
 window.bgPlanQuick=q=>{try{const r=offlinePlan(q);if(!r||r.error)return r||{error:'no plan'};const n=normPlan(r);if(n)n.meta={budget:q.bud,people:q.ppl||1};return n}catch(e){return{error:String(e)}}};
 function planText(p){const t=totals(p);let x=`🎒 ${p.title}\n${p.summary}\n`;p.days.forEach(d=>{x+=`\nDay ${d.day}: ${d.city}\n`;d.items.forEach(i=>{x+=`  ${i.time}  ${i.what}${i.cost?' ('+inr(i.cost)+')':''}\n`});const o=d.stay.options[d.stay.pick];x+=o?`  Sleep: ${o.name||o.type+' in '+(o.area||d.stay.city)} (${inr(o.price)})\n`:`  Night: ${d.stay.city}\n`});
+  {const kn=(p.know&&p.know.length===3)?p.know:kcKnow(p,p.know||[]);if(kn.length)x+=`\nKnow before you go:\n${kn.map(k=>'  • '+k).join('\n')}\n`}
   x+=`\nTotal per person: ${inr(t.sum)} (travel ${inr(t.travel)}, stay ${inr(t.stay)}, food ${inr(t.food)}, other ${inr(t.sight)})\nMade with Kidhar Chale? · free trip planner`;return x}
 function code3(n){const w=String(n||'').replace(/[^A-Za-z ]/g,'').trim();if(!w)return'---';return w.replace(/\s+/g,'').slice(0,3).toUpperCase()}
 /* two places with the same first three letters (Jaipur, Jaisalmer) get a different code for the second: first letter + its next consonants */
@@ -1583,9 +1678,12 @@ Rules:
 - Nights spent travelling: "stay": {"city":"On the bus" or "On the train","options":[]}.
 - Keep the total within budgetPerPersonINR if at all possible; if impossible, say so in the summary.
 - Avoid sights on their closed day (e.g. Taj Mahal on Friday).
+- TRANSFER BUFFER: before every intercity bus, train, flight or ferry add its own "travel" item "Reach <exact boarding point: the named bus stand/ISBT, railway station or airport>" at least 60 minutes before departure (120 for flights), saying how to get there and its cost. Schedule nothing else in those 60 minutes. A change of bus or train in the same town also needs 60+ minutes between arrival and the next departure.
+- LAST MILE: after every intercity arrival add a "travel" item naming exactly where you are dropped and how you get into town or to the stay, with its cost. Say it clearly when the stand is outside or below the town (e.g. Shimla ISBT Tutikandi is ~5 km below the Mall; Delhi buses stop at Rishikesh ISBT, not Laxman Jhula; McLeod Ganj is a local bus up from Dharamshala).
+- MICRO-TRANSITS: every hop that is not an easy walk (over 1.5 km, uphill, or to a trailhead, viewpoint or temple outside town, e.g. McLeod Ganj to the Galu Devi temple trailhead for Triund) is its own "travel" item with a realistic per-person price (shared auto/e-rickshaw ₹20-50, auto ₹80-200, shared jeep ₹50-150, taxi to a trailhead ₹150-600 split, local bus ₹10-40). Never price these at ₹0. Use ₹0 only for real walks and write "walk, ~N min".
 - Keep every string short.
-Reply ONLY with JSON: {"title":string,"summary":string (2 sentences),"days":[{"day":number,"city":"A → B" or "Town","items":[{"time":"HH:MM","what":string,"cost":number,"kind":string}],"stay":{"city":string,"options":[{"name":string|null,"type":string,"area":string,"price":number,"note":string}]}}],"tips":[3-5 trip-specific money or hassle savers],"verify":[2-4 short things to double-check before leaving]}`;
-    try{const r=await s.json(prompt,{modelTier:'complex'});LD.done();const p=normPlan(r);if(!p)throw 0;p.meta={budget:bud,people:ppl};save('plan',p);renderPlan(p);$('#p-out').scrollIntoView({block:'start'});btn.disabled=false;btn.textContent='Make my plan';return}
+Reply ONLY with JSON: {"title":string,"summary":string (2 sentences),"days":[{"day":number,"city":"A → B" or "Town","items":[{"time":"HH:MM","what":string,"cost":number,"kind":string}],"stay":{"city":string,"options":[{"name":string|null,"type":string,"area":string,"price":number,"note":string}]}}],"tips":[3-5 trip-specific money or hassle savers],"verify":[2-4 short things to double-check before leaving],"know":[exactly 3 "Know before you go" points for THIS trip: 1) ID needed (original photo ID for trains and check-in; any Inner Line Permit or area permit; passport and visa abroad), 2) how reliable UPI is versus cash at these exact places, 3) booking lead times for this trip's transport and beds]}`;
+    try{const r=await s.json(prompt,{modelTier:'complex'});LD.done();const p=normPlan(r);if(!p)throw 0;kcEnforce(p);p.meta={budget:bud,people:ppl};save('plan',p);renderPlan(p);$('#p-out').scrollIntoView({block:'start'});btn.disabled=false;btn.textContent='Make my plan';return}
     catch(e){LD.stop()}
   }
   try{
@@ -1731,7 +1829,7 @@ function offlinePlan(q){
   if(stops.some(s=>(s.tags||[]).some(t=>'mrs'.includes(t))))tips.push('Carry cash in the hills: UPI and ATMs are unreliable.');
   if(stops.some(s=>s.reg[0]==='X'))tips.push('Check visa rules for Indian passports and get travel insurance before booking flights.');
   tips.push('Eat where locals queue: it’s cheaper and usually fresher.');
-  return{title:`${home.n} → ${stops.map(s=>s.n).join(' → ')} → ${home.n}`,summary:`A ${days.length}-day round trip built from typical prices. Change where you sleep below, then check live times and prices before booking.`,days,tips,verify:['Exact times for each journey (Go tab)','Live bed prices for your dates (Stay tab)','Season, permits and road status for each place']};
+  return kcEnforce({title:`${home.n} → ${stops.map(s=>s.n).join(' → ')} → ${home.n}`,summary:`A ${days.length}-day round trip built from typical prices. Change where you sleep below, then check live times and prices before booking.`,days,tips,verify:['Exact times for each journey (Go tab)','Live bed prices for your dates (Stay tab)','Season, permits and road status for each place']});
 }
 /* one price engine for the whole site: Pick for me asks the planner for its number */
 window.bgEstimate=(from,stops,nd,ppl)=>{try{const r=offlinePlan({from,stops,nd,bud:0,ppl:Math.max(1,ppl||1)});if(!r||r.error)return null;return totals(normPlan(r)).sum}catch(e){return null}};
