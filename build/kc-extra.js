@@ -19,7 +19,7 @@ function findCo(q){q=norm(q);if(!q)return null;if(CO[q])return CO[q];
   const alias={gurgaon:'gurugram',bangalore:'bengaluru',bombay:'mumbai',madras:'chennai',calcutta:'kolkata',mysore:'mysuru',aurangabad:'chhatrapati sambhajinagar',trivandrum:'thiruvananthapuram',cochin:'kochi',pondicherry:'puducherry',benares:'varanasi',banaras:'varanasi',kashi:'varanasi',simla:'shimla',baroda:'vadodara',mangalore:'mangaluru','new delhi':'delhi',prayagraj:'prayagraj',allahabad:'prayagraj'};
   if(alias[q]&&CO[alias[q]])return CO[alias[q]];
   const ks=Object.keys(CO);const k=ks.find(x=>x.startsWith(q))||ks.find(x=>x.split(' ')[0]===q.split(' ')[0]&&q.length>3);return k?CO[k]:null}
-window.bgCoords=findCo;
+window.bgCoords=findCo;window.bgSights=SIGHTS;
 window.bgCoordsExact=q=>{const k=norm(q);return CO[k]||null};
 const R=6371,rad=x=>x*Math.PI/180;
 function km(a,b){const dLa=rad(b.la-a.la),dLo=rad(b.lo-a.lo);const h=Math.sin(dLa/2)**2+Math.cos(rad(a.la))*Math.cos(rad(b.la))*Math.sin(dLo/2)**2;return 2*R*Math.asin(Math.sqrt(h))}
