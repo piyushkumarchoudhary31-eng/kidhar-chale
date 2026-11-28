@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'sha256-1pCKTzfoeG/qZGW3MYWTdDTU6p1ebDrZX/A90tdfttY=' 'sha256-2gEmaajpxyl8Pt4k+xpY/Jc4ySFE47Vqb4SEfdfGZjw=' 'sha256-QoMl/ODRUCIcosF0+RcqJlCA2wvXgi/HQBKCTD3HNKU=' 'sha256-Yi7Zu0BvK1zlFBdx7rMrIMy4tBRrdH+L2ULX+9f72q0=' 'sha256-tSDjBzDeD8Wp8RTN8hwV8HY79/g5mUaYfFN/dsH1BPA=' 'sha256-tp28CuXBZnknngQpJpLrK7pVCoodv8dYREb+GJE2OqM=' 'sha256-xMKAXLmbbD+Xf5lc7jzlqzMYXKuvxDxU1GoUfdAp3gE=' https://cdnjs.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://upload.wikimedia.org https://tile.openstreetmap.org https://*.tile.openstreetmap.org https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://www.google.com; connect-src 'self' https://open.er-api.com https://en.wikipedia.org https://commons.wikimedia.org https://api.open-meteo.com https://script.google.com https://script.googleusercontent.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://upload.wikimedia.org https://*.g.doubleclick.net https://www.google.com; worker-src 'self'; manifest-src 'self'; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'sha256-034McULo8MapBdCdrQhn7wwqEPsJdhOkRlW9G71oRDc=' 'sha256-G3aXBxruhXN656T7w6RrqmDNCIgea433xWz8k6Oc4Mo=' 'sha256-QoMl/ODRUCIcosF0+RcqJlCA2wvXgi/HQBKCTD3HNKU=' 'sha256-Yi7Zu0BvK1zlFBdx7rMrIMy4tBRrdH+L2ULX+9f72q0=' 'sha256-ZdYC04B8LpcDl1vj7UcAZX8GgAnQ7Tw8o08H96MY/80=' 'sha256-tSDjBzDeD8Wp8RTN8hwV8HY79/g5mUaYfFN/dsH1BPA=' 'sha256-vxi/t+awC7kQuygqreVovXvw6IW7mvjhlB/w4PW3Bb0=' https://cdnjs.cloudflare.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://upload.wikimedia.org https://tile.openstreetmap.org https://*.tile.openstreetmap.org https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://*.g.doubleclick.net https://www.google.com; connect-src 'self' https://open.er-api.com https://en.wikipedia.org https://commons.wikimedia.org https://api.open-meteo.com https://script.google.com https://script.googleusercontent.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://fonts.googleapis.com https://fonts.gstatic.com https://cdnjs.cloudflare.com https://upload.wikimedia.org https://*.g.doubleclick.net https://www.google.com; worker-src 'self'; manifest-src 'self'; media-src 'self' blob: data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-src 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Plan a budget trip in seconds: day-by-day bus and train routes, cheap stays and real costs in ₹. 643 places in India, 357 abroad. Free, no sign-up.">
@@ -1003,6 +1003,8 @@ nav.tabs button:focus-visible,.kc-side nav.tabs button:focus-visible{outline:2.5
 @media (prefers-reduced-motion:reduce){.kt-svg .kt-rev{animation:none!important;stroke-dashoffset:0!important}}
 @media print{.kc-troute{break-inside:avoid}.kt-svg .kt-rev{stroke-dashoffset:0!important;animation:none!important}.kt-badge{opacity:1!important}.kt-acts,.kt-street{display:none!important}.kt-map{aspect-ratio:1.5/1}}
 .kt-pdot{fill:var(--ink);stroke:var(--surface)}
+
+.kt-nav{align-self:flex-start;margin-top:6px}
 </style>
 </head>
 <body>
@@ -1494,6 +1496,7 @@ function kcDelhiISBT(other){const o=String(other||'').toLowerCase();const P=(win
   if(/Himachal|Punjab|Jammu|Kashmir|Ladakh|Chandigarh|Haryana|Uttarakhand/.test(st)||/shimla|manali|dharamshala|mcleod|amritsar|chandigarh|dehradun|rishikesh|haridwar|mussoorie|jammu|katra|srinagar/.test(o))return 'Kashmere Gate ISBT';
   if(/Rajasthan/.test(st)||/jaipur|jodhpur|udaipur|ajmer|pushkar|bikaner|jaisalmer/.test(o))return 'Sarai Kale Khan ISBT (or Bikaner House for RSRTC Volvos)';
   return 'your Delhi ISBT: Kashmere Gate, Anand Vihar or Sarai Kale Khan (check your ticket)'}
+const KC_RV=4;
 const kcN=s=>String(s||'').toLowerCase().replace(/[^a-z]/g,'');
 const kcN2=s=>' '+String(s||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,' ').trim()+' ';
 function kcFee(f){f=String(f||'');if(/^(free|street food|snacks|fixed official)/i.test(f))return 0;
@@ -1554,7 +1557,7 @@ function kcEnforce(p){let lastArr=null;
   if(india)p.days.forEach(d=>(d.items||[]).forEach(it=>{if(it.kind!=='sight'&&it.kind!=='other')return;const w=kcN2(it.what);if(/\bfree\b/i.test(it.what)&&!/free langar/i.test(it.what))return;
     let sum=0;const seen=[];(window.bgSights||[]).forEach(x=>{const k=kcN2(x.n.replace(/\s*\(.*?\)/g,'').replace(/,\s*[A-Z][a-z]+$/,''));if(k.length>3&&w.includes(k)&&!seen.includes(k)){seen.push(k);sum+=kcFee(x.fee)}});
     if(sum>0&&(+it.cost||0)<sum){it.cost=sum;if(!/entry/i.test(it.what))it.what+=` · entry ~₹${sum} (Indian adults)`}}));
-  p.know=kcKnow(p,Array.isArray(p.know)?p.know:[]);
+  p.know=kcKnow(p,Array.isArray(p.know)?p.know:[]);p.rv=KC_RV;
   return p}
 function kcKnow(p,given){
   const out=(given||[]).map(x=>String(x||'').trim()).filter(Boolean).slice(0,3);
@@ -1596,7 +1599,7 @@ function normPlan(p){
     return{day:num(d.day)||i+1,city:String(d.city||'Day '+(i+1)),items,stay:{city,options:opts,pick,sorted:true}};
   });
   const arr=x=>Array.isArray(x)?x.filter(v=>v!=null&&v!=='').map(String):[];
-  return{example:!!p.example,meta:(p.meta&&typeof p.meta==='object')?p.meta:{},title:String(p.title||'Your trip'),summary:String(p.summary||''),days,tips:arr(p.tips),verify:arr(p.verify),know:arr(p.know).slice(0,3)};
+  return{example:!!p.example,meta:(p.meta&&typeof p.meta==='object')?p.meta:{},title:String(p.title||'Your trip'),summary:String(p.summary||''),days,tips:arr(p.tips),verify:arr(p.verify),know:arr(p.know).slice(0,3),rv:num(p.rv)};
 }
 function totals(p){const t={travel:0,food:0,sight:0,stay:0};p.days.forEach(d=>{d.items.forEach(i=>{t[i.kind==='other'?'sight':i.kind]+=i.cost});const o=d.stay.options[d.stay.pick];if(o)t.stay+=o.price});t.sum=t.travel+t.food+t.sight+t.stay;return t}
 const isMoving=c=>/\b(bus|train|move|road|flight|ferry|overnight)\b/i.test(c);
@@ -1614,15 +1617,35 @@ verify:['Exact bus departure times on the HRTC and PRTC sites','Hostel prices fo
 kcEnforce(EXAMPLE);
 
 let CUR=null;
-function stayLink(o,city){return o.name?'https://www.google.com/search?q='+encodeURIComponent(o.name+' '+city+' price'):'https://www.booking.com/searchresults.html?ss='+encodeURIComponent((o.area||city)+(o.area&&!o.area.toLowerCase().includes(city.toLowerCase())?', '+city:''))+'&order=price'}
+function stayLink(o,city,di){if(o.name)return 'https://www.google.com/search?q='+encodeURIComponent(o.name+' '+city+' price');
+  const q=new URLSearchParams({ss:(o.area||city)+(o.area&&!o.area.toLowerCase().includes(city.toLowerCase())?', '+city:''),order:'price',no_rooms:'1',group_children:'0'});
+  const ppl=Math.max(1,Math.min(10,+((CUR&&CUR.meta&&CUR.meta.people)||1)));q.set('group_adults',String(ppl));
+  const st=($('#p-start')&&$('#p-start').value)||(CUR&&CUR.meta&&CUR.meta.q&&CUR.meta.q.start)||'';
+  if(st&&di!=null){const d=new Date(st+'T00:00');if(!isNaN(d)){d.setDate(d.getDate()+di);const e=new Date(d.getTime()+864e5);const f=x=>x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0');q.set('checkin',f(d));q.set('checkout',f(e))}}
+  const ty=String(o.type||'').toLowerCase();const ht=/dorm|hostel/.test(ty)?'203':/homestay/.test(ty)?'222':/hotel/.test(ty)?'204':/guest ?house/.test(ty)?'216':'';if(ht)q.set('nflt','ht_id='+ht);
+  const aid=window.KC_CONFIG&&KC_CONFIG.aff&&KC_CONFIG.aff.booking;if(aid)q.set('aid',aid);
+  return 'https://www.booking.com/searchresults.html?'+q.toString()}
 /* the Book tab follows the newest plan's first journey (once per new plan, so your own Book edits stay) */
+function planInputs(p){const q=(p.meta&&p.meta.q)||{};const parts=p.days.flatMap(d=>String(d.city||'').split(/\s*(?:→|->)\s*/)).map(x=>x.trim()).filter(x=>x&&!/^on the (bus|train)$/i.test(x));
+  const home=q.from||parts[0]||'';const to=q.to||[...new Set(String(p.title||'').split(/\s*(?:→|->)\s*/).map(x=>x.trim()).filter(x=>x&&x.toLowerCase()!==home.toLowerCase()&&!/,\s*\d+ days?$/.test(x)))].join(', ');
+  return{from:home,to,days:q.days||p.days.length,budget:(p.meta&&p.meta.budget)||'',ppl:(p.meta&&p.meta.people)||1,start:q.start||''}}
+function syncForm(p,force){try{if(!p||p.example||!p.days||!p.days.length)return;const sg=p.title+'|'+p.days.length;if(!force&&load('formsig','')===sg)return;save('formsig',sg);
+  const v=planInputs(p);const set=(id,x)=>{const e=$('#'+id);if(e&&x!==''&&x!=null)e.value=x};set('p-from',v.from);set('p-to',v.to);set('p-days',v.days);set('p-budget',v.budget);set('p-people',v.ppl);if(v.start)set('p-start',v.start)}catch(e){}}
+const KC_KEEP=new Set();
+/* places nobody knows ("Delhii") get a "Did you mean Delhi?" before any plan is made */
+function kcUnknownPlaces(list){const names=(window.bgPlaceNames?bgPlaceNames():[]).concat((window.bgPlaces||[]).map(x=>x.n));const low=[...new Set(names.map(x=>String(x).toLowerCase()))];
+  const lev=(a,b)=>{const m=a.length,n=b.length;if(Math.abs(m-n)>2)return 9;let pr=Array.from({length:n+1},(_,j)=>j);for(let i=1;i<=m;i++){const cu=[i];for(let j=1;j<=n;j++)cu[j]=Math.min(pr[j]+1,cu[j-1]+1,pr[j-1]+(a[i-1]===b[j-1]?0:1));pr=cu}return pr[n]};
+  const out=[];list.map(x=>String(x||'').trim()).filter(Boolean).forEach(t=>{const k=t.toLowerCase();if(KC_KEEP.has(k)||low.includes(k))return;const pi=placeInfo(t);if(pi&&pi.known)return;
+    let best=null,bd=9;low.forEach(c=>{const d=lev(k,c);if(d<bd){bd=d;best=c}});const lim=k.length<=5?1:2;
+    const sug=bd<=lim?(names.find(x=>String(x).toLowerCase()===best)||best):null;out.push({typed:t,sug})});return out}
 function syncBook(p){try{if(!p||p.example||!p.days||!p.days.length)return;const sg=p.title+'|'+p.days.length+'|'+p.days[0].city;if(load('bksig','')===sg)return;save('bksig',sg);
   const parts=String(p.days[0].city||'').split(/\s*(?:→|->)\s*/).map(x=>x.trim()).filter(Boolean);if(parts.length<2)return;
   $('#t-from').value=parts[0];$('#t-to').value=parts[1];const st=$('#p-start')&&$('#p-start').value;if(st&&$('#t-date'))$('#t-date').value=st;if(typeof goLinks==='function')goLinks()}catch(e){}}
 function renderPlan(raw){
-  const p=normPlan(raw)||normPlan(EXAMPLE);CUR=p;const t=totals(p);const bud=num(p.meta.budget),ppl=Math.max(1,num(p.meta.people)||1);
+  const p=normPlan(raw)||normPlan(EXAMPLE);CUR=p;
+  let refreshed=false;if(!p.example&&(p.rv||0)<KC_RV){if(!window.bgSights||!window.bgCoords){(function retry(n){setTimeout(()=>{if(window.bgSights&&window.bgCoords){if(CUR&&!CUR.example&&(CUR.rv||0)<KC_RV)renderPlan(CUR)}else if(n<200)retry(n+1)},50)})(0)}else{try{kcEnforce(p);refreshed=true;save('plan',p)}catch(e){}}}const t=totals(p);const bud=num(p.meta.budget),ppl=Math.max(1,num(p.meta.people)||1);
   let bp='';if(bud){const df=bud-t.sum;bp=df>=0?`<span class="pill good">${inr(df)} under budget</span>`:`<span class="pill bad">${inr(-df)} over budget</span>`}
-  let h=`<div class="card"><div class="dayhead"><h3>${esc(p.title)}</h3>${p.example?'<span class="pill ex">Example plan</span>':'<span class="pill">Your plan</span>'}</div><p class="sub">${esc(p.summary)}</p>
+  let h=`<div class="card"><div class="dayhead"><h3>${esc(p.title)}</h3>${p.example?'<span class="pill ex">Example plan</span>':'<span class="pill">Your plan</span>'}</div><p class="sub">${esc(p.summary)}</p>${refreshed?'<p class="ok kc-refreshed">✓ Updated with our latest costs and travel steps. <button class="small ghost" id="p-rebuild" type="button">↻ Rebuild this plan</button></p>':''}
   <div class="dayhead" style="align-items:center"><div><p class="eyebrow">Total per person</p><p class="big" id="p-sum">${inr(t.sum)}</p></div>${bp}</div>
   ${ppl>1?`<p class="sub">For all ${ppl} people: <b class="num">${inr(t.sum*ppl)}</b></p>`:''}
   <div class="totals">
@@ -1638,7 +1661,7 @@ function renderPlan(raw){
     const parts=String(dd.city||'').split(/\s*(?:→|->)\s*/).filter(Boolean);
     if(parts.length>1){h+=`<div class="row" style="gap:8px">`+parts.slice(0,-1).map((a,k)=>`<button class="small" data-from="${esc(a)}" data-to="${esc(parts[k+1])}" data-day="${di}">🎫 Tickets ${esc(a)} → ${esc(parts[k+1])}</button>`).join('')+`</div>`}
     if(st.options.length){
-      h+=`<div class="stayblk"><p class="eyebrow">🛏 Where to sleep in ${esc(st.city)} · tap to choose</p>`+st.options.map((s,oi)=>`<div class="sopt"><button data-d="${di}" data-o="${oi}" aria-pressed="${oi===st.pick}"><span class="radio" aria-hidden="true"></span><span style="min-width:0"><b>${esc(s.name||s.type+' in '+(s.area||st.city))}</b><small>${esc(s.name?s.type+' · '+s.area:'Any good one here; check reviews')}</small>${s.note?`<small>${esc(s.note)}</small>`:''}</span><span class="pr">${s.price?inr(s.price):'-'}</span></button><a href="${esc(stayLink(s,st.city))}" target="_blank" rel="noopener" aria-label="Check price for ${esc(s.name||s.type)}">Check ↗</a></div>`).join('')+
+      h+=`<div class="stayblk"><p class="eyebrow">🛏 Where to sleep in ${esc(st.city)} · tap to choose</p>`+st.options.map((s,oi)=>`<div class="sopt"><button data-d="${di}" data-o="${oi}" aria-pressed="${oi===st.pick}"><span class="radio" aria-hidden="true"></span><span style="min-width:0"><b>${esc(s.name||s.type+' in '+(s.area||st.city))}</b><small>${esc(s.name?s.type+' · '+s.area:'Typical price here · search stays for your dates')}</small>${s.note?`<small>${esc(s.note)}</small>`:''}</span><span class="pr">${s.price?inr(s.price):'-'}</span></button><a href="${esc(stayLink(s,st.city,di))}" target="_blank" rel="noopener" aria-label="Check price for ${esc(s.name||s.type)}">Check ↗</a></div>`).join('')+
       `<button class="small ghost" data-stay="${esc(st.city)}" style="align-self:flex-start">More beds in ${esc(st.city)}</button></div>`;
     }
     h+='</div>';
@@ -1648,7 +1671,8 @@ function renderPlan(raw){
   h+=`<div class="card"><p class="note">Times and prices are typical, not live. Stay names are well-known places or areas; always check the price and recent reviews before paying.${p.verify.length?' Also check: '+p.verify.map(esc).join('; ')+'.':''}</p></div>`;
   h+=`<div class="card kc-share"><h3>📤 Share this trip</h3><p class="sub">Friends open the full plan from the link. No app or sign-up needed.</p><div class="row" style="gap:8px"><button class="primary" id="p-link">🔗 Share trip link</button><button id="p-wa">💬 Send on WhatsApp</button><button id="p-copy">📋 Copy as text</button></div><textarea id="p-copytxt" rows="4" hidden readonly></textarea><p class="ok" id="p-copied" hidden>Copied. Paste it in any chat.</p></div>`;
   $('#p-out').innerHTML=h;
-  updatePass(p);syncBook(p);
+  updatePass(p);syncForm(p);syncBook(p);
+  {const rb=$('#p-rebuild');if(rb)rb.onclick=()=>{syncForm(p,true);const go=$('#p-go');if(go){$('#p-form')&&$('#p-form').scrollIntoView({block:'start'});go.click()}}}
   $('#p-copy').onclick=()=>{const tx=planText(p);const done=()=>{$('#p-copied').hidden=false;setTimeout(()=>$('#p-copied').hidden=true,2500)};
     const fb=()=>{const ta=$('#p-copytxt');ta.value=tx;ta.hidden=false;ta.focus();ta.select();$('#p-copied').textContent='Text selected. Tap Copy.';done()};
     try{navigator.clipboard.writeText(tx).then(()=>{$('#p-copied').textContent='Copied. Paste it in any chat.';done()},fb)}catch(e){fb()}};
@@ -1665,7 +1689,7 @@ function renderPlan(raw){
 window.bgCurrentPlan=()=>CUR;window.bgRenderPlan=p=>{save('plan',p);renderPlan(p)};
 
 window.bgRenderPlan=raw=>{const n=normPlan(raw);if(!n)return false;n.meta=n.meta||{};save('plan',n);renderPlan(n);return true};window.bgNormPlan=x=>normPlan(x);window.bgPlanText=x=>planText(x);
-window.bgPlanQuick=q=>{try{const r=offlinePlan(q);if(!r||r.error)return r||{error:'no plan'};const n=normPlan(r);if(n)n.meta={budget:q.bud,people:q.ppl||1};return n}catch(e){return{error:String(e)}}};
+window.bgPlanQuick=q=>{try{const r=offlinePlan(q);if(!r||r.error)return r||{error:'no plan'};const n=normPlan(r);if(n)n.meta={budget:q.bud,people:q.ppl||1,q:{from:q.from,to:(q.stops||[]).join(', '),days:q.nd,start:q.start||''}};return n}catch(e){return{error:String(e)}}};
 function planText(p){const t=totals(p);let x=`🎒 ${p.title}\n${p.summary}\n`;p.days.forEach(d=>{x+=`\nDay ${d.day}: ${d.city}\n`;d.items.forEach(i=>{x+=`  ${i.time}  ${i.what}${i.cost?' ('+inr(i.cost)+')':''}\n`});const o=d.stay.options[d.stay.pick];x+=o?`  Sleep: ${o.name||o.type+' in '+(o.area||d.stay.city)} (${inr(o.price)})\n`:`  Night: ${d.stay.city}\n`});
   {const kn=(p.know&&p.know.length===3)?p.know:kcKnow(p,p.know||[]);if(kn.length)x+=`\nKnow before you go:\n${kn.map(k=>'  • '+k).join('\n')}\n`}
   x+=`\nTotal per person: ${inr(t.sum)} (travel ${inr(t.travel)}, stay ${inr(t.stay)}, food ${inr(t.food)}, other ${inr(t.sight)})\nMade with Kidhar Chale? · free trip planner`;return x}
@@ -1688,6 +1712,10 @@ $('#p-go').onclick=async()=>{
   const bad=m=>{err.textContent=m;err.hidden=false;err.scrollIntoView({block:'center'})};
   if(!$('#p-from').value.trim())return bad('Add where you are starting from.');
   if(!$('#p-to').value.replace(/[,\s]/g,''))return bad('Add at least one place you want to see.');
+  {const unk=kcUnknownPlaces([$('#p-from').value,...$('#p-to').value.split(',')]);
+   if(unk.length){err.innerHTML=unk.map(u=>`<span class="kc-dym">“${esc(u.typed)}” isn’t a place we know. ${u.sug?`Did you mean <b>${esc(u.sug)}</b>? <button type="button" class="small" data-fix="${esc(u.typed)}" data-to="${esc(u.sug)}">Use ${esc(u.sug)}</button>`:'Check the spelling, or pick the nearest town from the suggestions.'} <button type="button" class="small ghost" data-keep="${esc(u.typed)}">Keep “${esc(u.typed)}”</button></span>`).join('<br>');err.hidden=false;err.scrollIntoView({block:'center'});
+     err.querySelectorAll('[data-fix]').forEach(b=>b.onclick=()=>{['p-from','p-to'].forEach(id=>{const e=$('#'+id);e.value=e.value.split(',').map(x=>x.trim().toLowerCase()===b.dataset.fix.toLowerCase()?b.dataset.to:x.trim()).join(', ')});err.hidden=true;$('#p-go').click()});
+     err.querySelectorAll('[data-keep]').forEach(b=>b.onclick=()=>{KC_KEEP.add(b.dataset.keep.toLowerCase());err.hidden=true;$('#p-go').click()});return}}
   const nd=+$('#p-days').value;if(!(nd>=1))return bad('Days should be 1 or more.');
   if(nd>12)return bad('For trips longer than 12 days, plan it in two parts so every day gets exact times and stays. Set days to 12 or fewer.');
   const bud=+$('#p-budget').value;if(!(bud>0))return bad('Add your budget in rupees, even a rough number.');
@@ -1718,13 +1746,13 @@ Rules:
 - MICRO-TRANSITS: every hop that is not an easy walk (over 1.5 km, uphill, or to a trailhead, viewpoint or temple outside town, e.g. McLeod Ganj to the Galu Devi temple trailhead for Triund) is its own "travel" item with a realistic per-person price (shared auto/e-rickshaw ₹20-50, auto ₹80-200, shared jeep ₹50-150, taxi to a trailhead ₹150-600 split, local bus ₹10-40). Never price these at ₹0. Use ₹0 only for real walks and write "walk, ~N min".
 - Keep every string short.
 Reply ONLY with JSON: {"title":string,"summary":string (2 sentences),"days":[{"day":number,"city":"A → B" or "Town","items":[{"time":"HH:MM","what":string,"cost":number,"kind":string}],"stay":{"city":string,"options":[{"name":string|null,"type":string,"area":string,"price":number,"note":string}]}}],"tips":[3-5 trip-specific money or hassle savers],"verify":[2-4 short things to double-check before leaving],"know":[exactly 3 "Know before you go" points for THIS trip: 1) ID needed (original photo ID for trains and check-in; any Inner Line Permit or area permit; passport and visa abroad), 2) how reliable UPI is versus cash at these exact places, 3) booking lead times for this trip's transport and beds]}`;
-    try{const r=await s.json(prompt,{modelTier:'complex'});LD.done();const p=normPlan(r);if(!p)throw 0;kcEnforce(p);p.meta={budget:bud,people:ppl};save('plan',p);renderPlan(p);$('#p-out').scrollIntoView({block:'start'});btn.disabled=false;btn.textContent='Make my plan';return}
+    try{const r=await s.json(prompt,{modelTier:'complex'});LD.done();const p=normPlan(r);if(!p)throw 0;kcEnforce(p);p.meta={budget:bud,people:ppl,q:{from:$('#p-from').value.trim(),to:$('#p-to').value.trim(),days:nd,start:$('#p-start').value}};save('plan',p);renderPlan(p);$('#p-out').scrollIntoView({block:'start'});btn.disabled=false;btn.textContent='Make my plan';return}
     catch(e){LD.stop()}
   }
   try{
     const r=offlinePlan({from:$('#p-from').value.trim(),stops:$('#p-to').value.split(',').map(x=>x.trim()).filter(Boolean),nd,bud,ppl});
     if(r.error){bad(r.error);return}
-    const p=normPlan(r);p.meta={budget:bud,people:ppl};
+    const p=normPlan(r);p.meta={budget:bud,people:ppl,q:{from:$('#p-from').value.trim(),to:$('#p-to').value.trim(),days:nd,start:$('#p-start').value}};
     /* a short city-coloured loader so the plan arrives instead of popping in */
     if(window.kcLoader&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
       const LD=window.kcLoader($('#p-out'),{place:($('#p-to').value.split(',').map(x=>x.trim()).filter(Boolean)[0]||$('#p-from').value),title:'Planning your trip',eta:'a few seconds',tau:1.1,steps:[['Putting your stops in order, no backtracking',0],['Finding government buses and sleeper trains',.5],['Picking cheap beds for every night',1],['Adding food, sights and real costs',1.5]]});
@@ -1794,34 +1822,44 @@ function stayOpts(pl,ppl){
   return o.slice(0,3);
 }
 function exploreItems(pl,dayN,isArrival,ti,ab,arr){
-  const f=k=>Math.round(FOOD[k][ti]*(ab?3:1));const it=[];const t=pl.tags||[];
+  const f=k=>Math.round(FOOD[k][ti]*(ab?3:1));const it=[];
   const hh=h=>String(Math.floor(h)).padStart(2,'0')+':'+(h%1?'30':'00');
   if(isArrival&&arr>=15){it.push({time:hh(Math.min(arr+1,21)),what:`Check in and an easy evening walk around ${pl.n}`,cost:0,kind:'sight'});it.push({time:hh(Math.min(Math.max(arr+2,20),22)),what:'Dinner where locals eat',cost:f('d'),kind:'food'});return it}
   const st=isArrival&&arr?Math.max(10.5,arr+0.5):9.5;
   if(!isArrival)it.push({time:'08:30',what:'Breakfast nearby',cost:f('b'),kind:'food'});
-  if(dayN===1){
-    const BASES={goa:'Pick a base: Panaji and Old Goa for churches, North Goa (Anjuna, Baga) for busy beaches, South Goa (Palolem, Colva) for quiet ones. Get around by local bus or a rented scooter',spiti:'Base in Kaza and go out by local bus or shared taxi',kashmir:'Base in Srinagar and do day trips by shared taxi',ladakh:'Base in Leh; acclimatise for a day before going higher',sikkim:'Base in Gangtok and go out by shared jeep',kerala:'Pick a base town and move by KSRTC bus',coorg:'Base in Madikeri and go out by local bus or auto'};
-    const base=BASES[String(pl.n).toLowerCase()];
-    it.push({time:hh(st),what:base?base+(pl.why?` (${String(pl.why).replace(/\.\s*$/,'')})`:''):pl.why?`Explore ${pl.n} (${String(pl.why).replace(/\.\s*$/,'')})`:`Walk around ${pl.n}: old market, main viewpoint and the local temple or church (free)`,cost:0,kind:'sight'});
+  const BASES={goa:'Pick a base: Panaji and Old Goa for churches, North Goa (Anjuna, Baga) for busy beaches, South Goa (Palolem, Colva) for quiet ones. Get around by local bus or a rented scooter',spiti:'Base in Kaza and go out by local bus or shared taxi',kashmir:'Base in Srinagar and do day trips by shared taxi',ladakh:'Base in Leh; acclimatise for a day before going higher',sikkim:'Base in Gangtok and go out by shared jeep',kerala:'Pick a base town and move by KSRTC bus',coorg:'Base in Madikeri and go out by local bus or auto'};
+  const base=BASES[String(pl.n).toLowerCase()];
+  /* cities whose sights we know: each sight on its own row, with the ride between them */
+  const nk=x=>String(x||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,' ').trim();
+  const kmAB=(a,b)=>{const r=v=>v*Math.PI/180,h=Math.sin(r(b.la-a.la)/2)**2+Math.cos(r(a.la))*Math.cos(r(b.la))*Math.sin(r(b.lo-a.lo)/2)**2;return 2*6371*Math.asin(Math.sqrt(h))*1.3};
+  const eveOf=x=>{const o=String((x.t&&x.t[0]&&x.t[0][0])||'');return /^ss/.test(o)||(/^\d\d:/.test(o)&&+o.slice(0,2)>=16)?o:null};
+  const SGall=(window.bgSights||[]).filter(x=>nk(x.c)===nk(pl.n)&&isFinite(x.la));
+  let SGd=SGall.filter(x=>!eveOf(x));const SGe=SGall.filter(x=>eveOf(x));
+  /* best-known sights first, each paired with the closest one left */
+  if(SGd.length>2){const left=SGd.slice(),ord=[];while(left.length){const x=left.shift();ord.push(x);if(left.length){left.sort((p,q)=>kmAB(x,p)-kmAB(x,q));ord.push(left.shift());left.sort((p,q)=>SGd.indexOf(p)-SGd.indexOf(q))}}SGd=ord}
+  const slot=dayN-(base?2:1),daySights=slot>=0?SGd.slice(slot*2,slot*2+2):[],eve=slot>=0?SGe[slot]:null;
+  const metro=/^(delhi|new delhi|mumbai|kolkata|bengaluru|chennai|hyderabad|kochi|ahmedabad|pune)$/i.test(pl.n);
+  const t=pl.tags||[];let lunchAt=Math.max(13.5,st+2);
+  if(eve&&!ab){const o=eveOf(eve);it.push({time:/^ss/.test(o)?'17:30':o,what:'Evening: '+eve.n,cost:0,kind:'sight'})}
+  if(dayN===1&&base)it.push({time:hh(st),what:base+(pl.why?` (${String(pl.why).replace(/\.\s*$/,'')})`:''),cost:0,kind:'sight'});
+  else if(daySights.length&&!ab){
+    const [s1,s2]=daySights;it.push({time:hh(st),what:'See '+s1.n,cost:0,kind:'sight'});
+    if(s2){const km=kmAB(s1,s2),short=x=>x.n.replace(/\s*\(.*?\)/g,'').replace(/,\s*[A-Z][a-z]+$/,'');
+      const hop=km<1.3?{w:`Walk ${short(s1)} → ${short(s2)}, ~${Math.max(5,Math.round(km/4.5*60/5)*5)} min`,c:0}:metro&&km>5?{w:`Metro or auto ${short(s1)} → ${short(s2)} (~${Math.round(km)} km; metro is cheapest)`,c:50}:{w:`Auto or e-rickshaw ${short(s1)} → ${short(s2)} (~${Math.round(km)} km)`,c:Math.max(40,Math.round(km*15/10)*10)};
+      it.push({time:hh(st+2),what:hop.w,cost:hop.c,kind:'travel'});it.push({time:hh(st+2.5),what:'See '+s2.n,cost:0,kind:'sight'});lunchAt=Math.max(13.5,st+4)}
+  }else if(dayN===1){
+    it.push({time:hh(st),what:pl.why?`Explore ${pl.n} (${String(pl.why).replace(/\.\s*$/,'')})`:`Walk around ${pl.n} and ask your stay what is worth seeing nearby (free)`,cost:0,kind:'sight'});
   }else{
     const ex={t:'Day hike or trek nearby (ask your hostel for the trail and start early)',b:'Beach day: swim, walk the coast, sunset',h:'Forts, palaces or old temples (entry ₹50–600)',p:'Temples, ghats and the evening prayers (free)',f:'Safari or nature walk (book on the official forest site)',l:'Walk or cycle around the lake',w:'Day trip to the nearest waterfall',m:'Viewpoint walk and a village nearby',s:'Snow day: ask for the nearest slope or pass',d:'Dunes at sunset; compare camel-ride prices first',i:'Island hopping or snorkelling by local boat'};
     const k=Object.keys(ex).filter(k=>t.includes(k));const pick=k.length?k[(dayN-2)%k.length]:null;
     const cost={h:300,f:1800,i:800,d:300}[pick]||0;
-    const cA=window.bgCoords&&bgCoords(pl.n),kmTo=x=>{const c=window.bgCoords&&bgCoords(x.n);if(!c||!cA)return 999;const r=v=>v*Math.PI/180,h=Math.sin(r(c.la-cA.la)/2)**2+Math.cos(r(cA.la))*Math.cos(r(c.la))*Math.sin(r(c.lo-cA.lo)/2)**2;return Math.round(2*6371*Math.asin(Math.sqrt(h))*1.3)};
+    const cA=window.bgCoords&&bgCoords(pl.n),kmTo=x=>{const c=window.bgCoords&&bgCoords(x.n);if(!c||!cA)return 999;return Math.round(kmAB(cA,c))};
     const near=(window.bgPlaces||[]).filter(x=>x.state===pl.state&&x.n!==pl.n&&kmTo(x)<=110);const nb=near.length?near[(dayN*7)%near.length]:null;
-    /* name real sights when we know this city's sights, so the plan (and its map) has places A, B, C */
-    const nk=x=>String(x||'').toLowerCase().replace(/[’']/g,'').replace(/[^a-z0-9]+/g,' ').trim();
-    const why=nk(pl.why),SG=(window.bgSights||[]).filter(x=>nk(x.c)===nk(pl.n)&&!why.includes(nk(x.n.replace(/\s*\(.*?\)/g,'').replace(/,.*$/,''))));
-    const eveOf=x=>{const o=String((x.t&&x.t[0]&&x.t[0][0])||'');return /^ss/.test(o)||(/^\d\d:/.test(o)&&+o.slice(0,2)>=16)?o:null};
-    const SGd=SG.filter(x=>!eveOf(x)),SGe=SG.filter(x=>eveOf(x));
-    const eve=SGe[dayN-2];if(eve){const o=eveOf(eve);it.push({time:/^ss/.test(o)?'17:30':o,what:'Evening: '+eve.n,cost:0,kind:'sight'})}
-    const two=SGd.slice((dayN-2)*2,(dayN-2)*2+2).map(x=>x.n);
-    if(two.length&&pick!=='t'&&pick!=='b'&&pick!=='i'&&pick!=='s'){it.push({time:hh(st),what:'See '+two.join(' and '),cost:0,kind:'sight'})}
-    else if(!pick&&nb){const km=kmTo(nb);it.push({time:hh(st),what:`Local bus or shared taxi ${pl.n} → ${nb.n} and back (~${km} km each way)`,cost:Math.max(60,Math.round(km*2*(ab?6:2.5)/10)*10),kind:'travel'});
+    if(!pick&&nb){const km=kmTo(nb);it.push({time:hh(st),what:`Local bus or shared taxi ${pl.n} → ${nb.n} and back (~${km} km each way)`,cost:Math.max(60,Math.round(km*2*(ab?6:2.5)/10)*10),kind:'travel'});
       it.push({time:hh(st+Math.max(1,Math.round(km/35*2)/2)),what:`Day trip idea: ${nb.n}. ${nb.why}`,cost:0,kind:'sight'})}
     else it.push({time:hh(st),what:pick?ex[pick]:'Slow day: markets, cafés and a local food walk',cost:Math.round(cost*(ab?2:1)),kind:'sight'});
   }
-  it.push({time:hh(Math.max(13.5,st+2)),what:'Lunch at a local dhaba or canteen',cost:f('l'),kind:'food'});
+  it.push({time:hh(lunchAt),what:'Lunch at a local dhaba or canteen',cost:f('l'),kind:'food'});
   it.push({time:hh(Math.max(15,st+3.5)),what:'Local bus, shared auto or walking around town',cost:ab?150:60,kind:'travel'});
   it.push({time:'20:00',what:'Dinner where locals eat',cost:f('d'),kind:'food'});
   return it;
@@ -1905,6 +1943,9 @@ function offlinePlan(q){
   return kcEnforce({title:`${home.n} → ${stops.map(s=>s.n+((s.trips||[]).length?' + '+s.trips.map(t=>t.n).join(' + '):'')).join(' → ')} → ${home.n}`,summary:`A ${days.length}-day round trip built from typical prices. Change where you sleep below, then check live times and prices before booking.`,days,tips,verify:['Exact times for each journey (Book › Tickets)','Live bed prices for your dates (Book › Beds)','Season, permits and road status for each place']});
 }
 /* one price engine for the whole site: Pick for me asks the planner for its number */
+window.bgTripTime=(from,stops,nd,ppl)=>{try{const r=offlinePlan({from,stops,nd,bud:0,ppl:Math.max(1,ppl||1)});if(!r||r.error)return null;
+  let h=0,legs=0;r.days.forEach(d=>d.items.forEach(i=>{if(kcIsLong(i)){const x=kcHrs(i.what);if(x){h+=x;legs++}}}));const ex=r.days.filter(d=>d.items.some(i=>i.kind==='sight')).length;
+  if(!legs)return null;const each=Math.round(h/legs*2)/2;return `~${each} h travel each way · ${ex} day${ex===1?'':'s'} to explore`}catch(e){return null}};
 window.bgEstimate=(from,stops,nd,ppl)=>{try{const r=offlinePlan({from,stops,nd,bud:0,ppl:Math.max(1,ppl||1)});if(!r||r.error)return null;return totals(normPlan(r)).sum}catch(e){return null}};
 $('#p-example').onclick=()=>{try{localStorage.removeItem('bg_plan')}catch(e){}renderPlan(EXAMPLE)};
 
@@ -1933,7 +1974,7 @@ function goLinks(){
   const q=new URLSearchParams({fromCityName:a,toCityName:b});if(rb)q.set('onward',rb);
   $('#t-bus').innerHTML=(abroad?[['FlixBus and local buses','Search buses for this route',g('bus from '+a+' to '+b+(nice?' '+nice:''))]]:[
    ['redBus',a+' → '+b+(nice?', '+nice:''),'https://www.redbus.in/bus-tickets/'+sa+'-to-'+sb+'?'+q.toString()],
-   [rtc?rtc+' (govt bus)':'Government bus','Cheapest; timetable and fare',g((rtc||'government')+' bus '+a+' to '+b+' timetable fare')],
+   [rtc?rtc+' (govt bus)':'Government bus','Search timings and fares (opens Google)',g((rtc||'government')+' bus '+a+' to '+b+' timetable fare')],
    ['ixigo Buses','Compare all bus companies','https://www.ixigo.com/buses/'+sa+'-'+sb+'-sts'],
    ['Bus timings','Counter buses, no booking',g(a+' to '+b+' bus timings ordinary')]]).map(card).join('');
   $('#t-train').innerHTML=abroad?'':[
@@ -2161,7 +2202,7 @@ function find(q){
   out.sort((a,b)=>(a.sc>1)-(b.sc>1)||a.p.w-b.p.w||a.sc-b.sc||a.p.n.length-b.p.n.length);
   return out.slice(0,7);
 }
-window.bgFindPlace=find;
+window.bgFindPlace=find;window.bgPlaceNames=()=>PL.flatMap(p=>[p.n,...p.al]);
 const escH=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function hl(name,q){const i=norm(name).indexOf(norm(q).trim());if(i<0||!q.trim())return escH(name);const L=norm(q).trim().length;return escH(name.slice(0,i))+'<mark>'+escH(name.slice(i,i+L))+'</mark>'+escH(name.slice(i+L))}
 const NEXT={'p-from':'#p-to','t-from':'#t-to','t-to':'#t-date','sf-from':'#sf-to','s-city':'#s-in','w-from':'#w-next'};
@@ -2567,6 +2608,7 @@ function ideaCard(o,ai){
   <p class="route"><b>${esc(A.from)}</b> → ${names.map(n=>`<b>${esc(n)}</b>`).join(' → ')} → <b>${esc(A.from)}</b> · ${A.days} day${A.days>1?'s':''}</p>
   <p>${esc(ai?o.why:(first.why+(o.stops.length>1?' Then '+o.stops.slice(1).map(s=>s.n).join(' and ')+' nearby.':'')))}</p>
   ${ai&&o.travel?`<p class="sub">🚌 ${esc(o.travel)}</p>`:!ai?`<p class="sub">🚌 ${esc(first.reach)}</p>`:''}
+  ${(()=>{if(ai||!window.bgTripTime||(first.reg||'')[0]==='X')return'';const t=window.bgTripTime(A.from,names,A.days,A.people);return t?`<p class="sub">🕒 ${esc(t)}</p>`:''})()}
   <div class="ideameta">${tags.map(t=>`<span class="pill ex">${esc(t)}</span>`).join('')}${!ai&&o.good?'<span class="goodnow">✓ good in '+MN[month()-1]+'</span>':''}</div>
   <div class="row" style="gap:8px"><button class="primary" data-plan="${esc(names.join('|'))}">✨ Plan this trip</button><button class="small" data-look="${esc(names[0])}">See details</button></div></div>`}
 function wire(box){box.querySelectorAll('[data-plan]').forEach(b=>b.onclick=()=>planIt(b.dataset.plan.split('|')));
@@ -5021,7 +5063,7 @@ window.kcPhoto=(()=>{
 (()=>{
   const RE=[[/^([\d,]+) places$/,'$1 जगहें'],[/^1 place$/,'1 जगह'],[/^(\d+) days$/,'$1 दिन'],[/^Show more places \((\d+) left\)$/,'और जगहें दिखाएँ ($1 बाकी)'],[/^(\d+) of (\d+) packed$/,'$2 में से $1 पैक'],
     [/^💸 Trips under (₹[\d,]+)$/,'💸 $1 से कम की ट्रिप्स'],[/^Show trips under (₹[\d,]+)$/,'$1 से कम की ट्रिप्स दिखाएँ'],[/^Step (\d) of (\d)$/,'चरण $1 / $2'],[/^Spoken in: (.*)$/,'बोली जाती है: $1'],
-    [/^Your trip: (.*)$/,'आपकी ट्रिप: $1'],[/^For your trip: (.*) in (.*)$/,'आपकी ट्रिप के लिए: $1 ($2)'],[/^(\d+) Underrated$/,'$1 कम मशहूर'],[/^Great in (\w+)$/,'$1 में बढ़िया'],[/^Skip in (\w+)$/,'$1 में न जाएँ'],[/^(.+) · IN (\d+) DAYS$/,'$1 · $2 दिन में'],[/^(.+) · TOMORROW!$/,'$1 · कल!'],[/^(\d+) DAYS?$/,'$1 दिन'],[/^(₹[\d,]+) \/ PERSON$/,'$1 / व्यक्ति'],[/^(\d+) days? · open now$/,'$1 दिन · अभी खोलें'],[/^(\d+) days? · (\d+) places?$/,'$1 दिन · $2 जगहें']];
+    [/^Your trip: (.*)$/,'आपकी ट्रिप: $1'],[/^For your trip: (.*) in (.*)$/,'आपकी ट्रिप के लिए: $1 ($2)'],[/^(\d+) Underrated$/,'$1 कम मशहूर'],[/^Great in (\w+)$/,'$1 में बढ़िया'],[/^Skip in (\w+)$/,'$1 में न जाएँ'],[/^(.+) · IN (\d+) DAYS$/,'$1 · $2 दिन में'],[/^(.+) · TOMORROW!$/,'$1 · कल!'],[/^(\d+) DAYS?$/,'$1 दिन'],[/^(₹[\d,]+) \/ PERSON$/,'$1 / व्यक्ति'],[/^(\d+) days? · open now$/,'$1 दिन · अभी खोलें'],[/^🕒 ~([\d.]+) h travel each way · (\d+) days? to explore$/,'🕒 हर तरफ़ ~$1 घंटे सफ़र · घूमने के $2 दिन'],[/^(\d+) days? · (\d+) places?$/,'$1 दिन · $2 जगहें']];
   /* lines the trip rules add to every plan (they can be long) */
   const RIDE={'auto or shared auto':'ऑटो या शेयर्ड ऑटो','local bus or taxi':'लोकल बस या टैक्सी','cab or airport bus':'कैब या एयरपोर्ट बस','metro, bus or taxi':'मेट्रो, बस या टैक्सी','local bus, or a taxi if you have bags':'लोकल बस, या सामान ज़्यादा हो तो टैक्सी'};
   const rd=x=>RIDE[x]||x;
@@ -5040,7 +5082,8 @@ window.kcPhoto=(()=>{
     [/^Arrive (.+?), freshen up, chai$/,'$1 पहुँचें, फ्रेश हों, चाय'],[/^Arrive (.+?) and check in$/,'$1 पहुँचें और चेक-इन करें'],[/^Check in and an easy evening walk around (.+)$/,'चेक-इन करें और $1 में शाम की हल्की सैर'],
     [/^Explore (.+?) \((.+)\)$/,'$1 घूमें ($2)'],[/^Walk around (.+?): old market, main viewpoint and the local temple or church \(free\)$/,'$1 में घूमें: पुराना बाज़ार, मुख्य व्यू-पॉइंट और लोकल मंदिर या चर्च (फ्री)'],
     [/^(Government bus|Sleeper \/ Volvo bus|Sleeper-class train|AC 3-tier train|Shared jeep \/ taxi|Budget flight|Government ferry) (.+?) → (.+?) \(~([\d.]+) h\)(.*)$/,(m,a,b,c,h,r)=>`${({'Government bus':'सरकारी बस','Sleeper / Volvo bus':'स्लीपर / वोल्वो बस','Sleeper-class train':'स्लीपर क्लास ट्रेन','AC 3-tier train':'AC 3-टियर ट्रेन','Shared jeep / taxi':'शेयर्ड जीप / टैक्सी','Budget flight':'सस्ती फ़्लाइट','Government ferry':'सरकारी फ़ेरी'})[a]} ${b} → ${c} (~${h} घंटे)${r}`],
-    [/^Day (\d+)$/,'दिन $1'],[/^🎫 Tickets (.+)$/,'🎫 टिकट $1'],[/^Sleep: (.+)$/,'रुकना: $1'],[/^Home in (.+)\. Trip done! 🎉$/,'$1 में घर। ट्रिप पूरी! 🎉'],[/^More beds in (.+)$/,'$1 में और बिस्तर']];
+    [/^Day (\d+)$/,'दिन $1'],[/^Walk (.+?) → (.+?), ~(\d+) min$/,'$1 → $2 पैदल, ~$3 मिनट'],[/^Metro or auto (.+?) → (.+?) \(~(\d+) km; metro is cheapest\)$/,'$1 → $2 मेट्रो या ऑटो से (~$3 किमी; मेट्रो सबसे सस्ती)'],[/^Auto or e-rickshaw (.+?) → (.+?) \(~(\d+) km\)$/,'$1 → $2 ऑटो या ई-रिक्शा से (~$3 किमी)'],
+    [/^Walk around (.+?) and ask your stay what is worth seeing nearby \(free\)$/,'$1 में घूमें और अपने ठिकाने से पूछें कि पास में क्या देखने लायक है (फ्री)'],[/^🧭 Directions for day (\d+): (.+) ↗$/,'🧭 दिन $1 के रास्ते: $2 ↗'],[/^✓ Updated with our latest costs and travel steps\.$/,'✓ हमारे नए दाम और सफ़र के कदमों से अपडेट किया गया।'],[/^🎫 Tickets (.+)$/,'🎫 टिकट $1'],[/^Sleep: (.+)$/,'रुकना: $1'],[/^Home in (.+)\. Trip done! 🎉$/,'$1 में घर। ट्रिप पूरी! 🎉'],[/^More beds in (.+)$/,'$1 में और बिस्तर']];
   const done=new Map();
   window.kcHiRe=root=>{const w=document.createTreeWalker(root||document.body,NodeFilter.SHOW_TEXT);let n;
     while(n=w.nextNode()){const pe=n.parentElement;if(!pe||pe.closest('script,style,.kc-lang'))continue;const t=n.nodeValue.trim();if(!t||t.length>80)continue;
@@ -5327,7 +5370,7 @@ window.kcPhoto=(()=>{
       <div class="kt-map" role="img" aria-label="${E('Map of India showing the route '+title+(plN?', with places '+R.places.map(x=>x.L+' '+x.n).join(', '):''))}"><p class="kc-skel kt-skel" aria-busy="true">Drawing your map…</p></div>
       <div class="kt-key" aria-hidden="true"></div>
       <ol class="kt-list"></ol>
-      <div class="row kt-acts"><button type="button" class="small" id="kt-street" aria-expanded="false">🧭 Street map</button>${R.cities.length>1?`<a class="btnlink small" target="_blank" rel="noopener" id="kt-gm">📍 Open in Google Maps ↗</a>`:''}</div>
+      <div class="row kt-acts"><button type="button" class="small" id="kt-street" aria-expanded="false">🧭 Street map</button>${R.cities.length>1?`<a class="btnlink small" target="_blank" rel="noopener" id="kt-gm">📍 Intercity route in Google Maps ↗</a>`:''}</div>
       <div class="kc-rmap kt-street" hidden></div>
       <p class="kt-src">India map: Survey of India boundaries via <a href="https://github.com/datameet/maps" target="_blank" rel="noopener">DataMeet</a> (CC BY 4.0). Places are approximate.</p>`;
     first.after(card);
@@ -5346,6 +5389,14 @@ window.kcPhoto=(()=>{
         const L=R.legs[si];if(L&&si<R.seq.length-1)h+=`<li class="kt-leg kt-m-${L.mode}"><span class="kt-ico" aria-hidden="true">${L.ico}</span><span><b>${E(L.name)}</b>${L.hrs?` · ~${E(String(L.hrs))} h`:''}${L.night?' · overnight':''} <small>Day ${L.day}</small></span></li>`});
       list.innerHTML=h};
     drawList();
+    /* "Directions for this day" on every day card that has places */
+    const dayNav=()=>{out.querySelectorAll('.kt-nav').forEach(x=>x.remove());const cards=[...out.querySelectorAll('.card.day')];
+      const byDay=new Map();R.places.forEach(x=>{if(x.la==null)return;(byDay.get(x.day)||byDay.set(x.day,[]).get(x.day)).push(x)});
+      byDay.forEach((ps,d)=>{const card=cards[d-1];if(!card)return;const c=ps[0].ci!=null?R.cities[ps[0].ci]:null,cn=c?', '+c.n:'';const q=x=>encodeURIComponent(x.n+cn);
+        const url=ps.length===1?`https://www.google.com/maps/dir/?api=1&destination=${q(ps[0])}`:`https://www.google.com/maps/dir/?api=1&origin=${q(ps[0])}&destination=${q(ps[ps.length-1])}${ps.length>2?'&waypoints='+ps.slice(1,-1).slice(0,8).map(q).join('%7C'):''}`;
+        const a=document.createElement('a');a.className='btnlink small kt-nav';a.target='_blank';a.rel='noopener';a.href=url;a.textContent=`🧭 Directions for day ${d}: ${ps.map(x=>x.L).join(' → ')} ↗`;
+        const row=card.querySelector('.row');row?row.before(a):(card.querySelector('.stayblk')?card.querySelector('.stayblk').before(a):card.appendChild(a))})};
+    dayNav();
     const modes=[...new Set(R.legs.map(l=>l.mode))];
     const KEY={train:'<i class="k-rail"></i>Train',bus:'<i class="k-road"></i>Bus',road:'<i class="k-road"></i>Road',cab:'<i class="k-road"></i>Taxi / jeep',flight:'<i class="k-fly"></i>Flight',ferry:'<i class="k-sea"></i>Ferry'};
     /* place lookups that need Wikipedia */
@@ -5373,7 +5424,7 @@ window.kcPhoto=(()=>{
       .then(()=>{if(!card.isConnected)return;R.places=R.places.filter(x=>x.la!=null);R.places.forEach((x,i)=>x.L=letters(i));
         /* re-letter in order and redraw */
         const pl=R.places.length;card.querySelector('.kt-head .pill').textContent=`${R.days} day${R.days>1?'s':''}${pl?' · '+pl+' place'+(pl>1?'s':''):''}`;
-        drawList();seenOnce=true;draw();if(sm.dataset.on)openStreet(true)})}
+        drawList();dayNav();seenOnce=true;draw();if(sm.dataset.on)openStreet(true)})}
     /* street map with Leaflet, on demand */
     const LCSS='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css',LJS='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
     const leaflet=()=>window.L&&window.L.map?Promise.resolve(window.L):window.__kcLeaf||(window.__kcLeaf=new Promise((res,rej)=>{
